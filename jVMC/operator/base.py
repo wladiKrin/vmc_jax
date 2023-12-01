@@ -158,7 +158,13 @@ class Operator(metaclass=abc.ABCMeta):
         self.sp = self._array_idx_pmapd(self.sp, idx[..., :jnp.max(self.numNonzero)])
 
         return self._flatten_pmapd(self.sp), self.matEl
-
+      
+    def _get_o_loc(self, matEl, psiSP):
+        # check this line
+        # pmap THIS above in "__init__"
+        # add function analogous to "get_O_loc" 
+        return jax.vmap(lambda x, y: jnp.sum(x * y), in_axes=(0, 0, 0))(matEl, psiSP.reshape(matEl.shape))
+  
     def _get_O_loc(self, matEl, logPsiS, logPsiSP):
 
         return jax.vmap(lambda x, y, z: jnp.sum(x * jnp.exp(z - y)), in_axes=(0, 0, 0))(matEl, logPsiS, logPsiSP.reshape(matEl.shape))
