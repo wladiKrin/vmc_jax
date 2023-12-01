@@ -159,6 +159,11 @@ class NQS:
         self.seed = seed
         self.parameters = None
 
+        ################# TODO #####################
+        # add:
+        # self.psi_regularization = epsilon
+        ################# TODO #####################
+
         self._isGenerator = False
         if isinstance(net, collections.abc.Iterable):
             net = jVMC.nets.two_nets_wrapper.TwoNets(net)
@@ -341,6 +346,13 @@ class NQS:
         Returns:
             Real part of the NQS and current parameters
         """
+
+        ################# TODO #####################
+        # construct regularized probability function
+        # and return it and take the log of the 
+        # regularized psi probability >mind the mu<
+        # take real part > apply cutoff > apply log
+        ################# TODO #####################
 
         evalReal = lambda p,x: jnp.real( self.net.apply(p,x) )
         if "eval_real" in dir(self.net):
