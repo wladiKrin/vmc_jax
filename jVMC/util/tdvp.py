@@ -260,17 +260,21 @@ class TDVP:
         start_timing(outp, "sampling")
         sampleConfigs, sampleLogPsi, p = self.sampler.sample(numSamples=numSamples)
         stop_timing(outp, "sampling", waitFor=sampleConfigs)
-
+        
         # Evaluate local energy
         start_timing(outp, "compute Eloc")
+        # TODO: add get_o_loc
         Eloc = hamiltonian.get_O_loc(sampleConfigs, psi, sampleLogPsi, t)
         stop_timing(outp, "compute Eloc", waitFor=Eloc)
+        # TODO: get_sampler_net call to obtain regularized p function
+        # TODO: apply the p function to all configurations
         Eloc = SampledObs( Eloc, p)
 
         # Evaluate gradients
         start_timing(outp, "compute gradients")
         sampleGradients = psi.gradients(sampleConfigs)
         stop_timing(outp, "compute gradients", waitFor=sampleGradients)
+        # TODO: sort out how the regularization enters the gradiet computation
         sampleGradients = SampledObs( sampleGradients, p)
 
         start_timing(outp, "solve TDVP eqn.")
