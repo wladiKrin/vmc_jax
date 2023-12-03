@@ -68,7 +68,7 @@ class MinSR:
 
         eloc_all = mpi.gather(eloc._data).reshape((-1,))
         gradients_all = mpi.gather(gradients._data)
-        update = - gradients_all.conj().T @ T_inv @ eloc_all
+        update = - 1.j*gradients_all.conj().T @ T_inv @ eloc_all
 
         return update
 
