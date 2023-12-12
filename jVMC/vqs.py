@@ -118,6 +118,7 @@ class NQS:
                         batchSize=1000, 
                         seed=1234, 
                         orbit=None, 
+                        psi_regularization=1e-6, 
                         avgFun=jVMC.nets.sym_wrapper.avgFun_Coefficients_Exp):
         """Initializes NQS class.
         
@@ -159,10 +160,7 @@ class NQS:
         self.seed = seed
         self.parameters = None
 
-        ################# TODO #####################
-        # add:
-        # self.psi_regularization = epsilon
-        ################# TODO #####################
+        self.psi_regularization = psi_regularization
 
         self._isGenerator = False
         if isinstance(net, collections.abc.Iterable):
@@ -354,10 +352,14 @@ class NQS:
         # take real part > apply cutoff > apply log
         ################# TODO #####################
 
+        ################# Old Code #####################
+        # evalReal = lambda p,x: jnp.real( self.net.apply(p,x) )
+        # if "eval_real" in dir(self.net):
+        #     if callable(self.net.eval_real):
+        #         evalReal = lambda p,x: jnp.real( self.net.apply(p,x,method=self.net.eval_real) )
+        ################# Old Code #####################
+
         evalReal = lambda p,x: jnp.real( self.net.apply(p,x) )
-        if "eval_real" in dir(self.net):
-            if callable(self.net.eval_real):
-                evalReal = lambda p,x: jnp.real( self.net.apply(p,x,method=self.net.eval_real) )
 
         return evalReal, self.parameters
 
