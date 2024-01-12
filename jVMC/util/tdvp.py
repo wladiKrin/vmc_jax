@@ -261,17 +261,16 @@ class TDVP:
 
         # Get sample
         start_timing(outp, "sampling")
-        sampleConfigs, samplePsi, pMean, pVar, addFact = self.sampler.sample(numSamples=numSamples)
+        sampleConfigs, samplePsi, pMean, pVar = self.sampler.sample(numSamples=numSamples)
         stop_timing(outp, "sampling", waitFor=sampleConfigs)
         
         # Evaluate local energy
         start_timing(outp, "compute Eloc")
         ElocObs = hamiltonian.get_o_loc(sampleConfigs, psi, samplePsi, t)
+
         stop_timing(outp, "compute Eloc", waitFor=ElocObs)
         ElocM = SampledObs(ElocObs, pMean)
         ElocV = SampledObs(ElocObs, pVar)
-
-        # print("Eloc: ", ElocM.mean(), ", ",  ElocV.var(), ", ", ElocV.var() - jnp.abs(ElocM.mean())**2, ", ", addFact*(ElocV.var() - jnp.abs(ElocM.mean())**2))
 
         # Evaluate gradients
         start_timing(outp, "compute gradients")
@@ -296,12 +295,12 @@ class TDVP:
             # def get_tdvp_equation(self, Eloc, gradients):
 
         self.ElocMean = ElocM.mean()[0]
-        self.ElocVar = addFact*(ElocV.var() - ElocM.mean()**2)[0]
+        self.ElocVar = (ElocV.var() - jnp.abs(ElocM.mean())**2)[0]
 
-        self.F0 = (-self.rhsPrefactor) * (addFact*(sampleGradientsV.covar(ElocV).ravel() - sampleGradientsM.mean()*ElocM.mean())).ravel()
+        self.F0 = (-self.rhsPrefactor) * (sampleGradientsV.covar(ElocV).ravel() - jnp.conj(sampleGradientsM.mean())*ElocM.mean()).ravel()
         F = self.makeReal(self.F0)
 
-        self.S0 = addFact*(sampleGradientsV.covar() - sampleGradientsM.mean()**2)
+        self.S0 = sampleGradientsV.covar() - jnp.abs(sampleGradientsM.mean())**2
         S = self.makeReal(self.S0)
 
         if self.diagonalShift > 1e-10:

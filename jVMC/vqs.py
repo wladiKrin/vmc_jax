@@ -213,8 +213,8 @@ class NQS:
                     self.flat_gradient_function = flat_gradient_cpx_nonholo
 
             self.flat_gradient_function = flat_gradient_cpx_nonholo
-            # print(self.flat_gradient_function)
-            # print(self.dict_gradient_function)
+            print(self.flat_gradient_function)
+            print(self.dict_gradient_function)
 
             self.paramShapes = [(p.size, p.shape) for p in tree_flatten(self.parameters["params"])[0]]
             self.netTreeDef = jax.tree_util.tree_structure(self.parameters["params"])
@@ -363,7 +363,7 @@ class NQS:
         #         evalReal = lambda p,x: jnp.real( self.net.apply(p,x,method=self.net.eval_real) )
         ################# Old Code #####################
 
-        evalReal = lambda p,x: jnp.real( self.net.apply(p,x) )
+        evalReal = lambda p,x: self.net.apply(p,x)
 
         return evalReal, self.parameters
 

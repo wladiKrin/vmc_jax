@@ -127,7 +127,7 @@ def measure(observables, psi, sampler, numSamples=None):
 
     '''
     # Get sample
-    sampleConfigs, sampleLogPsi, p, pVar, addFact = sampler.sample(numSamples=numSamples)
+    sampleConfigs, sampleLogPsi, p, pVar = sampler.sample(numSamples=numSamples)
 
     result = {}
 
@@ -148,7 +148,7 @@ def measure(observables, psi, sampler, numSamples=None):
 
             me = mpi.global_mean(Oloc[..., None], p)[0]
             tmpMeans.append(me)
-            tmpVariances.append(addFact*(mpi.global_variance(Oloc[..., None], pVar)[0] - jnp.abs(me)**2))
+            tmpVariances.append(mpi.global_variance(Oloc[..., None], pVar)[0] - jnp.abs(me)**2)
             tmpErrors.append(jnp.sqrt(tmpVariances[-1]) / jnp.sqrt(sampler.get_last_number_of_samples()))
 
         result[name] = {}
