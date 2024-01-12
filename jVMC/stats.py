@@ -45,7 +45,7 @@ def jit_my_stuff():
 
         _mean_helper = jVMC.global_defs.pmap_for_my_devices(lambda data, w: jnp.tensordot(w, data, axes=(0,0)), in_axes=(0, 0))
         _var_helper = jVMC.global_defs.pmap_for_my_devices(lambda data, w: jax.vmap(lambda d, w: w * jnp.abs(d)**2, in_axes=(0,0))(data, w), in_axes=(0, 0))
-        _data_prep = jVMC.global_defs.pmap_for_my_devices(lambda data, w, mean: jax.vmap(lambda d, w, m: jnp.sqrt(w) * (d - m), in_axes=(0,0,None))(data, w, mean), in_axes=(0, 0, None))
+        _data_prep = jVMC.global_defs.pmap_for_my_devices(lambda data, w, mean: jax.vmap(lambda d, w, m: jnp.sqrt(w) * (d ), in_axes=(0,0,None))(data, w, mean), in_axes=(0, 0, None))
         _covar_helper = jVMC.global_defs.pmap_for_my_devices(
                                 lambda data1, data2:
                                     jnp.tensordot(

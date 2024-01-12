@@ -266,13 +266,8 @@ class TDVP:
         
         # Evaluate local energy
         start_timing(outp, "compute Eloc")
-        # TODO: add get_o_loc
         ElocObs = hamiltonian.get_o_loc(sampleConfigs, psi, samplePsi, t)
-        # print(Eloc/psi(sampleConfigs))
-        # Eloc = hamiltonian.get_O_loc(sampleConfigs, psi, sampleLogPsi, t)
         stop_timing(outp, "compute Eloc", waitFor=ElocObs)
-        # TODO: get_sampler_net call to obtain regularized p function
-        # TODO: apply the p function to all configurations
         ElocM = SampledObs(ElocObs, pMean)
         ElocV = SampledObs(ElocObs, pVar)
 
@@ -281,16 +276,16 @@ class TDVP:
         # Evaluate gradients
         start_timing(outp, "compute gradients")
         sampleGradientsObs = psi.gradients(sampleConfigs)
-        # print("sampleGradients: ", sampleGradients)
         stop_timing(outp, "compute gradients", waitFor=sampleGradientsObs)
-        # TODO: sort out how the regularization enters the gradiet computation
+
         sampleGradientsM = SampledObs( sampleGradientsObs, pMean)
         sampleGradientsV = SampledObs( sampleGradientsObs, pVar)
 
-        # print("grad: ", sampleGradientsM.mean(), ", ",  sampleGradientsV.var(), ", ", sampleGradientsV.var() - sampleGradientsM.mean()**2, ", ", addFact*(sampleGradientsV.var() - sampleGradientsM.mean()**2))
-
-        # print("F: ", addFact*(sampleGradientsV.covar(ElocV).ravel() - sampleGradientsM.mean()*ElocM.mean()))
-        # print("S: ", addFact*(sampleGradientsV.covar() - sampleGradientsM.mean()**2))
+        # print("Eloc: ", ElocM.mean(), ", ",  ElocV.var(), ", ", ElocV.var() - jnp.abs(ElocM.mean())**2)
+        # print("grad: ", sampleGradientsM.mean(), ", ",  sampleGradientsV.var(), ", ", sampleGradientsV.var() - jnp.abs(sampleGradientsM.mean())**2)
+        #
+        # print("F: ", (sampleGradientsV.covar(ElocV).ravel() - jnp.conj(sampleGradientsM.mean())*ElocM.mean()))
+        # print("S: ", (sampleGradientsV.covar() - jnp.abs(sampleGradientsM.mean())**2))
 
         start_timing(outp, "solve TDVP eqn.")
 

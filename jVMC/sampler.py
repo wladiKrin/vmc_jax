@@ -270,21 +270,15 @@ class MCSampler:
 
         configs, psi = self._get_samples_mcmc(parameters, numSamples, multipleOf)
         prob_eps = self._prob_regularization(psi, self.psi_regularization)
-        prob_eps = prob_eps # / mpi.global_sum(prob_eps)
 
-        # p = jnp.conjugate(psi)/(prob_eps * mpi.global_sum(jnp.abs(psi)**2))
-        # print(mpi.global_sum(jnp.abs(psi)**2))
-        # print(mpi.global_sum(jnp.abs(psi)))
         p1 = jnp.conjugate(psi)/prob_eps
         p2 = 1/prob_eps
         Nsamples = mpi.globNumSamples
-        # print(p1[1][1])
-        # print(p2[1][1])
-        # print(mpi.global_sum(p2))
-        # print(mpi.global_sum(prob_eps)/configs.shape[1])
-        return configs, psi, p1/Nsamples, p2/Nsamples, mpi.global_sum(prob_eps)/Nsamples
+
+        return configs, psi, p1/Nsamples, p2/Nsamples
 
     def _prob_regularization(self, psi, psi_regularization):
+        ### TODO: rescale the cutoff by the maximal value of psi across all samples ###
         abs2Psi = jnp.abs(psi)**2 - psi_regularization
         mask = jnp.where(abs2Psi < 0, 0, 1)
         prob = abs2Psi * mask + psi_regularization
@@ -387,9 +381,9 @@ class MCSampler:
             newStates = vmap(updateProposer, in_axes=(0, 0, None))(newKeys[:len(carry[0])], carry[0], updateProposerArg)
 
             # Compute acceptance probabilities
-            newAccProb = jax.vmap(lambda y: self._prob_regularization(net(params, y), self.net.psi_regularization), in_axes=(0,))(newStates)
-            # print("newAccProb: ", newAccProb)
-            # print("oldProb: ", carry[1])
+            newAccProb = jax.vmap(lambda y: self._prob_regularization(net(params, y), self.psi_regularization), in_axes=(0,))(newStates)
+            # newAccProb = jax.vmap(lambda y: jnp.abs(net(params, y))**2, in_axes=(0,))(newStates) #self.net.psi_regularization
+            # newAccProb = jax.vmap(lambda y: self.mu * jnp.real(net(params, y)), in_axes=(0,))(newStates)
             P = newAccProb / carry[1]
 
             # Roll dice
@@ -419,7 +413,7 @@ class MCSampler:
         # Initialize logAccProb
         net, _ = self.net.get_sampler_net()
         self.logAccProb = global_defs.pmap_for_my_devices(
-            lambda x: jax.vmap(lambda y: self.mu * jnp.real(net(netParams, y)), in_axes=(0,))(x)
+            lambda x: jax.vmap(lambda y: self._prob_regularization(net(netParams, y), self.psi_regularization), in_axes=(0,))(x)
         )(self.states)
 
         shape = (global_defs.device_count(),) + (1,)
