@@ -212,7 +212,7 @@ class NQS:
                 else:
                     self.flat_gradient_function = flat_gradient_cpx_nonholo
 
-            self.flat_gradient_function = flat_gradient_cpx_nonholo
+            # self.flat_gradient_function = flat_gradient_cpx_nonholo
             print(self.flat_gradient_function)
             print(self.dict_gradient_function)
 

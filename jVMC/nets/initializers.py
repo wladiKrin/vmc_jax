@@ -30,6 +30,11 @@ def cplx_init(rng, shape, dtype):
     unif = jax.nn.initializers.uniform()
     return unif(rng1, shape, dtype=global_defs.tReal) + 1.j * unif(rng2, shape, dtype=global_defs.tReal)
 
+def new_init(rng, shape, dtype):
+    rng1, rng2 = jax.random.split(rng)
+    unif = jax.nn.initializers.uniform(scale=1e-2)
+    return unif(rng1, shape, dtype=global_defs.tReal)
+
 
 def cplx_variance_scaling(rng, shape, dtype):
     rng1, rng2 = jax.random.split(rng)

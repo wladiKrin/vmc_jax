@@ -271,6 +271,14 @@ class MCSampler:
         configs, psi = self._get_samples_mcmc(parameters, numSamples, multipleOf)
         prob_eps = self._prob_regularization(psi, self.psi_regularization)
 
+        psi_norm = jnp.abs(psi) / jnp.sqrt(jnp.sum(jnp.abs(psi)**2) )
+        abs2Psi = psi_norm**2 - self.psi_regularization*jnp.max(psi_norm**2)
+        mask = jnp.where(abs2Psi < 0, 0, 1)
+        # jax.debug.print("psi: {x}",  x = psi)
+        # jax.debug.print("max: {x}",  x = jnp.max(psi_norm))
+        # jax.debug.print("min: {x}",  x = jnp.min(psi_norm))
+        # jax.debug.print("mask: {x}", x = jnp.sum(mask))
+
         p1 = jnp.conjugate(psi)/prob_eps
         p2 = 1/prob_eps
         Nsamples = mpi.globNumSamples
@@ -281,8 +289,8 @@ class MCSampler:
         ### TODO: rescale the cutoff by the maximal value of psi across all samples ###
         abs2Psi = jnp.abs(psi)**2 - psi_regularization
         mask = jnp.where(abs2Psi < 0, 0, 1)
-        prob = abs2Psi * mask + psi_regularization
-        return prob
+
+        return abs2Psi * mask + psi_regularization
 
     def _randomize_samples(self, samples, key, orbit):
         """ For a given set of samples apply a random symmetry transformation to each sample

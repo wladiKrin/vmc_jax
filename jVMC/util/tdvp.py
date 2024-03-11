@@ -302,6 +302,9 @@ class TDVP:
 
         self.S0 = sampleGradientsV.covar() - jnp.abs(sampleGradientsM.mean())**2
         S = self.makeReal(self.S0)
+        # if self.makeReal == imagFun:
+        #     print("S = ", S)
+        #     print("F = ", F)
 
         if self.diagonalShift > 1e-10:
             S = S + jnp.diag(self.diagonalShift * jnp.diag(S))
@@ -314,6 +317,16 @@ class TDVP:
         self._transform_to_eigenbasis(self.S, F) #, Fdata)
 
         # self._get_snr(ElocM, sampleGradientsM)
+        # EO = gradients.covar_data(Eloc).transform(
+        #                 linearFun = jnp.transpose(jnp.conj(self.V)),
+        #                 nonLinearFun=self.trafo_helper
+        #             )
+        # self.rhoVar = EO.var().ravel()
+        #
+        # self.snr = jnp.sqrt(jnp.abs(mpi.globNumSamples * (jnp.conj(self.VtF) * self.VtF) / self.rhoVar)).ravel()
+        # print("EO: ", EO.mean(), ", ", EO.var())
+        # print("rhoVar: ", self.rhoVar)
+        # print("snr: ", self.snr)
 
         # Discard eigenvalues below numerical precision
         self.invEv = jnp.where(jnp.abs(self.ev / self.ev[-1]) > 1e-14, 1. / self.ev, 0.)
