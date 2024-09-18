@@ -1,0 +1,7 @@
+{
+"L": 6,
+"hiddenSize": 2,
+"depth": 1,
+"numSamples": 1000,
+"data_dir": "./data"
+}
