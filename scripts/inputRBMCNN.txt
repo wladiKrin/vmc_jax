@@ -1,0 +1,10 @@
+{
+"L": 5,
+"trv_field": -1.0,
+"num_channels": 10,
+"filter_size": 5,
+"numSamples": 10,
+"stride_size": 1,
+"tmax": 0.3,
+"data_dir": "../data"
+}

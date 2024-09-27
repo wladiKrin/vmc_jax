@@ -189,6 +189,7 @@ class Operator(metaclass=abc.ABCMeta):
             logPsiSP = psi(sampleOffdConfigs)
             if not psi.logarithmic:
                 logPsiSP = jnp.log(logPsiSP)
+                logPsiS  = jnp.log(logPsiS)
             return self.get_O_loc_unbatched(logPsiS, logPsiSP)
 
     def get_O_loc_unbatched(self, logPsiS, logPsiSP):

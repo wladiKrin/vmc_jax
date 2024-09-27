@@ -26,7 +26,7 @@ import jVMC.global_defs as global_defs
 import matplotlib.pyplot as plt
 
 import tdvp_imp
-from nets.RWKV import CpxRWKV
+from nets.RBMCNN import CpxRBMCNN
 
 from functools import partial
 
@@ -79,6 +79,7 @@ if mpi.commSize > 1:
     global_defs.set_pmap_devices(jax.devices()[mpi.rank % jax.device_count()])
 else:
     global_defs.set_pmap_devices(jax.devices()[0])
+
 print(" -> Rank %d working with device %s" % (mpi.rank, global_defs.devices()), flush=True)
 
 L = inp["L"]
@@ -89,30 +90,22 @@ dt = 1e-4  # Initial time step
 integratorTol = 1e-6  # Adaptive integrator tolerance
 tmax = inp["tmax"]  # Final time
 numSamples = inp["numSamples"]
-num_layers=inp["num_layers"]
-embedding_size=inp["embedding_size"]
-hidden_size=inp["hidden_size"]
-num_heads=inp["num_heads"]
-patch_size=inp["patch_size"]
+num_channels=inp["num_channels"]
+filter_size=inp["filter_size"]
+stride_size=inp["stride_size"]
 
-outp = jVMC.util.OutputManager(inp["data_dir"]+"/dataMixed_L="+str(L)+"_g="+str(g)+"_num_layers="+str(num_layers)+"_embedding_size="+str(embedding_size)+"_hidden_size="+str(hidden_size)+"_num_heads="+str(num_heads)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)+".hdf5", append=True)
+param_name = "RBMCNN_mixedSamp_L="+str(L)+"_g="+str(g)+"_num_channels="+str(num_channels)+"_filter_size="+str(filter_size)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)
+
+outp = jVMC.util.OutputManager(inp["data_dir"]+"/output_"+param_name+".hdf5", append=True)
 
 # Set up variational wave function
-#net = jVMC.nets.RNN1DGeneral(L=L, hiddenSize=hiddenSize, depth=depth)
-#net = CpxRWKV(L=L, embedding_size=hiddenSize, numLayers=depth+1)
-temperature = 1.
-net = CpxRWKV(
-        L=L, 
-        temperature=temperature,
-        num_layers=num_layers,
-        patch_size=patch_size,
-        embedding_size=embedding_size, 
-        hidden_size=hidden_size, 
-        num_heads=num_heads, 
+print("initializing network")
+net = CpxRBMCNN(
+        F=(filter_size,),
+        channels=(num_channels,),
+        strides=(stride_size,),
         bias=False, 
-        lin_out=False,
-        one_hot=False, 
-        init_variance=.2,
+        periodicBoundary=False,
 )
 
 psi = jVMC.vqs.NQS(net, logarithmic=True, seed=1234)  # Variational wave function
@@ -150,84 +143,38 @@ uniformSampler = UniformSampler(psi, (L,), numSamples=numSamples)
 params = psi.get_parameters()
 print("Number of parameters: ", params.size)
 
-######### GS Search #################
-# t, weights = outp.get_network_checkpoint(0)
-# psi.set_parameters(weights)
 # Set up sampler
-sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
-                                 numChains=100, sweepSteps=L,
-                                 numSamples=2000, thermalizationSweeps=25)
+exactSampler = jVMC.sampler.ExactSampler(psi, L)
+# sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
+#                                  numChains=100, sweepSteps=L,
+#                                  numSamples=2000, thermalizationSweeps=25)
+
+######### GS Search #################
 
 # Set up TDVP
-tdvpEquation = jVMC.util.tdvp.TDVP(sampler, rhsPrefactor=1.,
+tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs": exactSampler}, rhsPrefactor=1.,
                                    pinvTol=1e-8, diagonalShift=10, makeReal='real')
 
 print("starting GS search")
-jVMC.util.ground_state_search(psi, H_GS, tdvpEquation, sampler, numSteps=200)
-
-#####################################
-
+jVMC.util.ground_state_search(psi, H_GS, tdvpEquation, exactSampler, numSteps=50)
 print("network checkpoint")
 outp.write_network_checkpoint(0.0, psi.get_parameters())
 
-# Get sample
-# numSamples=1000
-# sampleConfigs, sampleLogPsi, p = exactSampler.sample()
+# print("loading GS data")
+# t, weights = outp.get_network_checkpoint(0)
+# psi.set_parameters(weights)
 
-# Eloc = hamiltonian.get_O_loc(sampleConfigs, psi, sampleLogPsi, t)
-# Eloc = SampledObs( Eloc, p)
-# sampleGradients = psi.gradients(sampleConfigs)
-# sampleGradients = SampledObs( sampleGradients, p)
-# # sampleGradients = sampleGradients * jnp.exp(sampleLogPsi[:,:,None])
+#####################################
 
-# S = 1.j * jnp.imag( sampleGradients.covar() )
-# # S = mpi.global_sum(jVMC.stats._covar_helper(sampleGradients, sampleGradients)[:,None,...])
-# S = 1.j * jnp.imag( S )
-
-# ev, V = jnp.linalg.eigh(S)
-
-# # print(jnp.imag(-1.j*sampleGradients.covar(Eloc)))
-
-# sampleConfigs, sampleLogPsi, p = uniformSampler.sample(numSamples=numSamples)
-# sampleGradients = psi.gradients(sampleConfigs)
-# sampleGradients = sampleGradients * jnp.exp(sampleLogPsi[:,:,None])
-
-# S = mpi.global_sum(jVMC.stats._covar_helper(sampleGradients, sampleGradients)[:,None,...]) * p.ravel()[0]
-
-# S = 1.j * jnp.imag( S )
-
-# ev, V = jnp.linalg.eigh(S)
-
-# sampleConfigs, sampleLogPsi, p = psi2sampler.sample(numSamples=numSamples)
-# sampleGradients = psi.gradients(sampleConfigs)
-# sampleGradients = SampledObs(sampleGradients, p)
-# Eloc = hamiltonian.get_O_loc(sampleConfigs, psi, sampleLogPsi, t)
-# Eloc = SampledObs( Eloc, p)
-
-# F = sampleGradients.covar(Eloc)
-# # print(jnp.imag(-1.j*F))
-# print(sampleGradients.covar())
-
-# exit()
-
-# print(ev)
-# exit()
-
-# Set up TDVP
-#tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, pinvTol=inp["pinvTol"], pinvCutoff=1e-4,
-#                                   rhsPrefactor=1.j,
-#                                   makeReal='real')
-# tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, **inp["tdvp"], rhsPrefactor=1.j)
 print("setting up tdvp equation")
-tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, rhsPrefactor=1.j)
-
-t = 0.0  # Initial time
+tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs":exactSampler}, rhsPrefactor=1.j)
 
 # Set up stepper
 stepper = jVMC.util.stepper.AdaptiveHeun(timeStep=dt, tol=integratorTol)
 
+t = 0.
 # Measure initial observables
-obs = measure(observables, psi, psi2sampler)
+obs = measure(observables, psi, exactSampler)
 data = []
 data.append([t, obs["energy"]["mean"][0], obs["X"]["mean"][0]])
 
@@ -246,7 +193,7 @@ while t < tmax:
     t += dt
 
     # Measure observables
-    obs = measure(observables, psi, psi2sampler)
+    obs = measure(observables, psi, exactSampler)
     data.append([t, obs["energy"]["mean"][0], obs["X"]["mean"][0]])
 
     # Write some meta info to screen
@@ -254,6 +201,7 @@ while t < tmax:
     tdvpErr, tdvpRes = tdvpEquation.get_residuals()
     outp.print("   Residuals: tdvp_err = %.2e, solver_res = %.2e" % (tdvpErr, tdvpRes))
     outp.print("    Energy = %f +/- %f" % (obs["energy"]["mean"][0], obs["energy"]["MC_error"][0]))
+    outp.print("    xPol = %f +/- %f" % (obs["X"]["mean"][0], obs["X"]["MC_error"][0]))
     toc = time.perf_counter()
     outp.print("   == Total time for this step: %fs\n" % (toc - tic))
 
@@ -272,7 +220,7 @@ while t < tmax:
             #"calcTime": npdata[:, 7],
         }
     )
-    dfTDVP.to_csv(inp["data_dir"]+"/vmc_tdvpMixed_data_L="+str(L)+"_g="+str(g)+"_num_layers="+str(num_layers)+"_embedding_size="+str(embedding_size)+"_hidden_size="+str(hidden_size)+"_num_heads="+str(num_heads)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)+".csv", sep=' ')
+    dfTDVP.to_csv(inp["data_dir"]+"/data_"+param_name+".csv", sep=' ')
 
 
 tic = time.perf_counter()
@@ -281,4 +229,9 @@ outp.print("done")
 
 data = np.array(data)
 plt.plot(data[:,0], data[:,2])
+plt.xlim(0,tmax)
+plt.ylim(data[-1,2], 1)
+
+df = pd.read_csv('ref_L=5.csv')
+plt.plot(df['time'], df['xPol'], color='red')
 plt.savefig("plot.pdf")

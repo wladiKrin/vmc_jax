@@ -1,6 +1,5 @@
 import os
 print(os.environ['CONDA_DEFAULT_ENV'])
-print(os.environ['CONDA_PREFIX'])
 
 import jax
 from jax.config import config
@@ -25,13 +24,16 @@ import jVMC.global_defs as global_defs
 
 import matplotlib.pyplot as plt
 
-import tdvp_imp
-from nets.RWKV import CpxRWKV
+import new_tdvp
+from RWKV import CpxRWKV
 
 from functools import partial
 
 import json
 import sys
+
+def xy_to_id(x,y,L):
+    return int(x + L * y)
 
 class UniformSampler:
 
@@ -86,66 +88,58 @@ g = inp["trv_field"]
 h = 0.0
 
 dt = 1e-4  # Initial time step
-integratorTol = 1e-6  # Adaptive integrator tolerance
+integratorTol = inp["integratorTol"]  # Adaptive integrator tolerance
 tmax = inp["tmax"]  # Final time
 numSamples = inp["numSamples"]
 num_layers=inp["num_layers"]
 embedding_size=inp["embedding_size"]
 hidden_size=inp["hidden_size"]
 num_heads=inp["num_heads"]
-patch_size=inp["patch_size"]
 
-outp = jVMC.util.OutputManager(inp["data_dir"]+"/dataMixed_L="+str(L)+"_g="+str(g)+"_num_layers="+str(num_layers)+"_embedding_size="+str(embedding_size)+"_hidden_size="+str(hidden_size)+"_num_heads="+str(num_heads)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)+".hdf5", append=True)
+outp = jVMC.util.OutputManager(inp["data_dir"]+"/data2DMixed_L="+str(L)+"_g="+str(g)+"_num_layers="+str(num_layers)+"_embedding_size="+str(embedding_size)+"_hidden_size="+str(hidden_size)+"_num_heads="+str(num_heads)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)+".hdf5", append=True)
 
 # Set up variational wave function
 #net = jVMC.nets.RNN1DGeneral(L=L, hiddenSize=hiddenSize, depth=depth)
 #net = CpxRWKV(L=L, embedding_size=hiddenSize, numLayers=depth+1)
-temperature = 1.
-net = CpxRWKV(
-        L=L, 
-        temperature=temperature,
-        num_layers=num_layers,
-        patch_size=patch_size,
-        embedding_size=embedding_size, 
-        hidden_size=hidden_size, 
-        num_heads=num_heads, 
-        bias=False, 
-        lin_out=False,
-        one_hot=False, 
-        init_variance=.2,
-)
+net = CpxRWKV(L=L*L, num_layers=num_layers, embedding_size=embedding_size, hidden_size=hidden_size, num_heads=num_heads, bias=True, one_hot=True, patch_size=4)
 
 psi = jVMC.vqs.NQS(net, logarithmic=True, seed=1234)  # Variational wave function
 # psi = jVMC.vqs.NQS(net, seed=1234)  # Variational wave function
 
 # Set up hamiltonian
 hamiltonian = jVMC.operator.BranchFreeOperator()
-for l in range(L-1):
-    hamiltonian.add(op.scal_opstr(-1., (op.Sz(l), op.Sz(l + 1))))
+for x in range(L):
+    for y in range(L):
+        if x+1 < L:
+            hamiltonian.add(op.scal_opstr(-1., (op.Sz(xy_to_id(x,y,L)), op.Sz(xy_to_id(x+1,y,L)))))
+        if y+1 < L:
+            hamiltonian.add(op.scal_opstr(-1., (op.Sz(xy_to_id(x,y,L)), op.Sz(xy_to_id(x,y+1,L)))))
+        hamiltonian.add(op.scal_opstr(g, (op.Sx(xy_to_id(x,y,L)), )))
+        hamiltonian.add(op.scal_opstr(h, (op.Sz(xy_to_id(x,y,L)),)))
 
-for l in range(L):
-    hamiltonian.add(op.scal_opstr(g, (op.Sx(l), )))
-    hamiltonian.add(op.scal_opstr(h, (op.Sz(l),)))
+print(hamiltonian)
 
 # Set u GS hamiltonian
 H_GS = jVMC.operator.BranchFreeOperator()
-for l in range(L):
-    H_GS.add(op.scal_opstr(-1.0, (op.Sx(l), )))
+for x in range(L):
+    for y in range(L):
+        H_GS.add(op.scal_opstr(-1.0, (op.Sx(xy_to_id(x,y,L)), )))
 
 # Set up observables
 observables = {
     "energy": hamiltonian,
     "X": jVMC.operator.BranchFreeOperator(),
 }
-for l in range(L):
-    observables["X"].add(op.scal_opstr(1. / L, (op.Sx(l), )))
+for x in range(L):
+    for y in range(L):
+        observables["X"].add(op.scal_opstr(1. / (L*L), (op.Sx(xy_to_id(x,y,L)), )))
 
 # Set up sampler
 # exactSampler = jVMC.sampler.ExactSampler(psi, L)
-psi2sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
-                                 numChains=25, sweepSteps=L,
+psi2sampler = jVMC.sampler.MCSampler(psi, (L*L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
+                                 numChains=25, sweepSteps=L*L,
                                  numSamples=numSamples, thermalizationSweeps=25)
-uniformSampler = UniformSampler(psi, (L,), numSamples=numSamples)
+uniformSampler = UniformSampler(psi, (L*L,), numSamples=numSamples)
 
 params = psi.get_parameters()
 print("Number of parameters: ", params.size)
@@ -154,8 +148,8 @@ print("Number of parameters: ", params.size)
 # t, weights = outp.get_network_checkpoint(0)
 # psi.set_parameters(weights)
 # Set up sampler
-sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
-                                 numChains=100, sweepSteps=L,
+sampler = jVMC.sampler.MCSampler(psi, (L*L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
+                                 numChains=100, sweepSteps=L*L,
                                  numSamples=2000, thermalizationSweeps=25)
 
 # Set up TDVP
@@ -214,12 +208,12 @@ outp.write_network_checkpoint(0.0, psi.get_parameters())
 # exit()
 
 # Set up TDVP
-#tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, pinvTol=inp["pinvTol"], pinvCutoff=1e-4,
+#tdvpEquation = new_tdvp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, pinvTol=inp["pinvTol"], pinvCutoff=1e-4,
 #                                   rhsPrefactor=1.j,
 #                                   makeReal='real')
-# tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, **inp["tdvp"], rhsPrefactor=1.j)
+# tdvpEquation = new_tdvp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, **inp["tdvp"], rhsPrefactor=1.j)
 print("setting up tdvp equation")
-tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, rhsPrefactor=1.j)
+tdvpEquation = new_tdvp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, rhsPrefactor=1.j)
 
 t = 0.0  # Initial time
 
@@ -272,7 +266,7 @@ while t < tmax:
             #"calcTime": npdata[:, 7],
         }
     )
-    dfTDVP.to_csv(inp["data_dir"]+"/vmc_tdvpMixed_data_L="+str(L)+"_g="+str(g)+"_num_layers="+str(num_layers)+"_embedding_size="+str(embedding_size)+"_hidden_size="+str(hidden_size)+"_num_heads="+str(num_heads)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)+".csv", sep=' ')
+    dfTDVP.to_csv(inp["data_dir"]+"/vmc_tdvp2DMixed_data_L="+str(L)+"_g="+str(g)+"_num_layers="+str(num_layers)+"_embedding_size="+str(embedding_size)+"_hidden_size="+str(hidden_size)+"_num_heads="+str(num_heads)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)+".csv", sep=' ')
 
 
 tic = time.perf_counter()

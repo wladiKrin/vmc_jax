@@ -202,7 +202,6 @@ class TDVP:
         self.start_timing(outp, "compute Eloc")
         #Eloc = hamiltonian.get_O_loc(sampleConfigs, psi, sampleLogPsi, t)
         Eloc = hamiltonian.get_O_loc(sample["rhs"].configs, psi, sample["rhs"].coeffs, t)
-        
         self.stop_timing(outp, "compute Eloc", waitFor=Eloc)
         Eloc = SampledObs( Eloc, sample["rhs"].weights)
 
@@ -210,10 +209,9 @@ class TDVP:
         self.start_timing(outp, "compute gradients")
         # lhs
         gradients = psi.gradients(sample["lhs"].configs)
-        print(gradients.shape)
         if psi.logarithmic:
             gradients = gradients * jnp.exp(sample["lhs"].coeffs[:,:,None])
-        self.S0 = mpi.global_sum(jVMC.stats._covar_helper(gradients, gradients)[:,None,...]) * sample["lhs"].weights.ravel()[0]
+        self.S0 = mpi.global_sum(jVMC.stats._covar_helper(gradients, gradients)[:,None,...]) # * sample["lhs"].weights.ravel()[0]
 
         # rhs
         gradients = psi.gradients(sample["rhs"].configs)
@@ -221,7 +219,7 @@ class TDVP:
             gradients = gradients / jnp.exp(sample["rhs"].coeffs[:,:,None])
         self.stop_timing(outp, "compute gradients", waitFor=gradients)
         gradients = SampledObs( gradients, sample["rhs"].weights)
-        self.S0 = self.S0 - jnp.outer(jnp.conj(gradients.mean()), gradients.mean())
+        self.S0 = (self.S0 - jnp.outer(jnp.conj(gradients.mean()), gradients.mean()))* sample["lhs"].weights.ravel()[0]
 
 
         # Get TDVP equation from MC data

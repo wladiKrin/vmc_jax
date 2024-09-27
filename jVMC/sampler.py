@@ -509,9 +509,11 @@ class ExactSampler:
             self.psi.set_parameters(tmpP)
 
         p = self._compute_probabilities_pmapd(logPsi, self.lastNorm, self.numStatesPerDevice)
+        # p = jnp.abs(logPsi)**2
 
         nrm = mpi.global_sum(p)
         p = self._normalize_pmapd(p, nrm)
+        # print("p: ", p)
 
         self.lastNorm += self.logProbFactor * jnp.log(nrm)
 

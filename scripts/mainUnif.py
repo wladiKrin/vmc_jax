@@ -25,8 +25,8 @@ import jVMC.global_defs as global_defs
 
 import matplotlib.pyplot as plt
 
-import tdvp_imp
-from nets.RWKV import CpxRWKV
+import new_tdvp
+from RWKV import CpxRWKV
 
 from functools import partial
 
@@ -93,27 +93,13 @@ num_layers=inp["num_layers"]
 embedding_size=inp["embedding_size"]
 hidden_size=inp["hidden_size"]
 num_heads=inp["num_heads"]
-patch_size=inp["patch_size"]
 
-outp = jVMC.util.OutputManager(inp["data_dir"]+"/dataMixed_L="+str(L)+"_g="+str(g)+"_num_layers="+str(num_layers)+"_embedding_size="+str(embedding_size)+"_hidden_size="+str(hidden_size)+"_num_heads="+str(num_heads)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)+".hdf5", append=True)
+outp = jVMC.util.OutputManager(inp["data_dir"]+"/dataUniform_L="+str(L)+"_g="+str(g)+"_num_layers="+str(num_layers)+"_embedding_size="+str(embedding_size)+"_hidden_size="+str(hidden_size)+"_num_heads="+str(num_heads)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)+".hdf5", append=True)
 
 # Set up variational wave function
 #net = jVMC.nets.RNN1DGeneral(L=L, hiddenSize=hiddenSize, depth=depth)
 #net = CpxRWKV(L=L, embedding_size=hiddenSize, numLayers=depth+1)
-temperature = 1.
-net = CpxRWKV(
-        L=L, 
-        temperature=temperature,
-        num_layers=num_layers,
-        patch_size=patch_size,
-        embedding_size=embedding_size, 
-        hidden_size=hidden_size, 
-        num_heads=num_heads, 
-        bias=False, 
-        lin_out=False,
-        one_hot=False, 
-        init_variance=.2,
-)
+net = CpxRWKV(L=L, num_layers=num_layers, embedding_size=embedding_size, hidden_size=hidden_size, num_heads=num_heads, bias=True, one_hot=True)
 
 psi = jVMC.vqs.NQS(net, logarithmic=True, seed=1234)  # Variational wave function
 # psi = jVMC.vqs.NQS(net, seed=1234)  # Variational wave function
@@ -141,7 +127,7 @@ for l in range(L):
     observables["X"].add(op.scal_opstr(1. / L, (op.Sx(l), )))
 
 # Set up sampler
-# exactSampler = jVMC.sampler.ExactSampler(psi, L)
+exactSampler = jVMC.sampler.ExactSampler(psi, L)
 psi2sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
                                  numChains=25, sweepSteps=L,
                                  numSamples=numSamples, thermalizationSweeps=25)
@@ -214,12 +200,12 @@ outp.write_network_checkpoint(0.0, psi.get_parameters())
 # exit()
 
 # Set up TDVP
-#tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, pinvTol=inp["pinvTol"], pinvCutoff=1e-4,
+#tdvpEquation = new_tdvp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, pinvTol=inp["pinvTol"], pinvCutoff=1e-4,
 #                                   rhsPrefactor=1.j,
 #                                   makeReal='real')
-# tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, **inp["tdvp"], rhsPrefactor=1.j)
+# tdvpEquation = new_tdvp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, **inp["tdvp"], rhsPrefactor=1.j)
 print("setting up tdvp equation")
-tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs":psi2sampler}, rhsPrefactor=1.j)
+tdvpEquation = new_tdvp.TDVP({"lhs": uniformSampler, "rhs": uniformSampler}, rhsPrefactor=1.j)
 
 t = 0.0  # Initial time
 
@@ -272,7 +258,7 @@ while t < tmax:
             #"calcTime": npdata[:, 7],
         }
     )
-    dfTDVP.to_csv(inp["data_dir"]+"/vmc_tdvpMixed_data_L="+str(L)+"_g="+str(g)+"_num_layers="+str(num_layers)+"_embedding_size="+str(embedding_size)+"_hidden_size="+str(hidden_size)+"_num_heads="+str(num_heads)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)+".csv", sep=' ')
+    dfTDVP.to_csv(inp["data_dir"]+"/vmc_tdvpUniform_data_L="+str(L)+"_g="+str(g)+"_num_layers="+str(num_layers)+"_embedding_size="+str(embedding_size)+"_hidden_size="+str(hidden_size)+"_num_heads="+str(num_heads)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)+".csv", sep=' ')
 
 
 tic = time.perf_counter()

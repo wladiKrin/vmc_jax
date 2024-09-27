@@ -1,0 +1,12 @@
+{
+"L": 20,
+"trv_field": -1.0,
+"num_layers": 4,
+"embedding_size": 10,
+"hidden_size": 24,
+"num_heads": 2,
+"numSamples": 40000,
+"patch_size": 1,
+"tmax": 3.0,
+"data_dir": "../data"
+}

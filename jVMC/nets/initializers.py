@@ -27,7 +27,7 @@ def init_fn_args(dtype=None, **kwargs):
 def cplx_init(rng, shape, dtype):
     rng1, rng2 = jax.random.split(rng)
     unif = jax.nn.initializers.uniform()
-    return unif(rng1, shape, dtype=global_defs.tReal) + 1.j * unif(rng2, shape, dtype=global_defs.tReal)
+    return 0.01 * (unif(rng1, shape, dtype=global_defs.tReal) + 1.j * unif(rng2, shape, dtype=global_defs.tReal))
 
 
 def cplx_variance_scaling(rng, shape, dtype):

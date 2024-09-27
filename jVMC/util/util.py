@@ -210,3 +210,8 @@ def ground_state_search(psi, ham, tdvpEquation, sampler, numSteps=200, varianceT
             outp.print("   Energy variance: %f" % (varE))
             outp.print_timings(indent="   ")
             outp.print("   == Time for step: %fs" % (time.perf_counter() - tic))
+
+        print(" STEP %d" % (n))
+        print("   Energy mean: %f" % (tdvpEquation.get_energy_mean()))
+        print("   Energy variance: %f" % (varE))
+        print("   == Time for step: %fs" % (time.perf_counter() - tic))
