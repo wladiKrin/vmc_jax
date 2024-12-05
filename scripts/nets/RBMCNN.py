@@ -31,9 +31,9 @@ class CpxRBMCNN(nn.Module):
     F: Sequence[int] = (8,)
     channels: Sequence[int] = (10,)
     strides: Sequence[int] = (1,)
-    # actFun: Sequence[callable] = (jnp.cosh,)
-    actFun: Sequence[callable] = (act_funs.log_cosh,)
-    bias: bool = True
+    actFun: Sequence[callable] = (jnp.cosh,)
+    # actFun: Sequence[callable] = (act_funs.log_cosh,)
+    bias: bool = False
     firstLayerBias: bool = False
     periodicBoundary: bool = True
 
@@ -76,53 +76,4 @@ class CpxRBMCNN(nn.Module):
                           strides=self.strides,
                           use_bias=bias, **init_args)(x))
 
-        # strides=self.strides, padding=[(0, 0)] * len(self.strides),
-        # nrm = jnp.sqrt(jnp.prod(jnp.array(x.shape[reduceDims[-1]:])))
-
-        return jnp.sum(x)
-
-# ** end class CpxCNN
-
-
-# class CpxCNNSym(nn.Module):
-#     """
-#     Complex symmetric CNN.
-#     It uses the CpxCNN class to compute probabilities and averages the outputs over all symmetry-invariant configurations.
-#
-#     Initialization arguments:
-#         * ``orbit``: orbits which define the symmetry operations (instance of ``util.symmetries.LatticeSymmetry``)
-#         * ``F``: Filter diameter
-#         * ``channels``: Number of channels
-#         * ``strides``: Number of pixels the filter shifts over
-#         * ``actFun``: Non-linear activation function
-#         * ``bias``: Whether to use biases
-#         * ``firstLayerBias``: Whether to use biases in the first layer
-#
-#     """
-#     orbit: LatticeSymmetry
-#     F: Sequence[int] = (8,)
-#     channels: Sequence[int] = (10,)
-#     strides: Sequence[int] = (1,)
-#     actFun: Sequence[callable] = (act_funs.poly6,)
-#     bias: bool = True
-#     firstLayerBias: bool = False
-#
-#     def setup(self):
-#
-#         self.cnn = CpxCNN(F=self.F, channels=self.channels,
-#                           strides=self.strides, actFun=self.actFun,
-#                           bias=self.bias, firstLayerBias=self.firstLayerBias)
-#
-#     def __call__(self, x):
-#
-#         inShape = x.shape
-#         x = jax.vmap(lambda o, s: jnp.dot(o, s.ravel()).reshape(inShape), in_axes=(0, None))(self.orbit.orbit, x)
-#
-#         def evaluate(x):
-#             return self.cnn(x)
-#
-#         res = jnp.mean(jax.vmap(evaluate)(x), axis=0)
-#
-#         return res
-#
-# # ** end class CpxCNNSym
+        return jnp.prod(x)

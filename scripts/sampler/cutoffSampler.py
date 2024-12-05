@@ -4,6 +4,7 @@ import jax.random as random
 import numpy as np
 from jax import vmap
 
+import jVMC
 import jVMC.mpi_wrapper as mpi
 from jVMC.nets.sym_wrapper import SymNet
 
@@ -64,17 +65,19 @@ def propose_spin_flip_zeroMag(key, s, info):
     return jax.lax.cond(doFlip == 0, lambda x: 1 - x, lambda x: x, s)
 
 
-class MCSampler:
+class CutoffSampler:
     """A sampler class.
 
     This class provides functionality to sample computational basis states from \
     the distribution 
 
-        :math:`p_{\\mu}(s)=\\frac{|\\psi(s)|^{\\mu}}{\\sum_s|\\psi(s)|^{\\mu}}`.
+        :math:`p_{\\eps}(s)=\\frac{|\\psi(s)|^{\\mu}}{\\sum_s|\\psi(s)|^{\\mu}}`
 
-    For :math:`\\mu=2` this corresponds to sampling from the Born distribution. \
-    :math:`0\leq\\mu<2` can be used to perform importance sampling \
-    (see `[arXiv:2108.08631] <https://arxiv.org/abs/2108.08631>`_).
+    for :math:`\\frac{|\\psi(s)|^{\\mu}}{\\sum_s|\\psi(s)|^{\\mu}} > \\eps`
+
+        :math:`\\eps`.
+
+    else.
 
     Sampling is automatically distributed accross MPI processes and locally available \
     devices.
@@ -84,6 +87,7 @@ class MCSampler:
         * ``sampleShape``: Shape of computational basis configurations.
         * ``key``: An instance of ``jax.random.PRNGKey``. Alternatively, an ``int`` that will be used \
                    as seed to initialize a ``PRNGKey``.
+        * ``eps``: epsilon used for the cutoff procedure.
         * ``updateProposer``: A function to propose updates for the MCMC algorithm. \
         It is called as ``updateProposer(key, config, **kwargs)``, where ``key`` is an instance of \
         ``jax.random.PRNGKey``, ``config`` is a computational basis configuration, and ``**kwargs`` \
@@ -100,7 +104,7 @@ class MCSampler:
         ``mu`` parameter must be set to 1.0, to sample the unchanged POVM distribution.
     """
 
-    def __init__(self, net, sampleShape, key, updateProposer=None, numChains=1, updateProposerArg=None,
+    def __init__(self, net, sampleShape, key, eps, updateProposer=None, numChains=1, updateProposerArg=None,
                  numSamples=100, thermalizationSweeps=10, sweepSteps=10, initState=None, mu=2, logProbFactor=0.5):
         """Initializes the MCSampler class.
 
@@ -109,6 +113,7 @@ class MCSampler:
         self.sampleShape = sampleShape
 
         self.net = net
+        self.eps = eps
         if (not net.is_generator) and (updateProposer is None):
             raise RuntimeError("Instantiation of MCSampler: `updateProposer` is `None` and cannot be used for MCMC sampling.")
         self.orbit = None
@@ -145,6 +150,17 @@ class MCSampler:
         self.numAccepted = jnp.zeros(shape, dtype=np.int64)
 
         self.numChains = numChains
+
+        ## based on exact norm
+        # self.normSampler = jVMC.sampler.ExactSampler(self.net, np.prod(self.sampleShape))
+        # self.cutoff = jnp.log(self.normSampler.get_norm() * self.eps)
+
+        ## based on sampled max coeff
+        sampler = jVMC.sampler.MCSampler(self.net, (np.prod(self.sampleShape),), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
+                                     numChains=25, sweepSteps=np.prod(self.sampleShape),
+                                     numSamples=numSamples, thermalizationSweeps=50)
+        _,coeffs,_ = sampler.sample()
+        self.cutoff = jnp.log(jnp.max(jnp.abs(coeffs)**2)* self.eps)
 
         # jit'd member functions
         self._get_samples_jitd = {}  # will hold a jit'd function for each number of samples
@@ -219,19 +235,24 @@ class MCSampler:
             return configs, coeffs, ps
 
         configs, logPsi = self._get_samples_mcmc(parameters, numSamples, multipleOf)
-        # exSampler = ExactSampler(self.net, self.sampleShape, logProbFactor=self.logProbFactor)
 
-        # exactSampler = ExactSampler(self.net, np.prod(self.sampleShape))
-        # configs = exactSampler.basis
-        # logPsi = self.net(configs)
-        # if self.net.logarithmic:
-        #     p = jnp.exp((1.0 / self.logProbFactor - self.mu) * jnp.real(logPsi))
-        # else:
-        #     p = jnp.abs(logPsi)**(1.0 / self.logProbFactor - self.mu)
+        ## based on exact norm
+        # self.cutoff = jnp.log(self.normSampler.get_norm() * self.eps)
+
+        ## based on sampled max coeff
+        self.cutoff = jnp.log(jnp.max(jnp.abs(logPsi)**2) * self.eps)
 
         p = jnp.exp((1.0 / self.logProbFactor - self.mu) * jnp.real(jnp.log(logPsi)))
 
-        return configs, logPsi, p / mpi.global_sum(p)
+        weights = jnp.where(jnp.abs(logPsi)**2 > jnp.exp(self.cutoff), jnp.abs(logPsi)**2, jnp.exp(self.cutoff))
+        ratio = jnp.abs(logPsi)**2 / weights
+
+        renorm = numSamples / jnp.sum(ratio)
+        print("r: ", renorm)
+        # print("rEx: ", renormEx)
+        return configs, logPsi, (p/mpi.global_sum(p)) * renorm * ratio #/ self.lastNumSamples / weights
+
+        # return configs, logPsi, p / mpi.global_sum(p)
 
     def _randomize_samples(self, samples, key, orbit):
         """ For a given set of samples apply a random symmetry transformation to each sample
@@ -337,8 +358,12 @@ class MCSampler:
             # else:
             #     newLogAccProb = jax.vmap(lambda y: net(params, y)**self.mu, in_axes=(0,))(newStates)
             #     P = newLogAccProb / carry[1]
-            #
+
             newLogAccProb = jax.vmap(lambda y: self.mu * jnp.real(net(params, y)), in_axes=(0,))(newStates)
+
+            # def cutoff(acc, prob)
+            #     return jax.lax.cond(acc, lambda x: x, lambda x: self.normalization * eps, prob)
+            newLogAccProb = jnp.where(newLogAccProb > self.cutoff, newLogAccProb, self.cutoff)
             P = jnp.exp(newLogAccProb - carry[1])
 
             # Roll dice
@@ -381,6 +406,8 @@ class MCSampler:
             lambda x: jax.vmap(lambda y: self.mu * jnp.real(net(netParams, y)), in_axes=(0,))(x)
         )(self.states)
 
+        self.logAccProb = jnp.where(self.logAccProb > self.cutoff, self.logAccProb, self.cutoff)
+
         shape = (global_defs.device_count(),) + (1,)
 
         self.numProposed = jnp.zeros(shape, dtype=np.int64)
@@ -400,174 +427,3 @@ class MCSampler:
         return jnp.array([0.])
 
 # ** end class Sampler
-
-
-class ExactSampler:
-    """Class for full enumeration of basis states.
-
-    This class generates a full basis of the many-body Hilbert space. Thereby, it \
-    allows to exactly perform sums over the full Hilbert space instead of stochastic \
-    sampling.
-
-    Initialization arguments:
-        * ``net``: Network defining the probability distribution.
-        * ``sampleShape``: Shape of computational basis states.
-        * ``lDim``: Local Hilbert space dimension.
-        * ``logProbFactor``: Factor for the log-probabilities, aquivalent to the exponent for the probability \
-        distribution. For pure wave functions this should be 0.5, and 1.0 for POVMs.
-    """
-
-    def __init__(self, net, sampleShape, lDim=2, logProbFactor=0.5):
-
-        self.psi = net
-        self.N = jnp.prod(jnp.asarray(sampleShape))
-        self.sampleShape = sampleShape
-        self.lDim = lDim
-        self.logProbFactor = logProbFactor
-
-        # pmap'd member functions
-        self._get_basis_ldim2_pmapd = global_defs.pmap_for_my_devices(self._get_basis_ldim2, in_axes=(0, 0, None), static_broadcasted_argnums=2)
-        self._get_basis_pmapd = global_defs.pmap_for_my_devices(self._get_basis, in_axes=(0, 0, None, None), static_broadcasted_argnums=(2, 3))
-        self._compute_probabilities_pmapd = global_defs.pmap_for_my_devices(self._compute_probabilities, in_axes=(0, None, 0))
-        self._normalize_pmapd = global_defs.pmap_for_my_devices(self._normalize, in_axes=(0, None))
-
-        self.get_basis()
-
-        # Make sure that net params are initialized
-        self.psi(self.basis)
-
-        self.lastNorm = 0.
-
-    def get_basis(self):
-
-        myNumStates, _ = mpi.distribute_sampling(self.lDim**self.N)
-        myFirstState = mpi.first_sample_id()
-
-        deviceCount = global_defs.device_count()
-
-        self.numStatesPerDevice = [(myNumStates + deviceCount - 1) // deviceCount] * deviceCount
-        self.numStatesPerDevice[-1] += myNumStates - deviceCount * self.numStatesPerDevice[0]
-        self.numStatesPerDevice = jnp.array(self.numStatesPerDevice)
-
-        totalNumStates = deviceCount * self.numStatesPerDevice[0]
-
-        intReps = jnp.arange(myFirstState, myFirstState + totalNumStates)
-        intReps = intReps.reshape((global_defs.device_count(), -1))
-        self.basis = jnp.zeros(intReps.shape + (self.N,), dtype=np.int32)
-        if self.lDim == 2:
-            self.basis = self._get_basis_ldim2_pmapd(self.basis, intReps, self.sampleShape)
-        else:
-            self.basis = self._get_basis_pmapd(self.basis, intReps, self.lDim, self.sampleShape)
-
-    def _get_basis_ldim2(self, states, intReps, sampleShape):
-
-        def make_state(state, intRep):
-
-            def for_fun(i, x):
-                return (jax.lax.cond(x[1] >> i & 1, lambda x: x[0].at[x[1]].set(1), lambda x: x[0], (x[0], i)), x[1])
-
-            (state, _) = jax.lax.fori_loop(0, state.shape[0], for_fun, (state, intRep))
-
-            return state.reshape(sampleShape)
-
-        basis = jax.vmap(make_state, in_axes=(0, 0))(states, intReps)
-
-        return basis
-
-    def _get_basis(self, states, intReps, lDim, sampleShape):
-
-        def make_state(state, intRep):
-
-            def scan_fun(c, x):
-                locState = c % lDim
-                c = (c - locState) // lDim
-                return c, locState
-
-            _, state = jax.lax.scan(scan_fun, intRep, state)
-
-            return state[::-1].reshape(sampleShape)
-
-        basis = jax.vmap(make_state, in_axes=(0, 0))(states, intReps)
-
-        return basis
-
-    def _compute_probabilities(self, logPsi, lastNorm, numStates):
-
-        p = jnp.exp(jnp.real(logPsi - lastNorm) / self.logProbFactor)
-
-        def scan_fun(c, x):
-            out = jax.lax.cond(c[1] < c[0], lambda x: x[0], lambda x: x[1], (x, 0.))
-            newC = c[1] + 1
-            return (c[0], newC), out
-
-        _, p = jax.lax.scan(scan_fun, (numStates, 0), p)
-
-        return p
-
-    def _normalize(self, p, nrm):
-
-        return p / nrm
-
-    def get_norm(self, parameters=None, numSamples=None, multipleOf=None):
-
-        if parameters is not None:
-            tmpP = self.psi.get_parameters()
-            self.psi.set_parameters(parameters)
-        logPsi = self.psi(self.basis)
-        if parameters is not None:
-            self.psi.set_parameters(tmpP)
-
-        if self.psi.logarithmic:
-            p = self._compute_probabilities_pmapd(logPsi, self.lastNorm, self.numStatesPerDevice)
-        else:
-            p = jnp.abs(logPsi)**2
-
-        nrm = mpi.global_sum(p)
-        return nrm
-    
-    def sample(self, parameters=None, numSamples=None, multipleOf=None):
-        """Return all computational basis states.
-
-        Sampling is automatically distributed accross MPI processes and available \
-        devices.
-
-        Arguments:
-            * ``parameters``: Dummy argument to provide identical interface as the \
-            ``MCSampler`` class.
-            * ``numSamples``: Dummy argument to provide identical interface as the \
-            ``MCSampler`` class.
-            * ``multipleOf``: Dummy argument to provide identical interface as the \
-            ``MCSampler`` class.
-
-        Returns:
-            ``configs, logPsi, p``: All computational basis configurations, \
-            corresponding wave function coefficients, and probabilities \
-            :math:`|\psi(s)|^2` (normalized).
-        """
-
-        if parameters is not None:
-            tmpP = self.psi.get_parameters()
-            self.psi.set_parameters(parameters)
-        logPsi = self.psi(self.basis)
-        if parameters is not None:
-            self.psi.set_parameters(tmpP)
-
-        if self.psi.logarithmic:
-            p = self._compute_probabilities_pmapd(logPsi, self.lastNorm, self.numStatesPerDevice)
-        else:
-            p = jnp.abs(logPsi)**2
-
-        nrm = mpi.global_sum(p)
-        p = self._normalize_pmapd(p, nrm)
-
-        self.lastNorm += self.logProbFactor * jnp.log(nrm)
-
-        return self.basis, logPsi, p
-
-    def set_number_of_samples(self, N):
-        pass
-
-    def get_last_number_of_samples(self):
-        return jnp.inf
-
-# ** end class ExactSampler

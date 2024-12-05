@@ -6,6 +6,7 @@ import jVMC
 import jVMC.mpi_wrapper as mpi
 import jVMC.global_defs as global_defs
 from jVMC.stats import SampledObs
+import matplotlib.pyplot as plt
 
 import warnings
 from functools import partial
@@ -90,6 +91,7 @@ class TDVP:
         self.crossValidation = crossValidation
 
         self.diagonalizeOnDevice = diagonalizeOnDevice
+        self.time = 0.
 
         self.metaData = None
 
@@ -103,6 +105,9 @@ class TDVP:
 
     def set_diagonal_shift(self, delta):
         self.diagonalShift = delta
+
+    def set_time(self, time):
+        self.time = time
 
     def set_cross_validation(self, crossValidation=True):
         self.crossValidation = crossValidation
@@ -141,15 +146,16 @@ class TDVP:
 
     def get_tdvp_equation(self, Eloc, gradients):
 
-        self.ElocMean = Eloc.mean()[0]
-        self.ElocVar = Eloc.var()[0]
-
-        self.F0 = (-self.rhsPrefactor) * (gradients.covar(Eloc).ravel()) #+ jnp.conj(gradients.mean()) * self.ElocMean)
+        # self.ElocMean = Eloc.mean()[0]
+        # self.ElocVar = Eloc.var()[0]
+        #
+        # self.F0 = (-self.rhsPrefactor) * (gradients.covar(Eloc).ravel()) #+ jnp.conj(gradients.mean()) * self.ElocMean)
         F = self.makeReal(self.F0)
 
-        # self.S0 = gradients.covar() + jnp.outer(jnp.conj(gradients.mean()),gradients.mean())
+        # self.S0 = gradients.covar()# + jnp.outer(jnp.conj(gradients.mean()),gradients.mean())
         S = self.makeReal(self.S0)
 
+        # print("F: ", F)
         if self.diagonalShift > 1e-10:
             S = S + jnp.diag(self.diagonalShift * jnp.diag(S))
 
@@ -192,46 +198,113 @@ class TDVP:
 
         # Get sample
         sample = dict()
-        for k in self.sampler.keys():
+        for (i,k) in enumerate(self.sampler.keys()):
             self.start_timing(outp, "sampling"+str(k))
             sample[k] = Sample(*self.sampler[k].sample(numSamples=numSamples))
-            #sampleConfigs, sampleLogPsi, p = self.sampler.sample(numSamples=numSamples)
             self.stop_timing(outp, "sampling"+str(k), waitFor=sample[k].configs)
 
-        # Evaluate local energy
-        self.start_timing(outp, "compute Eloc")
-        #Eloc = hamiltonian.get_O_loc(sampleConfigs, psi, sampleLogPsi, t)
-        Eloc = hamiltonian.get_O_loc(sample["rhs"].configs, psi, sample["rhs"].coeffs, t)
-        self.stop_timing(outp, "compute Eloc", waitFor=Eloc)
-        Eloc = SampledObs( Eloc, sample["rhs"].weights)
-
-        # Evaluate gradients
-        self.start_timing(outp, "compute gradients")
-        # lhs
-        gradients = psi.gradients(sample["lhs"].configs)
         if psi.logarithmic:
-            gradients = gradients * jnp.exp(sample["lhs"].coeffs[:,:,None])
-        self.S0 = mpi.global_sum(jVMC.stats._covar_helper(gradients, gradients)[:,None,...]) # * sample["lhs"].weights.ravel()[0]
+            self.start_timing(outp, "compute Eloc")
+            Eloc = hamiltonian.get_O_loc(sample["rhs"].configs, psi, sample["rhs"].coeffs, t)
+            self.stop_timing(outp, "compute Eloc", waitFor=Eloc)
 
-        # rhs
-        gradients = psi.gradients(sample["rhs"].configs)
-        if not psi.logarithmic:
-            gradients = gradients / jnp.exp(sample["rhs"].coeffs[:,:,None])
-        self.stop_timing(outp, "compute gradients", waitFor=gradients)
-        gradients = SampledObs( gradients, sample["rhs"].weights)
-        self.S0 = (self.S0 - jnp.outer(jnp.conj(gradients.mean()), gradients.mean()))* sample["lhs"].weights.ravel()[0]
+            Eloc = SampledObs(Eloc, sample["rhs"].weights)
+            self.ElocMean = Eloc.mean()[0]
+            self.ElocVar = Eloc.var()[0]
+            # print("Eloc: ", self.ElocMean)
 
+            # Evaluate gradients
+            self.start_timing(outp, "compute gradients")
+
+            # lhs
+            gradients = psi.gradients(sample["lhs"].configs)
+            # self.S0 = mpi.global_sum(jVMC.stats._covar_helper(gradients, gradients)[:,None,...]) #* sample["lhs"].weights.ravel()[0]
+            gradients = SampledObs( gradients, sample["lhs"].weights)
+            self.S0 = gradients.covar()
+
+            gradients = psi.gradients(sample["rhs"].configs)
+            self.stop_timing(outp, "compute gradients", waitFor=gradients)
+            gradients = SampledObs( gradients, sample["rhs"].weights)
+
+            self.F0 = (-self.rhsPrefactor) * (gradients.covar(Eloc).ravel())
+        else:
+            self.start_timing(outp, "compute Eloc")
+
+            # counts, bins = np.histogram([sum([s*(2**i) for (i,s) in enumerate(spin)]) for spin in sample["rhs"].configs[0]],bins = 2**10)
+            # counts = counts / sum(counts)
+            # plt.stairs(counts, bins)
+            #
+            # exactSampler = jVMC.sampler.ExactSampler(psi, 10)
+            #
+            # plt.plot([sum([s*(2**i) for (i,s) in enumerate(spin)]) for spin in exactSampler.basis[0]], (jnp.abs(psi(exactSampler.basis)[0,:])**2)/jnp.sum(jnp.abs(psi(exactSampler.basis)[0,:])**2))
+            # plt.savefig('/Users/wladi/Desktop/plots/plot_t=' + str(self.time)+'.pdf')
+            # plt.clf()
+
+            # plt.hist([sum([s*(2**i) for (i,s) in enumerate(spin)]) for spin in sample["lhs"].configs[0]])
+
+            ElocL = hamiltonian.get_O_loc(sample["lhs"].configs, psi, sample["lhs"].coeffs, t)
+            ElocR = hamiltonian.get_O_loc(sample["rhs"].configs, psi, sample["rhs"].coeffs, t)
+
+            self.stop_timing(outp, "compute Eloc", waitFor=ElocL)
+
+            ElocL = SampledObs(ElocL, sample["lhs"].weights)
+            ElocR = SampledObs(ElocR, sample["rhs"].weights)
+
+            self.ElocMean = jnp.sum(sample["lhs"].weights * ElocL.obs * jnp.abs(sample["lhs"].coeffs)**2)
+            self.ElocVar = jnp.real(jnp.sum(sample["lhs"].weights * jnp.abs(ElocL.obs* jnp.abs(sample["lhs"].coeffs)**2)**2)) - jnp.real(self.ElocMean)**2
+
+            # self.ElocMean = ElocR.mean()[0]
+            # self.ElocVar = ElocR.var()[0]
+
+            # Evaluate gradients
+            self.start_timing(outp, "compute gradients")
+            gradientsR = psi.gradients(sample["rhs"].configs)
+            gradsMeanR = jnp.sum(sample["rhs"].weights[:,:,None] * gradientsR / sample["rhs"].coeffs[:,:,None], axis = 1) #Eloc.mean()[0] 
+
+            gradients = psi.gradients(sample["lhs"].configs)
+            gradsMean = jnp.sum(sample["lhs"].weights[:,:,None] * gradients * jnp.conj(sample["lhs"].coeffs[:,:,None]), axis = 1) # gradsMeanR # 
+
+            grads = jnp.sqrt(sample["lhs"].weights[:,:,None])*(gradients - sample["lhs"].coeffs[:,:,None]*gradsMean[None,:,:])
+            # gradsR = jnp.sqrt(sample["rhs"].weights[:,:,None])*(gradientsR/sample["rhs"].coeffs[:,:,None] - gradsMeanR[None,:,:])
+
+            # gradientsR = psi.gradients(sample["rhs"].configs)
+            # gradsMeanR = jnp.sum(sample["rhs"].weights[:,:,None] * gradientsR / sample["rhs"].coeffs[:,:,None], axis = 1) #Eloc.mean()[0] 
+            # gradsR = jnp.sqrt(sample["rhs"].weights[:,:,None])*(gradientsR - sample["rhs"].coeffs[:,:,None]*gradsMeanR[None,:,:])
+
+            elocL = jnp.sqrt(sample["lhs"].weights[:,:,None])*(sample["lhs"].coeffs[:,:,None]*ElocL.obs[:,:,None] - sample["lhs"].coeffs[:,:,None]*self.ElocMean)
+            # elocR = jnp.sqrt(sample["rhs"].weights[:,:,None])/sample["rhs"].coeffs[:,:,None]*(sample["rhs"].coeffs[:,:,None]*ElocR.obs[:,:,None] - sample["rhs"].coeffs[:,:,None]*self.ElocMean)
+            # elocR = jnp.sqrt(sample["rhs"].weights[:,:,None])*(ElocR.obs[:,:,None] - self.ElocMean)
+
+            self.S0 = mpi.global_sum(jVMC.stats._covar_helper(grads, grads)[:,None,...])
+
+            # self.F0 = (-self.rhsPrefactor) * mpi.global_sum(jVMC.stats._covar_helper(gradsR, elocR)[:,None,...]).ravel()
+            # FWvsq = (-self.rhsPrefactor) * mpi.global_sum(jVMC.stats._covar_helper(gradsR, elocR)[:,None,...]).ravel()
+            FUnif = (-self.rhsPrefactor) * mpi.global_sum(jVMC.stats._covar_helper(grads, elocL)[:,None,...]).ravel()
+
+            # FcovWvsq = (-self.rhsPrefactor) * mpi.global_sum(jVMC.stats._covar_helper(jnp.sqrt(sample["rhs"].weights[:,:,None])*(gradientsR/sample["rhs"].coeffs[:,:,None]), jnp.sqrt(sample["rhs"].weights[:,:,None])*ElocR.obs[:,:,None])[:,None,...]).ravel()
+            # FcovUnif = (-self.rhsPrefactor) * mpi.global_sum(jVMC.stats._covar_helper(jnp.sqrt(sample["lhs"].weights[:,:,None])*gradients, jnp.sqrt(sample["lhs"].weights[:,:,None])*(sample["lhs"].coeffs[:,:,None]*ElocL.obs[:,:,None]))[:,None,...]).ravel()
+
+            self.F0 = FUnif
+            # self.F0 = FUnif
+            # print("full vecs: ", np.linalg.norm(FWvsq - FUnif) / np.linalg.norm(FUnif))
+            # print("covar part: ", np.linalg.norm(FcovWvsq - FcovUnif) / np.linalg.norm(FcovUnif))
+            # print("means part: ", np.linalg.norm(FcovWvsq - FcovUnif) / np.linalg.norm(FcovUnif))
 
         # Get TDVP equation from MC data
         self.start_timing(outp, "solve TDVP eqn.")
-        self.S, F = self.get_tdvp_equation(Eloc, gradients)
+
+        gradients = SampledObs( gradients, sample["lhs"].weights)
+        self.S, F = self.get_tdvp_equation(ElocL, gradients)
+        # print(self.S)
+        # print(F)
         F.block_until_ready()
 
         # Transform TDVP equation to eigenbasis and compute SNR
         self._transform_to_eigenbasis(self.S, F) #, Fdata)
-        self._get_snr(Eloc, gradients)
+        self._get_snr(ElocL, gradients)
 
         # Discard eigenvalues below numerical precision
+        
         self.invEv = jnp.where(jnp.abs(self.ev / self.ev[-1]) > 1e-14, 1. / self.ev, 0.)
 
         residual = 1.0
@@ -242,9 +315,9 @@ class TDVP:
             # Set regularizer for singular value cutoff
             regularizer = 1. / (1. + (max(cutoff, self.pinvCutoff) / jnp.abs(self.ev / self.ev[-1]))**6)
 
-            if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
-                # Construct a soft cutoff based on the SNR
-                regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
+            # if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
+            #     # Construct a soft cutoff based on the SNR
+            #     regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
 
             pinvEv = self.invEv * regularizer
 
@@ -253,7 +326,7 @@ class TDVP:
         update = jnp.real(jnp.dot(self.V, (pinvEv * self.VtF)))
 
         self.stop_timing(outp, "solve TDVP eqn.")
-
+        # print("update: ", update)
         return update, residual, max(cutoff, self.pinvCutoff)
 
     def S_dot(self, v):
@@ -299,7 +372,12 @@ class TDVP:
         """
 
         tmpParameters = psi.get_parameters()
+        sp = np.zeros((1,1,5))
+        # print("tmp: ", tmpParameters)
+        # print("net: ", netParameters)
+        # print("before: ", psi(sp))
         psi.set_parameters(netParameters)
+        # print("after: ", psi(sp))
 
         outp = None
         if "outp" in rhsArgs:
@@ -317,6 +395,7 @@ class TDVP:
             outp.add_timing("MPI communication", mpi.get_communication_time())
 
         psi.set_parameters(tmpParameters)
+        # print(tmpParameters)
 
         if "intStep" in rhsArgs:
             if rhsArgs["intStep"] == 0:

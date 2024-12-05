@@ -1,10 +1,11 @@
 {
-"L": 5,
+"L": 10,
 "trv_field": -1.0,
-"num_channels": 10,
+"num_hidden": 10,
 "filter_size": 5,
-"numSamples": 10,
-"stride_size": 1,
-"tmax": 0.3,
+"numSamples": 2000,
+"tmax": 1.5,
+"integratorTol": 1e-4,
+"dt": 1e-4,
 "data_dir": "../data"
 }

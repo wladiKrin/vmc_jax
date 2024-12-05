@@ -145,6 +145,8 @@ def measure(observables, psi, sampler, numSamples=None):
 
             Oloc = op.get_O_loc(sampleConfigs, psi, sampleLogPsi, *args)
 
+            # tmpMeans.append(jnp.sum(p * Oloc * jnp.abs(sampleLogPsi)**2))
+            # tmpVariances.append(jnp.sum(p * jnp.abs(Oloc * jnp.abs(sampleLogPsi)**2)**2))
             tmpMeans.append(mpi.global_mean(Oloc[..., None], p)[0])
             tmpVariances.append(mpi.global_variance(Oloc[..., None], p)[0])
             tmpErrors.append(jnp.sqrt(tmpVariances[-1]) / jnp.sqrt(sampler.get_last_number_of_samples()))

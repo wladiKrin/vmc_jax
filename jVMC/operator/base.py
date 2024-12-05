@@ -183,6 +183,7 @@ class Operator(metaclass=abc.ABCMeta):
             logPsiS = psi(samples)
 
         if self.ElocBatchSize > 0:
+            print("Using batch: need to fix computation for non-log psi")
             return self.get_O_loc_batched(samples, psi, logPsiS, self.ElocBatchSize, *args)
         else:
             sampleOffdConfigs, _ = self.get_s_primes(samples, *args)

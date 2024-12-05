@@ -149,7 +149,8 @@ class SampledObs():
             observations=None, 
             weights=None,
             estimator=None,
-            params=None
+            params=None,
+            mean=None,
             ):
         """Initializes SampledObs class.
 
@@ -165,7 +166,8 @@ class SampledObs():
 
         self._weights = weights
         self._data = observations
-        self._mean = None
+        self.obs = observations
+        self._mean = mean
         self._configs = None
         def estimator_not_implemented(p,s):
             raise Exception("No estimator function given.")
@@ -201,7 +203,9 @@ class SampledObs():
                 observations = observations[...,None]
 
             #self._weights = weights
-            self._mean = mpi.global_sum( _mean_helper(observations,self._weights)[:, None,...]  )
+            if self._mean is None:
+                self._mean = mpi.global_sum( _mean_helper(observations,self._weights)[:, None,...]  )
+            
             self._data = _data_prep(observations, self._weights, self._mean)
 
 

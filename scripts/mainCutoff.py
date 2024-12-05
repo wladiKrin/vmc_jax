@@ -34,6 +34,7 @@ from nets.RBMNoLog import CpxRBMNoLog
 from jVMC.nets.initializers import init_fn_args
 
 from sampler.uniformSampler import UniformSampler
+from sampler.cutoffSampler  import CutoffSampler
 
 from functools import partial
 
@@ -65,6 +66,8 @@ L = inp["L"]
 g = inp["trv_field"]
 h = 0.0
 
+eps = 1e-0
+
 dt = inp["dt"]  # Initial time step
 integratorTol = inp["integratorTol"]  # Adaptive integrator tolerance
 tmax = inp["tmax"]  # Final time
@@ -72,7 +75,7 @@ numSamples = inp["numSamples"]
 num_hidden=inp["num_hidden"]
 filter_size=inp["filter_size"]
 
-param_name = "RBMCNN_uniformSamp_L="+str(L)+"_g="+str(g)+"_num_hidden="+str(num_hidden)+"_filter_size="+str(filter_size)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)
+param_name = "RBMCNN_cutoffSamp_L="+str(L)+"_g="+str(g)+"_num_hidden="+str(num_hidden)+"_filter_size="+str(filter_size)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)
 
 outp = jVMC.util.OutputManager(inp["data_dir"]+"/output_"+param_name+".hdf5", append=True)
 
@@ -120,7 +123,10 @@ psi2Sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProp
                                  numChains=25, sweepSteps=L,
                                  numSamples=numSamples, thermalizationSweeps=50)
 uniformSampler = UniformSampler(psi, (L,), numSamples=numSamples)
-uniformSampler2 = UniformSampler(psi, (L,), numSamples=numSamples)
+cutoffSampler = CutoffSampler(psi, (L,), random.PRNGKey(4321), eps, updateProposer=jVMC.sampler.propose_spin_flip_Z2,
+                                 numChains=25, sweepSteps=L,
+                                 numSamples=numSamples, thermalizationSweeps=50)
+# uniformSampler2 = UniformSampler(psi, (L,), numSamples=numSamples)
 
 # params = np.load("/Users/wladi/Desktop/test.npy")
 # psi.set_parameters(params)
@@ -145,11 +151,8 @@ print("Number of parameters: ", params.size)
 #####################################
 
 print("setting up tdvp equation")
+tdvpEquation = tdvp_imp.TDVP({"lhs": cutoffSampler, "rhs": cutoffSampler}, rhsPrefactor=1.j)
 # tdvpEquation = tdvp_imp.TDVP({"lhs": psi2Sampler, "rhs": psi2Sampler}, rhsPrefactor=1.j)
-# tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs": uniformSampler}, rhsPrefactor=1.j)
-# tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs": psi2Sampler}, rhsPrefactor=1.j)
-# tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs": exactSampler}, rhsPrefactor=1.j)
-tdvpEquation = jVMC.util.TDVP(psi2Sampler, rhsPrefactor=1.j)
 
 # Set up stepper
 stepper = jVMC.util.stepper.AdaptiveHeun(timeStep=dt, tol=integratorTol)
@@ -187,7 +190,7 @@ while t < tmax:
     # print(dp)
     psi.set_parameters(dp)
     t += dt
-    # tdvpEquation.set_time(t)
+    tdvpEquation.set_time(t)
 
     # Measure observables
     obs = measure(observables, psi, exactSampler)

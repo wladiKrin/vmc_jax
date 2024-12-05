@@ -344,6 +344,10 @@ class NQS:
             Real part of the NQS and current parameters
         """
 
+        if not self.logarithmic:
+            evalLogReal = lambda p,x: jnp.real( jnp.log(self.net.apply(p,x) ))
+            return evalLogReal, self.parameters
+            
         evalReal = lambda p,x: jnp.real( self.net.apply(p,x) )
         if "eval_real" in dir(self.net):
             if callable(self.net.eval_real):
