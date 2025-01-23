@@ -27,7 +27,8 @@ import h5py
 import tdvp_imp
 from nets.RBMCNN import CpxRBMCNN
 from sampler.uniformSampler import UniformSampler
-
+from jVMC.nets.rbm import CpxRBM
+from nets.RBMNoLog import CpxRBMNoLog
 from jVMC.nets.initializers import init_fn_args
 
 from functools import partial
@@ -40,6 +41,10 @@ import argparse
 # Create the argument parser
 parser = argparse.ArgumentParser( description='TDVP script')
 
+# Positional arguments
+# parser.add_argument('-m', '--modelname', 
+#     help='modelname for saving purposes',
+# )
     
 parser.add_argument('-l', '--lattice', type=int, 
                     default=10, 
@@ -94,6 +99,28 @@ dt            = args.dt
 integratorTol = args.integratorTol  # Adaptive integrator tolerance
 invCutoff     = args.invCutoff  # Adaptive integrator tolerance
 
+# inp = None
+# if len(sys.argv) > 1:
+#     # if an input file is given
+#     with open(sys.argv[1], 'r') as f:
+#         inp = json.load(f)
+# else:
+#
+#      if mpi.rank == 0:
+#         print("Error: No input file given.")
+#         exit()
+# L = inp["L"]
+# g = inp["trv_field"]
+# h = 0.0
+#
+# numSamples = inp["numSamples"]
+# num_hidden=inp["num_hidden"]
+# filter_size=inp["filter_size"]
+# tmax = inp["tmax"]  # Final time
+# dt = inp["dt"]  # Initial time step
+# integratorTol = inp["integratorTol"]  # Adaptive integrator tolerance
+# invCutoff = inp["invCutoff"]  # Adaptive integrator tolerance
+
 def norm_fun(v, df=lambda x: x):
     return jnp.abs(jnp.real(jnp.vdot(v,df(v))))
 
@@ -104,7 +131,7 @@ else:
 
 print(" -> Rank %d working with device %s" % (mpi.rank, global_defs.devices()), flush=True)
 
-param_name = "RBMCNN_mixedSamp_L="+str(L)+ "_g="+str(g)+ "_num_hidden="+str(num_hidden)+ "_filter_size="+str(filter_size)+ "_numSamples="+str(numSamples)+ "_exactRenorm="+str(exactRenorm) +"_integratorTol="+str(integratorTol)+ "_invCutoff="+str(invCutoff)+ "_tmax="+str(tmax)
+param_name = "RBMCNN_PBC_mixedSamp_L="+str(L)+ "_g="+str(g)+ "_num_hidden="+str(num_hidden)+ "_filter_size="+str(filter_size)+ "_numSamples="+str(numSamples)+ "_exactRenorm="+str(exactRenorm) +"_integratorTol="+str(integratorTol)+ "_invCutoff="+str(invCutoff)+ "_tmax="+str(tmax)
 
 outp = jVMC.util.OutputManager("../data/output_"+param_name+".hdf5", append=True)
 
@@ -115,17 +142,15 @@ net = CpxRBMCNN(
         channels=(num_hidden,),
         strides=(1,),
         bias=False, 
-        periodicBoundary=False,
+        periodicBoundary=True,
 )
 
 psi = jVMC.vqs.NQS(net, logarithmic=False, seed=4321)  # Variational wave function
 
 # Set up hamiltonian
 hamiltonian = jVMC.operator.BranchFreeOperator()
-for l in range(L-1):
-    hamiltonian.add(op.scal_opstr(-1., (op.Sz(l), op.Sz(l + 1))))
-
 for l in range(L):
+    hamiltonian.add(op.scal_opstr(-1., (op.Sz(l), op.Sz((l + 1)%L))))
     hamiltonian.add(op.scal_opstr(g, (op.Sx(l), )))
     hamiltonian.add(op.scal_opstr(h, (op.Sz(l),)))
 
@@ -142,12 +167,10 @@ observables = {
 for l in range(L):
     observables["Z"].add(op.scal_opstr(1. / L, (op.Sz(l), )))
     observables["X"].add(op.scal_opstr(1. / L, (op.Sx(l), )))
-for l in range(L-1):
-    observables["ZZ1"].add(op.scal_opstr(1. / L, (op.Sz(l), op.Sz(l + 1))))
-    observables["XX1"].add(op.scal_opstr(1. / L, (op.Sx(l), op.Sx(l + 1))))
-for l in range(L-2):
-    observables["ZZ2"].add(op.scal_opstr(1. / L, (op.Sz(l), op.Sz(l + 2))))
-    observables["XX2"].add(op.scal_opstr(1. / L, (op.Sx(l), op.Sx(l + 2))))
+    observables["ZZ1"].add(op.scal_opstr(1. / L, (op.Sz(l), op.Sz((l + 1)%L))))
+    observables["XX1"].add(op.scal_opstr(1. / L, (op.Sx(l), op.Sx((l + 1)%L))))
+    observables["ZZ2"].add(op.scal_opstr(1. / L, (op.Sz(l), op.Sz((l + 2)%L))))
+    observables["XX2"].add(op.scal_opstr(1. / L, (op.Sx(l), op.Sx((l + 2)%L))))
 
 # Set up sampler
 # exactSampler = jVMC.sampler.ExactSampler(psi, L)
@@ -160,8 +183,6 @@ psi2Sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProp
 print(exactRenorm)
 uniformSampler = UniformSampler(psi, (L,), numSamples=numSamples, exactRenorm=False)
 
-# params = np.load("/Users/wladi/Desktop/test.npy")
-# psi.set_parameters(params)
 params = psi.get_parameters()
 print("Number of parameters: ", params.size)
 
@@ -186,16 +207,10 @@ print("Number of parameters: ", params.size)
 #####################################
 
 print("setting up tdvp equation")
-# tdvpEquation = tdvp_imp.TDVP({"lhs": psi2Sampler, "rhs": psi2Sampler}, rhsPrefactor=1.j)
-# tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs": uniformSampler}, rhsPrefactor=1.j)
-# tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs": psi2Sampler}, rhsPrefactor=1.j)
-# tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs": exactSampler}, rhsPrefactor=1.j)
-# tdvpEquation = jVMC.util.TDVP(psi2Sampler, rhsPrefactor=1.j)
 tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs": psi2Sampler}, rhsPrefactor=1.j, pinvCutoff=invCutoff)
 
 # Set up stepper
 stepper = jVMC.util.stepper.AdaptiveHeun(timeStep=dt, tol=integratorTol)
-# stepper = jVMC.util.stepper.Heun(timeStep=dt)
 
 t = 0.
 # Measure initial observables
@@ -230,7 +245,6 @@ data.append([t,
 
 print("starting tdvp equation")
 while t < tmax:
-# while t <= 0:
     tic = time.perf_counter()
     print(">  t = %f\n" % (t))
     print("================================== whole step =============================================")
@@ -241,6 +255,7 @@ while t < tmax:
     # print(dp)
     psi.set_parameters(dp)
     t += dt
+    tdvpEquation.set_time(t)
 
     # Measure observables
     obs = measure(observables, psi, psi2ObsSampler)
@@ -253,22 +268,6 @@ while t < tmax:
     print("    xPol = %f +/- %f" % (obs["X"]["mean"][0], obs["X"]["MC_error"][0]))
     toc = time.perf_counter()
     print("   == Total time for this step: %fs\n" % (toc - tic))
-    # params = psi.get_parameters()
-    # np.save("/Users/wladi/Desktop/test.npy", params)
-    #
-    data.append([t, 
-        obs["energy"]["mean"][0], 
-        obs["energy"]["variance"][0], 
-        obs["energy"]["MC_error"][0], 
-        obs["X"]["mean"][0],
-        obs["X"]["variance"][0], 
-        obs["X"]["MC_error"][0], 
-        tdvpErr, 
-        tdvpRes,
-        dt,
-    ])
-
-=======
 
     data.append([t, 
         obs["energy"]["mean"][0], 
@@ -294,7 +293,6 @@ while t < tmax:
         obs["XX2"]["MC_error"][0], 
         tdvpErr, tdvpRes, dt])
 
->>>>>>> e7162c2 (alex scripts)
     params = psi.get_parameters()
     parameters.append(params) 
 
@@ -357,8 +355,6 @@ while t < tmax:
             grp.create_dataset(f'params_{i}', data=arr)
 
 
-# params = psi.get_parameters()
-# np.save("/Users/wladi/Desktop/test.npy", params)
 tic = time.perf_counter()
 print(">  t = %f\n" % (t))
 print("done")

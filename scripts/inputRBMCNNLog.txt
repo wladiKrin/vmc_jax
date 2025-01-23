@@ -3,10 +3,9 @@
 "trv_field": -1.0,
 "num_hidden": 20,
 "filter_size": 10,
-"numSamples": 1e5,
+"numSamples": 40000,
 "tmax": 2.0,
 "integratorTol": 1e-4,
-"invCutoff": 1e-6,
 "dt": 1e-4,
 "data_dir": "../data"
 }

@@ -348,7 +348,6 @@ class MCSampler:
             # Bookkeeping
             numProposed = carry[3] + len(newStates)
             numAccepted = carry[4] + jnp.sum(accepted)
-
             # Perform accepted updates
             def update(acc, old, new):
                 return jax.lax.cond(acc, lambda x: x[1], lambda x: x[0], (old, new))

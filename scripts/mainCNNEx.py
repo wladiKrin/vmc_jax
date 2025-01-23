@@ -1,13 +1,11 @@
 import os
-print(os.environ['CONDA_DEFAULT_ENV'])
-print(os.environ['CONDA_PREFIX'])
 
 import jax
-from jax.config import config
-config.update("jax_enable_x64", True)
+jax.config.update("jax_enable_x64", True)
 
 import jax.random as random
 import flax
+import flax.linen as nn
 import jax.numpy as jnp
 
 import numpy as np
@@ -24,77 +22,81 @@ import jVMC.mpi_wrapper as mpi
 import jVMC.global_defs as global_defs
 
 import matplotlib.pyplot as plt
+import h5py
 
 import tdvp_imp
 from nets.RBMCNN import CpxRBMCNN
+from sampler.uniformSampler import UniformSampler
 from jVMC.nets.rbm import CpxRBM
+from nets.RBMNoLog import CpxRBMNoLog
+from jVMC.nets.initializers import init_fn_args
 
 from functools import partial
 
 import json
 import sys
 
-class UniformSampler:
+import argparse
 
-    def __init__(self, net, sampleShape, key=123, numSamples=100):
-        self.sampleShape = sampleShape
-        self.net = net
-        if isinstance(key,jax.Array):
-            self.key = key
-        else:
-            self.key = jax.random.PRNGKey(key)
-        # self.key = jax.random.split(self.key, mpi.commSize)[mpi.rank]
-        # self.key = jax.random.split(self.key, global_defs.device_count())
+# Create the argument parser
+parser = argparse.ArgumentParser( description='TDVP script')
+
+parser.add_argument('-l', '--lattice', type=int, 
+                    default=10, 
+                    help='lattice size (default: 10)')
+parser.add_argument('-g', '--trvField', type=float, 
+                    default=-1, 
+                    help='transverse field (default: -1)')
+
+parser.add_argument('-s', '--numSamples', type=int, 
+                    default=10000, 
+                    help='Number of samples (default: 1e4)')
+parser.add_argument('--exactRenorm', type=bool, 
+                    default=False, 
+                    help='Wether to use the exact Renormalisation factor (default: false)')
+
+parser.add_argument('--numHidden', type=int, 
+                    default=20, 
+                    help='Number of hidden units (default: 20)')
+parser.add_argument('-f', '--filterSize', type=int, 
+                    default=10, 
+                    help='Filter size (default: 10)')
+
+parser.add_argument('--tmax', type=float, 
+                    default=2., 
+                    help='maximum time (default: 2)')
+parser.add_argument('--dt', type=float, 
+                    default=1e-4, 
+                    help='Time step (default: 1e-4)')
+parser.add_argument('--integratorTol', type=float, 
+                    default=1e-4, 
+                    help='Adaptive Heun integrator tolerance (default: 1e-4)')
+
+parser.add_argument('--invCutoff', type=float, 
+                    default=1e-8, 
+                    help='Cutoff for matrix inversion (default: 1e-8)')
     
-        self.numSamples = numSamples
-        self.lastNumSamples = 0
+# Parse the arguments
+args = parser.parse_args()
 
-        # Make sure that net is initialized
-        self.net(jnp.zeros((jVMC.global_defs.device_count(), 1) + sampleShape, dtype=np.int32))
+L = args.lattice
+g = args.trvField
+h = 0.0
 
-    def sample(self, parameters=None, numSamples=None, multipleOf=1):
-        if numSamples is None:
-            numSamples = self.numSamples
+numSamples    = args.numSamples
+exactRenorm   = args.exactRenorm
 
-        exactSampler = jVMC.sampler.ExactSampler(self.net, np.prod(self.sampleShape))
-        numSamples, self.lastNumSamples = mpi.distribute_sampling(numSamples, localDevices=jVMC.global_defs.device_count(), numChainsPerDevice=1)
-        # numSamples = mpi.distribute_sampling(numSamples, localDevices=jVMC.global_defs.device_count(), numChainsPerDevice=1)
-        key, self.key = jax.random.split(self.key)
-        configs = 1 * jax.random.bernoulli(key, shape=(1,numSamples,)+self.sampleShape)
-        coeffs = self.net(configs)
-        
-        weights = jnp.ones(configs.shape[:2]) * (2.0**(-np.prod(self.sampleShape)))
-        
-        renorm1 = self.lastNumSamples / jnp.sum(jnp.abs(jnp.exp(coeffs))**2 / weights)
-        renorm2 = 1/exactSampler.get_norm()
-        # print("renorm1: ", renorm1)
-        # print("renorm2: ", renorm2)
-        # print(renorm1/renorm2)
-        # print(1/renorm2)
-        renorm = renorm2
-        # print(jnp.abs(jnp.exp(coeffs))**2)
-        # print((2.0**(-np.prod(self.sampleShape))))
-        print("renorm: ", renorm)
-        # print("coeffs: ", coeffs)
-        # print("1: ", jnp.abs(jnp.exp(coeffs))**2 * (renorm / self.lastNumSamples / (2.0**(-np.prod(self.sampleShape)))))
-        # print("1.5: ", jnp.abs(jnp.exp(coeffs))**2 * (renorm / self.lastNumSamples / weights))
-        # print("2: ", renorm / self.lastNumSamples / weights)
-        return configs, coeffs, renorm * jnp.abs(jnp.exp(coeffs))**2 / self.lastNumSamples / weights
-        # return configs, coeffs, renorm / self.lastNumSamples / weights
-    
-    def get_last_number_of_samples(self):
-        return self.lastNumSamples
+num_hidden    = args.numHidden
+filter_size   = args.filterSize
 
-inp = None
-if len(sys.argv) > 1:
-    # if an input file is given
-    with open(sys.argv[1], 'r') as f:
-        inp = json.load(f)
-else:
+tmax          = args.tmax
+dt            = args.dt
+integratorTol = args.integratorTol  # Adaptive integrator tolerance
+invCutoff     = args.invCutoff  # Adaptive integrator tolerance
 
-    if mpi.rank == 0:
-        print("Error: No input file given.")
-        exit()
+
+def norm_fun(v, df=lambda x: x):
+    return jnp.abs(jnp.real(jnp.vdot(v,df(v))))
 
 if mpi.commSize > 1:
     global_defs.set_pmap_devices(jax.devices()[mpi.rank % jax.device_count()])
@@ -103,35 +105,21 @@ else:
 
 print(" -> Rank %d working with device %s" % (mpi.rank, global_defs.devices()), flush=True)
 
-L = inp["L"]
-g = inp["trv_field"]
-h = 0.0
+param_name = "RBMCNN_exactSamp_L="+str(L)+ "_g="+str(g)+ "_num_hidden="+str(num_hidden)+ "_filter_size="+str(filter_size)+ "_numSamples="+str(numSamples)+ "_exactRenorm="+str(exactRenorm) +"_integratorTol="+str(integratorTol)+ "_invCutoff="+str(invCutoff)+ "_tmax="+str(tmax)
 
-dt = inp["dt"]  # Initial time step
-integratorTol = inp["integratorTol"]  # Adaptive integrator tolerance
-tmax = inp["tmax"]  # Final time
-numSamples = inp["numSamples"]
-num_hidden=inp["num_hidden"]
-# filter_size=inp["filter_size"]
-# stride_size=inp["stride_size"]
-
-param_name = "RBMCNN_mixedSamp_L="+str(L)+"_g="+str(g)+"_num_hidden="+str(num_hidden)+"_numSamples="+str(numSamples)+"_integratorTol="+str(integratorTol)+"_tmax="+str(tmax)
-
-outp = jVMC.util.OutputManager(inp["data_dir"]+"/output_"+param_name+".hdf5", append=True)
+outp = jVMC.util.OutputManager("../data/output_"+param_name+".hdf5", append=True)
 
 # Set up variational wave function
 print("initializing network")
-# net = CpxRBMCNN(
-#         F=(filter_size,),
-#         channels=(num_channels,),
-#         strides=(stride_size,),
-#         bias=False, 
-#         periodicBoundary=False,
-# )
-net = CpxRBM(numHidden = num_hidden)
+net = CpxRBMCNN(
+        F=(filter_size,),
+        channels=(num_hidden,),
+        strides=(1,),
+        bias=False, 
+        periodicBoundary=False,
+)
 
-psi = jVMC.vqs.NQS(net, logarithmic=True, seed=4321)  # Variational wave function
-# psi = jVMC.vqs.NQS(net, seed=1234)  # Variational wave function
+psi = jVMC.vqs.NQS(net, logarithmic=False, seed=4321)  # Variational wave function
 
 # Set up hamiltonian
 hamiltonian = jVMC.operator.BranchFreeOperator()
@@ -142,74 +130,91 @@ for l in range(L):
     hamiltonian.add(op.scal_opstr(g, (op.Sx(l), )))
     hamiltonian.add(op.scal_opstr(h, (op.Sz(l),)))
 
-# Set u GS hamiltonian
-H_GS = jVMC.operator.BranchFreeOperator()
-for l in range(L):
-    H_GS.add(op.scal_opstr(-1.0, (op.Sx(l), )))
-
 # Set up observables
 observables = {
     "energy": hamiltonian,
+    "Z": jVMC.operator.BranchFreeOperator(),
+    "ZZ1": jVMC.operator.BranchFreeOperator(),
+    "ZZ2": jVMC.operator.BranchFreeOperator(),
     "X": jVMC.operator.BranchFreeOperator(),
+    "XX1": jVMC.operator.BranchFreeOperator(),
+    "XX2": jVMC.operator.BranchFreeOperator(),
 }
 for l in range(L):
+    observables["Z"].add(op.scal_opstr(1. / L, (op.Sz(l), )))
     observables["X"].add(op.scal_opstr(1. / L, (op.Sx(l), )))
+for l in range(L-1):
+    observables["ZZ1"].add(op.scal_opstr(1. / L, (op.Sz(l), op.Sz(l + 1))))
+    observables["XX1"].add(op.scal_opstr(1. / L, (op.Sx(l), op.Sx(l + 1))))
+for l in range(L-2):
+    observables["ZZ2"].add(op.scal_opstr(1. / L, (op.Sz(l), op.Sz(l + 2))))
+    observables["XX2"].add(op.scal_opstr(1. / L, (op.Sx(l), op.Sx(l + 2))))
 
 # Set up sampler
 exactSampler = jVMC.sampler.ExactSampler(psi, L)
-psi2Sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
+psi2ObsSampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
                                  numChains=25, sweepSteps=L,
-                                 numSamples=numSamples, thermalizationSweeps=25)
-uniformSampler = UniformSampler(psi, (L,), numSamples=numSamples)
+                                 numSamples=20000, thermalizationSweeps=25)
+# psi2Sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
+#                                 numChains=25, sweepSteps=L,
+#                                 numSamples=numSamples, thermalizationSweeps=25)
+# print(exactRenorm)
+# uniformSampler = UniformSampler(psi, (L,), numSamples=numSamples, exactRenorm=False)
 
 params = psi.get_parameters()
 print("Number of parameters: ", params.size)
 
-# Set up sampler
-exactSampler = jVMC.sampler.ExactSampler(psi, L)
-# sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
-#                                  numChains=100, sweepSteps=L,
-#                                  numSamples=2000, thermalizationSweeps=25)
+######### GS Search ################
 
-######### GS Search #################
+# Set u GS hamiltonian
+# H_GS = jVMC.operator.BranchFreeOperator()
+# for l in range(L):
+#     H_GS.add(op.scal_opstr(-1.0, (op.Sx(l), )))
 
 # Set up TDVP
-tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs": exactSampler}, rhsPrefactor=1.,
-                                   pinvTol=1e-8, diagonalShift=10, makeReal='real')
-
-print("starting GS search")
-jVMC.util.ground_state_search(psi, H_GS, tdvpEquation, exactSampler, numSteps=50)
-print("network checkpoint")
+# tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs": exactSampler}, rhsPrefactor=1.,
+#                                    pinvTol=1e-8, diagonalShift=10, makeReal='real')
+# print("starting GS search")
+# jVMC.util.ground_state_search(psi, H_GS, tdvpEquation, exactSampler, numSteps=50)
 # outp.write_network_checkpoint(0.0, psi.get_parameters())
-
-print("loading GS data")
-# t, weights = outp.get_network_checkpoint(0)
-# psi.set_parameters(weights)
 
 #####################################
 
 print("setting up tdvp equation")
-# tdvpEquation = tdvp_imp.TDVP({"lhs": psi2Sampler, "rhs": psi2Sampler}, rhsPrefactor=1.j)
-tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs": exactSampler}, rhsPrefactor=1.j)
+tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs": exactSampler}, rhsPrefactor=1.j, pinvCutoff=invCutoff)
 
 # Set up stepper
 stepper = jVMC.util.stepper.AdaptiveHeun(timeStep=dt, tol=integratorTol)
-# stepper = jVMC.util.stepper.Heun(timeStep=dt)
 
 t = 0.
 # Measure initial observables
-obs = measure(observables, psi, exactSampler)
+parameters = []
+parameters.append(params) 
+obs = measure(observables, psi, psi2ObsSampler)
 data = []
-data.append([t, obs["energy"]["mean"][0], obs["X"]["mean"][0]])
-
-def norm_fun(v, df=lambda x: x):
-    # print("updateDiff: ", jnp.real(jnp.conj(jnp.transpose(v)).dot(df(v))))
-    # return jnp.abs(jnp.real(jnp.conj(jnp.transpose(v)).dot(df(v))))
-    res = jnp.abs(jnp.real(jnp.vdot(v,df(v))))
-    print(res)
-    return res
-    # return jnp.real(jnp.conj(jnp.transpose(v)).dot(df(v))))
-    # return jnp.real(jnp.conj(jnp.transpose(v)).dot(v))
+data.append([t, 
+    obs["energy"]["mean"][0], 
+    obs["energy"]["variance"][0], 
+    obs["energy"]["MC_error"][0], 
+    obs["Z"]["mean"][0],
+    obs["Z"]["variance"][0], 
+    obs["Z"]["MC_error"][0], 
+    obs["ZZ1"]["mean"][0],
+    obs["ZZ1"]["variance"][0], 
+    obs["ZZ1"]["MC_error"][0], 
+    obs["ZZ2"]["mean"][0],
+    obs["ZZ2"]["variance"][0], 
+    obs["ZZ2"]["MC_error"][0], 
+    obs["X"]["mean"][0],
+    obs["X"]["variance"][0], 
+    obs["X"]["MC_error"][0], 
+    obs["XX1"]["mean"][0],
+    obs["XX1"]["variance"][0], 
+    obs["XX1"]["MC_error"][0], 
+    obs["XX2"]["mean"][0],
+    obs["XX2"]["variance"][0], 
+    obs["XX2"]["MC_error"][0], 
+    0, 0, 0])
 
 print("starting tdvp equation")
 while t < tmax:
@@ -225,8 +230,7 @@ while t < tmax:
     t += dt
 
     # Measure observables
-    obs = measure(observables, psi, exactSampler)
-    data.append([t, obs["energy"]["mean"][0], obs["X"]["mean"][0]])
+    obs = measure(observables, psi, psi2ObsSampler)
 
     # Write some meta info to screen
     print("   Time step size: dt = %f" % (dt))
@@ -237,35 +241,103 @@ while t < tmax:
     toc = time.perf_counter()
     print("   == Total time for this step: %fs\n" % (toc - tic))
 
-    npdata = np.array(data)
-    dfTDVP = pd.DataFrame(
-        {
-            "time": npdata[:, 0],
-            "energy": npdata[:, 1],
-            "xPol": npdata[:, 2],
-            #"xxCorr": npdata[:, 3],
-            #"xx2Corr": npdata[:, 4],
-            #"xx3Corr": npdata[:, 5],
-            #"xx4Corr": npdata[:, 6],
-            #"zPol": npdata[:, 5],
-            #"zzCorr": npdata[:, 6],
-            #"calcTime": npdata[:, 7],
-        }
-    )
-    dfTDVP.to_csv(inp["data_dir"]+"/data_"+param_name+".csv", sep=' ')
+    data.append([t, 
+        obs["energy"]["mean"][0], 
+        obs["energy"]["variance"][0], 
+        obs["energy"]["MC_error"][0], 
+        obs["Z"]["mean"][0],
+        obs["Z"]["variance"][0], 
+        obs["Z"]["MC_error"][0], 
+        obs["ZZ1"]["mean"][0],
+        obs["ZZ1"]["variance"][0], 
+        obs["ZZ1"]["MC_error"][0], 
+        obs["ZZ2"]["mean"][0],
+        obs["ZZ2"]["variance"][0], 
+        obs["ZZ2"]["MC_error"][0], 
+        obs["X"]["mean"][0],
+        obs["X"]["variance"][0], 
+        obs["X"]["MC_error"][0], 
+        obs["XX1"]["mean"][0],
+        obs["XX1"]["variance"][0], 
+        obs["XX1"]["MC_error"][0], 
+        obs["XX2"]["mean"][0],
+        obs["XX2"]["variance"][0], 
+        obs["XX2"]["MC_error"][0], 
+        tdvpErr, tdvpRes, dt])
+
+    params = psi.get_parameters()
+    parameters.append(params) 
+
+    npdata   = np.array(data)
+    npparams = np.array(parameters)
+
+    dfTDVP = pd.DataFrame( {
+        "time":       npdata[:, 0],
+        "energy":     npdata[:, 1],
+        "energy_var": npdata[:, 2],
+        "energy_MC":  npdata[:, 3],
+        "zPol":       npdata[:, 4],
+        "zPol_var":   npdata[:, 5],
+        "zPol_MC":    npdata[:, 6],
+        "zz1":        npdata[:, 7],
+        "zz1_var":    npdata[:, 8],
+        "zz1_MC":     npdata[:, 9],
+        "zz2":        npdata[:, 10],
+        "zz2_var":    npdata[:, 11],
+        "zz2_MC":     npdata[:, 12],
+        "xPol":       npdata[:, 13],
+        "xPol_var":   npdata[:, 14],
+        "xPol_MC":    npdata[:, 15],
+        "xx1":        npdata[:, 16],
+        "xx1_var":    npdata[:, 17],
+        "xx1_MC":     npdata[:, 18],
+        "xx2":        npdata[:, 19],
+        "xx2_var":    npdata[:, 20],
+        "xx2_MC":     npdata[:, 21],
+        "tdvpErr":    npdata[:, 22],
+        "tdvpRes":    npdata[:, 23],
+        "dt":         npdata[:, 24],
+    })
+
+    dfTDVP.to_csv("../data/data_"+param_name+".csv", sep=' ')
+
+    with h5py.File("../data/data_"+param_name+".h5", 'w') as f:
+        # If single array, save directly
+        f.create_dataset("time",       data=npdata[:,0])
+        f.create_dataset("energy",     data=npdata[:,1])
+        f.create_dataset("energy_var", data=npdata[:,2])
+        f.create_dataset("energy_MC",  data=npdata[:,3])
+        f.create_dataset("zPol",       data=npdata[:,4])
+        f.create_dataset("zPol_var",   data=npdata[:,5])
+        f.create_dataset("zPol_MC",    data=npdata[:,6])
+        f.create_dataset("zz1",        data=npdata[:,7])
+        f.create_dataset("zz1_var",    data=npdata[:,8])
+        f.create_dataset("zz1_MC",     data=npdata[:,9])
+        f.create_dataset("zz2",        data=npdata[:,10])
+        f.create_dataset("zz2_var",    data=npdata[:,11])
+        f.create_dataset("zz2_MC",     data=npdata[:,12])
+        f.create_dataset("xPol",       data=npdata[:,13])
+        f.create_dataset("xPol_var",   data=npdata[:,14])
+        f.create_dataset("xPol_MC",    data=npdata[:,15])
+        f.create_dataset("xx1",        data=npdata[:,16])
+        f.create_dataset("xx1_var",    data=npdata[:,17])
+            # If list of arrays, create a group and save each array
+        grp = f.create_group("params")
+        for i, arr in enumerate(npparams):
+            grp.create_dataset(f'params_{i}', data=arr)
 
 
 tic = time.perf_counter()
 print(">  t = %f\n" % (t))
 print("done")
 
-data = np.array(data)
-fig, axs = plt.subplots(2)
-#plt.ylim(data[-1,2], 1)
-
-df = pd.read_csv('ref_L=10.csv')
-axs[1].plot(df['time'], df['xPol'], color='red')
-axs[1].plot(data[:,0], data[:,2])
-axs[0].plot(data[:,0], data[:,1])
-axs[1].set_xlim(0,tmax+0.1)
-plt.savefig("plot.pdf")
+# data = np.array(data)
+# fig, axs = plt.subplots(2)
+# #plt.ylim(data[-1,2], 1)
+#
+# df = pd.read_csv('ref_L='+str(L)+'.csv')
+# axs[1].plot(df['time'], df['xPol'], color='red')
+# axs[1].plot(data[:,0], data[:,4])
+# axs[0].plot(data[:,0], data[:,1])
+# axs[1].set_xlim(0,tmax+0.1)
+# plt.savefig("plot.pdf")
