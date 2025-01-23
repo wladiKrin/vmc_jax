@@ -26,9 +26,11 @@ import h5py
 
 import tdvp_imp
 from nets.RBMCNN import CpxRBMCNN
-from sampler.uniformSampler import UniformSampler
-
+from jVMC.nets.rbm import CpxRBM
+from nets.RBMNoLog import CpxRBMNoLog
 from jVMC.nets.initializers import init_fn_args
+
+from sampler.uniformSampler import UniformSampler
 
 from functools import partial
 
@@ -190,8 +192,7 @@ print("setting up tdvp equation")
 # tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs": uniformSampler}, rhsPrefactor=1.j)
 # tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs": psi2Sampler}, rhsPrefactor=1.j)
 # tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs": exactSampler}, rhsPrefactor=1.j)
-# tdvpEquation = jVMC.util.TDVP(psi2Sampler, rhsPrefactor=1.j)
-tdvpEquation = tdvp_imp.TDVP({"lhs": uniformSampler, "rhs": psi2Sampler}, rhsPrefactor=1.j, pinvCutoff=invCutoff)
+tdvpEquation = jVMC.util.TDVP(psi2Sampler, rhsPrefactor=1.j)
 
 # Set up stepper
 stepper = jVMC.util.stepper.AdaptiveHeun(timeStep=dt, tol=integratorTol)
@@ -241,6 +242,7 @@ while t < tmax:
     # print(dp)
     psi.set_parameters(dp)
     t += dt
+    # tdvpEquation.set_time(t)
 
     # Measure observables
     obs = measure(observables, psi, psi2ObsSampler)
@@ -268,7 +270,6 @@ while t < tmax:
         dt,
     ])
 
-=======
 
     data.append([t, 
         obs["energy"]["mean"][0], 
@@ -294,7 +295,8 @@ while t < tmax:
         obs["XX2"]["MC_error"][0], 
         tdvpErr, tdvpRes, dt])
 
->>>>>>> e7162c2 (alex scripts)
+=======
+>>>>>>> d120fba (merge)
     params = psi.get_parameters()
     parameters.append(params) 
 
