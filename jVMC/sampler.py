@@ -1,15 +1,14 @@
+from functools import partial
+
 import jax
 import jax.numpy as jnp
 import jax.random as random
 import numpy as np
 from jax import vmap
 
+import jVMC.global_defs as global_defs
 import jVMC.mpi_wrapper as mpi
 from jVMC.nets.sym_wrapper import SymNet
-
-from functools import partial
-
-import jVMC.global_defs as global_defs
 
 
 def propose_spin_flip(key, s, info):
@@ -122,6 +121,7 @@ class MCSampler:
 
         # Make sure that net is initialized
         self.net(self.states)
+        self.sampler_net, _ = self.net.get_sampler_net()
 
         self.logProbFactor = logProbFactor
         self.mu = mu
@@ -149,6 +149,17 @@ class MCSampler:
         # jit'd member functions
         self._get_samples_jitd = {}  # will hold a jit'd function for each number of samples
         self._randomize_samples_jitd = {}  # will hold a jit'd function for each number of samples
+
+
+        # pmap'd helper function
+        self._logAccProb_pmapd = global_defs.pmap_for_my_devices(self._logAccProb,
+                                                                 in_axes=(0, None, None, None),
+                                                                 static_broadcasted_argnums=(2,))
+
+    def _logAccProb(self, x, mu, sampler_net, netParams):
+        # vmap is over parallel MC chains
+        return jax.vmap(lambda y: mu * jnp.real(sampler_net(netParams, y)), in_axes=(0,))(x)
+
 
     def set_number_of_samples(self, N):
         """Set default number of samples.
