@@ -1,14 +1,14 @@
+import warnings
+from functools import partial
+
 import jax
 import jax.numpy as jnp
 import numpy as np
 
 import jVMC
-import jVMC.mpi_wrapper as mpi
 import jVMC.global_defs as global_defs
+import jVMC.mpi_wrapper as mpi
 from jVMC.stats import SampledObs
-
-import warnings
-from functools import partial
 
 
 def realFun(x):
@@ -70,15 +70,12 @@ class TDVP:
         * ``diagonalizeOnDevice``: Choose whether to diagonalize :math:`S` on GPU or CPU.
     """
 
-    def __init__(self, sampler, snrTol=2, pinvTol=1e-14, svdTol=None, makeReal='imag', rhsPrefactor=1.j, diagonalShift=0., crossValidation=False, diagonalizeOnDevice=True):
+    def __init__(self, sampler, snrTol=2, pinvTol=1e-14, pinvCutoff=1e-8, makeReal='imag', rhsPrefactor=1.j, diagonalShift=0., crossValidation=False, diagonalizeOnDevice=True):
         
-        if svdTol is not None:
-            warnings.warn("Parameter `svdTol` is deprecated. Use `pinvTol` instead.", DeprecationWarning)
-            pinvTol = svdTol
-            
         self.sampler = sampler
         self.snrTol = snrTol
         self.pinvTol = pinvTol
+        self.pinvCutoff = pinvCutoff
         self.diagonalShift = diagonalShift
         self.rhsPrefactor = rhsPrefactor
         self.crossValidation = crossValidation
@@ -199,9 +196,21 @@ class TDVP:
         # Set regularizer for singular value cutoff
         regularizer = 1. / (1. + (self.pinvTol / jnp.abs(self.ev / self.ev[-1]))**6)
 
-        # if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
-        #     # Construct a soft cutoff based on the SNR
-        #     regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
+        residual = 1.0
+        cutoff = 1e-2
+        F_norm = jnp.linalg.norm(F)
+        while residual > self.pinvTol and cutoff > self.pinvCutoff:
+            cutoff *= 0.8
+            # Set regularizer for singular value cutoff
+            regularizer = 1. / (1. + (max(cutoff, self.pinvCutoff) / jnp.abs(self.ev / self.ev[-1]))**6)
+
+            if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
+                # Construct a soft cutoff based on the SNR
+                regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
+
+            pinvEv = self.invEv * regularizer
+
+            residual = jnp.linalg.norm((pinvEv * self.ev - jnp.ones_like(pinvEv)) * self.VtF) / F_norm
 
         update = jnp.real(jnp.dot(self.V, (self.invEv * regularizer * self.VtF)))
 
