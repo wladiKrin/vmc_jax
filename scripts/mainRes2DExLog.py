@@ -1,5 +1,4 @@
 import os
-
 import jax
 
 jax.config.update("jax_enable_x64", True)
@@ -32,66 +31,66 @@ from jVMC.nets.initializers import init_fn_args
 from jVMC.stats import SampledObs
 from jVMC.util import measure
 
-# Create the argument parser
-# parser = argparse.ArgumentParser( description='TDVP script')
+Create the argument parser
+parser = argparse.ArgumentParser( description='TDVP script')
 
-# Positional arguments
-# parser.add_argument('-m', '--modelname', 
-#     help='modelname for saving purposes',
-# )
+Positional arguments
+parser.add_argument('-m', '--modelname', 
+    help='modelname for saving purposes',
+)
+  
+parser.add_argument('-l', '--lattice', type=int, 
+                    default=10, 
+                    help='lattice size (default: 10)')
+parser.add_argument('-g', '--trvField', type=float, 
+                    default=-1, 
+                    help='transverse field (default: -1)')
+
+parser.add_argument('-s', '--numSamples', type=int, 
+                    default=10000, 
+                    help='Number of samples (default: 1e4)')
+parser.add_argument('--exactRenorm', type=bool, 
+                    default=False, 
+                    help='Wether to use the exact Renormalisation factor (default: false)')
+
+parser.add_argument('--numHidden', type=int, 
+                    default=20, 
+                    help='Number of hidden units (default: 20)')
+parser.add_argument('-f', '--filterSize', type=int, 
+                    default=10, 
+                    help='Filter size (default: 10)')
+
+parser.add_argument('--tmax', type=float, 
+                    default=2., 
+                    help='maximum time (default: 2)')
+parser.add_argument('--dt', type=float, 
+                    default=1e-4, 
+                    help='Time step (default: 1e-4)')
+parser.add_argument('--integratorTol', type=float, 
+                    default=1e-4, 
+                    help='Adaptive Heun integrator tolerance (default: 1e-4)')
+
+parser.add_argument('--invCutoff', type=float, 
+                    default=1e-8, 
+                    help='Cutoff for matrix inversion (default: 1e-8)')
     
-# parser.add_argument('-l', '--lattice', type=int, 
-#                     default=10, 
-#                     help='lattice size (default: 10)')
-# parser.add_argument('-g', '--trvField', type=float, 
-#                     default=-1, 
-#                     help='transverse field (default: -1)')
-#
-# parser.add_argument('-s', '--numSamples', type=int, 
-#                     default=10000, 
-#                     help='Number of samples (default: 1e4)')
-# parser.add_argument('--exactRenorm', type=bool, 
-#                     default=False, 
-#                     help='Wether to use the exact Renormalisation factor (default: false)')
-#
-# parser.add_argument('--numHidden', type=int, 
-#                     default=20, 
-#                     help='Number of hidden units (default: 20)')
-# parser.add_argument('-f', '--filterSize', type=int, 
-#                     default=10, 
-#                     help='Filter size (default: 10)')
-#
-# parser.add_argument('--tmax', type=float, 
-#                     default=2., 
-#                     help='maximum time (default: 2)')
-# parser.add_argument('--dt', type=float, 
-#                     default=1e-4, 
-#                     help='Time step (default: 1e-4)')
-# parser.add_argument('--integratorTol', type=float, 
-#                     default=1e-4, 
-#                     help='Adaptive Heun integrator tolerance (default: 1e-4)')
-#
-# parser.add_argument('--invCutoff', type=float, 
-#                     default=1e-8, 
-#                     help='Cutoff for matrix inversion (default: 1e-8)')
-#     
-# # Parse the arguments
-# args = parser.parse_args()
+# Parse the arguments
+args = parser.parse_args()
 
-L = 3
-g = -1
+L = args.lattice
+g = args.trvField
 h = 0.0
 
-numSamples    = 2000
-exactRenorm   = False
+numSamples    = args.numSamples
+exactRenorm   = args.exactRenorm
 
-num_hidden    = 3
-filter_size   = 2
+num_hidden    = args.numHidden
+filter_size   = args.filterSize
 
-tmax          = 0.5
-dt            = 1e-4
-integratorTol = 1e-4
-invCutoff     = 1e-8
+tmax          = args.tmax
+dt            = args.dt
+integratorTol = args.integratorTol
+invCutoff     = args.invCutoff
 
 def xy_to_id(x,y,L):
     return int(x + L * y)
@@ -112,22 +111,22 @@ outp = jVMC.util.OutputManager("../data/output_"+param_name+".hdf5", append=True
 
 # Set up variational wave function
 print("initializing network")
-# net = ResNet(
-#         F=(filter_size,),
-#         channels=(num_hidden,),
-#         strides=(1,),
-#         bias=False, 
-# )
-
-sample_shape = (L,L)
-
-net = CpxRBMCNNLog(
+net = ResNet(
         F=(filter_size,filter_size),
         channels=(num_hidden,),
         strides=(1,1),
         bias=False, 
-        periodicBoundary=False,
 )
+
+sample_shape = (L,L)
+
+# net = CpxRBMCNNLog(
+#         F=(filter_size,filter_size),
+#         channels=(num_hidden,),
+#         strides=(1,1),
+#         bias=False, 
+#         periodicBoundary=False,
+# )
 
 psi = jVMC.vqs.NQS( 
         net, 
