@@ -3618,3 +3618,87 @@ starting tdvp equation
 >  t = 1.770541
 
 ================================== whole step =============================================
+   Time step size: dt = 0.003847
+   Residuals: tdvp_err = 8.79e-02, solver_res = 1.38e-05
+    Energy = -389.570637 +/- 0.082919
+    xPol = 0.964084 +/- 0.000333
+   == Total time for this step: 249.302687s
+
+>  t = 1.774389
+
+================================== whole step =============================================
+   Time step size: dt = 0.004674
+   Residuals: tdvp_err = 8.23e-02, solver_res = 1.39e-05
+    Energy = -389.581966 +/- 0.081331
+    xPol = 0.965717 +/- 0.000324
+   == Total time for this step: 127.945606s
+
+>  t = 1.779063
+
+================================== whole step =============================================
+   Time step size: dt = 0.005071
+   Residuals: tdvp_err = 8.69e-02, solver_res = 1.52e-05
+    Energy = -389.581066 +/- 0.081932
+    xPol = 0.965008 +/- 0.000328
+   == Total time for this step: 128.475692s
+
+>  t = 1.784134
+
+================================== whole step =============================================
+   Time step size: dt = 0.005134
+   Residuals: tdvp_err = 8.40e-02, solver_res = 1.58e-05
+    Energy = -389.442829 +/- 0.083121
+    xPol = 0.965473 +/- 0.000327
+   == Total time for this step: 128.436017s
+
+>  t = 1.789268
+
+================================== whole step =============================================
+   Time step size: dt = 0.003973
+   Residuals: tdvp_err = 8.45e-02, solver_res = 1.78e-05
+    Energy = -389.503948 +/- 0.081972
+    xPol = 0.966311 +/- 0.000322
+   == Total time for this step: 247.348914s
+
+>  t = 1.793241
+
+================================== whole step =============================================
+   Time step size: dt = 0.003864
+   Residuals: tdvp_err = 8.59e-02, solver_res = 1.92e-05
+    Energy = -389.435798 +/- 0.081188
+    xPol = 0.966550 +/- 0.000320
+   == Total time for this step: 248.699550s
+
+>  t = 1.797105
+
+================================== whole step =============================================
+   Time step size: dt = 0.004029
+   Residuals: tdvp_err = 8.64e-02, solver_res = 2.13e-05
+    Energy = -389.504815 +/- 0.083585
+    xPol = 0.967786 +/- 0.000323
+   == Total time for this step: 128.342782s
+
+>  t = 1.801134
+
+================================== whole step =============================================
+   Time step size: dt = 0.003836
+   Residuals: tdvp_err = 8.40e-02, solver_res = 2.35e-05
+    Energy = -389.472466 +/- 0.083135
+    xPol = 0.967609 +/- 0.000322
+   == Total time for this step: 128.299397s
+
+>  t = 1.804970
+
+================================== whole step =============================================
+   Time step size: dt = 0.004010
+   Residuals: tdvp_err = 8.67e-02, solver_res = 2.46e-05
+    Energy = -389.437358 +/- 0.082979
+    xPol = 0.968663 +/- 0.000321
+   == Total time for this step: 128.302020s
+
+>  t = 1.808980
+
+================================== whole step =============================================
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 62894.0 ON pgi8cluster22 CANCELLED AT 2025-02-03T16:48:24 ***
+slurmstepd: error: *** JOB 62894 ON pgi8cluster22 CANCELLED AT 2025-02-03T16:48:24 ***
