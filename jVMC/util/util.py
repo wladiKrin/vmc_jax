@@ -204,9 +204,14 @@ def ground_state_search(psi, ham, tdvpEquation, sampler, numSteps=200, varianceT
             delta = 0.95 * delta
             tdvpEquation.set_diagonal_shift(delta)
 
-        if outp is not None:
-            outp.print(" STEP %d" % (n))
-            outp.print("   Energy mean: %f" % (tdvpEquation.get_energy_mean()))
-            outp.print("   Energy variance: %f" % (varE))
-            outp.print_timings(indent="   ")
-            outp.print("   == Time for step: %fs" % (time.perf_counter() - tic))
+        print(" STEP %d" % (n))
+        print("   Energy mean: %f" % (tdvpEquation.get_energy_mean()))
+        print("   Energy variance: %f" % (varE))
+        print("   == Time for step: %fs" % (time.perf_counter() - tic))
+
+        # if outp is not None:
+        #     outp.print(" STEP %d" % (n))
+        #     outp.print("   Energy mean: %f" % (tdvpEquation.get_energy_mean()))
+        #     outp.print("   Energy variance: %f" % (varE))
+        #     outp.print_timings(indent="   ")
+        #     outp.print("   == Time for step: %fs" % (time.perf_counter() - tic))

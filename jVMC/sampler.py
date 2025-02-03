@@ -414,6 +414,9 @@ class ExactSampler:
         self.get_basis()
 
         # Make sure that net params are initialized
+        print(self.N)
+        print(self.sampleShape)
+        print(self.basis)
         self.psi(self.basis)
 
         self.lastNorm = 0.
@@ -490,7 +493,7 @@ class ExactSampler:
         return p / nrm
 
     def sample(self, parameters=None, numSamples=None, multipleOf=None):
-        """Return all computational basis states.
+        """ Return all computational basis states.
 
         Sampling is automatically distributed accross MPI processes and available \
         devices.

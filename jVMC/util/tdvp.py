@@ -187,7 +187,7 @@ class TDVP:
 
         # Transform TDVP equation to eigenbasis and compute SNR
         self._transform_to_eigenbasis(self.S, F) #, Fdata)
-        self._get_snr(Eloc, gradients)
+        # self._get_snr(Eloc, gradients)
 
         # Discard eigenvalues below numerical precision
         self.invEv = jnp.where(jnp.abs(self.ev / self.ev[-1]) > 1e-14, 1. / self.ev, 0.)
@@ -200,9 +200,9 @@ class TDVP:
             # Set regularizer for singular value cutoff
             regularizer = 1. / (1. + (max(cutoff, self.pinvCutoff) / jnp.abs(self.ev / self.ev[-1]))**6)
 
-            if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
+            #if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
                 # Construct a soft cutoff based on the SNR
-                regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
+                #regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
 
             pinvEv = self.invEv * regularizer
 
@@ -299,7 +299,7 @@ class TDVP:
                     "tdvp_error": self._get_tdvp_error(update),
                     "tdvp_residual": solverResidual,
                     "pinv_cutoff": pinvCutoff,
-                    "SNR": self.snr, 
+                    "SNR": 0., #self.snr, 
                     "spectrum": self.ev,
                 }
 

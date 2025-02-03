@@ -1,0 +1,4872 @@
+pgi8cluster22: Using Ethernet for MPI communication.
+job started
+pgi8cluster22: Using Ethernet for MPI communication.
+2
+commSize:  2
+rank:  0
+device_count:  2
+mpi distributed
+ -> Rank 0 working with device [CudaDevice(id=0)]
+initializing network
+num interactions:  128
+Number of parameters:  4590
+starting GS search
+ STEP 1
+   Energy mean: -63.931510
+   Energy variance: 0.423819
+   == Time for step: 21.448356s
+ STEP 2
+   Energy mean: -63.932727
+   Energy variance: 0.376947
+   == Time for step: 10.137290s
+ STEP 3
+   Energy mean: -63.939508
+   Energy variance: 0.341775
+   == Time for step: 10.129657s
+ STEP 4
+   Energy mean: -63.949399
+   Energy variance: 0.308263
+   == Time for step: 10.139642s
+ STEP 5
+   Energy mean: -63.948233
+   Energy variance: 0.276610
+   == Time for step: 10.148817s
+ STEP 6
+   Energy mean: -63.955143
+   Energy variance: 0.247933
+   == Time for step: 10.079638s
+ STEP 7
+   Energy mean: -63.962990
+   Energy variance: 0.223296
+   == Time for step: 10.105565s
+ STEP 8
+   Energy mean: -63.965039
+   Energy variance: 0.201526
+   == Time for step: 10.141987s
+ STEP 9
+   Energy mean: -63.965789
+   Energy variance: 0.183240
+   == Time for step: 10.065554s
+ STEP 10
+   Energy mean: -63.969239
+   Energy variance: 0.165905
+   == Time for step: 10.135806s
+ STEP 11
+   Energy mean: -63.972445
+   Energy variance: 0.149227
+   == Time for step: 10.132125s
+ STEP 12
+   Energy mean: -63.974659
+   Energy variance: 0.136900
+   == Time for step: 10.165388s
+ STEP 13
+   Energy mean: -63.974885
+   Energy variance: 0.122844
+   == Time for step: 10.029465s
+ STEP 14
+   Energy mean: -63.981776
+   Energy variance: 0.113004
+   == Time for step: 10.105295s
+ STEP 15
+   Energy mean: -63.979507
+   Energy variance: 0.102979
+   == Time for step: 10.062291s
+ STEP 16
+   Energy mean: -63.975272
+   Energy variance: 0.093347
+   == Time for step: 10.121133s
+ STEP 17
+   Energy mean: -63.981527
+   Energy variance: 0.085620
+   == Time for step: 10.157037s
+ STEP 18
+   Energy mean: -63.982117
+   Energy variance: 0.078763
+   == Time for step: 10.162541s
+ STEP 19
+   Energy mean: -63.985529
+   Energy variance: 0.071130
+   == Time for step: 10.122485s
+ STEP 20
+   Energy mean: -63.984872
+   Energy variance: 0.065219
+   == Time for step: 10.124662s
+ STEP 21
+   Energy mean: -63.988337
+   Energy variance: 0.060111
+   == Time for step: 10.048927s
+ STEP 22
+   Energy mean: -63.986764
+   Energy variance: 0.055287
+   == Time for step: 10.085588s
+ STEP 23
+   Energy mean: -63.987410
+   Energy variance: 0.051000
+   == Time for step: 10.062143s
+ STEP 24
+   Energy mean: -63.990153
+   Energy variance: 0.046161
+   == Time for step: 10.131111s
+ STEP 25
+   Energy mean: -63.988937
+   Energy variance: 0.042308
+   == Time for step: 10.137170s
+ STEP 26
+   Energy mean: -63.989212
+   Energy variance: 0.039062
+   == Time for step: 10.124518s
+ STEP 27
+   Energy mean: -63.989453
+   Energy variance: 0.035893
+   == Time for step: 10.116147s
+ STEP 28
+   Energy mean: -63.991088
+   Energy variance: 0.033777
+   == Time for step: 10.121031s
+ STEP 29
+   Energy mean: -63.990273
+   Energy variance: 0.031267
+   == Time for step: 10.144083s
+ STEP 30
+   Energy mean: -63.992064
+   Energy variance: 0.028782
+   == Time for step: 10.080620s
+ STEP 31
+   Energy mean: -63.993433
+   Energy variance: 0.026498
+   == Time for step: 10.065539s
+ STEP 32
+   Energy mean: -63.993651
+   Energy variance: 0.024755
+   == Time for step: 10.111763s
+ STEP 33
+   Energy mean: -63.993356
+   Energy variance: 0.022853
+   == Time for step: 10.052638s
+ STEP 34
+   Energy mean: -63.992032
+   Energy variance: 0.020878
+   == Time for step: 10.027390s
+ STEP 35
+   Energy mean: -63.992179
+   Energy variance: 0.019651
+   == Time for step: 10.111948s
+ STEP 36
+   Energy mean: -63.993533
+   Energy variance: 0.018031
+   == Time for step: 10.151338s
+ STEP 37
+   Energy mean: -63.994445
+   Energy variance: 0.017205
+   == Time for step: 10.086247s
+ STEP 38
+   Energy mean: -63.994894
+   Energy variance: 0.015703
+   == Time for step: 10.034684s
+ STEP 39
+   Energy mean: -63.995288
+   Energy variance: 0.014901
+   == Time for step: 10.037108s
+ STEP 40
+   Energy mean: -63.995262
+   Energy variance: 0.013647
+   == Time for step: 10.080595s
+ STEP 41
+   Energy mean: -63.995230
+   Energy variance: 0.012722
+   == Time for step: 10.133207s
+ STEP 42
+   Energy mean: -63.995262
+   Energy variance: 0.011806
+   == Time for step: 10.036236s
+ STEP 43
+   Energy mean: -63.995932
+   Energy variance: 0.011184
+   == Time for step: 10.036150s
+ STEP 44
+   Energy mean: -63.996608
+   Energy variance: 0.010496
+   == Time for step: 10.125150s
+ STEP 45
+   Energy mean: -63.996920
+   Energy variance: 0.009922
+   == Time for step: 10.041100s
+ STEP 46
+   Energy mean: -63.996947
+   Energy variance: 0.009221
+   == Time for step: 10.109064s
+ STEP 47
+   Energy mean: -63.995925
+   Energy variance: 0.008608
+   == Time for step: 10.126810s
+ STEP 48
+   Energy mean: -63.997187
+   Energy variance: 0.008054
+   == Time for step: 10.037332s
+ STEP 49
+   Energy mean: -63.997514
+   Energy variance: 0.007598
+   == Time for step: 10.095296s
+ STEP 50
+   Energy mean: -63.996626
+   Energy variance: 0.007109
+   == Time for step: 10.130634s
+setting up tdvp equation
+starting tdvp equation
+>  t = 0.000000
+
+================================== whole step =============================================
+   Time step size: dt = 0.000100
+   Residuals: tdvp_err = 5.02e-01, solver_res = 6.48e-06
+    Energy = -19.481060 +/- 0.081123
+    xPol = 0.999971 +/- 0.000009
+   == Total time for this step: 148.923532s
+
+>  t = 0.000100
+
+================================== whole step =============================================
+   Time step size: dt = 0.000200
+   Residuals: tdvp_err = 3.87e-01, solver_res = 1.09e-05
+    Energy = -19.666900 +/- 0.079978
+    xPol = 0.999962 +/- 0.000010
+   == Total time for this step: 128.034362s
+
+>  t = 0.000300
+
+================================== whole step =============================================
+   Time step size: dt = 0.000215
+   Residuals: tdvp_err = 4.11e-01, solver_res = 1.30e-05
+    Energy = -19.671058 +/- 0.079217
+    xPol = 0.999971 +/- 0.000010
+   == Total time for this step: 255.245569s
+
+>  t = 0.000515
+
+================================== whole step =============================================
+   Time step size: dt = 0.000308
+   Residuals: tdvp_err = 4.01e-01, solver_res = 1.06e-05
+    Energy = -19.453315 +/- 0.080795
+    xPol = 0.999943 +/- 0.000011
+   == Total time for this step: 247.751557s
+
+>  t = 0.000824
+
+================================== whole step =============================================
+   Time step size: dt = 0.000304
+   Residuals: tdvp_err = 3.72e-01, solver_res = 8.81e-06
+    Energy = -19.229602 +/- 0.079790
+    xPol = 0.999937 +/- 0.000012
+   == Total time for this step: 128.093644s
+
+>  t = 0.001128
+
+================================== whole step =============================================
+   Time step size: dt = 0.000405
+   Residuals: tdvp_err = 6.08e-01, solver_res = 1.06e-05
+    Energy = -19.565729 +/- 0.079806
+    xPol = 0.999943 +/- 0.000013
+   == Total time for this step: 247.897566s
+
+>  t = 0.001533
+
+================================== whole step =============================================
+   Time step size: dt = 0.000431
+   Residuals: tdvp_err = 4.47e-01, solver_res = 1.12e-05
+    Energy = -19.482882 +/- 0.079790
+    xPol = 0.999920 +/- 0.000015
+   == Total time for this step: 129.145513s
+
+>  t = 0.001963
+
+================================== whole step =============================================
+   Time step size: dt = 0.000587
+   Residuals: tdvp_err = 3.02e-01, solver_res = 5.89e-06
+    Energy = -19.504949 +/- 0.080434
+    xPol = 0.999862 +/- 0.000017
+   == Total time for this step: 128.104483s
+
+>  t = 0.002550
+
+================================== whole step =============================================
+   Time step size: dt = 0.000581
+   Residuals: tdvp_err = 3.45e-01, solver_res = 6.63e-06
+    Energy = -19.618882 +/- 0.080958
+    xPol = 0.999859 +/- 0.000020
+   == Total time for this step: 128.360998s
+
+>  t = 0.003132
+
+================================== whole step =============================================
+   Time step size: dt = 0.000734
+   Residuals: tdvp_err = 1.55e-01, solver_res = 4.64e-06
+    Energy = -19.392269 +/- 0.079582
+    xPol = 0.999827 +/- 0.000023
+   == Total time for this step: 127.923395s
+
+>  t = 0.003866
+
+================================== whole step =============================================
+   Time step size: dt = 0.000924
+   Residuals: tdvp_err = 1.17e-01, solver_res = 6.18e-06
+    Energy = -19.477382 +/- 0.080413
+    xPol = 0.999741 +/- 0.000027
+   == Total time for this step: 128.689937s
+
+>  t = 0.004790
+
+================================== whole step =============================================
+   Time step size: dt = 0.001088
+   Residuals: tdvp_err = 1.03e-01, solver_res = 4.37e-06
+    Energy = -19.588904 +/- 0.080758
+    xPol = 0.999655 +/- 0.000032
+   == Total time for this step: 128.952020s
+
+>  t = 0.005878
+
+================================== whole step =============================================
+   Time step size: dt = 0.001615
+   Residuals: tdvp_err = 4.67e-02, solver_res = 3.51e-06
+    Energy = -19.410909 +/- 0.079965
+    xPol = 0.999511 +/- 0.000040
+   == Total time for this step: 128.710105s
+
+>  t = 0.007493
+
+================================== whole step =============================================
+   Time step size: dt = 0.002075
+   Residuals: tdvp_err = 3.47e-02, solver_res = 3.24e-06
+    Energy = -19.486385 +/- 0.079690
+    xPol = 0.999197 +/- 0.000049
+   == Total time for this step: 128.171191s
+
+>  t = 0.009568
+
+================================== whole step =============================================
+   Time step size: dt = 0.003045
+   Residuals: tdvp_err = 2.22e-02, solver_res = 3.67e-06
+    Energy = -19.473600 +/- 0.080074
+    xPol = 0.998684 +/- 0.000064
+   == Total time for this step: 128.485610s
+
+>  t = 0.012613
+
+================================== whole step =============================================
+   Time step size: dt = 0.003281
+   Residuals: tdvp_err = 1.07e-02, solver_res = 2.05e-06
+    Energy = -19.300530 +/- 0.080621
+    xPol = 0.997952 +/- 0.000080
+   == Total time for this step: 128.364958s
+
+>  t = 0.015894
+
+================================== whole step =============================================
+   Time step size: dt = 0.006179
+   Residuals: tdvp_err = 6.24e-03, solver_res = 1.70e-06
+    Energy = -19.416267 +/- 0.081572
+    xPol = 0.996132 +/- 0.000111
+   == Total time for this step: 128.641787s
+
+>  t = 0.022073
+
+================================== whole step =============================================
+   Time step size: dt = 0.007473
+   Residuals: tdvp_err = 3.07e-03, solver_res = 1.32e-06
+    Energy = -19.380407 +/- 0.080048
+    xPol = 0.993121 +/- 0.000146
+   == Total time for this step: 128.671847s
+
+>  t = 0.029546
+
+================================== whole step =============================================
+   Time step size: dt = 0.011316
+   Residuals: tdvp_err = 1.45e-03, solver_res = 1.14e-06
+    Energy = -19.603598 +/- 0.079813
+    xPol = 0.986859 +/- 0.000201
+   == Total time for this step: 127.922052s
+
+>  t = 0.040862
+
+================================== whole step =============================================
+   Time step size: dt = 0.019100
+   Residuals: tdvp_err = 7.11e-04, solver_res = 9.34e-07
+    Energy = -19.586626 +/- 0.080248
+    xPol = 0.972049 +/- 0.000293
+   == Total time for this step: 128.642672s
+
+>  t = 0.059963
+
+================================== whole step =============================================
+   Time step size: dt = 0.030078
+   Residuals: tdvp_err = 2.88e-04, solver_res = 7.92e-07
+    Energy = -19.639632 +/- 0.079746
+    xPol = 0.937795 +/- 0.000429
+   == Total time for this step: 128.717268s
+
+>  t = 0.090041
+
+================================== whole step =============================================
+   Time step size: dt = 0.043474
+   Residuals: tdvp_err = 1.42e-04, solver_res = 6.31e-07
+    Energy = -19.627396 +/- 0.079186
+    xPol = 0.867880 +/- 0.000609
+   == Total time for this step: 128.670943s
+
+>  t = 0.133515
+
+================================== whole step =============================================
+   Time step size: dt = 0.026391
+   Residuals: tdvp_err = 2.07e-04, solver_res = 8.58e-07
+    Energy = -19.406619 +/- 0.080029
+    xPol = 0.815058 +/- 0.000713
+   == Total time for this step: 250.331204s
+
+>  t = 0.159906
+
+================================== whole step =============================================
+   Time step size: dt = 0.020782
+   Residuals: tdvp_err = 3.64e-04, solver_res = 1.24e-06
+    Energy = -19.532164 +/- 0.079131
+    xPol = 0.768638 +/- 0.000778
+   == Total time for this step: 250.664880s
+
+>  t = 0.180688
+
+================================== whole step =============================================
+   Time step size: dt = 0.026701
+   Residuals: tdvp_err = 5.03e-04, solver_res = 1.47e-06
+    Energy = -19.474660 +/- 0.080173
+    xPol = 0.704857 +/- 0.000867
+   == Total time for this step: 128.950427s
+
+>  t = 0.207388
+
+================================== whole step =============================================
+   Time step size: dt = 0.020664
+   Residuals: tdvp_err = 6.45e-04, solver_res = 1.65e-06
+    Energy = -19.640449 +/- 0.081382
+    xPol = 0.652989 +/- 0.000924
+   == Total time for this step: 370.384211s
+
+>  t = 0.228053
+
+================================== whole step =============================================
+   Time step size: dt = 0.020767
+   Residuals: tdvp_err = 7.51e-04, solver_res = 1.86e-06
+    Energy = -19.435097 +/- 0.079838
+    xPol = 0.602683 +/- 0.000958
+   == Total time for this step: 249.686810s
+
+>  t = 0.248820
+
+================================== whole step =============================================
+   Time step size: dt = 0.028768
+   Residuals: tdvp_err = 8.94e-04, solver_res = 2.08e-06
+    Energy = -19.544509 +/- 0.079721
+    xPol = 0.529259 +/- 0.001007
+   == Total time for this step: 129.246820s
+
+>  t = 0.277588
+
+================================== whole step =============================================
+   Time step size: dt = 0.026299
+   Residuals: tdvp_err = 1.07e-03, solver_res = 2.37e-06
+    Energy = -19.645634 +/- 0.079520
+    xPol = 0.463417 +/- 0.001035
+   == Total time for this step: 128.580141s
+
+>  t = 0.303887
+
+================================== whole step =============================================
+   Time step size: dt = 0.025536
+   Residuals: tdvp_err = 1.32e-03, solver_res = 2.70e-06
+    Energy = -19.699182 +/- 0.080026
+    xPol = 0.401620 +/- 0.001053
+   == Total time for this step: 128.239211s
+
+>  t = 0.329423
+
+================================== whole step =============================================
+   Time step size: dt = 0.024404
+   Residuals: tdvp_err = 1.52e-03, solver_res = 2.85e-06
+    Energy = -19.704463 +/- 0.080755
+    xPol = 0.343957 +/- 0.001064
+   == Total time for this step: 129.043160s
+
+>  t = 0.353827
+
+================================== whole step =============================================
+   Time step size: dt = 0.021825
+   Residuals: tdvp_err = 1.96e-03, solver_res = 3.55e-06
+    Energy = -19.322523 +/- 0.079981
+    xPol = 0.299410 +/- 0.001072
+   == Total time for this step: 250.214863s
+
+>  t = 0.375652
+
+================================== whole step =============================================
+   Time step size: dt = 0.023704
+   Residuals: tdvp_err = 2.31e-03, solver_res = 4.07e-06
+    Energy = -19.376428 +/- 0.079637
+    xPol = 0.250278 +/- 0.001048
+   == Total time for this step: 128.558674s
+
+>  t = 0.399356
+
+================================== whole step =============================================
+   Time step size: dt = 0.023046
+   Residuals: tdvp_err = 2.77e-03, solver_res = 4.53e-06
+    Energy = -19.482218 +/- 0.079750
+    xPol = 0.211241 +/- 0.001040
+   == Total time for this step: 250.693059s
+
+>  t = 0.422403
+
+================================== whole step =============================================
+   Time step size: dt = 0.024298
+   Residuals: tdvp_err = 3.23e-03, solver_res = 5.22e-06
+    Energy = -19.507554 +/- 0.079723
+    xPol = 0.172693 +/- 0.001032
+   == Total time for this step: 128.261912s
+
+>  t = 0.446701
+
+================================== whole step =============================================
+   Time step size: dt = 0.022471
+   Residuals: tdvp_err = 4.05e-03, solver_res = 5.93e-06
+    Energy = -19.798601 +/- 0.080070
+    xPol = 0.144436 +/- 0.001018
+   == Total time for this step: 128.829789s
+
+>  t = 0.469172
+
+================================== whole step =============================================
+   Time step size: dt = 0.020493
+   Residuals: tdvp_err = 5.12e-03, solver_res = 7.16e-06
+    Energy = -19.640396 +/- 0.078961
+    xPol = 0.117676 +/- 0.001003
+   == Total time for this step: 128.449878s
+
+>  t = 0.489665
+
+================================== whole step =============================================
+   Time step size: dt = 0.018919
+   Residuals: tdvp_err = 5.82e-03, solver_res = 7.70e-06
+    Energy = -19.710833 +/- 0.080761
+    xPol = 0.097702 +/- 0.000981
+   == Total time for this step: 128.858151s
+
+>  t = 0.508584
+
+================================== whole step =============================================
+   Time step size: dt = 0.018370
+   Residuals: tdvp_err = 6.92e-03, solver_res = 8.41e-06
+    Energy = -19.748407 +/- 0.079893
+    xPol = 0.084357 +/- 0.000965
+   == Total time for this step: 128.740538s
+
+>  t = 0.526953
+
+================================== whole step =============================================
+   Time step size: dt = 0.016803
+   Residuals: tdvp_err = 7.63e-03, solver_res = 9.17e-06
+    Energy = -19.756188 +/- 0.080303
+    xPol = 0.072007 +/- 0.000956
+   == Total time for this step: 128.604332s
+
+>  t = 0.543756
+
+================================== whole step =============================================
+   Time step size: dt = 0.015531
+   Residuals: tdvp_err = 8.93e-03, solver_res = 9.62e-06
+    Energy = -19.538351 +/- 0.080141
+    xPol = 0.062387 +/- 0.000944
+   == Total time for this step: 128.650824s
+
+>  t = 0.559287
+
+================================== whole step =============================================
+   Time step size: dt = 0.014881
+   Residuals: tdvp_err = 1.09e-02, solver_res = 1.03e-05
+    Energy = -19.744545 +/- 0.080425
+    xPol = 0.053569 +/- 0.000935
+   == Total time for this step: 128.801327s
+
+>  t = 0.574168
+
+================================== whole step =============================================
+   Time step size: dt = 0.013559
+   Residuals: tdvp_err = 1.21e-02, solver_res = 1.07e-05
+    Energy = -19.591872 +/- 0.079864
+    xPol = 0.049634 +/- 0.000931
+   == Total time for this step: 128.644013s
+
+>  t = 0.587727
+
+================================== whole step =============================================
+   Time step size: dt = 0.012877
+   Residuals: tdvp_err = 1.36e-02, solver_res = 1.12e-05
+    Energy = -19.691700 +/- 0.079829
+    xPol = 0.046484 +/- 0.000923
+   == Total time for this step: 128.386371s
+
+>  t = 0.600604
+
+================================== whole step =============================================
+   Time step size: dt = 0.011710
+   Residuals: tdvp_err = 1.42e-02, solver_res = 1.08e-05
+    Energy = -19.577766 +/- 0.080822
+    xPol = 0.042259 +/- 0.000919
+   == Total time for this step: 129.010029s
+
+>  t = 0.612314
+
+================================== whole step =============================================
+   Time step size: dt = 0.011014
+   Residuals: tdvp_err = 1.63e-02, solver_res = 1.17e-05
+    Energy = -19.652594 +/- 0.079617
+    xPol = 0.039037 +/- 0.000905
+   == Total time for this step: 129.087163s
+
+>  t = 0.623328
+
+================================== whole step =============================================
+   Time step size: dt = 0.010767
+   Residuals: tdvp_err = 1.70e-02, solver_res = 1.24e-05
+    Energy = -19.624292 +/- 0.080743
+    xPol = 0.038344 +/- 0.000917
+   == Total time for this step: 129.336161s
+
+>  t = 0.634094
+
+================================== whole step =============================================
+   Time step size: dt = 0.010356
+   Residuals: tdvp_err = 1.93e-02, solver_res = 1.28e-05
+    Energy = -19.748906 +/- 0.079200
+    xPol = 0.037082 +/- 0.000905
+   == Total time for this step: 129.161821s
+
+>  t = 0.644451
+
+================================== whole step =============================================
+   Time step size: dt = 0.009628
+   Residuals: tdvp_err = 1.91e-02, solver_res = 1.34e-05
+    Energy = -19.682461 +/- 0.080277
+    xPol = 0.036053 +/- 0.000905
+   == Total time for this step: 128.921750s
+
+>  t = 0.654079
+
+================================== whole step =============================================
+   Time step size: dt = 0.009704
+   Residuals: tdvp_err = 2.03e-02, solver_res = 1.34e-05
+    Energy = -19.554594 +/- 0.080400
+    xPol = 0.036963 +/- 0.000905
+   == Total time for this step: 129.077120s
+
+>  t = 0.663782
+
+================================== whole step =============================================
+   Time step size: dt = 0.009735
+   Residuals: tdvp_err = 2.19e-02, solver_res = 1.48e-05
+    Energy = -19.441676 +/- 0.079293
+    xPol = 0.036711 +/- 0.000913
+   == Total time for this step: 128.693075s
+
+>  t = 0.673517
+
+================================== whole step =============================================
+   Time step size: dt = 0.008962
+   Residuals: tdvp_err = 2.23e-02, solver_res = 1.42e-05
+    Energy = -19.574146 +/- 0.080342
+    xPol = 0.036817 +/- 0.000894
+   == Total time for this step: 128.239400s
+
+>  t = 0.682479
+
+================================== whole step =============================================
+   Time step size: dt = 0.008928
+   Residuals: tdvp_err = 2.41e-02, solver_res = 1.41e-05
+    Energy = -19.644340 +/- 0.079039
+    xPol = 0.038490 +/- 0.000911
+   == Total time for this step: 129.010873s
+
+>  t = 0.691407
+
+================================== whole step =============================================
+   Time step size: dt = 0.008965
+   Residuals: tdvp_err = 2.42e-02, solver_res = 1.51e-05
+    Energy = -19.529432 +/- 0.080183
+    xPol = 0.037417 +/- 0.000908
+   == Total time for this step: 128.844149s
+
+>  t = 0.700372
+
+================================== whole step =============================================
+   Time step size: dt = 0.008881
+   Residuals: tdvp_err = 2.64e-02, solver_res = 1.59e-05
+    Energy = -19.406297 +/- 0.080750
+    xPol = 0.036886 +/- 0.000906
+   == Total time for this step: 129.126807s
+
+>  t = 0.709253
+
+================================== whole step =============================================
+   Time step size: dt = 0.008422
+   Residuals: tdvp_err = 2.83e-02, solver_res = 1.64e-05
+    Energy = -19.669826 +/- 0.080522
+    xPol = 0.038320 +/- 0.000902
+   == Total time for this step: 129.005438s
+
+>  t = 0.717675
+
+================================== whole step =============================================
+   Time step size: dt = 0.007947
+   Residuals: tdvp_err = 2.78e-02, solver_res = 1.61e-05
+    Energy = -19.509151 +/- 0.079870
+    xPol = 0.038388 +/- 0.000904
+   == Total time for this step: 128.241956s
+
+>  t = 0.725622
+
+================================== whole step =============================================
+   Time step size: dt = 0.008027
+   Residuals: tdvp_err = 2.87e-02, solver_res = 1.67e-05
+    Energy = -19.580965 +/- 0.080928
+    xPol = 0.036264 +/- 0.000907
+   == Total time for this step: 129.160030s
+
+>  t = 0.733649
+
+================================== whole step =============================================
+   Time step size: dt = 0.008192
+   Residuals: tdvp_err = 2.91e-02, solver_res = 1.62e-05
+    Energy = -19.581104 +/- 0.080073
+    xPol = 0.040726 +/- 0.000912
+   == Total time for this step: 128.740537s
+
+>  t = 0.741841
+
+================================== whole step =============================================
+   Time step size: dt = 0.008008
+   Residuals: tdvp_err = 3.12e-02, solver_res = 1.69e-05
+    Energy = -19.321435 +/- 0.081002
+    xPol = 0.039059 +/- 0.000908
+   == Total time for this step: 128.741783s
+
+>  t = 0.749849
+
+================================== whole step =============================================
+   Time step size: dt = 0.007775
+   Residuals: tdvp_err = 3.09e-02, solver_res = 1.73e-05
+    Energy = -19.523441 +/- 0.079637
+    xPol = 0.040456 +/- 0.000917
+   == Total time for this step: 128.665616s
+
+>  t = 0.757623
+
+================================== whole step =============================================
+   Time step size: dt = 0.007506
+   Residuals: tdvp_err = 3.32e-02, solver_res = 1.77e-05
+    Energy = -19.632619 +/- 0.080004
+    xPol = 0.040065 +/- 0.000917
+   == Total time for this step: 128.404088s
+
+>  t = 0.765130
+
+================================== whole step =============================================
+   Time step size: dt = 0.007527
+   Residuals: tdvp_err = 3.23e-02, solver_res = 1.81e-05
+    Energy = -19.535676 +/- 0.079856
+    xPol = 0.040653 +/- 0.000912
+   == Total time for this step: 129.178184s
+
+>  t = 0.772657
+
+================================== whole step =============================================
+   Time step size: dt = 0.007435
+   Residuals: tdvp_err = 3.32e-02, solver_res = 1.69e-05
+    Energy = -19.341641 +/- 0.080697
+    xPol = 0.041390 +/- 0.000909
+   == Total time for this step: 128.275262s
+
+>  t = 0.780092
+
+================================== whole step =============================================
+   Time step size: dt = 0.007305
+   Residuals: tdvp_err = 3.37e-02, solver_res = 1.83e-05
+    Energy = -19.437103 +/- 0.080840
+    xPol = 0.040685 +/- 0.000917
+   == Total time for this step: 128.737831s
+
+>  t = 0.787397
+
+================================== whole step =============================================
+   Time step size: dt = 0.007336
+   Residuals: tdvp_err = 3.47e-02, solver_res = 1.83e-05
+    Energy = -19.811231 +/- 0.079712
+    xPol = 0.042108 +/- 0.000906
+   == Total time for this step: 128.974200s
+
+>  t = 0.794733
+
+================================== whole step =============================================
+   Time step size: dt = 0.007109
+   Residuals: tdvp_err = 3.57e-02, solver_res = 1.85e-05
+    Energy = -19.625805 +/- 0.080224
+    xPol = 0.043923 +/- 0.000914
+   == Total time for this step: 128.954951s
+
+>  t = 0.801842
+
+================================== whole step =============================================
+   Time step size: dt = 0.007127
+   Residuals: tdvp_err = 3.61e-02, solver_res = 1.91e-05
+    Energy = -19.521451 +/- 0.080036
+    xPol = 0.041873 +/- 0.000915
+   == Total time for this step: 128.571637s
+
+>  t = 0.808969
+
+================================== whole step =============================================
+   Time step size: dt = 0.007083
+   Residuals: tdvp_err = 3.68e-02, solver_res = 1.83e-05
+    Energy = -19.462045 +/- 0.079753
+    xPol = 0.043094 +/- 0.000909
+   == Total time for this step: 129.123508s
+
+>  t = 0.816052
+
+================================== whole step =============================================
+   Time step size: dt = 0.007003
+   Residuals: tdvp_err = 3.76e-02, solver_res = 1.85e-05
+    Energy = -19.703824 +/- 0.079621
+    xPol = 0.039962 +/- 0.000917
+   == Total time for this step: 128.959333s
+
+>  t = 0.823055
+
+================================== whole step =============================================
+   Time step size: dt = 0.006919
+   Residuals: tdvp_err = 3.84e-02, solver_res = 1.86e-05
+    Energy = -19.620636 +/- 0.079774
+    xPol = 0.042550 +/- 0.000915
+   == Total time for this step: 129.053702s
+
+>  t = 0.829974
+
+================================== whole step =============================================
+   Time step size: dt = 0.006963
+   Residuals: tdvp_err = 3.78e-02, solver_res = 1.90e-05
+    Energy = -19.697313 +/- 0.079930
+    xPol = 0.043549 +/- 0.000907
+   == Total time for this step: 129.287293s
+
+>  t = 0.836937
+
+================================== whole step =============================================
+   Time step size: dt = 0.006857
+   Residuals: tdvp_err = 4.28e-02, solver_res = 1.80e-05
+    Energy = -19.357679 +/- 0.079551
+    xPol = 0.044697 +/- 0.000909
+   == Total time for this step: 129.043988s
+
+>  t = 0.843794
+
+================================== whole step =============================================
+   Time step size: dt = 0.006872
+   Residuals: tdvp_err = 3.80e-02, solver_res = 1.86e-05
+    Energy = -19.682490 +/- 0.079369
+    xPol = 0.044431 +/- 0.000910
+   == Total time for this step: 128.826525s
+
+>  t = 0.850666
+
+================================== whole step =============================================
+   Time step size: dt = 0.006757
+   Residuals: tdvp_err = 4.19e-02, solver_res = 1.95e-05
+    Energy = -19.416745 +/- 0.079610
+    xPol = 0.043582 +/- 0.000919
+   == Total time for this step: 128.928177s
+
+>  t = 0.857424
+
+================================== whole step =============================================
+   Time step size: dt = 0.006658
+   Residuals: tdvp_err = 4.35e-02, solver_res = 1.84e-05
+    Energy = -19.693422 +/- 0.080532
+    xPol = 0.045074 +/- 0.000915
+   == Total time for this step: 128.948584s
+
+>  t = 0.864082
+
+================================== whole step =============================================
+   Time step size: dt = 0.006724
+   Residuals: tdvp_err = 4.30e-02, solver_res = 1.77e-05
+    Energy = -19.568239 +/- 0.080784
+    xPol = 0.046635 +/- 0.000921
+   == Total time for this step: 129.234720s
+
+>  t = 0.870806
+
+================================== whole step =============================================
+   Time step size: dt = 0.006427
+   Residuals: tdvp_err = 4.02e-02, solver_res = 1.90e-05
+    Energy = -19.752437 +/- 0.080383
+    xPol = 0.047405 +/- 0.000916
+   == Total time for this step: 128.563141s
+
+>  t = 0.877233
+
+================================== whole step =============================================
+   Time step size: dt = 0.006418
+   Residuals: tdvp_err = 4.46e-02, solver_res = 1.88e-05
+    Energy = -19.740410 +/- 0.080491
+    xPol = 0.046274 +/- 0.000901
+   == Total time for this step: 128.821600s
+
+>  t = 0.883651
+
+================================== whole step =============================================
+   Time step size: dt = 0.006563
+   Residuals: tdvp_err = 4.28e-02, solver_res = 1.81e-05
+    Energy = -19.489417 +/- 0.080570
+    xPol = 0.045566 +/- 0.000913
+   == Total time for this step: 129.469270s
+
+>  t = 0.890213
+
+================================== whole step =============================================
+   Time step size: dt = 0.006642
+   Residuals: tdvp_err = 4.13e-02, solver_res = 1.76e-05
+    Energy = -19.832279 +/- 0.079452
+    xPol = 0.047274 +/- 0.000915
+   == Total time for this step: 128.736971s
+
+>  t = 0.896855
+
+================================== whole step =============================================
+   Time step size: dt = 0.006557
+   Residuals: tdvp_err = 4.33e-02, solver_res = 1.78e-05
+    Energy = -19.627875 +/- 0.080495
+    xPol = 0.046308 +/- 0.000909
+   == Total time for this step: 129.362829s
+
+>  t = 0.903412
+
+================================== whole step =============================================
+   Time step size: dt = 0.006380
+   Residuals: tdvp_err = 4.66e-02, solver_res = 1.91e-05
+    Energy = -19.650683 +/- 0.079129
+    xPol = 0.047233 +/- 0.000912
+   == Total time for this step: 129.225419s
+
+>  t = 0.909792
+
+================================== whole step =============================================
+   Time step size: dt = 0.006462
+   Residuals: tdvp_err = 4.40e-02, solver_res = 1.77e-05
+    Energy = -19.630615 +/- 0.079941
+    xPol = 0.047085 +/- 0.000912
+   == Total time for this step: 128.508235s
+
+>  t = 0.916254
+
+================================== whole step =============================================
+   Time step size: dt = 0.006514
+   Residuals: tdvp_err = 4.18e-02, solver_res = 1.71e-05
+    Energy = -19.709843 +/- 0.080322
+    xPol = 0.049961 +/- 0.000910
+   == Total time for this step: 128.703684s
+
+>  t = 0.922768
+
+================================== whole step =============================================
+   Time step size: dt = 0.006459
+   Residuals: tdvp_err = 4.33e-02, solver_res = 1.71e-05
+    Energy = -19.621878 +/- 0.080387
+    xPol = 0.050291 +/- 0.000904
+   == Total time for this step: 128.688292s
+
+>  t = 0.929227
+
+================================== whole step =============================================
+   Time step size: dt = 0.006534
+   Residuals: tdvp_err = 4.68e-02, solver_res = 1.81e-05
+    Energy = -19.469141 +/- 0.080874
+    xPol = 0.049843 +/- 0.000919
+   == Total time for this step: 128.869484s
+
+>  t = 0.935761
+
+================================== whole step =============================================
+   Time step size: dt = 0.006547
+   Residuals: tdvp_err = 4.50e-02, solver_res = 1.69e-05
+    Energy = -19.582328 +/- 0.080004
+    xPol = 0.052573 +/- 0.000919
+   == Total time for this step: 128.639622s
+
+>  t = 0.942307
+
+================================== whole step =============================================
+   Time step size: dt = 0.006538
+   Residuals: tdvp_err = 4.25e-02, solver_res = 1.69e-05
+    Energy = -19.596329 +/- 0.079911
+    xPol = 0.052347 +/- 0.000906
+   == Total time for this step: 128.699835s
+
+>  t = 0.948846
+
+================================== whole step =============================================
+   Time step size: dt = 0.006578
+   Residuals: tdvp_err = 4.61e-02, solver_res = 1.73e-05
+    Energy = -19.664990 +/- 0.080652
+    xPol = 0.053161 +/- 0.000906
+   == Total time for this step: 129.372754s
+
+>  t = 0.955424
+
+================================== whole step =============================================
+   Time step size: dt = 0.006393
+   Residuals: tdvp_err = 4.35e-02, solver_res = 1.70e-05
+    Energy = -19.411875 +/- 0.080594
+    xPol = 0.054808 +/- 0.000915
+   == Total time for this step: 129.059467s
+
+>  t = 0.961817
+
+================================== whole step =============================================
+   Time step size: dt = 0.006590
+   Residuals: tdvp_err = 4.40e-02, solver_res = 1.66e-05
+    Energy = -19.496535 +/- 0.080890
+    xPol = 0.054677 +/- 0.000921
+   == Total time for this step: 129.182813s
+
+>  t = 0.968407
+
+================================== whole step =============================================
+   Time step size: dt = 0.006508
+   Residuals: tdvp_err = 4.65e-02, solver_res = 1.70e-05
+    Energy = -19.536406 +/- 0.080006
+    xPol = 0.056601 +/- 0.000913
+   == Total time for this step: 128.912730s
+
+>  t = 0.974915
+
+================================== whole step =============================================
+   Time step size: dt = 0.006442
+   Residuals: tdvp_err = 4.44e-02, solver_res = 1.58e-05
+    Energy = -19.634681 +/- 0.081247
+    xPol = 0.058873 +/- 0.000912
+   == Total time for this step: 128.982856s
+
+>  t = 0.981357
+
+================================== whole step =============================================
+   Time step size: dt = 0.006445
+   Residuals: tdvp_err = 4.53e-02, solver_res = 1.72e-05
+    Energy = -19.586906 +/- 0.080341
+    xPol = 0.059274 +/- 0.000915
+   == Total time for this step: 129.080441s
+
+>  t = 0.987801
+
+================================== whole step =============================================
+   Time step size: dt = 0.006406
+   Residuals: tdvp_err = 4.93e-02, solver_res = 1.69e-05
+    Energy = -19.590470 +/- 0.079565
+    xPol = 0.062906 +/- 0.000907
+   == Total time for this step: 128.483864s
+
+>  t = 0.994207
+
+================================== whole step =============================================
+   Time step size: dt = 0.006262
+   Residuals: tdvp_err = 4.92e-02, solver_res = 1.68e-05
+    Energy = -19.315237 +/- 0.079907
+    xPol = 0.064609 +/- 0.000933
+   == Total time for this step: 128.923312s
+
+>  t = 1.000469
+
+================================== whole step =============================================
+   Time step size: dt = 0.006364
+   Residuals: tdvp_err = 4.56e-02, solver_res = 1.68e-05
+    Energy = -19.695528 +/- 0.078466
+    xPol = 0.066245 +/- 0.000923
+   == Total time for this step: 129.172510s
+
+>  t = 1.006833
+
+================================== whole step =============================================
+   Time step size: dt = 0.006326
+   Residuals: tdvp_err = 4.66e-02, solver_res = 1.73e-05
+    Energy = -19.517731 +/- 0.080323
+    xPol = 0.066831 +/- 0.000919
+   == Total time for this step: 128.846634s
+
+>  t = 1.013159
+
+================================== whole step =============================================
+   Time step size: dt = 0.006508
+   Residuals: tdvp_err = 4.66e-02, solver_res = 1.75e-05
+    Energy = -19.363044 +/- 0.080102
+    xPol = 0.070450 +/- 0.000924
+   == Total time for this step: 129.644111s
+
+>  t = 1.019667
+
+================================== whole step =============================================
+   Time step size: dt = 0.006541
+   Residuals: tdvp_err = 4.92e-02, solver_res = 1.70e-05
+    Energy = -19.365913 +/- 0.080334
+    xPol = 0.074518 +/- 0.000930
+   == Total time for this step: 129.456875s
+
+>  t = 1.026208
+
+================================== whole step =============================================
+   Time step size: dt = 0.006340
+   Residuals: tdvp_err = 4.72e-02, solver_res = 1.70e-05
+    Energy = -19.589640 +/- 0.080578
+    xPol = 0.075715 +/- 0.000920
+   == Total time for this step: 129.057635s
+
+>  t = 1.032548
+
+================================== whole step =============================================
+   Time step size: dt = 0.006358
+   Residuals: tdvp_err = 4.76e-02, solver_res = 1.73e-05
+    Energy = -19.672855 +/- 0.080316
+    xPol = 0.079411 +/- 0.000932
+   == Total time for this step: 129.162622s
+
+>  t = 1.038906
+
+================================== whole step =============================================
+   Time step size: dt = 0.006226
+   Residuals: tdvp_err = 4.75e-02, solver_res = 1.69e-05
+    Energy = -19.683959 +/- 0.079033
+    xPol = 0.083656 +/- 0.000929
+   == Total time for this step: 128.618635s
+
+>  t = 1.045132
+
+================================== whole step =============================================
+   Time step size: dt = 0.006196
+   Residuals: tdvp_err = 4.76e-02, solver_res = 1.71e-05
+    Energy = -19.672904 +/- 0.080091
+    xPol = 0.087379 +/- 0.000939
+   == Total time for this step: 128.888522s
+
+>  t = 1.051327
+
+================================== whole step =============================================
+   Time step size: dt = 0.006294
+   Residuals: tdvp_err = 4.70e-02, solver_res = 1.75e-05
+    Energy = -19.371914 +/- 0.080073
+    xPol = 0.089238 +/- 0.000940
+   == Total time for this step: 129.404395s
+
+>  t = 1.057622
+
+================================== whole step =============================================
+   Time step size: dt = 0.006202
+   Residuals: tdvp_err = 4.88e-02, solver_res = 1.80e-05
+    Energy = -19.443136 +/- 0.081743
+    xPol = 0.092380 +/- 0.000938
+   == Total time for this step: 129.288252s
+
+>  t = 1.063824
+
+================================== whole step =============================================
+   Time step size: dt = 0.006164
+   Residuals: tdvp_err = 5.10e-02, solver_res = 1.78e-05
+    Energy = -19.635953 +/- 0.079712
+    xPol = 0.097678 +/- 0.000930
+   == Total time for this step: 128.739622s
+
+>  t = 1.069988
+
+================================== whole step =============================================
+   Time step size: dt = 0.006070
+   Residuals: tdvp_err = 5.09e-02, solver_res = 1.84e-05
+    Energy = -19.547336 +/- 0.079564
+    xPol = 0.104113 +/- 0.000942
+   == Total time for this step: 128.403116s
+
+>  t = 1.076057
+
+================================== whole step =============================================
+   Time step size: dt = 0.005972
+   Residuals: tdvp_err = 5.16e-02, solver_res = 1.85e-05
+    Energy = -19.561165 +/- 0.080877
+    xPol = 0.105808 +/- 0.000940
+   == Total time for this step: 128.674208s
+
+>  t = 1.082030
+
+================================== whole step =============================================
+   Time step size: dt = 0.006063
+   Residuals: tdvp_err = 4.62e-02, solver_res = 1.79e-05
+    Energy = -19.626688 +/- 0.080512
+    xPol = 0.111819 +/- 0.000955
+   == Total time for this step: 129.115240s
+
+>  t = 1.088092
+
+================================== whole step =============================================
+   Time step size: dt = 0.006106
+   Residuals: tdvp_err = 5.16e-02, solver_res = 1.90e-05
+    Energy = -19.595253 +/- 0.079223
+    xPol = 0.117268 +/- 0.000954
+   == Total time for this step: 128.812385s
+
+>  t = 1.094198
+
+================================== whole step =============================================
+   Time step size: dt = 0.006166
+   Residuals: tdvp_err = 5.09e-02, solver_res = 1.88e-05
+    Energy = -19.709867 +/- 0.080478
+    xPol = 0.121077 +/- 0.000967
+   == Total time for this step: 128.414637s
+
+>  t = 1.100364
+
+================================== whole step =============================================
+   Time step size: dt = 0.006039
+   Residuals: tdvp_err = 5.17e-02, solver_res = 1.87e-05
+    Energy = -19.312293 +/- 0.078947
+    xPol = 0.126786 +/- 0.000950
+   == Total time for this step: 128.390688s
+
+>  t = 1.106403
+
+================================== whole step =============================================
+   Time step size: dt = 0.006129
+   Residuals: tdvp_err = 5.22e-02, solver_res = 1.95e-05
+    Energy = -19.496911 +/- 0.079811
+    xPol = 0.134495 +/- 0.000956
+   == Total time for this step: 128.706076s
+
+>  t = 1.112532
+
+================================== whole step =============================================
+   Time step size: dt = 0.006094
+   Residuals: tdvp_err = 5.33e-02, solver_res = 1.89e-05
+    Energy = -19.507778 +/- 0.079648
+    xPol = 0.139138 +/- 0.000959
+   == Total time for this step: 129.367021s
+
+>  t = 1.118626
+
+================================== whole step =============================================
+   Time step size: dt = 0.006080
+   Residuals: tdvp_err = 5.11e-02, solver_res = 1.88e-05
+    Energy = -19.927841 +/- 0.080650
+    xPol = 0.142734 +/- 0.000962
+   == Total time for this step: 129.325161s
+
+>  t = 1.124705
+
+================================== whole step =============================================
+   Time step size: dt = 0.005891
+   Residuals: tdvp_err = 5.35e-02, solver_res = 1.96e-05
+    Energy = -19.499600 +/- 0.079621
+    xPol = 0.151139 +/- 0.000960
+   == Total time for this step: 128.404763s
+
+>  t = 1.130596
+
+================================== whole step =============================================
+   Time step size: dt = 0.005999
+   Residuals: tdvp_err = 5.09e-02, solver_res = 1.99e-05
+    Energy = -19.615927 +/- 0.079285
+    xPol = 0.157417 +/- 0.000963
+   == Total time for this step: 129.332664s
+
+>  t = 1.136596
+
+================================== whole step =============================================
+   Time step size: dt = 0.006060
+   Residuals: tdvp_err = 5.13e-02, solver_res = 1.86e-05
+    Energy = -19.376732 +/- 0.079260
+    xPol = 0.164562 +/- 0.000980
+   == Total time for this step: 128.896605s
+
+>  t = 1.142656
+
+================================== whole step =============================================
+   Time step size: dt = 0.005918
+   Residuals: tdvp_err = 5.27e-02, solver_res = 2.07e-05
+    Energy = -19.781133 +/- 0.080617
+    xPol = 0.170085 +/- 0.000977
+   == Total time for this step: 129.056575s
+
+>  t = 1.148573
+
+================================== whole step =============================================
+   Time step size: dt = 0.005884
+   Residuals: tdvp_err = 5.55e-02, solver_res = 1.97e-05
+    Energy = -19.777164 +/- 0.080550
+    xPol = 0.176532 +/- 0.000987
+   == Total time for this step: 129.491789s
+
+>  t = 1.154457
+
+================================== whole step =============================================
+   Time step size: dt = 0.005923
+   Residuals: tdvp_err = 5.40e-02, solver_res = 2.05e-05
+    Energy = -19.491337 +/- 0.079744
+    xPol = 0.184609 +/- 0.000982
+   == Total time for this step: 129.229996s
+
+>  t = 1.160380
+
+================================== whole step =============================================
+   Time step size: dt = 0.005877
+   Residuals: tdvp_err = 5.46e-02, solver_res = 2.01e-05
+    Energy = -19.581253 +/- 0.080261
+    xPol = 0.190702 +/- 0.000980
+   == Total time for this step: 128.845264s
+
+>  t = 1.166258
+
+================================== whole step =============================================
+   Time step size: dt = 0.005799
+   Residuals: tdvp_err = 5.50e-02, solver_res = 2.08e-05
+    Energy = -19.404618 +/- 0.079831
+    xPol = 0.202413 +/- 0.000992
+   == Total time for this step: 128.765102s
+
+>  t = 1.172057
+
+================================== whole step =============================================
+   Time step size: dt = 0.005721
+   Residuals: tdvp_err = 5.51e-02, solver_res = 1.95e-05
+    Energy = -19.516890 +/- 0.080510
+    xPol = 0.208627 +/- 0.000988
+   == Total time for this step: 128.960774s
+
+>  t = 1.177778
+
+================================== whole step =============================================
+   Time step size: dt = 0.005595
+   Residuals: tdvp_err = 5.26e-02, solver_res = 1.92e-05
+    Energy = -19.464167 +/- 0.081205
+    xPol = 0.213681 +/- 0.000987
+   == Total time for this step: 128.482255s
+
+>  t = 1.183373
+
+================================== whole step =============================================
+   Time step size: dt = 0.005659
+   Residuals: tdvp_err = 5.42e-02, solver_res = 2.05e-05
+    Energy = -19.464378 +/- 0.079162
+    xPol = 0.223382 +/- 0.001000
+   == Total time for this step: 128.872828s
+
+>  t = 1.189032
+
+================================== whole step =============================================
+   Time step size: dt = 0.005596
+   Residuals: tdvp_err = 5.52e-02, solver_res = 1.97e-05
+    Energy = -19.428726 +/- 0.080608
+    xPol = 0.230236 +/- 0.001005
+   == Total time for this step: 128.903639s
+
+>  t = 1.194629
+
+================================== whole step =============================================
+   Time step size: dt = 0.005526
+   Residuals: tdvp_err = 5.35e-02, solver_res = 2.01e-05
+    Energy = -19.571749 +/- 0.080384
+    xPol = 0.239794 +/- 0.001010
+   == Total time for this step: 128.794397s
+
+>  t = 1.200155
+
+================================== whole step =============================================
+   Time step size: dt = 0.005727
+   Residuals: tdvp_err = 5.64e-02, solver_res = 2.03e-05
+    Energy = -19.438357 +/- 0.080140
+    xPol = 0.248406 +/- 0.001015
+   == Total time for this step: 129.185608s
+
+>  t = 1.205882
+
+================================== whole step =============================================
+   Time step size: dt = 0.005679
+   Residuals: tdvp_err = 5.38e-02, solver_res = 1.97e-05
+    Energy = -19.411588 +/- 0.080164
+    xPol = 0.255737 +/- 0.001010
+   == Total time for this step: 128.584711s
+
+>  t = 1.211561
+
+================================== whole step =============================================
+   Time step size: dt = 0.005533
+   Residuals: tdvp_err = 5.39e-02, solver_res = 2.09e-05
+    Energy = -19.651072 +/- 0.080098
+    xPol = 0.262752 +/- 0.001014
+   == Total time for this step: 128.717485s
+
+>  t = 1.217094
+
+================================== whole step =============================================
+   Time step size: dt = 0.005692
+   Residuals: tdvp_err = 5.49e-02, solver_res = 1.99e-05
+    Energy = -19.718912 +/- 0.080567
+    xPol = 0.272721 +/- 0.001013
+   == Total time for this step: 129.156654s
+
+>  t = 1.222786
+
+================================== whole step =============================================
+   Time step size: dt = 0.005529
+   Residuals: tdvp_err = 5.41e-02, solver_res = 1.97e-05
+    Energy = -19.656866 +/- 0.080051
+    xPol = 0.280890 +/- 0.001011
+   == Total time for this step: 128.385041s
+
+>  t = 1.228315
+
+================================== whole step =============================================
+   Time step size: dt = 0.005745
+   Residuals: tdvp_err = 5.50e-02, solver_res = 2.07e-05
+    Energy = -19.655483 +/- 0.080364
+    xPol = 0.289318 +/- 0.001006
+   == Total time for this step: 128.841528s
+
+>  t = 1.234060
+
+================================== whole step =============================================
+   Time step size: dt = 0.005731
+   Residuals: tdvp_err = 5.20e-02, solver_res = 1.97e-05
+    Energy = -19.943629 +/- 0.079382
+    xPol = 0.296408 +/- 0.001015
+   == Total time for this step: 128.809525s
+
+>  t = 1.239790
+
+================================== whole step =============================================
+   Time step size: dt = 0.005545
+   Residuals: tdvp_err = 5.27e-02, solver_res = 1.99e-05
+    Energy = -19.582874 +/- 0.079195
+    xPol = 0.309488 +/- 0.001018
+   == Total time for this step: 128.826947s
+
+>  t = 1.245335
+
+================================== whole step =============================================
+   Time step size: dt = 0.005627
+   Residuals: tdvp_err = 5.72e-02, solver_res = 1.95e-05
+    Energy = -19.773147 +/- 0.080805
+    xPol = 0.317899 +/- 0.001032
+   == Total time for this step: 128.970534s
+
+>  t = 1.250962
+
+================================== whole step =============================================
+   Time step size: dt = 0.005526
+   Residuals: tdvp_err = 5.23e-02, solver_res = 1.95e-05
+    Energy = -19.676432 +/- 0.079772
+    xPol = 0.326176 +/- 0.001028
+   == Total time for this step: 128.027477s
+
+>  t = 1.256489
+
+================================== whole step =============================================
+   Time step size: dt = 0.005758
+   Residuals: tdvp_err = 5.46e-02, solver_res = 2.00e-05
+    Energy = -19.566528 +/- 0.081765
+    xPol = 0.334537 +/- 0.001040
+   == Total time for this step: 128.737533s
+
+>  t = 1.262246
+
+================================== whole step =============================================
+   Time step size: dt = 0.005872
+   Residuals: tdvp_err = 5.31e-02, solver_res = 1.98e-05
+    Energy = -19.514064 +/- 0.080576
+    xPol = 0.346482 +/- 0.001034
+   == Total time for this step: 128.919674s
+
+>  t = 1.268118
+
+================================== whole step =============================================
+   Time step size: dt = 0.005783
+   Residuals: tdvp_err = 5.51e-02, solver_res = 1.88e-05
+    Energy = -19.468949 +/- 0.080524
+    xPol = 0.357141 +/- 0.001025
+   == Total time for this step: 128.688543s
+
+>  t = 1.273901
+
+================================== whole step =============================================
+   Time step size: dt = 0.005635
+   Residuals: tdvp_err = 5.35e-02, solver_res = 1.96e-05
+    Energy = -19.422317 +/- 0.080110
+    xPol = 0.366491 +/- 0.001028
+   == Total time for this step: 128.506067s
+
+>  t = 1.279537
+
+================================== whole step =============================================
+   Time step size: dt = 0.005613
+   Residuals: tdvp_err = 5.14e-02, solver_res = 1.94e-05
+    Energy = -19.765529 +/- 0.080940
+    xPol = 0.372999 +/- 0.001031
+   == Total time for this step: 128.404610s
+
+>  t = 1.285150
+
+================================== whole step =============================================
+   Time step size: dt = 0.005558
+   Residuals: tdvp_err = 5.42e-02, solver_res = 1.88e-05
+    Energy = -19.606214 +/- 0.081116
+    xPol = 0.383361 +/- 0.001043
+   == Total time for this step: 129.304752s
+
+>  t = 1.290708
+
+================================== whole step =============================================
+   Time step size: dt = 0.005540
+   Residuals: tdvp_err = 5.75e-02, solver_res = 1.90e-05
+    Energy = -19.660735 +/- 0.080115
+    xPol = 0.393324 +/- 0.001034
+   == Total time for this step: 129.597398s
+
+>  t = 1.296248
+
+================================== whole step =============================================
+   Time step size: dt = 0.005545
+   Residuals: tdvp_err = 5.30e-02, solver_res = 1.91e-05
+    Energy = -19.652047 +/- 0.080810
+    xPol = 0.400433 +/- 0.001040
+   == Total time for this step: 128.427184s
+
+>  t = 1.301793
+
+================================== whole step =============================================
+   Time step size: dt = 0.005657
+   Residuals: tdvp_err = 5.36e-02, solver_res = 1.94e-05
+    Energy = -19.526839 +/- 0.080220
+    xPol = 0.412750 +/- 0.001042
+   == Total time for this step: 128.744117s
+
+>  t = 1.307450
+
+================================== whole step =============================================
+   Time step size: dt = 0.005411
+   Residuals: tdvp_err = 5.49e-02, solver_res = 1.89e-05
+    Energy = -19.561244 +/- 0.079450
+    xPol = 0.423487 +/- 0.001046
+   == Total time for this step: 128.869505s
+
+>  t = 1.312861
+
+================================== whole step =============================================
+   Time step size: dt = 0.005303
+   Residuals: tdvp_err = 5.64e-02, solver_res = 1.98e-05
+    Energy = -19.656732 +/- 0.081144
+    xPol = 0.429846 +/- 0.001044
+   == Total time for this step: 128.715110s
+
+>  t = 1.318164
+
+================================== whole step =============================================
+   Time step size: dt = 0.005377
+   Residuals: tdvp_err = 5.75e-02, solver_res = 1.85e-05
+    Energy = -19.571234 +/- 0.080315
+    xPol = 0.441882 +/- 0.001046
+   == Total time for this step: 129.065523s
+
+>  t = 1.323541
+
+================================== whole step =============================================
+   Time step size: dt = 0.005435
+   Residuals: tdvp_err = 5.32e-02, solver_res = 1.83e-05
+    Energy = -19.420634 +/- 0.080748
+    xPol = 0.450617 +/- 0.001051
+   == Total time for this step: 128.261007s
+
+>  t = 1.328977
+
+================================== whole step =============================================
+   Time step size: dt = 0.005332
+   Residuals: tdvp_err = 5.43e-02, solver_res = 1.82e-05
+    Energy = -19.528141 +/- 0.081287
+    xPol = 0.458845 +/- 0.001054
+   == Total time for this step: 128.220433s
+
+>  t = 1.334309
+
+================================== whole step =============================================
+   Time step size: dt = 0.005485
+   Residuals: tdvp_err = 5.74e-02, solver_res = 1.82e-05
+    Energy = -19.459981 +/- 0.080541
+    xPol = 0.469881 +/- 0.001056
+   == Total time for this step: 129.086189s
+
+>  t = 1.339794
+
+================================== whole step =============================================
+   Time step size: dt = 0.005202
+   Residuals: tdvp_err = 5.64e-02, solver_res = 1.96e-05
+    Energy = -19.238514 +/- 0.081041
+    xPol = 0.478757 +/- 0.001045
+   == Total time for this step: 128.400631s
+
+>  t = 1.344996
+
+================================== whole step =============================================
+   Time step size: dt = 0.005352
+   Residuals: tdvp_err = 5.72e-02, solver_res = 1.98e-05
+    Energy = -19.695683 +/- 0.080343
+    xPol = 0.481937 +/- 0.001047
+   == Total time for this step: 128.420355s
+
+>  t = 1.350348
+
+================================== whole step =============================================
+   Time step size: dt = 0.005224
+   Residuals: tdvp_err = 5.84e-02, solver_res = 2.15e-05
+    Energy = -19.513182 +/- 0.080828
+    xPol = 0.493162 +/- 0.001045
+   == Total time for this step: 128.817948s
+
+>  t = 1.355572
+
+================================== whole step =============================================
+   Time step size: dt = 0.005334
+   Residuals: tdvp_err = 5.69e-02, solver_res = 1.85e-05
+    Energy = -19.645785 +/- 0.081674
+    xPol = 0.501672 +/- 0.001050
+   == Total time for this step: 128.375257s
+
+>  t = 1.360906
+
+================================== whole step =============================================
+   Time step size: dt = 0.005274
+   Residuals: tdvp_err = 5.83e-02, solver_res = 1.93e-05
+    Energy = -19.504187 +/- 0.079991
+    xPol = 0.510315 +/- 0.001046
+   == Total time for this step: 129.126513s
+
+>  t = 1.366180
+
+================================== whole step =============================================
+   Time step size: dt = 0.005141
+   Residuals: tdvp_err = 5.96e-02, solver_res = 1.98e-05
+    Energy = -19.692565 +/- 0.080442
+    xPol = 0.519449 +/- 0.001051
+   == Total time for this step: 130.120044s
+
+>  t = 1.371321
+
+================================== whole step =============================================
+   Time step size: dt = 0.005226
+   Residuals: tdvp_err = 6.64e-02, solver_res = 1.96e-05
+    Energy = -19.635649 +/- 0.079945
+    xPol = 0.527943 +/- 0.001048
+   == Total time for this step: 129.176837s
+
+>  t = 1.376547
+
+================================== whole step =============================================
+   Time step size: dt = 0.005121
+   Residuals: tdvp_err = 6.21e-02, solver_res = 1.84e-05
+    Energy = -19.456879 +/- 0.080872
+    xPol = 0.535335 +/- 0.001057
+   == Total time for this step: 128.855326s
+
+>  t = 1.381668
+
+================================== whole step =============================================
+   Time step size: dt = 0.005182
+   Residuals: tdvp_err = 5.92e-02, solver_res = 1.77e-05
+    Energy = -19.590594 +/- 0.080468
+    xPol = 0.541274 +/- 0.001057
+   == Total time for this step: 128.981300s
+
+>  t = 1.386850
+
+================================== whole step =============================================
+   Time step size: dt = 0.005122
+   Residuals: tdvp_err = 5.81e-02, solver_res = 1.81e-05
+    Energy = -19.526152 +/- 0.079696
+    xPol = 0.550120 +/- 0.001049
+   == Total time for this step: 128.792401s
+
+>  t = 1.391971
+
+================================== whole step =============================================
+   Time step size: dt = 0.005071
+   Residuals: tdvp_err = 5.88e-02, solver_res = 1.90e-05
+    Energy = -19.640097 +/- 0.080669
+    xPol = 0.557836 +/- 0.001054
+   == Total time for this step: 128.355706s
+
+>  t = 1.397043
+
+================================== whole step =============================================
+   Time step size: dt = 0.005042
+   Residuals: tdvp_err = 5.98e-02, solver_res = 1.83e-05
+    Energy = -19.607762 +/- 0.081742
+    xPol = 0.565271 +/- 0.001052
+   == Total time for this step: 128.774011s
+
+>  t = 1.402085
+
+================================== whole step =============================================
+   Time step size: dt = 0.004972
+   Residuals: tdvp_err = 6.00e-02, solver_res = 1.73e-05
+    Energy = -19.606589 +/- 0.080403
+    xPol = 0.572129 +/- 0.001049
+   == Total time for this step: 128.777089s
+
+>  t = 1.407057
+
+================================== whole step =============================================
+   Time step size: dt = 0.004981
+   Residuals: tdvp_err = 6.21e-02, solver_res = 1.85e-05
+    Energy = -19.774307 +/- 0.080932
+    xPol = 0.578151 +/- 0.001048
+   == Total time for this step: 128.563886s
+
+>  t = 1.412038
+
+================================== whole step =============================================
+   Time step size: dt = 0.004907
+   Residuals: tdvp_err = 6.75e-02, solver_res = 1.81e-05
+    Energy = -19.372686 +/- 0.081042
+    xPol = 0.587696 +/- 0.001058
+   == Total time for this step: 129.265731s
+
+>  t = 1.416945
+
+================================== whole step =============================================
+   Time step size: dt = 0.004883
+   Residuals: tdvp_err = 6.41e-02, solver_res = 1.79e-05
+    Energy = -19.446782 +/- 0.080951
+    xPol = 0.593942 +/- 0.001062
+   == Total time for this step: 129.169728s
+
+>  t = 1.421828
+
+================================== whole step =============================================
+   Time step size: dt = 0.005061
+   Residuals: tdvp_err = 6.17e-02, solver_res = 1.78e-05
+    Energy = -19.494605 +/- 0.080433
+    xPol = 0.599229 +/- 0.001055
+   == Total time for this step: 128.678548s
+
+>  t = 1.426888
+
+================================== whole step =============================================
+   Time step size: dt = 0.005003
+   Residuals: tdvp_err = 6.40e-02, solver_res = 1.77e-05
+    Energy = -19.622926 +/- 0.080847
+    xPol = 0.606903 +/- 0.001057
+   == Total time for this step: 128.689037s
+
+>  t = 1.431892
+
+================================== whole step =============================================
+   Time step size: dt = 0.004984
+   Residuals: tdvp_err = 6.33e-02, solver_res = 1.77e-05
+    Energy = -19.817664 +/- 0.080507
+    xPol = 0.612053 +/- 0.001057
+   == Total time for this step: 129.147950s
+
+>  t = 1.436875
+
+================================== whole step =============================================
+   Time step size: dt = 0.004794
+   Residuals: tdvp_err = 6.30e-02, solver_res = 1.70e-05
+    Energy = -19.294119 +/- 0.080052
+    xPol = 0.618913 +/- 0.001046
+   == Total time for this step: 128.346480s
+
+>  t = 1.441669
+
+================================== whole step =============================================
+   Time step size: dt = 0.004832
+   Residuals: tdvp_err = 6.20e-02, solver_res = 1.63e-05
+    Energy = -19.611799 +/- 0.081177
+    xPol = 0.624686 +/- 0.001061
+   == Total time for this step: 130.250344s
+
+>  t = 1.446501
+
+================================== whole step =============================================
+   Time step size: dt = 0.004972
+   Residuals: tdvp_err = 6.52e-02, solver_res = 1.66e-05
+    Energy = -19.462753 +/- 0.080289
+    xPol = 0.630791 +/- 0.001063
+   == Total time for this step: 129.354017s
+
+>  t = 1.451473
+
+================================== whole step =============================================
+   Time step size: dt = 0.005085
+   Residuals: tdvp_err = 6.78e-02, solver_res = 1.66e-05
+    Energy = -19.391635 +/- 0.080441
+    xPol = 0.635681 +/- 0.001061
+   == Total time for this step: 128.936261s
+
+>  t = 1.456558
+
+================================== whole step =============================================
+   Time step size: dt = 0.005015
+   Residuals: tdvp_err = 6.26e-02, solver_res = 1.73e-05
+    Energy = -19.652391 +/- 0.081211
+    xPol = 0.641612 +/- 0.001061
+   == Total time for this step: 129.393286s
+
+>  t = 1.461573
+
+================================== whole step =============================================
+   Time step size: dt = 0.004820
+   Residuals: tdvp_err = 6.05e-02, solver_res = 1.55e-05
+    Energy = -19.637569 +/- 0.080440
+    xPol = 0.645142 +/- 0.001061
+   == Total time for this step: 129.200628s
+
+>  t = 1.466393
+
+================================== whole step =============================================
+   Time step size: dt = 0.004966
+   Residuals: tdvp_err = 6.22e-02, solver_res = 1.54e-05
+    Energy = -19.514521 +/- 0.080129
+    xPol = 0.650385 +/- 0.001056
+   == Total time for this step: 129.432507s
+
+>  t = 1.471359
+
+================================== whole step =============================================
+   Time step size: dt = 0.004916
+   Residuals: tdvp_err = 6.42e-02, solver_res = 1.62e-05
+    Energy = -19.763492 +/- 0.081495
+    xPol = 0.653596 +/- 0.001069
+   == Total time for this step: 129.187896s
+
+>  t = 1.476275
+
+================================== whole step =============================================
+   Time step size: dt = 0.004883
+   Residuals: tdvp_err = 6.56e-02, solver_res = 1.57e-05
+    Energy = -19.593895 +/- 0.080739
+    xPol = 0.659632 +/- 0.001059
+   == Total time for this step: 129.047717s
+
+>  t = 1.481158
+
+================================== whole step =============================================
+   Time step size: dt = 0.004851
+   Residuals: tdvp_err = 6.41e-02, solver_res = 1.59e-05
+    Energy = -19.727993 +/- 0.079479
+    xPol = 0.662614 +/- 0.001046
+   == Total time for this step: 128.627868s
+
+>  t = 1.486010
+
+================================== whole step =============================================
+   Time step size: dt = 0.004964
+   Residuals: tdvp_err = 6.73e-02, solver_res = 1.49e-05
+    Energy = -19.649284 +/- 0.081260
+    xPol = 0.667936 +/- 0.001062
+   == Total time for this step: 128.421095s
+
+>  t = 1.490974
+
+================================== whole step =============================================
+   Time step size: dt = 0.004990
+   Residuals: tdvp_err = 5.92e-02, solver_res = 1.42e-05
+    Energy = -19.716447 +/- 0.080815
+    xPol = 0.670623 +/- 0.001063
+   == Total time for this step: 128.433644s
+
+>  t = 1.495963
+
+================================== whole step =============================================
+   Time step size: dt = 0.005053
+   Residuals: tdvp_err = 6.42e-02, solver_res = 1.42e-05
+    Energy = -19.508032 +/- 0.080519
+    xPol = 0.676104 +/- 0.001062
+   == Total time for this step: 128.809964s
+
+>  t = 1.501016
+
+================================== whole step =============================================
+   Time step size: dt = 0.005070
+   Residuals: tdvp_err = 6.24e-02, solver_res = 1.45e-05
+    Energy = -19.495252 +/- 0.081051
+    xPol = 0.677214 +/- 0.001042
+   == Total time for this step: 129.052919s
+
+>  t = 1.506086
+
+================================== whole step =============================================
+   Time step size: dt = 0.005045
+   Residuals: tdvp_err = 6.12e-02, solver_res = 1.37e-05
+    Energy = -19.595102 +/- 0.080881
+    xPol = 0.680532 +/- 0.001063
+   == Total time for this step: 128.810031s
+
+>  t = 1.511131
+
+================================== whole step =============================================
+   Time step size: dt = 0.005067
+   Residuals: tdvp_err = 5.76e-02, solver_res = 1.43e-05
+    Energy = -19.503282 +/- 0.081930
+    xPol = 0.684113 +/- 0.001051
+   == Total time for this step: 128.819542s
+
+>  t = 1.516198
+
+================================== whole step =============================================
+   Time step size: dt = 0.005123
+   Residuals: tdvp_err = 6.11e-02, solver_res = 1.41e-05
+    Energy = -19.442907 +/- 0.080706
+    xPol = 0.688159 +/- 0.001058
+   == Total time for this step: 128.851699s
+
+>  t = 1.521321
+
+================================== whole step =============================================
+   Time step size: dt = 0.005099
+   Residuals: tdvp_err = 6.01e-02, solver_res = 1.39e-05
+    Energy = -19.489219 +/- 0.080755
+    xPol = 0.688852 +/- 0.001065
+   == Total time for this step: 129.677255s
+
+>  t = 1.526420
+
+================================== whole step =============================================
+   Time step size: dt = 0.005211
+   Residuals: tdvp_err = 6.07e-02, solver_res = 1.39e-05
+    Energy = -19.625149 +/- 0.081014
+    xPol = 0.689341 +/- 0.001059
+   == Total time for this step: 128.842716s
+
+>  t = 1.531632
+
+================================== whole step =============================================
+   Time step size: dt = 0.005373
+   Residuals: tdvp_err = 6.16e-02, solver_res = 1.29e-05
+    Energy = -19.484977 +/- 0.081569
+    xPol = 0.694506 +/- 0.001066
+   == Total time for this step: 128.349623s
+
+>  t = 1.537005
+
+================================== whole step =============================================
+   Time step size: dt = 0.005262
+   Residuals: tdvp_err = 6.13e-02, solver_res = 1.30e-05
+    Energy = -19.634874 +/- 0.079802
+    xPol = 0.697560 +/- 0.001070
+   == Total time for this step: 128.362880s
+
+>  t = 1.542267
+
+================================== whole step =============================================
+   Time step size: dt = 0.005113
+   Residuals: tdvp_err = 6.08e-02, solver_res = 1.29e-05
+    Energy = -19.626704 +/- 0.080742
+    xPol = 0.697017 +/- 0.001069
+   == Total time for this step: 128.801885s
+
+>  t = 1.547380
+
+================================== whole step =============================================
+   Time step size: dt = 0.005183
+   Residuals: tdvp_err = 5.69e-02, solver_res = 1.24e-05
+    Energy = -19.550712 +/- 0.079884
+    xPol = 0.698968 +/- 0.001066
+   == Total time for this step: 128.992477s
+
+>  t = 1.552563
+
+================================== whole step =============================================
+   Time step size: dt = 0.005117
+   Residuals: tdvp_err = 5.92e-02, solver_res = 1.29e-05
+    Energy = -19.517807 +/- 0.080654
+    xPol = 0.697587 +/- 0.001073
+   == Total time for this step: 128.756496s
+
+>  t = 1.557681
+
+================================== whole step =============================================
+   Time step size: dt = 0.005195
+   Residuals: tdvp_err = 5.81e-02, solver_res = 1.28e-05
+    Energy = -19.464564 +/- 0.081003
+    xPol = 0.698899 +/- 0.001063
+   == Total time for this step: 128.499230s
+
+>  t = 1.562876
+
+================================== whole step =============================================
+   Time step size: dt = 0.005243
+   Residuals: tdvp_err = 5.49e-02, solver_res = 1.23e-05
+    Energy = -19.319818 +/- 0.080505
+    xPol = 0.699517 +/- 0.001056
+   == Total time for this step: 128.915197s
+
+>  t = 1.568120
+
+================================== whole step =============================================
+   Time step size: dt = 0.005192
+   Residuals: tdvp_err = 5.42e-02, solver_res = 1.25e-05
+    Energy = -19.954173 +/- 0.080770
+    xPol = 0.701034 +/- 0.001066
+   == Total time for this step: 129.023283s
+
+>  t = 1.573312
+
+================================== whole step =============================================
+   Time step size: dt = 0.005224
+   Residuals: tdvp_err = 5.75e-02, solver_res = 1.21e-05
+    Energy = -19.503590 +/- 0.081399
+    xPol = 0.701949 +/- 0.001060
+   == Total time for this step: 129.247664s
+
+>  t = 1.578536
+
+================================== whole step =============================================
+   Time step size: dt = 0.005375
+   Residuals: tdvp_err = 5.74e-02, solver_res = 1.27e-05
+    Energy = -19.700528 +/- 0.081280
+    xPol = 0.700272 +/- 0.001077
+   == Total time for this step: 128.443856s
+
+>  t = 1.583912
+
+================================== whole step =============================================
+   Time step size: dt = 0.005460
+   Residuals: tdvp_err = 5.50e-02, solver_res = 1.20e-05
+    Energy = -19.499987 +/- 0.080740
+    xPol = 0.700368 +/- 0.001074
+   == Total time for this step: 129.007174s
+
+>  t = 1.589371
+
+================================== whole step =============================================
+   Time step size: dt = 0.005553
+   Residuals: tdvp_err = 5.32e-02, solver_res = 1.14e-05
+    Energy = -19.654429 +/- 0.081380
+    xPol = 0.698789 +/- 0.001068
+   == Total time for this step: 128.418975s
+
+>  t = 1.594924
+
+================================== whole step =============================================
+   Time step size: dt = 0.005432
+   Residuals: tdvp_err = 5.23e-02, solver_res = 1.17e-05
+    Energy = -19.479519 +/- 0.079935
+    xPol = 0.699256 +/- 0.001069
+   == Total time for this step: 129.109852s
+
+>  t = 1.600356
+
+================================== whole step =============================================
+   Time step size: dt = 0.005394
+   Residuals: tdvp_err = 5.40e-02, solver_res = 1.15e-05
+    Energy = -19.552672 +/- 0.081470
+    xPol = 0.698124 +/- 0.001087
+   == Total time for this step: 127.881859s
+
+>  t = 1.605750
+
+================================== whole step =============================================
+   Time step size: dt = 0.005282
+   Residuals: tdvp_err = 5.25e-02, solver_res = 1.12e-05
+    Energy = -19.484991 +/- 0.081200
+    xPol = 0.695656 +/- 0.001078
+   == Total time for this step: 129.788711s
+
+>  t = 1.611031
+
+================================== whole step =============================================
+   Time step size: dt = 0.005304
+   Residuals: tdvp_err = 5.31e-02, solver_res = 1.14e-05
+    Energy = -19.581411 +/- 0.080573
+    xPol = 0.692434 +/- 0.001074
+   == Total time for this step: 129.313349s
+
+>  t = 1.616335
+
+================================== whole step =============================================
+   Time step size: dt = 0.005479
+   Residuals: tdvp_err = 5.03e-02, solver_res = 1.08e-05
+    Energy = -19.473464 +/- 0.080204
+    xPol = 0.693114 +/- 0.001076
+   == Total time for this step: 128.998472s
+
+>  t = 1.621814
+
+================================== whole step =============================================
+   Time step size: dt = 0.005436
+   Residuals: tdvp_err = 5.10e-02, solver_res = 1.14e-05
+    Energy = -19.504974 +/- 0.081096
+    xPol = 0.689599 +/- 0.001081
+   == Total time for this step: 129.073535s
+
+>  t = 1.627249
+
+================================== whole step =============================================
+   Time step size: dt = 0.005367
+   Residuals: tdvp_err = 5.13e-02, solver_res = 1.06e-05
+    Energy = -19.362166 +/- 0.080200
+    xPol = 0.686150 +/- 0.001078
+   == Total time for this step: 128.217537s
+
+>  t = 1.632616
+
+================================== whole step =============================================
+   Time step size: dt = 0.005447
+   Residuals: tdvp_err = 5.02e-02, solver_res = 1.12e-05
+    Energy = -19.652525 +/- 0.081071
+    xPol = 0.683540 +/- 0.001087
+   == Total time for this step: 128.324019s
+
+>  t = 1.638063
+
+================================== whole step =============================================
+   Time step size: dt = 0.005435
+   Residuals: tdvp_err = 5.15e-02, solver_res = 1.11e-05
+    Energy = -19.555542 +/- 0.080062
+    xPol = 0.681909 +/- 0.001074
+   == Total time for this step: 128.276039s
+
+>  t = 1.643498
+
+================================== whole step =============================================
+   Time step size: dt = 0.005491
+   Residuals: tdvp_err = 5.29e-02, solver_res = 1.14e-05
+    Energy = -19.325104 +/- 0.080041
+    xPol = 0.677842 +/- 0.001091
+   == Total time for this step: 128.905289s
+
+>  t = 1.648989
+
+================================== whole step =============================================
+   Time step size: dt = 0.005751
+   Residuals: tdvp_err = 5.32e-02, solver_res = 1.11e-05
+    Energy = -19.340382 +/- 0.080103
+    xPol = 0.675178 +/- 0.001093
+   == Total time for this step: 128.929943s
+
+>  t = 1.654740
+
+================================== whole step =============================================
+   Time step size: dt = 0.005698
+   Residuals: tdvp_err = 5.07e-02, solver_res = 1.11e-05
+    Energy = -19.390323 +/- 0.080502
+    xPol = 0.669960 +/- 0.001088
+   == Total time for this step: 129.020186s
+
+>  t = 1.660438
+
+================================== whole step =============================================
+   Time step size: dt = 0.005530
+   Residuals: tdvp_err = 5.16e-02, solver_res = 1.10e-05
+    Energy = -19.616464 +/- 0.080902
+    xPol = 0.665348 +/- 0.001097
+   == Total time for this step: 128.629196s
+
+>  t = 1.665969
+
+================================== whole step =============================================
+   Time step size: dt = 0.005539
+   Residuals: tdvp_err = 5.06e-02, solver_res = 1.08e-05
+    Energy = -19.506777 +/- 0.081619
+    xPol = 0.662490 +/- 0.001083
+   == Total time for this step: 128.621378s
+
+>  t = 1.671507
+
+================================== whole step =============================================
+   Time step size: dt = 0.005471
+   Residuals: tdvp_err = 5.08e-02, solver_res = 1.05e-05
+    Energy = -19.563964 +/- 0.081731
+    xPol = 0.658815 +/- 0.001090
+   == Total time for this step: 128.140793s
+
+>  t = 1.676979
+
+================================== whole step =============================================
+   Time step size: dt = 0.005573
+   Residuals: tdvp_err = 4.82e-02, solver_res = 1.09e-05
+    Energy = -19.689037 +/- 0.080865
+    xPol = 0.654066 +/- 0.001105
+   == Total time for this step: 128.762551s
+
+>  t = 1.682551
+
+================================== whole step =============================================
+   Time step size: dt = 0.005774
+   Residuals: tdvp_err = 5.28e-02, solver_res = 1.07e-05
+    Energy = -19.583965 +/- 0.079858
+    xPol = 0.649392 +/- 0.001083
+   == Total time for this step: 128.251625s
+
+>  t = 1.688326
+
+================================== whole step =============================================
+   Time step size: dt = 0.005616
+   Residuals: tdvp_err = 4.83e-02, solver_res = 1.09e-05
+    Energy = -19.700315 +/- 0.080749
+    xPol = 0.644585 +/- 0.001098
+   == Total time for this step: 128.481618s
+
+>  t = 1.693942
+
+================================== whole step =============================================
+   Time step size: dt = 0.005609
+   Residuals: tdvp_err = 4.94e-02, solver_res = 1.04e-05
+    Energy = -19.440276 +/- 0.080556
+    xPol = 0.638465 +/- 0.001096
+   == Total time for this step: 128.145126s
+
+>  t = 1.699551
+
+================================== whole step =============================================
+   Time step size: dt = 0.005661
+   Residuals: tdvp_err = 5.46e-02, solver_res = 1.11e-05
+    Energy = -19.500334 +/- 0.081242
+    xPol = 0.633233 +/- 0.001100
+   == Total time for this step: 130.134940s
+
+>  t = 1.705212
+
+================================== whole step =============================================
+   Time step size: dt = 0.005750
+   Residuals: tdvp_err = 5.08e-02, solver_res = 1.11e-05
+    Energy = -19.710172 +/- 0.080867
+    xPol = 0.627086 +/- 0.001115
+   == Total time for this step: 128.836700s
+
+>  t = 1.710962
+
+================================== whole step =============================================
+   Time step size: dt = 0.005800
+   Residuals: tdvp_err = 5.09e-02, solver_res = 1.08e-05
+    Energy = -19.630684 +/- 0.079659
+    xPol = 0.622145 +/- 0.001094
+   == Total time for this step: 128.618644s
+
+>  t = 1.716762
+
+================================== whole step =============================================
+   Time step size: dt = 0.005773
+   Residuals: tdvp_err = 4.87e-02, solver_res = 1.03e-05
+    Energy = -19.565368 +/- 0.079443
+    xPol = 0.615980 +/- 0.001094
+   == Total time for this step: 128.766313s
+
+>  t = 1.722536
+
+================================== whole step =============================================
+   Time step size: dt = 0.005748
+   Residuals: tdvp_err = 5.06e-02, solver_res = 1.05e-05
+    Energy = -19.483302 +/- 0.080698
+    xPol = 0.610556 +/- 0.001093
+   == Total time for this step: 128.268071s
+
+>  t = 1.728284
+
+================================== whole step =============================================
+   Time step size: dt = 0.005738
+   Residuals: tdvp_err = 4.82e-02, solver_res = 1.00e-05
+    Energy = -19.808337 +/- 0.080503
+    xPol = 0.604820 +/- 0.001102
+   == Total time for this step: 128.659197s
+
+>  t = 1.734022
+
+================================== whole step =============================================
+   Time step size: dt = 0.005828
+   Residuals: tdvp_err = 5.15e-02, solver_res = 1.04e-05
+    Energy = -19.456676 +/- 0.081456
+    xPol = 0.598083 +/- 0.001103
+   == Total time for this step: 128.399004s
+
+>  t = 1.739850
+
+================================== whole step =============================================
+   Time step size: dt = 0.005583
+   Residuals: tdvp_err = 4.96e-02, solver_res = 1.07e-05
+    Energy = -19.728241 +/- 0.080984
+    xPol = 0.592395 +/- 0.001097
+   == Total time for this step: 128.244444s
+
+>  t = 1.745433
+
+================================== whole step =============================================
+   Time step size: dt = 0.005786
+   Residuals: tdvp_err = 4.74e-02, solver_res = 1.03e-05
+    Energy = -19.543809 +/- 0.081473
+    xPol = 0.584140 +/- 0.001107
+   == Total time for this step: 128.232947s
+
+>  t = 1.751220
+
+================================== whole step =============================================
+   Time step size: dt = 0.005790
+   Residuals: tdvp_err = 5.06e-02, solver_res = 1.05e-05
+    Energy = -19.552843 +/- 0.081239
+    xPol = 0.576926 +/- 0.001116
+   == Total time for this step: 129.029367s
+
+>  t = 1.757010
+
+================================== whole step =============================================
+   Time step size: dt = 0.005872
+   Residuals: tdvp_err = 5.16e-02, solver_res = 1.07e-05
+    Energy = -19.439191 +/- 0.079669
+    xPol = 0.571524 +/- 0.001109
+   == Total time for this step: 129.128978s
+
+>  t = 1.762882
+
+================================== whole step =============================================
+   Time step size: dt = 0.005875
+   Residuals: tdvp_err = 5.00e-02, solver_res = 1.04e-05
+    Energy = -19.539409 +/- 0.080233
+    xPol = 0.563652 +/- 0.001104
+   == Total time for this step: 128.600188s
+
+>  t = 1.768758
+
+================================== whole step =============================================
+   Time step size: dt = 0.005806
+   Residuals: tdvp_err = 5.16e-02, solver_res = 1.06e-05
+    Energy = -19.697896 +/- 0.080740
+    xPol = 0.557723 +/- 0.001108
+   == Total time for this step: 128.755439s
+
+>  t = 1.774563
+
+================================== whole step =============================================
+   Time step size: dt = 0.005806
+   Residuals: tdvp_err = 4.87e-02, solver_res = 1.06e-05
+    Energy = -19.502301 +/- 0.081543
+    xPol = 0.549902 +/- 0.001125
+   == Total time for this step: 128.731348s
+
+>  t = 1.780369
+
+================================== whole step =============================================
+   Time step size: dt = 0.005587
+   Residuals: tdvp_err = 5.22e-02, solver_res = 1.07e-05
+    Energy = -19.487319 +/- 0.080619
+    xPol = 0.542974 +/- 0.001109
+   == Total time for this step: 128.610357s
+
+>  t = 1.785956
+
+================================== whole step =============================================
+   Time step size: dt = 0.005801
+   Residuals: tdvp_err = 5.10e-02, solver_res = 1.11e-05
+    Energy = -19.582793 +/- 0.080729
+    xPol = 0.536008 +/- 0.001108
+   == Total time for this step: 129.022743s
+
+>  t = 1.791757
+
+================================== whole step =============================================
+   Time step size: dt = 0.005864
+   Residuals: tdvp_err = 5.00e-02, solver_res = 1.08e-05
+    Energy = -19.823359 +/- 0.081487
+    xPol = 0.530843 +/- 0.001195
+   == Total time for this step: 128.844262s
+
+>  t = 1.797621
+
+================================== whole step =============================================
+   Time step size: dt = 0.005984
+   Residuals: tdvp_err = 5.71e-02, solver_res = 1.09e-05
+    Energy = -19.634557 +/- 0.079611
+    xPol = 0.520619 +/- 0.001114
+   == Total time for this step: 128.796854s
+
+>  t = 1.803605
+
+================================== whole step =============================================
+   Time step size: dt = 0.005849
+   Residuals: tdvp_err = 5.18e-02, solver_res = 1.05e-05
+    Energy = -19.686857 +/- 0.080554
+    xPol = 0.515954 +/- 0.001110
+   == Total time for this step: 128.397672s
+
+>  t = 1.809454
+
+================================== whole step =============================================
+   Time step size: dt = 0.005641
+   Residuals: tdvp_err = 5.64e-02, solver_res = 1.14e-05
+    Energy = -19.413081 +/- 0.078973
+    xPol = 0.508985 +/- 0.001096
+   == Total time for this step: 129.978307s
+
+>  t = 1.815095
+
+================================== whole step =============================================
+   Time step size: dt = 0.005592
+   Residuals: tdvp_err = 5.02e-02, solver_res = 1.11e-05
+    Energy = -19.507728 +/- 0.081054
+    xPol = 0.500334 +/- 0.001120
+   == Total time for this step: 128.135326s
+
+>  t = 1.820687
+
+================================== whole step =============================================
+   Time step size: dt = 0.005716
+   Residuals: tdvp_err = 5.61e-02, solver_res = 1.12e-05
+    Energy = -19.386428 +/- 0.080998
+    xPol = 0.494129 +/- 0.001109
+   == Total time for this step: 129.065647s
+
+>  t = 1.826403
+
+================================== whole step =============================================
+   Time step size: dt = 0.005542
+   Residuals: tdvp_err = 5.63e-02, solver_res = 1.12e-05
+    Energy = -19.630238 +/- 0.081667
+    xPol = 0.487016 +/- 0.001114
+   == Total time for this step: 128.907366s
+
+>  t = 1.831945
+
+================================== whole step =============================================
+   Time step size: dt = 0.005510
+   Residuals: tdvp_err = 5.85e-02, solver_res = 1.15e-05
+    Energy = -19.401348 +/- 0.080904
+    xPol = 0.479210 +/- 0.001100
+   == Total time for this step: 128.707447s
+
+>  t = 1.837455
+
+================================== whole step =============================================
+   Time step size: dt = 0.005574
+   Residuals: tdvp_err = 6.01e-02, solver_res = 1.16e-05
+    Energy = -19.292233 +/- 0.080323
+    xPol = 0.472378 +/- 0.001105
+   == Total time for this step: 128.877550s
+
+>  t = 1.843029
+
+================================== whole step =============================================
+   Time step size: dt = 0.005489
+   Residuals: tdvp_err = 5.60e-02, solver_res = 1.18e-05
+    Energy = -19.435190 +/- 0.079963
+    xPol = 0.465612 +/- 0.001103
+   == Total time for this step: 128.850041s
+
+>  t = 1.848519
+
+================================== whole step =============================================
+   Time step size: dt = 0.005395
+   Residuals: tdvp_err = 5.73e-02, solver_res = 1.12e-05
+    Energy = -19.702858 +/- 0.079910
+    xPol = 0.459189 +/- 0.001106
+   == Total time for this step: 128.788508s
+
+>  t = 1.853913
+
+================================== whole step =============================================
+   Time step size: dt = 0.005517
+   Residuals: tdvp_err = 5.99e-02, solver_res = 1.18e-05
+    Energy = -19.563620 +/- 0.079828
+    xPol = 0.454383 +/- 0.001086
+   == Total time for this step: 128.467185s
+
+>  t = 1.859430
+
+================================== whole step =============================================
+   Time step size: dt = 0.005337
+   Residuals: tdvp_err = 5.89e-02, solver_res = 1.18e-05
+    Energy = -19.395999 +/- 0.080903
+    xPol = 0.447731 +/- 0.001099
+   == Total time for this step: 128.802289s
+
+>  t = 1.864767
+
+================================== whole step =============================================
+   Time step size: dt = 0.005282
+   Residuals: tdvp_err = 6.28e-02, solver_res = 1.16e-05
+    Energy = -19.742129 +/- 0.079299
+    xPol = 0.443057 +/- 0.001106
+   == Total time for this step: 128.617058s
+
+>  t = 1.870049
+
+================================== whole step =============================================
+   Time step size: dt = 0.005216
+   Residuals: tdvp_err = 6.40e-02, solver_res = 1.18e-05
+    Energy = -19.558025 +/- 0.080699
+    xPol = 0.433505 +/- 0.001107
+   == Total time for this step: 128.769991s
+
+>  t = 1.875264
+
+================================== whole step =============================================
+   Time step size: dt = 0.005275
+   Residuals: tdvp_err = 6.44e-02, solver_res = 1.22e-05
+    Energy = -19.469136 +/- 0.080606
+    xPol = 0.427321 +/- 0.001104
+   == Total time for this step: 129.004307s
+
+>  t = 1.880539
+
+================================== whole step =============================================
+   Time step size: dt = 0.005219
+   Residuals: tdvp_err = 6.45e-02, solver_res = 1.24e-05
+    Energy = -19.512309 +/- 0.081013
+    xPol = 0.420483 +/- 0.001105
+   == Total time for this step: 129.092163s
+
+>  t = 1.885758
+
+================================== whole step =============================================
+   Time step size: dt = 0.005375
+   Residuals: tdvp_err = 6.39e-02, solver_res = 1.25e-05
+    Energy = -19.371296 +/- 0.080662
+    xPol = 0.415545 +/- 0.001118
+   == Total time for this step: 128.957278s
+
+>  t = 1.891133
+
+================================== whole step =============================================
+   Time step size: dt = 0.005187
+   Residuals: tdvp_err = 6.97e-02, solver_res = 1.26e-05
+    Energy = -19.589181 +/- 0.080338
+    xPol = 0.412111 +/- 0.001098
+   == Total time for this step: 128.852100s
+
+>  t = 1.896320
+
+================================== whole step =============================================
+   Time step size: dt = 0.004993
+   Residuals: tdvp_err = 6.68e-02, solver_res = 1.28e-05
+    Energy = -19.969759 +/- 0.080892
+    xPol = 0.405345 +/- 0.001102
+   == Total time for this step: 129.076817s
+
+>  t = 1.901313
+
+================================== whole step =============================================
+   Time step size: dt = 0.005008
+   Residuals: tdvp_err = 6.97e-02, solver_res = 1.28e-05
+    Energy = -19.520095 +/- 0.080690
+    xPol = 0.400066 +/- 0.001096
+   == Total time for this step: 128.815762s
+
+>  t = 1.906321
+
+================================== whole step =============================================
+   Time step size: dt = 0.004962
+   Residuals: tdvp_err = 7.03e-02, solver_res = 1.27e-05
+    Energy = -19.228933 +/- 0.080528
+    xPol = 0.392800 +/- 0.001094
+   == Total time for this step: 128.249006s
+
+>  t = 1.911283
+
+================================== whole step =============================================
+   Time step size: dt = 0.005049
+   Residuals: tdvp_err = 7.35e-02, solver_res = 1.29e-05
+    Energy = -19.657783 +/- 0.081112
+    xPol = 0.390072 +/- 0.001092
+   == Total time for this step: 128.930692s
+
+>  t = 1.916332
+
+================================== whole step =============================================
+   Time step size: dt = 0.005003
+   Residuals: tdvp_err = 6.79e-02, solver_res = 1.32e-05
+    Energy = -19.749451 +/- 0.080111
+    xPol = 0.383876 +/- 0.001083
+   == Total time for this step: 130.315485s
+
+>  t = 1.921335
+
+================================== whole step =============================================
+   Time step size: dt = 0.004901
+   Residuals: tdvp_err = 6.92e-02, solver_res = 1.29e-05
+    Energy = -19.394406 +/- 0.079847
+    xPol = 0.378361 +/- 0.001083
+   == Total time for this step: 128.619824s
+
+>  t = 1.926236
+
+================================== whole step =============================================
+   Time step size: dt = 0.004965
+   Residuals: tdvp_err = 7.03e-02, solver_res = 1.31e-05
+    Energy = -19.666723 +/- 0.080404
+    xPol = 0.373245 +/- 0.001082
+   == Total time for this step: 128.428611s
+
+>  t = 1.931200
+
+================================== whole step =============================================
+   Time step size: dt = 0.004833
+   Residuals: tdvp_err = 8.08e-02, solver_res = 1.37e-05
+    Energy = -19.823883 +/- 0.080706
+    xPol = 0.371662 +/- 0.001078
+   == Total time for this step: 128.437206s
+
+>  t = 1.936033
+
+================================== whole step =============================================
+   Time step size: dt = 0.004736
+   Residuals: tdvp_err = 7.60e-02, solver_res = 1.32e-05
+    Energy = -19.569556 +/- 0.079577
+    xPol = 0.363824 +/- 0.001079
+   == Total time for this step: 128.668332s
+
+>  t = 1.940769
+
+================================== whole step =============================================
+   Time step size: dt = 0.004825
+   Residuals: tdvp_err = 7.50e-02, solver_res = 1.34e-05
+    Energy = -19.605977 +/- 0.080955
+    xPol = 0.358754 +/- 0.001093
+   == Total time for this step: 128.365350s
+
+>  t = 1.945594
+
+================================== whole step =============================================
+   Time step size: dt = 0.004814
+   Residuals: tdvp_err = 7.79e-02, solver_res = 1.35e-05
+    Energy = -19.565036 +/- 0.079548
+    xPol = 0.354600 +/- 0.001082
+   == Total time for this step: 128.305987s
+
+>  t = 1.950408
+
+================================== whole step =============================================
+   Time step size: dt = 0.004724
+   Residuals: tdvp_err = 7.44e-02, solver_res = 1.34e-05
+    Energy = -19.339313 +/- 0.080915
+    xPol = 0.350755 +/- 0.001071
+   == Total time for this step: 129.118193s
+
+>  t = 1.955133
+
+================================== whole step =============================================
+   Time step size: dt = 0.004596
+   Residuals: tdvp_err = 7.71e-02, solver_res = 1.32e-05
+    Energy = -19.543035 +/- 0.080413
+    xPol = 0.349426 +/- 0.001082
+   == Total time for this step: 128.344613s
+
+>  t = 1.959729
+
+================================== whole step =============================================
+   Time step size: dt = 0.004539
+   Residuals: tdvp_err = 8.33e-02, solver_res = 1.38e-05
+    Energy = -19.457806 +/- 0.080300
+    xPol = 0.345216 +/- 0.001075
+   == Total time for this step: 128.290679s
+
+>  t = 1.964267
+
+================================== whole step =============================================
+   Time step size: dt = 0.004525
+   Residuals: tdvp_err = 8.51e-02, solver_res = 1.37e-05
+    Energy = -19.195333 +/- 0.080542
+    xPol = 0.337596 +/- 0.001071
+   == Total time for this step: 128.469270s
+
+>  t = 1.968792
+
+================================== whole step =============================================
+   Time step size: dt = 0.004429
+   Residuals: tdvp_err = 7.75e-02, solver_res = 1.41e-05
+    Energy = -19.559382 +/- 0.079694
+    xPol = 0.334786 +/- 0.001069
+   == Total time for this step: 129.241702s
+
+>  t = 1.973221
+
+================================== whole step =============================================
+   Time step size: dt = 0.004510
+   Residuals: tdvp_err = 8.37e-02, solver_res = 1.36e-05
+    Energy = -19.706028 +/- 0.081699
+    xPol = 0.331350 +/- 0.001067
+   == Total time for this step: 129.055148s
+
+>  t = 1.977732
+
+================================== whole step =============================================
+   Time step size: dt = 0.004338
+   Residuals: tdvp_err = 8.04e-02, solver_res = 1.38e-05
+    Energy = -19.688927 +/- 0.079001
+    xPol = 0.328706 +/- 0.001061
+   == Total time for this step: 129.128978s
+
+>  t = 1.982070
+
+================================== whole step =============================================
+   Time step size: dt = 0.004492
+   Residuals: tdvp_err = 8.27e-02, solver_res = 1.37e-05
+    Energy = -19.591175 +/- 0.080565
+    xPol = 0.325989 +/- 0.001064
+   == Total time for this step: 128.651943s
+
+>  t = 1.986562
+
+================================== whole step =============================================
+   Time step size: dt = 0.004457
+   Residuals: tdvp_err = 8.06e-02, solver_res = 1.44e-05
+    Energy = -19.491646 +/- 0.080095
+    xPol = 0.321681 +/- 0.001049
+   == Total time for this step: 128.235193s
+
+>  t = 1.991019
+
+================================== whole step =============================================
+   Time step size: dt = 0.004454
+   Residuals: tdvp_err = 7.96e-02, solver_res = 1.38e-05
+    Energy = -19.640372 +/- 0.081344
+    xPol = 0.315950 +/- 0.001054
+   == Total time for this step: 129.015199s
+
+>  t = 1.995472
+
+================================== whole step =============================================
+   Time step size: dt = 0.004330
+   Residuals: tdvp_err = 8.43e-02, solver_res = 1.40e-05
+    Energy = -19.393488 +/- 0.080050
+    xPol = 0.315658 +/- 0.001040
+   == Total time for this step: 128.683638s
+
+>  t = 1.999802
+
+================================== whole step =============================================
+   Time step size: dt = 0.004472
+   Residuals: tdvp_err = 8.79e-02, solver_res = 1.46e-05
+    Energy = -19.737160 +/- 0.080475
+    xPol = 0.310899 +/- 0.001051
+   == Total time for this step: 128.508174s
+
+>  t = 2.004275
+
+================================== whole step =============================================
+   Time step size: dt = 0.004408
+   Residuals: tdvp_err = 8.67e-02, solver_res = 1.39e-05
+    Energy = -19.427298 +/- 0.080568
+    xPol = 0.308340 +/- 0.001030
+   == Total time for this step: 128.838711s
+
+>  t = 2.008682
+
+================================== whole step =============================================
+   Time step size: dt = 0.004376
+   Residuals: tdvp_err = 8.55e-02, solver_res = 1.42e-05
+    Energy = -19.614402 +/- 0.080027
+    xPol = 0.306405 +/- 0.001045
+   == Total time for this step: 128.638568s
+
+>  t = 2.013059
+
+================================== whole step =============================================
+   Time step size: dt = 0.004419
+   Residuals: tdvp_err = 8.74e-02, solver_res = 1.43e-05
+    Energy = -19.720904 +/- 0.080932
+    xPol = 0.300333 +/- 0.001051
+   == Total time for this step: 130.140697s
+
+>  t = 2.017478
+
+================================== whole step =============================================
+   Time step size: dt = 0.004403
+   Residuals: tdvp_err = 8.27e-02, solver_res = 1.30e-05
+    Energy = -19.398554 +/- 0.080631
+    xPol = 0.300110 +/- 0.001035
+   == Total time for this step: 128.648142s
+
+>  t = 2.021881
+
+================================== whole step =============================================
+   Time step size: dt = 0.004433
+   Residuals: tdvp_err = 9.27e-02, solver_res = 1.40e-05
+    Energy = -19.512060 +/- 0.079474
+    xPol = 0.298360 +/- 0.001033
+   == Total time for this step: 129.120908s
+
+>  t = 2.026314
+
+================================== whole step =============================================
+   Time step size: dt = 0.004403
+   Residuals: tdvp_err = 8.79e-02, solver_res = 1.46e-05
+    Energy = -19.396051 +/- 0.080929
+    xPol = 0.295198 +/- 0.001020
+   == Total time for this step: 129.294396s
+
+>  t = 2.030717
+
+================================== whole step =============================================
+   Time step size: dt = 0.004480
+   Residuals: tdvp_err = 7.93e-02, solver_res = 1.39e-05
+    Energy = -19.440889 +/- 0.081320
+    xPol = 0.290499 +/- 0.001028
+   == Total time for this step: 128.190578s
+
+>  t = 2.035197
+
+================================== whole step =============================================
+   Time step size: dt = 0.004530
+   Residuals: tdvp_err = 9.03e-02, solver_res = 1.39e-05
+    Energy = -19.367937 +/- 0.081222
+    xPol = 0.289731 +/- 0.001025
+   == Total time for this step: 128.915461s
+
+>  t = 2.039726
+
+================================== whole step =============================================
+   Time step size: dt = 0.004357
+   Residuals: tdvp_err = 8.74e-02, solver_res = 1.44e-05
+    Energy = -19.572625 +/- 0.079402
+    xPol = 0.288289 +/- 0.001012
+   == Total time for this step: 128.565995s
+
+>  t = 2.044083
+
+================================== whole step =============================================
+   Time step size: dt = 0.004520
+   Residuals: tdvp_err = 9.11e-02, solver_res = 1.44e-05
+    Energy = -19.616017 +/- 0.080128
+    xPol = 0.286020 +/- 0.001001
+   == Total time for this step: 128.672696s
+
+>  t = 2.048603
+
+================================== whole step =============================================
+   Time step size: dt = 0.004399
+   Residuals: tdvp_err = 8.62e-02, solver_res = 1.48e-05
+    Energy = -19.626964 +/- 0.080396
+    xPol = 0.282496 +/- 0.001007
+   == Total time for this step: 128.727240s
+
+>  t = 2.053002
+
+================================== whole step =============================================
+   Time step size: dt = 0.004412
+   Residuals: tdvp_err = 8.67e-02, solver_res = 1.40e-05
+    Energy = -19.709760 +/- 0.079360
+    xPol = 0.281613 +/- 0.001011
+   == Total time for this step: 128.312387s
+
+>  t = 2.057414
+
+================================== whole step =============================================
+   Time step size: dt = 0.004346
+   Residuals: tdvp_err = 8.42e-02, solver_res = 1.36e-05
+    Energy = -19.797093 +/- 0.080022
+    xPol = 0.277309 +/- 0.000996
+   == Total time for this step: 128.939705s
+
+>  t = 2.061760
+
+================================== whole step =============================================
+   Time step size: dt = 0.004384
+   Residuals: tdvp_err = 9.24e-02, solver_res = 1.39e-05
+    Energy = -19.409085 +/- 0.079564
+    xPol = 0.276734 +/- 0.000996
+   == Total time for this step: 129.026270s
+
+>  t = 2.066144
+
+================================== whole step =============================================
+   Time step size: dt = 0.004303
+   Residuals: tdvp_err = 9.03e-02, solver_res = 1.39e-05
+    Energy = -19.779735 +/- 0.080705
+    xPol = 0.276028 +/- 0.000988
+   == Total time for this step: 129.030169s
+
+>  t = 2.070447
+
+================================== whole step =============================================
+   Time step size: dt = 0.004319
+   Residuals: tdvp_err = 9.31e-02, solver_res = 1.37e-05
+    Energy = -19.378503 +/- 0.080938
+    xPol = 0.272434 +/- 0.001005
+   == Total time for this step: 129.150230s
+
+>  t = 2.074767
+
+================================== whole step =============================================
+   Time step size: dt = 0.004423
+   Residuals: tdvp_err = 9.13e-02, solver_res = 1.54e-05
+    Energy = -19.528087 +/- 0.080693
+    xPol = 0.269004 +/- 0.000985
+   == Total time for this step: 128.967319s
+
+>  t = 2.079189
+
+================================== whole step =============================================
+   Time step size: dt = 0.004430
+   Residuals: tdvp_err = 9.47e-02, solver_res = 1.41e-05
+    Energy = -19.383088 +/- 0.078641
+    xPol = 0.269076 +/- 0.000990
+   == Total time for this step: 129.169786s
+
+>  t = 2.083619
+
+================================== whole step =============================================
+   Time step size: dt = 0.004216
+   Residuals: tdvp_err = 9.84e-02, solver_res = 1.40e-05
+    Energy = -19.466070 +/- 0.079866
+    xPol = 0.268449 +/- 0.000984
+   == Total time for this step: 128.696219s
+
+>  t = 2.087835
+
+================================== whole step =============================================
+   Time step size: dt = 0.004306
+   Residuals: tdvp_err = 9.66e-02, solver_res = 1.49e-05
+    Energy = -19.653618 +/- 0.079253
+    xPol = 0.266270 +/- 0.000989
+   == Total time for this step: 129.263064s
+
+>  t = 2.092141
+
+================================== whole step =============================================
+   Time step size: dt = 0.004208
+   Residuals: tdvp_err = 8.76e-02, solver_res = 1.43e-05
+    Energy = -19.586629 +/- 0.078995
+    xPol = 0.265542 +/- 0.000984
+   == Total time for this step: 128.930150s
+
+>  t = 2.096350
+
+================================== whole step =============================================
+   Time step size: dt = 0.004254
+   Residuals: tdvp_err = 9.04e-02, solver_res = 1.48e-05
+    Energy = -19.476630 +/- 0.080438
+    xPol = 0.263058 +/- 0.000983
+   == Total time for this step: 129.343058s
+
+>  t = 2.100603
+
+================================== whole step =============================================
+   Time step size: dt = 0.004365
+   Residuals: tdvp_err = 9.13e-02, solver_res = 1.44e-05
+    Energy = -19.688019 +/- 0.079197
+    xPol = 0.262431 +/- 0.000971
+   == Total time for this step: 128.777843s
+
+>  t = 2.104968
+
+================================== whole step =============================================
+   Time step size: dt = 0.004288
+   Residuals: tdvp_err = 9.92e-02, solver_res = 1.37e-05
+    Energy = -19.363495 +/- 0.080356
+    xPol = 0.261439 +/- 0.000972
+   == Total time for this step: 128.790596s
+
+>  t = 2.109256
+
+================================== whole step =============================================
+   Time step size: dt = 0.004243
+   Residuals: tdvp_err = 9.73e-02, solver_res = 1.48e-05
+    Energy = -19.642049 +/- 0.079995
+    xPol = 0.261488 +/- 0.000955
+   == Total time for this step: 128.986196s
+
+>  t = 2.113499
+
+================================== whole step =============================================
+   Time step size: dt = 0.004225
+   Residuals: tdvp_err = 9.22e-02, solver_res = 1.43e-05
+    Energy = -19.422881 +/- 0.079761
+    xPol = 0.259170 +/- 0.000971
+   == Total time for this step: 130.008336s
+
+>  t = 2.117724
+
+================================== whole step =============================================
+   Time step size: dt = 0.004248
+   Residuals: tdvp_err = 9.93e-02, solver_res = 1.40e-05
+    Energy = -19.720492 +/- 0.080264
+    xPol = 0.256954 +/- 0.000962
+   == Total time for this step: 128.950964s
+
+>  t = 2.121971
+
+================================== whole step =============================================
+   Time step size: dt = 0.004161
+   Residuals: tdvp_err = 9.89e-02, solver_res = 1.46e-05
+    Energy = -19.449856 +/- 0.080334
+    xPol = 0.256202 +/- 0.000965
+   == Total time for this step: 128.822954s
+
+>  t = 2.126133
+
+================================== whole step =============================================
+   Time step size: dt = 0.004123
+   Residuals: tdvp_err = 9.63e-02, solver_res = 1.45e-05
+    Energy = -19.535802 +/- 0.080239
+    xPol = 0.253284 +/- 0.000953
+   == Total time for this step: 128.364770s
+
+>  t = 2.130256
+
+================================== whole step =============================================
+   Time step size: dt = 0.004260
+   Residuals: tdvp_err = 1.00e-01, solver_res = 1.46e-05
+    Energy = -19.613917 +/- 0.079710
+    xPol = 0.253701 +/- 0.000963
+   == Total time for this step: 128.181283s
+
+>  t = 2.134516
+
+================================== whole step =============================================
+   Time step size: dt = 0.004249
+   Residuals: tdvp_err = 9.53e-02, solver_res = 1.51e-05
+    Energy = -19.445404 +/- 0.080686
+    xPol = 0.253326 +/- 0.000951
+   == Total time for this step: 129.112635s
+
+>  t = 2.138765
+
+================================== whole step =============================================
+   Time step size: dt = 0.004097
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.46e-05
+    Energy = -19.599522 +/- 0.080897
+    xPol = 0.252285 +/- 0.000946
+   == Total time for this step: 128.682162s
+
+>  t = 2.142862
+
+================================== whole step =============================================
+   Time step size: dt = 0.004112
+   Residuals: tdvp_err = 9.54e-02, solver_res = 1.47e-05
+    Energy = -19.264513 +/- 0.081222
+    xPol = 0.252253 +/- 0.000944
+   == Total time for this step: 128.451017s
+
+>  t = 2.146974
+
+================================== whole step =============================================
+   Time step size: dt = 0.004144
+   Residuals: tdvp_err = 9.17e-02, solver_res = 1.45e-05
+    Energy = -19.493673 +/- 0.080431
+    xPol = 0.249110 +/- 0.000946
+   == Total time for this step: 128.657227s
+
+>  t = 2.151118
+
+================================== whole step =============================================
+   Time step size: dt = 0.004158
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.50e-05
+    Energy = -19.492477 +/- 0.080421
+    xPol = 0.250507 +/- 0.000940
+   == Total time for this step: 128.777968s
+
+>  t = 2.155276
+
+================================== whole step =============================================
+   Time step size: dt = 0.004183
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.49e-05
+    Energy = -19.362458 +/- 0.080484
+    xPol = 0.248719 +/- 0.000949
+   == Total time for this step: 128.449833s
+
+>  t = 2.159459
+
+================================== whole step =============================================
+   Time step size: dt = 0.004101
+   Residuals: tdvp_err = 9.41e-02, solver_res = 1.40e-05
+    Energy = -19.549199 +/- 0.079784
+    xPol = 0.250277 +/- 0.000935
+   == Total time for this step: 128.442029s
+
+>  t = 2.163560
+
+================================== whole step =============================================
+   Time step size: dt = 0.004170
+   Residuals: tdvp_err = 9.35e-02, solver_res = 1.44e-05
+    Energy = -19.261163 +/- 0.080618
+    xPol = 0.247668 +/- 0.000938
+   == Total time for this step: 128.852260s
+
+>  t = 2.167730
+
+================================== whole step =============================================
+   Time step size: dt = 0.004015
+   Residuals: tdvp_err = 8.95e-02, solver_res = 1.39e-05
+    Energy = -19.542231 +/- 0.079486
+    xPol = 0.245628 +/- 0.000936
+   == Total time for this step: 128.077049s
+
+>  t = 2.171745
+
+================================== whole step =============================================
+   Time step size: dt = 0.004128
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.44e-05
+    Energy = -19.461384 +/- 0.080737
+    xPol = 0.248151 +/- 0.000923
+   == Total time for this step: 128.973467s
+
+>  t = 2.175873
+
+================================== whole step =============================================
+   Time step size: dt = 0.004176
+   Residuals: tdvp_err = 9.29e-02, solver_res = 1.39e-05
+    Energy = -19.448183 +/- 0.080458
+    xPol = 0.247823 +/- 0.000932
+   == Total time for this step: 128.083439s
+
+>  t = 2.180049
+
+================================== whole step =============================================
+   Time step size: dt = 0.004298
+   Residuals: tdvp_err = 9.27e-02, solver_res = 1.37e-05
+    Energy = -19.661024 +/- 0.079674
+    xPol = 0.247147 +/- 0.000924
+   == Total time for this step: 127.739741s
+
+>  t = 2.184347
+
+================================== whole step =============================================
+   Time step size: dt = 0.004275
+   Residuals: tdvp_err = 9.77e-02, solver_res = 1.45e-05
+    Energy = -19.355815 +/- 0.080025
+    xPol = 0.247516 +/- 0.000921
+   == Total time for this step: 128.160017s
+
+>  t = 2.188622
+
+================================== whole step =============================================
+   Time step size: dt = 0.004172
+   Residuals: tdvp_err = 9.13e-02, solver_res = 1.49e-05
+    Energy = -19.372771 +/- 0.081243
+    xPol = 0.246559 +/- 0.000919
+   == Total time for this step: 128.783958s
+
+>  t = 2.192794
+
+================================== whole step =============================================
+   Time step size: dt = 0.004064
+   Residuals: tdvp_err = 9.19e-02, solver_res = 1.44e-05
+    Energy = -19.602178 +/- 0.079707
+    xPol = 0.248233 +/- 0.000916
+   == Total time for this step: 128.655186s
+
+>  t = 2.196858
+
+================================== whole step =============================================
+   Time step size: dt = 0.004248
+   Residuals: tdvp_err = 9.69e-02, solver_res = 1.42e-05
+    Energy = -19.262535 +/- 0.080727
+    xPol = 0.244104 +/- 0.000914
+   == Total time for this step: 128.673737s
+
+>  t = 2.201106
+
+================================== whole step =============================================
+   Time step size: dt = 0.004317
+   Residuals: tdvp_err = 9.44e-02, solver_res = 1.38e-05
+    Energy = -19.379538 +/- 0.080098
+    xPol = 0.244956 +/- 0.000916
+   == Total time for this step: 128.645023s
+
+>  t = 2.205424
+
+================================== whole step =============================================
+   Time step size: dt = 0.004287
+   Residuals: tdvp_err = 9.81e-02, solver_res = 1.47e-05
+    Energy = -19.767823 +/- 0.079688
+    xPol = 0.244725 +/- 0.000913
+   == Total time for this step: 128.643560s
+
+>  t = 2.209710
+
+================================== whole step =============================================
+   Time step size: dt = 0.004300
+   Residuals: tdvp_err = 9.82e-02, solver_res = 1.42e-05
+    Energy = -19.454848 +/- 0.079034
+    xPol = 0.245947 +/- 0.000918
+   == Total time for this step: 129.033808s
+
+>  t = 2.214010
+
+================================== whole step =============================================
+   Time step size: dt = 0.004259
+   Residuals: tdvp_err = 9.96e-02, solver_res = 1.43e-05
+    Energy = -19.345539 +/- 0.081289
+    xPol = 0.245737 +/- 0.000920
+   == Total time for this step: 129.954279s
+
+>  t = 2.218269
+
+================================== whole step =============================================
+   Time step size: dt = 0.004293
+   Residuals: tdvp_err = 9.44e-02, solver_res = 1.38e-05
+    Energy = -19.526828 +/- 0.080333
+    xPol = 0.244304 +/- 0.000897
+   == Total time for this step: 128.812358s
+
+>  t = 2.222562
+
+================================== whole step =============================================
+   Time step size: dt = 0.004224
+   Residuals: tdvp_err = 1.00e-01, solver_res = 1.45e-05
+    Energy = -19.591370 +/- 0.080858
+    xPol = 0.243285 +/- 0.000898
+   == Total time for this step: 129.010045s
+
+>  t = 2.226786
+
+================================== whole step =============================================
+   Time step size: dt = 0.004278
+   Residuals: tdvp_err = 9.56e-02, solver_res = 1.45e-05
+    Energy = -19.429693 +/- 0.079877
+    xPol = 0.245231 +/- 0.000905
+   == Total time for this step: 128.696565s
+
+>  t = 2.231064
+
+================================== whole step =============================================
+   Time step size: dt = 0.004344
+   Residuals: tdvp_err = 9.89e-02, solver_res = 1.34e-05
+    Energy = -19.327630 +/- 0.080124
+    xPol = 0.244776 +/- 0.000907
+   == Total time for this step: 128.942117s
+
+>  t = 2.235408
+
+================================== whole step =============================================
+   Time step size: dt = 0.004313
+   Residuals: tdvp_err = 8.90e-02, solver_res = 1.38e-05
+    Energy = -19.453160 +/- 0.081908
+    xPol = 0.244157 +/- 0.000916
+   == Total time for this step: 128.422183s
+
+>  t = 2.239721
+
+================================== whole step =============================================
+   Time step size: dt = 0.004280
+   Residuals: tdvp_err = 9.32e-02, solver_res = 1.42e-05
+    Energy = -19.453502 +/- 0.079615
+    xPol = 0.243969 +/- 0.000900
+   == Total time for this step: 128.290723s
+
+>  t = 2.244000
+
+================================== whole step =============================================
+   Time step size: dt = 0.004144
+   Residuals: tdvp_err = 9.41e-02, solver_res = 1.41e-05
+    Energy = -19.875767 +/- 0.080334
+    xPol = 0.244311 +/- 0.000897
+   == Total time for this step: 129.081050s
+
+>  t = 2.248144
+
+================================== whole step =============================================
+   Time step size: dt = 0.004302
+   Residuals: tdvp_err = 9.44e-02, solver_res = 1.36e-05
+    Energy = -19.453873 +/- 0.079722
+    xPol = 0.245117 +/- 0.000902
+   == Total time for this step: 128.786543s
+
+>  t = 2.252446
+
+================================== whole step =============================================
+   Time step size: dt = 0.004330
+   Residuals: tdvp_err = 9.74e-02, solver_res = 1.35e-05
+    Energy = -19.578596 +/- 0.080074
+    xPol = 0.244559 +/- 0.000906
+   == Total time for this step: 128.894402s
+
+>  t = 2.256776
+
+================================== whole step =============================================
+   Time step size: dt = 0.004273
+   Residuals: tdvp_err = 9.35e-02, solver_res = 1.36e-05
+    Energy = -19.469896 +/- 0.079023
+    xPol = 0.245591 +/- 0.000915
+   == Total time for this step: 128.035014s
+
+>  t = 2.261048
+
+================================== whole step =============================================
+   Time step size: dt = 0.004320
+   Residuals: tdvp_err = 8.86e-02, solver_res = 1.34e-05
+    Energy = -19.704665 +/- 0.080267
+    xPol = 0.244234 +/- 0.000892
+   == Total time for this step: 128.797357s
+
+>  t = 2.265369
+
+================================== whole step =============================================
+   Time step size: dt = 0.004321
+   Residuals: tdvp_err = 8.95e-02, solver_res = 1.37e-05
+    Energy = -19.097025 +/- 0.080979
+    xPol = 0.244047 +/- 0.000900
+   == Total time for this step: 128.631646s
+
+>  t = 2.269690
+
+================================== whole step =============================================
+   Time step size: dt = 0.004434
+   Residuals: tdvp_err = 9.72e-02, solver_res = 1.34e-05
+    Energy = -19.415806 +/- 0.080000
+    xPol = 0.243779 +/- 0.000918
+   == Total time for this step: 128.755863s
+
+>  t = 2.274124
+
+================================== whole step =============================================
+   Time step size: dt = 0.004406
+   Residuals: tdvp_err = 9.21e-02, solver_res = 1.38e-05
+    Energy = -19.186258 +/- 0.079841
+    xPol = 0.243495 +/- 0.000897
+   == Total time for this step: 128.632596s
+
+>  t = 2.278529
+
+================================== whole step =============================================
+   Time step size: dt = 0.004334
+   Residuals: tdvp_err = 8.72e-02, solver_res = 1.32e-05
+    Energy = -19.461515 +/- 0.079833
+    xPol = 0.245263 +/- 0.000894
+   == Total time for this step: 129.088635s
+
+>  t = 2.282864
+
+================================== whole step =============================================
+   Time step size: dt = 0.004234
+   Residuals: tdvp_err = 9.66e-02, solver_res = 1.39e-05
+    Energy = -19.447029 +/- 0.079190
+    xPol = 0.244869 +/- 0.000898
+   == Total time for this step: 128.730438s
+
+>  t = 2.287098
+
+================================== whole step =============================================
+   Time step size: dt = 0.004350
+   Residuals: tdvp_err = 9.27e-02, solver_res = 1.34e-05
+    Energy = -19.392204 +/- 0.080394
+    xPol = 0.244785 +/- 0.000893
+   == Total time for this step: 128.928120s
+
+>  t = 2.291448
+
+================================== whole step =============================================
+   Time step size: dt = 0.004484
+   Residuals: tdvp_err = 8.86e-02, solver_res = 1.32e-05
+    Energy = -19.461626 +/- 0.079778
+    xPol = 0.243647 +/- 0.000891
+   == Total time for this step: 128.917412s
+
+>  t = 2.295932
+
+================================== whole step =============================================
+   Time step size: dt = 0.004534
+   Residuals: tdvp_err = 9.39e-02, solver_res = 1.44e-05
+    Energy = -19.524323 +/- 0.079798
+    xPol = 0.246352 +/- 0.000888
+   == Total time for this step: 129.038769s
+
+>  t = 2.300466
+
+================================== whole step =============================================
+   Time step size: dt = 0.004397
+   Residuals: tdvp_err = 9.51e-02, solver_res = 1.32e-05
+    Energy = -19.710204 +/- 0.078937
+    xPol = 0.245668 +/- 0.000882
+   == Total time for this step: 128.402097s
+
+>  t = 2.304863
+
+================================== whole step =============================================
+   Time step size: dt = 0.004483
+   Residuals: tdvp_err = 9.23e-02, solver_res = 1.32e-05
+    Energy = -19.264007 +/- 0.081017
+    xPol = 0.244549 +/- 0.000890
+   == Total time for this step: 128.562591s
+
+>  t = 2.309347
+
+================================== whole step =============================================
+   Time step size: dt = 0.004614
+   Residuals: tdvp_err = 8.90e-02, solver_res = 1.33e-05
+    Energy = -19.343835 +/- 0.080828
+    xPol = 0.243473 +/- 0.000871
+   == Total time for this step: 128.760789s
+
+>  t = 2.313961
+
+================================== whole step =============================================
+   Time step size: dt = 0.004379
+   Residuals: tdvp_err = 9.67e-02, solver_res = 1.37e-05
+    Energy = -19.480681 +/- 0.078764
+    xPol = 0.246185 +/- 0.000878
+   == Total time for this step: 128.948589s
+
+>  t = 2.318340
+
+================================== whole step =============================================
+   Time step size: dt = 0.004452
+   Residuals: tdvp_err = 9.16e-02, solver_res = 1.38e-05
+    Energy = -19.666603 +/- 0.080349
+    xPol = 0.243882 +/- 0.000889
+   == Total time for this step: 129.273817s
+
+>  t = 2.322792
+
+================================== whole step =============================================
+   Time step size: dt = 0.004358
+   Residuals: tdvp_err = 9.44e-02, solver_res = 1.42e-05
+    Energy = -19.418592 +/- 0.080811
+    xPol = 0.244415 +/- 0.000882
+   == Total time for this step: 128.752710s
+
+>  t = 2.327150
+
+================================== whole step =============================================
+   Time step size: dt = 0.004387
+   Residuals: tdvp_err = 9.26e-02, solver_res = 1.28e-05
+    Energy = -19.670328 +/- 0.079799
+    xPol = 0.244402 +/- 0.000878
+   == Total time for this step: 129.024261s
+
+>  t = 2.331537
+
+================================== whole step =============================================
+   Time step size: dt = 0.004444
+   Residuals: tdvp_err = 9.63e-02, solver_res = 1.32e-05
+    Energy = -19.505137 +/- 0.079756
+    xPol = 0.245018 +/- 0.000891
+   == Total time for this step: 128.976548s
+
+>  t = 2.335981
+
+================================== whole step =============================================
+   Time step size: dt = 0.004206
+   Residuals: tdvp_err = 8.57e-02, solver_res = 1.26e-05
+    Energy = -19.482979 +/- 0.080466
+    xPol = 0.243162 +/- 0.000882
+   == Total time for this step: 130.709090s
+
+>  t = 2.340187
+
+================================== whole step =============================================
+   Time step size: dt = 0.004458
+   Residuals: tdvp_err = 9.12e-02, solver_res = 1.37e-05
+    Energy = -19.247498 +/- 0.079729
+    xPol = 0.242265 +/- 0.000890
+   == Total time for this step: 128.972525s
+
+>  t = 2.344645
+
+================================== whole step =============================================
+   Time step size: dt = 0.004431
+   Residuals: tdvp_err = 9.74e-02, solver_res = 1.35e-05
+    Energy = -19.750354 +/- 0.080582
+    xPol = 0.244054 +/- 0.000878
+   == Total time for this step: 129.311324s
+
+>  t = 2.349076
+
+================================== whole step =============================================
+   Time step size: dt = 0.004486
+   Residuals: tdvp_err = 9.50e-02, solver_res = 1.36e-05
+    Energy = -19.429889 +/- 0.079765
+    xPol = 0.244379 +/- 0.000894
+   == Total time for this step: 128.490499s
+
+>  t = 2.353562
+
+================================== whole step =============================================
+   Time step size: dt = 0.004516
+   Residuals: tdvp_err = 8.68e-02, solver_res = 1.34e-05
+    Energy = -19.450838 +/- 0.080857
+    xPol = 0.244099 +/- 0.000886
+   == Total time for this step: 128.838866s
+
+>  t = 2.358078
+
+================================== whole step =============================================
+   Time step size: dt = 0.004365
+   Residuals: tdvp_err = 9.43e-02, solver_res = 1.38e-05
+    Energy = -19.526948 +/- 0.078483
+    xPol = 0.244926 +/- 0.000888
+   == Total time for this step: 128.951186s
+
+>  t = 2.362443
+
+================================== whole step =============================================
+   Time step size: dt = 0.004417
+   Residuals: tdvp_err = 9.56e-02, solver_res = 1.42e-05
+    Energy = -19.670747 +/- 0.080356
+    xPol = 0.244854 +/- 0.000889
+   == Total time for this step: 128.952647s
+
+>  t = 2.366859
+
+================================== whole step =============================================
+   Time step size: dt = 0.004283
+   Residuals: tdvp_err = 9.52e-02, solver_res = 1.36e-05
+    Energy = -19.711010 +/- 0.079933
+    xPol = 0.244252 +/- 0.000887
+   == Total time for this step: 128.918477s
+
+>  t = 2.371142
+
+================================== whole step =============================================
+   Time step size: dt = 0.004402
+   Residuals: tdvp_err = 9.65e-02, solver_res = 1.33e-05
+    Energy = -19.393790 +/- 0.080468
+    xPol = 0.245442 +/- 0.000889
+   == Total time for this step: 128.941989s
+
+>  t = 2.375544
+
+================================== whole step =============================================
+   Time step size: dt = 0.004411
+   Residuals: tdvp_err = 9.67e-02, solver_res = 1.41e-05
+    Energy = -19.604181 +/- 0.080307
+    xPol = 0.244538 +/- 0.000880
+   == Total time for this step: 128.248284s
+
+>  t = 2.379955
+
+================================== whole step =============================================
+   Time step size: dt = 0.004377
+   Residuals: tdvp_err = 9.08e-02, solver_res = 1.34e-05
+    Energy = -19.460429 +/- 0.079980
+    xPol = 0.244879 +/- 0.000888
+   == Total time for this step: 128.709548s
+
+>  t = 2.384332
+
+================================== whole step =============================================
+   Time step size: dt = 0.004401
+   Residuals: tdvp_err = 8.81e-02, solver_res = 1.28e-05
+    Energy = -19.382445 +/- 0.080492
+    xPol = 0.243012 +/- 0.000887
+   == Total time for this step: 129.119657s
+
+>  t = 2.388733
+
+================================== whole step =============================================
+   Time step size: dt = 0.004304
+   Residuals: tdvp_err = 9.37e-02, solver_res = 1.34e-05
+    Energy = -19.303244 +/- 0.081774
+    xPol = 0.243874 +/- 0.000894
+   == Total time for this step: 129.245210s
+
+>  t = 2.393037
+
+================================== whole step =============================================
+   Time step size: dt = 0.004380
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.30e-05
+    Energy = -19.318640 +/- 0.079873
+    xPol = 0.246491 +/- 0.000876
+   == Total time for this step: 128.542527s
+
+>  t = 2.397417
+
+================================== whole step =============================================
+   Time step size: dt = 0.004234
+   Residuals: tdvp_err = 9.55e-02, solver_res = 1.33e-05
+    Energy = -19.116127 +/- 0.080384
+    xPol = 0.242790 +/- 0.000897
+   == Total time for this step: 128.185086s
+
+>  t = 2.401651
+
+================================== whole step =============================================
+   Time step size: dt = 0.004289
+   Residuals: tdvp_err = 9.48e-02, solver_res = 1.35e-05
+    Energy = -19.787277 +/- 0.080274
+    xPol = 0.244450 +/- 0.000887
+   == Total time for this step: 128.741124s
+
+>  t = 2.405941
+
+================================== whole step =============================================
+   Time step size: dt = 0.004076
+   Residuals: tdvp_err = 9.27e-02, solver_res = 1.30e-05
+    Energy = -19.414990 +/- 0.080327
+    xPol = 0.243450 +/- 0.000899
+   == Total time for this step: 128.979594s
+
+>  t = 2.410017
+
+================================== whole step =============================================
+   Time step size: dt = 0.004254
+   Residuals: tdvp_err = 9.12e-02, solver_res = 1.26e-05
+    Energy = -19.725216 +/- 0.079248
+    xPol = 0.243421 +/- 0.000883
+   == Total time for this step: 128.433058s
+
+>  t = 2.414271
+
+================================== whole step =============================================
+   Time step size: dt = 0.004275
+   Residuals: tdvp_err = 9.44e-02, solver_res = 1.31e-05
+    Energy = -19.384058 +/- 0.080430
+    xPol = 0.242212 +/- 0.000891
+   == Total time for this step: 128.827310s
+
+>  t = 2.418547
+
+================================== whole step =============================================
+   Time step size: dt = 0.004389
+   Residuals: tdvp_err = 9.04e-02, solver_res = 1.32e-05
+    Energy = -19.617178 +/- 0.080031
+    xPol = 0.244958 +/- 0.000893
+   == Total time for this step: 128.983743s
+
+>  t = 2.422936
+
+================================== whole step =============================================
+   Time step size: dt = 0.004408
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.38e-05
+    Energy = -19.500480 +/- 0.079553
+    xPol = 0.242295 +/- 0.000893
+   == Total time for this step: 128.873628s
+
+>  t = 2.427343
+
+================================== whole step =============================================
+   Time step size: dt = 0.004329
+   Residuals: tdvp_err = 9.25e-02, solver_res = 1.24e-05
+    Energy = -19.573763 +/- 0.078510
+    xPol = 0.241827 +/- 0.000892
+   == Total time for this step: 128.693577s
+
+>  t = 2.431672
+
+================================== whole step =============================================
+   Time step size: dt = 0.004356
+   Residuals: tdvp_err = 9.23e-02, solver_res = 1.27e-05
+    Energy = -19.439079 +/- 0.079302
+    xPol = 0.243126 +/- 0.000889
+   == Total time for this step: 129.211672s
+
+>  t = 2.436029
+
+================================== whole step =============================================
+   Time step size: dt = 0.004355
+   Residuals: tdvp_err = 9.81e-02, solver_res = 1.35e-05
+    Energy = -19.565217 +/- 0.080332
+    xPol = 0.243380 +/- 0.000894
+   == Total time for this step: 128.941146s
+
+>  t = 2.440384
+
+================================== whole step =============================================
+   Time step size: dt = 0.004372
+   Residuals: tdvp_err = 9.93e-02, solver_res = 1.35e-05
+    Energy = -19.631855 +/- 0.080485
+    xPol = 0.242755 +/- 0.000894
+   == Total time for this step: 128.521176s
+
+>  t = 2.444756
+
+================================== whole step =============================================
+   Time step size: dt = 0.004248
+   Residuals: tdvp_err = 9.35e-02, solver_res = 1.32e-05
+    Energy = -19.556524 +/- 0.078843
+    xPol = 0.242359 +/- 0.000890
+   == Total time for this step: 128.421786s
+
+>  t = 2.449004
+
+================================== whole step =============================================
+   Time step size: dt = 0.004334
+   Residuals: tdvp_err = 9.71e-02, solver_res = 1.30e-05
+    Energy = -19.480066 +/- 0.079785
+    xPol = 0.242150 +/- 0.000904
+   == Total time for this step: 128.524147s
+
+>  t = 2.453338
+
+================================== whole step =============================================
+   Time step size: dt = 0.004344
+   Residuals: tdvp_err = 9.47e-02, solver_res = 1.29e-05
+    Energy = -19.387504 +/- 0.079981
+    xPol = 0.241506 +/- 0.000903
+   == Total time for this step: 129.221733s
+
+>  t = 2.457682
+
+================================== whole step =============================================
+   Time step size: dt = 0.004390
+   Residuals: tdvp_err = 9.85e-02, solver_res = 1.34e-05
+    Energy = -19.592093 +/- 0.078729
+    xPol = 0.242665 +/- 0.000913
+   == Total time for this step: 128.367246s
+
+>  t = 2.462072
+
+================================== whole step =============================================
+   Time step size: dt = 0.004326
+   Residuals: tdvp_err = 9.76e-02, solver_res = 1.35e-05
+    Energy = -19.452818 +/- 0.078487
+    xPol = 0.241080 +/- 0.000893
+   == Total time for this step: 128.534315s
+
+>  t = 2.466398
+
+================================== whole step =============================================
+   Time step size: dt = 0.004265
+   Residuals: tdvp_err = 9.46e-02, solver_res = 1.31e-05
+    Energy = -19.505787 +/- 0.080086
+    xPol = 0.240925 +/- 0.000900
+   == Total time for this step: 130.055665s
+
+>  t = 2.470663
+
+================================== whole step =============================================
+   Time step size: dt = 0.004329
+   Residuals: tdvp_err = 9.60e-02, solver_res = 1.30e-05
+    Energy = -19.411346 +/- 0.079652
+    xPol = 0.241108 +/- 0.000894
+   == Total time for this step: 129.001688s
+
+>  t = 2.474992
+
+================================== whole step =============================================
+   Time step size: dt = 0.004318
+   Residuals: tdvp_err = 9.86e-02, solver_res = 1.34e-05
+    Energy = -19.475297 +/- 0.080554
+    xPol = 0.242049 +/- 0.000898
+   == Total time for this step: 128.628859s
+
+>  t = 2.479310
+
+================================== whole step =============================================
+   Time step size: dt = 0.004346
+   Residuals: tdvp_err = 9.80e-02, solver_res = 1.30e-05
+    Energy = -19.620003 +/- 0.079630
+    xPol = 0.241429 +/- 0.000895
+   == Total time for this step: 129.107944s
+
+>  t = 2.483656
+
+================================== whole step =============================================
+   Time step size: dt = 0.004305
+   Residuals: tdvp_err = 9.78e-02, solver_res = 1.33e-05
+    Energy = -19.586459 +/- 0.080041
+    xPol = 0.240610 +/- 0.000902
+   == Total time for this step: 128.832490s
+
+>  t = 2.487961
+
+================================== whole step =============================================
+   Time step size: dt = 0.004249
+   Residuals: tdvp_err = 9.85e-02, solver_res = 1.33e-05
+    Energy = -19.543422 +/- 0.079833
+    xPol = 0.239715 +/- 0.000897
+   == Total time for this step: 129.009632s
+
+>  t = 2.492210
+
+================================== whole step =============================================
+   Time step size: dt = 0.004167
+   Residuals: tdvp_err = 9.31e-02, solver_res = 1.31e-05
+    Energy = -19.538328 +/- 0.079044
+    xPol = 0.240891 +/- 0.000893
+   == Total time for this step: 128.763277s
+
+>  t = 2.496377
+
+================================== whole step =============================================
+   Time step size: dt = 0.004226
+   Residuals: tdvp_err = 9.78e-02, solver_res = 1.34e-05
+    Energy = -19.724420 +/- 0.080495
+    xPol = 0.238494 +/- 0.000914
+   == Total time for this step: 128.955456s
+
+>  t = 2.500603
+
+================================== whole step =============================================
+   Time step size: dt = 0.004163
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.32e-05
+    Energy = -19.319086 +/- 0.079537
+    xPol = 0.240027 +/- 0.000916
+   == Total time for this step: 128.220508s
+
+>  t = 2.504766
+
+================================== whole step =============================================
+   Time step size: dt = 0.004236
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.40e-05
+    Energy = -19.689457 +/- 0.080444
+    xPol = 0.237295 +/- 0.000899
+   == Total time for this step: 129.092873s
+
+>  t = 2.509002
+
+================================== whole step =============================================
+   Time step size: dt = 0.004211
+   Residuals: tdvp_err = 9.85e-02, solver_res = 1.32e-05
+    Energy = -19.128834 +/- 0.080335
+    xPol = 0.239521 +/- 0.000907
+   == Total time for this step: 128.634094s
+
+>  t = 2.513212
+
+================================== whole step =============================================
+   Time step size: dt = 0.004260
+   Residuals: tdvp_err = 9.87e-02, solver_res = 1.36e-05
+    Energy = -19.589338 +/- 0.078732
+    xPol = 0.240265 +/- 0.000922
+   == Total time for this step: 128.462914s
+
+>  t = 2.517472
+
+================================== whole step =============================================
+   Time step size: dt = 0.004217
+   Residuals: tdvp_err = 9.91e-02, solver_res = 1.32e-05
+    Energy = -19.520113 +/- 0.080052
+    xPol = 0.241640 +/- 0.000916
+   == Total time for this step: 128.512099s
+
+>  t = 2.521690
+
+================================== whole step =============================================
+   Time step size: dt = 0.004222
+   Residuals: tdvp_err = 9.52e-02, solver_res = 1.37e-05
+    Energy = -19.588363 +/- 0.080121
+    xPol = 0.238901 +/- 0.000920
+   == Total time for this step: 128.781245s
+
+>  t = 2.525912
+
+================================== whole step =============================================
+   Time step size: dt = 0.004309
+   Residuals: tdvp_err = 1.08e-01, solver_res = 1.39e-05
+    Energy = -19.729512 +/- 0.078590
+    xPol = 0.240048 +/- 0.000909
+   == Total time for this step: 129.005343s
+
+>  t = 2.530220
+
+================================== whole step =============================================
+   Time step size: dt = 0.004146
+   Residuals: tdvp_err = 9.28e-02, solver_res = 1.36e-05
+    Energy = -19.195365 +/- 0.080552
+    xPol = 0.238809 +/- 0.000915
+   == Total time for this step: 128.508622s
+
+>  t = 2.534367
+
+================================== whole step =============================================
+   Time step size: dt = 0.004198
+   Residuals: tdvp_err = 9.57e-02, solver_res = 1.32e-05
+    Energy = -19.305144 +/- 0.079941
+    xPol = 0.237710 +/- 0.000916
+   == Total time for this step: 128.729114s
+
+>  t = 2.538564
+
+================================== whole step =============================================
+   Time step size: dt = 0.004254
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.41e-05
+    Energy = -19.457493 +/- 0.079864
+    xPol = 0.237584 +/- 0.000918
+   == Total time for this step: 128.323578s
+
+>  t = 2.542818
+
+================================== whole step =============================================
+   Time step size: dt = 0.004238
+   Residuals: tdvp_err = 1.08e-01, solver_res = 1.41e-05
+    Energy = -19.827708 +/- 0.078755
+    xPol = 0.237862 +/- 0.000924
+   == Total time for this step: 128.461962s
+
+>  t = 2.547056
+
+================================== whole step =============================================
+   Time step size: dt = 0.004193
+   Residuals: tdvp_err = 1.09e-01, solver_res = 1.37e-05
+    Energy = -19.393977 +/- 0.079795
+    xPol = 0.240380 +/- 0.000924
+   == Total time for this step: 128.317768s
+
+>  t = 2.551249
+
+================================== whole step =============================================
+   Time step size: dt = 0.004102
+   Residuals: tdvp_err = 1.09e-01, solver_res = 1.36e-05
+    Energy = -19.468055 +/- 0.079424
+    xPol = 0.238598 +/- 0.000946
+   == Total time for this step: 128.728484s
+
+>  t = 2.555351
+
+================================== whole step =============================================
+   Time step size: dt = 0.004104
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.35e-05
+    Energy = -19.346944 +/- 0.078668
+    xPol = 0.240040 +/- 0.000916
+   == Total time for this step: 128.662442s
+
+>  t = 2.559455
+
+================================== whole step =============================================
+   Time step size: dt = 0.003980
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.31e-05
+    Energy = -19.578712 +/- 0.080221
+    xPol = 0.238529 +/- 0.000930
+   == Total time for this step: 128.594308s
+
+>  t = 2.563434
+
+================================== whole step =============================================
+   Time step size: dt = 0.004080
+   Residuals: tdvp_err = 9.90e-02, solver_res = 1.36e-05
+    Energy = -19.480890 +/- 0.078536
+    xPol = 0.237964 +/- 0.000933
+   == Total time for this step: 130.229755s
+
+>  t = 2.567515
+
+================================== whole step =============================================
+   Time step size: dt = 0.004148
+   Residuals: tdvp_err = 1.05e-01, solver_res = 1.40e-05
+    Energy = -19.970207 +/- 0.079163
+    xPol = 0.238483 +/- 0.000928
+   == Total time for this step: 129.105134s
+
+>  t = 2.571663
+
+================================== whole step =============================================
+   Time step size: dt = 0.004151
+   Residuals: tdvp_err = 9.68e-02, solver_res = 1.32e-05
+    Energy = -19.704886 +/- 0.078653
+    xPol = 0.239955 +/- 0.000931
+   == Total time for this step: 128.683161s
+
+>  t = 2.575814
+
+================================== whole step =============================================
+   Time step size: dt = 0.004140
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.35e-05
+    Energy = -19.488349 +/- 0.079200
+    xPol = 0.237689 +/- 0.000930
+   == Total time for this step: 128.742612s
+
+>  t = 2.579954
+
+================================== whole step =============================================
+   Time step size: dt = 0.004210
+   Residuals: tdvp_err = 9.51e-02, solver_res = 1.36e-05
+    Energy = -19.581858 +/- 0.079282
+    xPol = 0.241709 +/- 0.000932
+   == Total time for this step: 128.260180s
+
+>  t = 2.584163
+
+================================== whole step =============================================
+   Time step size: dt = 0.004245
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.29e-05
+    Energy = -19.571622 +/- 0.079622
+    xPol = 0.240116 +/- 0.000939
+   == Total time for this step: 128.789715s
+
+>  t = 2.588408
+
+================================== whole step =============================================
+   Time step size: dt = 0.004235
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.39e-05
+    Energy = -19.460640 +/- 0.079172
+    xPol = 0.239039 +/- 0.000941
+   == Total time for this step: 128.876232s
+
+>  t = 2.592643
+
+================================== whole step =============================================
+   Time step size: dt = 0.004184
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.36e-05
+    Energy = -19.323083 +/- 0.080151
+    xPol = 0.240848 +/- 0.000943
+   == Total time for this step: 128.586074s
+
+>  t = 2.596827
+
+================================== whole step =============================================
+   Time step size: dt = 0.004203
+   Residuals: tdvp_err = 9.83e-02, solver_res = 1.32e-05
+    Energy = -19.432511 +/- 0.080735
+    xPol = 0.240079 +/- 0.000958
+   == Total time for this step: 128.566439s
+
+>  t = 2.601030
+
+================================== whole step =============================================
+   Time step size: dt = 0.004250
+   Residuals: tdvp_err = 9.59e-02, solver_res = 1.32e-05
+    Energy = -19.332641 +/- 0.079791
+    xPol = 0.240106 +/- 0.000943
+   == Total time for this step: 128.754097s
+
+>  t = 2.605280
+
+================================== whole step =============================================
+   Time step size: dt = 0.004185
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.30e-05
+    Energy = -19.371961 +/- 0.079189
+    xPol = 0.242658 +/- 0.000940
+   == Total time for this step: 128.572674s
+
+>  t = 2.609465
+
+================================== whole step =============================================
+   Time step size: dt = 0.004224
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.32e-05
+    Energy = -19.373271 +/- 0.080033
+    xPol = 0.242951 +/- 0.000937
+   == Total time for this step: 128.636256s
+
+>  t = 2.613689
+
+================================== whole step =============================================
+   Time step size: dt = 0.004160
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.33e-05
+    Energy = -19.614115 +/- 0.078963
+    xPol = 0.241824 +/- 0.000954
+   == Total time for this step: 129.258706s
+
+>  t = 2.617849
+
+================================== whole step =============================================
+   Time step size: dt = 0.004194
+   Residuals: tdvp_err = 9.46e-02, solver_res = 1.35e-05
+    Energy = -19.917680 +/- 0.079323
+    xPol = 0.241741 +/- 0.000961
+   == Total time for this step: 128.748972s
+
+>  t = 2.622043
+
+================================== whole step =============================================
+   Time step size: dt = 0.004158
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.33e-05
+    Energy = -19.562918 +/- 0.079560
+    xPol = 0.241640 +/- 0.000957
+   == Total time for this step: 129.455508s
+
+>  t = 2.626201
+
+================================== whole step =============================================
+   Time step size: dt = 0.004113
+   Residuals: tdvp_err = 9.62e-02, solver_res = 1.41e-05
+    Energy = -19.643580 +/- 0.080210
+    xPol = 0.242474 +/- 0.000944
+   == Total time for this step: 128.997384s
+
+>  t = 2.630314
+
+================================== whole step =============================================
+   Time step size: dt = 0.004079
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.36e-05
+    Energy = -19.640277 +/- 0.078903
+    xPol = 0.242757 +/- 0.000953
+   == Total time for this step: 128.865627s
+
+>  t = 2.634393
+
+================================== whole step =============================================
+   Time step size: dt = 0.004151
+   Residuals: tdvp_err = 9.56e-02, solver_res = 1.34e-05
+    Energy = -19.387546 +/- 0.079210
+    xPol = 0.243273 +/- 0.000967
+   == Total time for this step: 128.385396s
+
+>  t = 2.638544
+
+================================== whole step =============================================
+   Time step size: dt = 0.004240
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.36e-05
+    Energy = -19.451247 +/- 0.080288
+    xPol = 0.246009 +/- 0.000975
+   == Total time for this step: 129.275522s
+
+>  t = 2.642784
+
+================================== whole step =============================================
+   Time step size: dt = 0.004136
+   Residuals: tdvp_err = 1.06e-01, solver_res = 1.43e-05
+    Energy = -19.325155 +/- 0.078860
+    xPol = 0.247565 +/- 0.000968
+   == Total time for this step: 128.874469s
+
+>  t = 2.646920
+
+================================== whole step =============================================
+   Time step size: dt = 0.004200
+   Residuals: tdvp_err = 9.79e-02, solver_res = 1.28e-05
+    Energy = -19.894004 +/- 0.079733
+    xPol = 0.245083 +/- 0.000964
+   == Total time for this step: 128.461754s
+
+>  t = 2.651120
+
+================================== whole step =============================================
+   Time step size: dt = 0.004111
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.32e-05
+    Energy = -19.397521 +/- 0.078548
+    xPol = 0.247214 +/- 0.000980
+   == Total time for this step: 128.514924s
+
+>  t = 2.655231
+
+================================== whole step =============================================
+   Time step size: dt = 0.004226
+   Residuals: tdvp_err = 9.70e-02, solver_res = 1.36e-05
+    Energy = -19.682624 +/- 0.078877
+    xPol = 0.248030 +/- 0.000974
+   == Total time for this step: 128.984159s
+
+>  t = 2.659457
+
+================================== whole step =============================================
+   Time step size: dt = 0.004112
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.38e-05
+    Energy = -19.424298 +/- 0.080019
+    xPol = 0.250046 +/- 0.000985
+   == Total time for this step: 128.445686s
+
+>  t = 2.663569
+
+================================== whole step =============================================
+   Time step size: dt = 0.004262
+   Residuals: tdvp_err = 9.39e-02, solver_res = 1.35e-05
+    Energy = -19.379554 +/- 0.078862
+    xPol = 0.248386 +/- 0.000983
+   == Total time for this step: 130.087658s
+
+>  t = 2.667831
+
+================================== whole step =============================================
+   Time step size: dt = 0.004286
+   Residuals: tdvp_err = 9.40e-02, solver_res = 1.36e-05
+    Energy = -19.499261 +/- 0.080347
+    xPol = 0.251368 +/- 0.000979
+   == Total time for this step: 128.540757s
+
+>  t = 2.672117
+
+================================== whole step =============================================
+   Time step size: dt = 0.004181
+   Residuals: tdvp_err = 9.55e-02, solver_res = 1.35e-05
+    Energy = -19.581012 +/- 0.079511
+    xPol = 0.246798 +/- 0.000972
+   == Total time for this step: 129.021501s
+
+>  t = 2.676298
+
+================================== whole step =============================================
+   Time step size: dt = 0.004190
+   Residuals: tdvp_err = 1.05e-01, solver_res = 1.43e-05
+    Energy = -19.512191 +/- 0.079982
+    xPol = 0.251847 +/- 0.000999
+   == Total time for this step: 128.885563s
+
+>  t = 2.680489
+
+================================== whole step =============================================
+   Time step size: dt = 0.004177
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.36e-05
+    Energy = -19.697803 +/- 0.078541
+    xPol = 0.252874 +/- 0.000987
+   == Total time for this step: 128.994380s
+
+>  t = 2.684666
+
+================================== whole step =============================================
+   Time step size: dt = 0.004195
+   Residuals: tdvp_err = 1.07e-01, solver_res = 1.34e-05
+    Energy = -19.586088 +/- 0.079169
+    xPol = 0.252704 +/- 0.000989
+   == Total time for this step: 128.856944s
+
+>  t = 2.688861
+
+================================== whole step =============================================
+   Time step size: dt = 0.004108
+   Residuals: tdvp_err = 9.92e-02, solver_res = 1.40e-05
+    Energy = -19.292784 +/- 0.078451
+    xPol = 0.257010 +/- 0.001000
+   == Total time for this step: 128.944214s
+
+>  t = 2.692969
+
+================================== whole step =============================================
+   Time step size: dt = 0.004126
+   Residuals: tdvp_err = 9.82e-02, solver_res = 1.43e-05
+    Energy = -19.562018 +/- 0.078704
+    xPol = 0.257976 +/- 0.001001
+   == Total time for this step: 128.395755s
+
+>  t = 2.697096
+
+================================== whole step =============================================
+   Time step size: dt = 0.004171
+   Residuals: tdvp_err = 1.00e-01, solver_res = 1.39e-05
+    Energy = -19.472735 +/- 0.079856
+    xPol = 0.257561 +/- 0.001005
+   == Total time for this step: 128.191164s
+
+>  t = 2.701267
+
+================================== whole step =============================================
+   Time step size: dt = 0.004121
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.41e-05
+    Energy = -19.775615 +/- 0.079137
+    xPol = 0.258633 +/- 0.001014
+   == Total time for this step: 128.231717s
+
+>  t = 2.705388
+
+================================== whole step =============================================
+   Time step size: dt = 0.004175
+   Residuals: tdvp_err = 9.70e-02, solver_res = 1.36e-05
+    Energy = -19.471463 +/- 0.079288
+    xPol = 0.260247 +/- 0.000997
+   == Total time for this step: 128.864420s
+
+>  t = 2.709563
+
+================================== whole step =============================================
+   Time step size: dt = 0.004288
+   Residuals: tdvp_err = 9.99e-02, solver_res = 1.41e-05
+    Energy = -19.633145 +/- 0.080375
+    xPol = 0.259451 +/- 0.001015
+   == Total time for this step: 128.508178s
+
+>  t = 2.713851
+
+================================== whole step =============================================
+   Time step size: dt = 0.004132
+   Residuals: tdvp_err = 9.90e-02, solver_res = 1.33e-05
+    Energy = -19.455594 +/- 0.078957
+    xPol = 0.262779 +/- 0.001014
+   == Total time for this step: 128.857072s
+
+>  t = 2.717983
+
+================================== whole step =============================================
+   Time step size: dt = 0.004301
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.35e-05
+    Energy = -19.460919 +/- 0.079239
+    xPol = 0.263791 +/- 0.001008
+   == Total time for this step: 129.046332s
+
+>  t = 2.722284
+
+================================== whole step =============================================
+   Time step size: dt = 0.004156
+   Residuals: tdvp_err = 1.00e-01, solver_res = 1.46e-05
+    Energy = -19.478239 +/- 0.078693
+    xPol = 0.264496 +/- 0.001017
+   == Total time for this step: 128.548878s
+
+>  t = 2.726440
+
+================================== whole step =============================================
+   Time step size: dt = 0.004330
+   Residuals: tdvp_err = 9.71e-02, solver_res = 1.31e-05
+    Energy = -19.592919 +/- 0.078565
+    xPol = 0.266440 +/- 0.001018
+   == Total time for this step: 128.924590s
+
+>  t = 2.730769
+
+================================== whole step =============================================
+   Time step size: dt = 0.004346
+   Residuals: tdvp_err = 9.89e-02, solver_res = 1.33e-05
+    Energy = -19.661492 +/- 0.078815
+    xPol = 0.268214 +/- 0.001024
+   == Total time for this step: 128.892450s
+
+>  t = 2.735115
+
+================================== whole step =============================================
+   Time step size: dt = 0.004184
+   Residuals: tdvp_err = 9.73e-02, solver_res = 1.38e-05
+    Energy = -19.456050 +/- 0.079084
+    xPol = 0.268982 +/- 0.001043
+   == Total time for this step: 128.691066s
+
+>  t = 2.739299
+
+================================== whole step =============================================
+   Time step size: dt = 0.004149
+   Residuals: tdvp_err = 9.97e-02, solver_res = 1.40e-05
+    Energy = -19.339895 +/- 0.079356
+    xPol = 0.271458 +/- 0.001040
+   == Total time for this step: 128.991966s
+
+>  t = 2.743449
+
+================================== whole step =============================================
+   Time step size: dt = 0.004279
+   Residuals: tdvp_err = 9.38e-02, solver_res = 1.31e-05
+    Energy = -19.487871 +/- 0.078575
+    xPol = 0.274351 +/- 0.001031
+   == Total time for this step: 128.844751s
+
+>  t = 2.747728
+
+================================== whole step =============================================
+   Time step size: dt = 0.004136
+   Residuals: tdvp_err = 9.89e-02, solver_res = 1.39e-05
+    Energy = -19.559887 +/- 0.078693
+    xPol = 0.273818 +/- 0.001037
+   == Total time for this step: 128.764673s
+
+>  t = 2.751865
+
+================================== whole step =============================================
+   Time step size: dt = 0.004304
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.39e-05
+    Energy = -19.671168 +/- 0.079275
+    xPol = 0.276368 +/- 0.001042
+   == Total time for this step: 128.861663s
+
+>  t = 2.756169
+
+================================== whole step =============================================
+   Time step size: dt = 0.004237
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.38e-05
+    Energy = -19.736444 +/- 0.079427
+    xPol = 0.274566 +/- 0.001043
+   == Total time for this step: 129.255427s
+
+>  t = 2.760406
+
+================================== whole step =============================================
+   Time step size: dt = 0.004085
+   Residuals: tdvp_err = 9.66e-02, solver_res = 1.33e-05
+    Energy = -19.636858 +/- 0.079138
+    xPol = 0.279329 +/- 0.001043
+   == Total time for this step: 129.324951s
+
+>  t = 2.764491
+
+================================== whole step =============================================
+   Time step size: dt = 0.004237
+   Residuals: tdvp_err = 9.34e-02, solver_res = 1.30e-05
+    Energy = -19.794774 +/- 0.078678
+    xPol = 0.281070 +/- 0.001056
+   == Total time for this step: 130.596776s
+
+>  t = 2.768729
+
+================================== whole step =============================================
+   Time step size: dt = 0.004232
+   Residuals: tdvp_err = 9.75e-02, solver_res = 1.34e-05
+    Energy = -19.443685 +/- 0.078999
+    xPol = 0.284709 +/- 0.001055
+   == Total time for this step: 128.476563s
+
+>  t = 2.772960
+
+================================== whole step =============================================
+   Time step size: dt = 0.004321
+   Residuals: tdvp_err = 9.33e-02, solver_res = 1.40e-05
+    Energy = -19.370511 +/- 0.079694
+    xPol = 0.284074 +/- 0.001065
+   == Total time for this step: 128.411732s
+
+>  t = 2.777281
+
+================================== whole step =============================================
+   Time step size: dt = 0.004226
+   Residuals: tdvp_err = 9.68e-02, solver_res = 1.41e-05
+    Energy = -19.613232 +/- 0.080448
+    xPol = 0.286226 +/- 0.001064
+   == Total time for this step: 128.257900s
+
+>  t = 2.781507
+
+================================== whole step =============================================
+   Time step size: dt = 0.004195
+   Residuals: tdvp_err = 9.88e-02, solver_res = 1.41e-05
+    Energy = -19.458444 +/- 0.078945
+    xPol = 0.289142 +/- 0.001041
+   == Total time for this step: 129.074917s
+
+>  t = 2.785702
+
+================================== whole step =============================================
+   Time step size: dt = 0.004193
+   Residuals: tdvp_err = 9.70e-02, solver_res = 1.46e-05
+    Energy = -19.375281 +/- 0.079278
+    xPol = 0.291237 +/- 0.001059
+   == Total time for this step: 128.826663s
+
+>  t = 2.789895
+
+================================== whole step =============================================
+   Time step size: dt = 0.004271
+   Residuals: tdvp_err = 9.66e-02, solver_res = 1.35e-05
+    Energy = -19.541127 +/- 0.078494
+    xPol = 0.295644 +/- 0.001058
+   == Total time for this step: 129.045206s
+
+>  t = 2.794166
+
+================================== whole step =============================================
+   Time step size: dt = 0.004222
+   Residuals: tdvp_err = 9.45e-02, solver_res = 1.30e-05
+    Energy = -19.308750 +/- 0.079140
+    xPol = 0.294105 +/- 0.001075
+   == Total time for this step: 128.312691s
+
+>  t = 2.798387
+
+================================== whole step =============================================
+   Time step size: dt = 0.004363
+   Residuals: tdvp_err = 9.70e-02, solver_res = 1.43e-05
+    Energy = -19.356563 +/- 0.079288
+    xPol = 0.295861 +/- 0.001059
+   == Total time for this step: 128.682893s
+
+>  t = 2.802751
+
+================================== whole step =============================================
+   Time step size: dt = 0.004367
+   Residuals: tdvp_err = 9.54e-02, solver_res = 1.54e-05
+    Energy = -19.648019 +/- 0.079162
+    xPol = 0.295853 +/- 0.001065
+   == Total time for this step: 128.493868s
+
+>  t = 2.807118
+
+================================== whole step =============================================
+   Time step size: dt = 0.004284
+   Residuals: tdvp_err = 9.60e-02, solver_res = 1.42e-05
+    Energy = -19.385215 +/- 0.079098
+    xPol = 0.302259 +/- 0.001067
+   == Total time for this step: 128.890015s
+
+>  t = 2.811402
+
+================================== whole step =============================================
+   Time step size: dt = 0.004284
+   Residuals: tdvp_err = 9.66e-02, solver_res = 1.36e-05
+    Energy = -19.758761 +/- 0.079166
+    xPol = 0.304411 +/- 0.001066
+   == Total time for this step: 128.239633s
+
+>  t = 2.815687
+
+================================== whole step =============================================
+   Time step size: dt = 0.004262
+   Residuals: tdvp_err = 9.32e-02, solver_res = 1.38e-05
+    Energy = -19.594276 +/- 0.079385
+    xPol = 0.304120 +/- 0.001082
+   == Total time for this step: 128.869932s
+
+>  t = 2.819948
+
+================================== whole step =============================================
+   Time step size: dt = 0.004219
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.43e-05
+    Energy = -19.729031 +/- 0.079621
+    xPol = 0.304980 +/- 0.001075
+   == Total time for this step: 128.824163s
+
+>  t = 2.824168
+
+================================== whole step =============================================
+   Time step size: dt = 0.004167
+   Residuals: tdvp_err = 9.74e-02, solver_res = 1.36e-05
+    Energy = -19.567182 +/- 0.078685
+    xPol = 0.311393 +/- 0.001070
+   == Total time for this step: 128.404670s
+
+>  t = 2.828335
+
+================================== whole step =============================================
+   Time step size: dt = 0.004126
+   Residuals: tdvp_err = 9.72e-02, solver_res = 1.38e-05
+    Energy = -19.400497 +/- 0.078692
+    xPol = 0.311316 +/- 0.001072
+   == Total time for this step: 128.988441s
+
+>  t = 2.832460
+
+================================== whole step =============================================
+   Time step size: dt = 0.004214
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.44e-05
+    Energy = -19.344532 +/- 0.079930
+    xPol = 0.313946 +/- 0.001091
+   == Total time for this step: 128.278732s
+
+>  t = 2.836674
+
+================================== whole step =============================================
+   Time step size: dt = 0.004169
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.48e-05
+    Energy = -19.600799 +/- 0.078627
+    xPol = 0.317922 +/- 0.001075
+   == Total time for this step: 128.561811s
+
+>  t = 2.840843
+
+================================== whole step =============================================
+   Time step size: dt = 0.004181
+   Residuals: tdvp_err = 9.95e-02, solver_res = 1.50e-05
+    Energy = -19.492769 +/- 0.079555
+    xPol = 0.318351 +/- 0.001086
+   == Total time for this step: 128.339783s
+
+>  t = 2.845025
+
+================================== whole step =============================================
+   Time step size: dt = 0.004084
+   Residuals: tdvp_err = 9.63e-02, solver_res = 1.38e-05
+    Energy = -19.573079 +/- 0.078466
+    xPol = 0.319168 +/- 0.001095
+   == Total time for this step: 128.672688s
+
+>  t = 2.849109
+
+================================== whole step =============================================
+   Time step size: dt = 0.004177
+   Residuals: tdvp_err = 9.72e-02, solver_res = 1.50e-05
+    Energy = -19.341928 +/- 0.078534
+    xPol = 0.327670 +/- 0.001090
+   == Total time for this step: 128.722879s
+
+>  t = 2.853286
+
+================================== whole step =============================================
+   Time step size: dt = 0.004168
+   Residuals: tdvp_err = 1.00e-01, solver_res = 1.47e-05
+    Energy = -19.272392 +/- 0.080231
+    xPol = 0.325066 +/- 0.001097
+   == Total time for this step: 129.150832s
+
+>  t = 2.857454
+
+================================== whole step =============================================
+   Time step size: dt = 0.004129
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.43e-05
+    Energy = -19.352189 +/- 0.078528
+    xPol = 0.329633 +/- 0.001092
+   == Total time for this step: 128.697992s
+
+>  t = 2.861583
+
+================================== whole step =============================================
+   Time step size: dt = 0.004168
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.46e-05
+    Energy = -19.245465 +/- 0.079169
+    xPol = 0.332039 +/- 0.001108
+   == Total time for this step: 128.646312s
+
+>  t = 2.865750
+
+================================== whole step =============================================
+   Time step size: dt = 0.004147
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.53e-05
+    Energy = -19.478151 +/- 0.079509
+    xPol = 0.332855 +/- 0.001093
+   == Total time for this step: 128.823502s
+
+>  t = 2.869897
+
+================================== whole step =============================================
+   Time step size: dt = 0.004287
+   Residuals: tdvp_err = 1.00e-01, solver_res = 1.45e-05
+    Energy = -19.341171 +/- 0.079479
+    xPol = 0.332455 +/- 0.001098
+   == Total time for this step: 130.611326s
+
+>  t = 2.874184
+
+================================== whole step =============================================
+   Time step size: dt = 0.004198
+   Residuals: tdvp_err = 9.61e-02, solver_res = 1.46e-05
+    Energy = -19.027445 +/- 0.080629
+    xPol = 0.338772 +/- 0.001109
+   == Total time for this step: 128.915569s
+
+>  t = 2.878383
+
+================================== whole step =============================================
+   Time step size: dt = 0.004165
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.53e-05
+    Energy = -19.421910 +/- 0.080204
+    xPol = 0.338201 +/- 0.001123
+   == Total time for this step: 128.958207s
+
+>  t = 2.882548
+
+================================== whole step =============================================
+   Time step size: dt = 0.004070
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.51e-05
+    Energy = -19.346734 +/- 0.079084
+    xPol = 0.343026 +/- 0.001113
+   == Total time for this step: 128.722146s
+
+>  t = 2.886619
+
+================================== whole step =============================================
+   Time step size: dt = 0.004060
+   Residuals: tdvp_err = 1.00e-01, solver_res = 1.49e-05
+    Energy = -19.488361 +/- 0.078925
+    xPol = 0.344916 +/- 0.001112
+   == Total time for this step: 128.911662s
+
+>  t = 2.890679
+
+================================== whole step =============================================
+   Time step size: dt = 0.004145
+   Residuals: tdvp_err = 9.84e-02, solver_res = 1.57e-05
+    Energy = -19.344407 +/- 0.080416
+    xPol = 0.345925 +/- 0.001107
+   == Total time for this step: 128.336704s
+
+>  t = 2.894824
+
+================================== whole step =============================================
+   Time step size: dt = 0.004205
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.54e-05
+    Energy = -19.195654 +/- 0.079926
+    xPol = 0.347385 +/- 0.001120
+   == Total time for this step: 128.979511s
+
+>  t = 2.899030
+
+================================== whole step =============================================
+   Time step size: dt = 0.004314
+   Residuals: tdvp_err = 9.82e-02, solver_res = 1.47e-05
+    Energy = -19.570138 +/- 0.079574
+    xPol = 0.351105 +/- 0.001130
+   == Total time for this step: 129.136156s
+
+>  t = 2.903344
+
+================================== whole step =============================================
+   Time step size: dt = 0.004230
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.45e-05
+    Energy = -19.450356 +/- 0.078350
+    xPol = 0.356289 +/- 0.001119
+   == Total time for this step: 128.963223s
+
+>  t = 2.907574
+
+================================== whole step =============================================
+   Time step size: dt = 0.004179
+   Residuals: tdvp_err = 9.96e-02, solver_res = 1.58e-05
+    Energy = -19.143472 +/- 0.079372
+    xPol = 0.356716 +/- 0.001107
+   == Total time for this step: 128.583038s
+
+>  t = 2.911754
+
+================================== whole step =============================================
+   Time step size: dt = 0.004135
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.44e-05
+    Energy = -19.169273 +/- 0.079317
+    xPol = 0.358307 +/- 0.001124
+   == Total time for this step: 128.726087s
+
+>  t = 2.915888
+
+================================== whole step =============================================
+   Time step size: dt = 0.004141
+   Residuals: tdvp_err = 9.79e-02, solver_res = 1.56e-05
+    Energy = -19.393895 +/- 0.078760
+    xPol = 0.361747 +/- 0.001136
+   == Total time for this step: 129.048174s
+
+>  t = 2.920030
+
+================================== whole step =============================================
+   Time step size: dt = 0.004105
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.54e-05
+    Energy = -19.226693 +/- 0.078665
+    xPol = 0.364580 +/- 0.001124
+   == Total time for this step: 128.654562s
+
+>  t = 2.924135
+
+================================== whole step =============================================
+   Time step size: dt = 0.004164
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.67e-05
+    Energy = -19.336325 +/- 0.079445
+    xPol = 0.365526 +/- 0.001111
+   == Total time for this step: 128.780604s
+
+>  t = 2.928299
+
+================================== whole step =============================================
+   Time step size: dt = 0.004188
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.55e-05
+    Energy = -19.324187 +/- 0.079253
+    xPol = 0.369646 +/- 0.001142
+   == Total time for this step: 128.220142s
+
+>  t = 2.932487
+
+================================== whole step =============================================
+   Time step size: dt = 0.004078
+   Residuals: tdvp_err = 1.13e-01, solver_res = 1.63e-05
+    Energy = -19.158961 +/- 0.078590
+    xPol = 0.372950 +/- 0.001133
+   == Total time for this step: 128.080976s
+
+>  t = 2.936566
+
+================================== whole step =============================================
+   Time step size: dt = 0.004108
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.63e-05
+    Energy = -19.718949 +/- 0.079387
+    xPol = 0.370136 +/- 0.001135
+   == Total time for this step: 128.523876s
+
+>  t = 2.940674
+
+================================== whole step =============================================
+   Time step size: dt = 0.004152
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.53e-05
+    Energy = -19.348644 +/- 0.080166
+    xPol = 0.375007 +/- 0.001134
+   == Total time for this step: 128.819222s
+
+>  t = 2.944826
+
+================================== whole step =============================================
+   Time step size: dt = 0.004121
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.54e-05
+    Energy = -19.427632 +/- 0.078611
+    xPol = 0.375940 +/- 0.001129
+   == Total time for this step: 128.656689s
+
+>  t = 2.948947
+
+================================== whole step =============================================
+   Time step size: dt = 0.004041
+   Residuals: tdvp_err = 1.02e-01, solver_res = 1.60e-05
+    Energy = -19.558602 +/- 0.078845
+    xPol = 0.374574 +/- 0.001145
+   == Total time for this step: 128.384793s
+
+>  t = 2.952988
+
+================================== whole step =============================================
+   Time step size: dt = 0.004030
+   Residuals: tdvp_err = 1.05e-01, solver_res = 1.59e-05
+    Energy = -19.009912 +/- 0.079488
+    xPol = 0.383078 +/- 0.001132
+   == Total time for this step: 128.934363s
+
+>  t = 2.957018
+
+================================== whole step =============================================
+   Time step size: dt = 0.004188
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.65e-05
+    Energy = -19.639139 +/- 0.079933
+    xPol = 0.384127 +/- 0.001154
+   == Total time for this step: 128.484848s
+
+>  t = 2.961206
+
+================================== whole step =============================================
+   Time step size: dt = 0.004144
+   Residuals: tdvp_err = 9.75e-02, solver_res = 1.63e-05
+    Energy = -19.330130 +/- 0.079255
+    xPol = 0.385943 +/- 0.001134
+   == Total time for this step: 129.503500s
+
+>  t = 2.965349
+
+================================== whole step =============================================
+   Time step size: dt = 0.004243
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.60e-05
+    Energy = -19.597432 +/- 0.078901
+    xPol = 0.384511 +/- 0.001142
+   == Total time for this step: 128.671948s
+
+>  t = 2.969592
+
+================================== whole step =============================================
+   Time step size: dt = 0.004155
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.56e-05
+    Energy = -19.502609 +/- 0.078699
+    xPol = 0.387980 +/- 0.001151
+   == Total time for this step: 129.022846s
+
+>  t = 2.973747
+
+================================== whole step =============================================
+   Time step size: dt = 0.004002
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.51e-05
+    Energy = -19.502101 +/- 0.079295
+    xPol = 0.391526 +/- 0.001128
+   == Total time for this step: 128.588007s
+
+>  t = 2.977750
+
+================================== whole step =============================================
+   Time step size: dt = 0.004038
+   Residuals: tdvp_err = 1.03e-01, solver_res = 1.66e-05
+    Energy = -19.501015 +/- 0.079753
+    xPol = 0.394652 +/- 0.001145
+   == Total time for this step: 130.340083s
+
+>  t = 2.981788
+
+================================== whole step =============================================
+   Time step size: dt = 0.004143
+   Residuals: tdvp_err = 1.06e-01, solver_res = 1.63e-05
+    Energy = -19.402332 +/- 0.078780
+    xPol = 0.396465 +/- 0.001143
+   == Total time for this step: 128.608000s
+
+>  t = 2.985930
+
+================================== whole step =============================================
+   Time step size: dt = 0.004141
+   Residuals: tdvp_err = 1.09e-01, solver_res = 1.74e-05
+    Energy = -19.392877 +/- 0.078523
+    xPol = 0.397458 +/- 0.001142
+   == Total time for this step: 128.555615s
+
+>  t = 2.990071
+
+================================== whole step =============================================
+   Time step size: dt = 0.004126
+   Residuals: tdvp_err = 1.01e-01, solver_res = 1.66e-05
+    Energy = -19.440872 +/- 0.079507
+    xPol = 0.399100 +/- 0.001131
+   == Total time for this step: 128.499600s
+
+>  t = 2.994198
+
+================================== whole step =============================================
+   Time step size: dt = 0.004105
+   Residuals: tdvp_err = 1.04e-01, solver_res = 1.67e-05
+    Energy = -19.751515 +/- 0.079223
+    xPol = 0.400980 +/- 0.001148
+   == Total time for this step: 128.566734s
+
+>  t = 2.998303
+
+================================== whole step =============================================
+   Time step size: dt = 0.003952
+   Residuals: tdvp_err = 1.08e-01, solver_res = 1.83e-05
+    Energy = -19.201571 +/- 0.079377
+    xPol = 0.404063 +/- 0.001145
+   == Total time for this step: 128.903605s
+
+>  t = 3.002255
+
+done
+job ended
