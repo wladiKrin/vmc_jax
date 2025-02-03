@@ -1,0 +1,97 @@
+### Starting TaskPrologue of job 2341623 on a0805 at Do 30. Jan 00:39:22 CET 2025
+Running on cores 0-15,32-47,112-127 with governor ondemand
+Thu Jan 30 00:39:22 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:0E:00.0 Off |                    0 |
+| N/A   41C    P0             60W /  400W |       1MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:49:00.0 Off |                    0 |
+| N/A   35C    P0             53W /  400W |       1MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:D1:00.0 Off |                    0 |
+| N/A   41C    P0             56W /  400W |       1MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+3
+3
+mpi distributed
+ -> Rank 0 working with device [cuda(id=0)]
+initializing network
+Number of parameters:  6060
+starting GS search
+2025-01-30 00:40:27.878341: W external/xla/xla/service/hlo_rematerialization.cc:3005] Can't reduce memory use below -1.87GiB (-2005735760 bytes) by rematerialization; only reduced to 63.18GiB (67836585344 bytes), down from 63.18GiB (67836585520 bytes) originally
+2025-01-30 00:40:38.341768: W external/xla/xla/tsl/framework/bfc_allocator.cc:482] Allocator (GPU_0_bfc) ran out of memory trying to allocate 31.56GiB (rounded to 33890041088)requested by op 
+2025-01-30 00:40:38.342539: W external/xla/xla/tsl/framework/bfc_allocator.cc:494] *_****______________________________________________________________________________________________
+E0130 00:40:38.342572 3768548 pjrt_stream_executor_client.cc:2985] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 33890040960 bytes.
+jax.errors.SimplifiedTraceback: For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/atuin/b245da/b245da12/vmc_jax/scripts/mainResExLog.py", line 194, in <module>
+    jVMC.util.ground_state_search(psi, H_GS, tdvpEquation, exactSampler, numSteps=200)
+  File "/home/atuin/b245da/b245da12/vmc_jax/jVMC/util/util.py", line 194, in ground_state_search
+    dp, _ = stepper.step(0, tdvpEquation, psi.get_parameters(), hamiltonian=ham, psi=psi, numSamples=None, outp=outp)
+  File "/home/atuin/b245da/b245da12/vmc_jax/jVMC/util/stepper.py", line 38, in step
+    dy = f(yInitial, t, **rhsArgs, intStep=0)
+  File "/home/atuin/b245da/b245da12/vmc_jax/jVMC/util/tdvp.py", line 283, in __call__
+    sampleGradients = psi.gradients(sampleConfigs)
+  File "/home/atuin/b245da/b245da12/vmc_jax/jVMC/vqs.py", line 287, in gradients
+    return self._get_gradients_pmapd(self.net, self.parameters, s, self.batchSize, self.flat_gradient_function)
+jaxlib.xla_extension.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 33890040960 bytes.
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[40936,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+srun: error: a0805: task 0: Exited with exit code 1
+srun: Terminating StepId=2341623.0
+=== JOB_STATISTICS ===
+=== current date     : Thu Jan 30 00:40:42 CET 2025
+= Job-ID             : 2341623 on alex
+= Job-Name           : TDVP_ResNet20ExLog
+= Job-Command        : /home/atuin/b245da/b245da12/vmc_jax/scripts/sbatch_ResLogEx.py
+= Initial workdir    : /home/atuin/b245da/b245da12/vmc_jax/scripts
+= Queue/Partition    : a100
+= Slurm account      : b245da with QOS=normal
+= Features           : a100_40
+= Requested resources:  for 1-00:00:00
+= Elapsed runtime    : 00:01:24
+= Total RAM usage    : 1.7 GiB of assigned  GiB (%)
+= Node list          : a0805
+= Subm/Elig/Start/End: 2025-01-29T11:26:34 / 2025-01-29T11:26:34 / 2025-01-30T00:39:18 / 2025-01-30T00:40:42
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           22.1G   104.9G   209.7G        N/A      51K     500K   1,000K        N/A    
+    /home/vault          0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 3768548, 19 %, 0 %, 30766 MiB, 49070 ms
+NVIDIA A100-SXM4-40GB, 00000000:49:00.0, 3768548, 0 %, 0 %, 416 MiB, 48994 ms
+NVIDIA A100-SXM4-40GB, 00000000:D1:00.0, 3768548, 0 %, 0 %, 416 MiB, 48945 ms

@@ -30,6 +30,8 @@ from nets.CNN_resnet import ResNet
 from sampler.uniformSampler import UniformSampler
 from jVMC.nets.initializers import init_fn_args
 
+print(jax.local_device_count())
+
 from functools import partial
 
 import json
@@ -39,11 +41,6 @@ import argparse
 
 # Create the argument parser
 parser = argparse.ArgumentParser( description='TDVP script')
-
-# Positional arguments
-# parser.add_argument('-m', '--modelname', 
-#     help='modelname for saving purposes',
-# )
     
 parser.add_argument('-l', '--lattice', type=int, 
                     default=10, 
@@ -101,9 +98,14 @@ invCutoff     = args.invCutoff  # Adaptive integrator tolerance
 def norm_fun(v, df=lambda x: x):
     return jnp.abs(jnp.real(jnp.vdot(v,df(v))))
 
+mpi.commSize = jax.device_count()
+print(mpi.commSize)
+
 if mpi.commSize > 1:
+    print("mpi distributed")
     global_defs.set_pmap_devices(jax.devices()[mpi.rank % jax.device_count()])
 else:
+    print("not mpi distributed")
     global_defs.set_pmap_devices(jax.devices()[0])
 
 print(" -> Rank %d working with device %s" % (mpi.rank, global_defs.devices()), flush=True)
@@ -121,12 +123,17 @@ net = ResNet(
         bias=False, 
 )
 
-psi = jVMC.vqs.NQS(net, logarithmic=True, seed=4321)  # Variational wave function
+psi = jVMC.vqs.NQS(
+    net, 
+    logarithmic=True, 
+    seed=4321,
+    batchSize=200,
+)  # Variational wave function
 
 # Set up hamiltonian
 hamiltonian = jVMC.operator.BranchFreeOperator()
 for l in range(L-1):
-    hamiltonian.add(op.scal_opstr(-1., (op.Sz(l), op.Sz(l + 1))))
+    hamiltonian.add(op.scal_opstr(-1., (op.Sz(l), op.Sz((l + 1)%L))))
 
 for l in range(L):
     hamiltonian.add(op.scal_opstr(g, (op.Sx(l), )))
@@ -154,13 +161,16 @@ for l in range(L-2):
 
 # Set up sampler
 # exactSampler = jVMC.sampler.ExactSampler(psi, L)
+psi2GSSampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
+                                 numChains=25, sweepSteps=L,
+                                 numSamples=40000, thermalizationSweeps=25)
 psi2ObsSampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
                                  numChains=25, sweepSteps=L,
                                  numSamples=20000, thermalizationSweeps=25)
 psi2Sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
                                  numChains=25, sweepSteps=L,
                                  numSamples=numSamples, thermalizationSweeps=25)
-uniformSampler = UniformSampler(psi, (L,), numSamples=numSamples, exactRenorm=exactRenorm)
+# uniformSampler = UniformSampler(psi, (L,), numSamples=numSamples, exactRenorm=exactRenorm)
 
 params = psi.get_parameters()
 print("Number of parameters: ", params.size)
@@ -174,7 +184,7 @@ for l in range(L):
 
 # Set up TDVP
 # tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs": exactSampler}, rhsPrefactor=1., pinvTol=1e-8, diagonalShift=10, makeReal='real')
-tdvpEquation = jVMC.util.TDVP(psi2Sampler, rhsPrefactor=1., pinvTol=1e-8, diagonalShift=10, makeReal='real')
+tdvpEquation = jVMC.util.TDVP(psi2GSSampler, rhsPrefactor=1., pinvTol=1e-8, diagonalShift=10, makeReal='real')
 
 print("starting GS search")
 jVMC.util.ground_state_search(psi, H_GS, tdvpEquation, psi2Sampler, numSteps=200)
