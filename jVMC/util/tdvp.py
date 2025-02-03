@@ -193,20 +193,18 @@ class TDVP:
         # Discard eigenvalues below numerical precision
         self.invEv = jnp.where(jnp.abs(self.ev / self.ev[-1]) > 1e-14, 1. / self.ev, 0.)
 
-        # Set regularizer for singular value cutoff
-        regularizer = 1. / (1. + (self.pinvTol / jnp.abs(self.ev / self.ev[-1]))**6)
-
         residual = 1.0
         cutoff = 1e-2
         F_norm = jnp.linalg.norm(F)
+
         while residual > self.pinvTol and cutoff > self.pinvCutoff:
             cutoff *= 0.8
             # Set regularizer for singular value cutoff
             regularizer = 1. / (1. + (max(cutoff, self.pinvCutoff) / jnp.abs(self.ev / self.ev[-1]))**6)
 
-            if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
+            #if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
                 # Construct a soft cutoff based on the SNR
-                regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
+            #    regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
 
             pinvEv = self.invEv * regularizer
 
