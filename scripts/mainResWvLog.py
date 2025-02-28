@@ -163,10 +163,10 @@ for l in range(L-2):
 # exactSampler = jVMC.sampler.ExactSampler(psi, L)
 psi2GSSampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
                                  numChains=25, sweepSteps=L,
-                                 numSamples=40000, thermalizationSweeps=25)
+                                 numSamples=2000, thermalizationSweeps=25)
 psi2ObsSampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
                                  numChains=25, sweepSteps=L,
-                                 numSamples=20000, thermalizationSweeps=25)
+                                 numSamples=2000, thermalizationSweeps=25)
 psi2Sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
                                  numChains=25, sweepSteps=L,
                                  numSamples=numSamples, thermalizationSweeps=25)
