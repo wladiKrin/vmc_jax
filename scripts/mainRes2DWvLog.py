@@ -104,7 +104,6 @@ def xy_to_id(x,y,L):
 def norm_fun(v, df=lambda x: x):
     return jnp.abs(jnp.real(jnp.vdot(v,df(v))))
 
-mpi.commSize = jax.device_count()
 print("commSize: ", mpi.commSize)
 print("rank: ", mpi.rank)
 print("device_count: ", jax.device_count())
@@ -145,7 +144,7 @@ psi = jVMC.vqs.NQS(
         net, 
         logarithmic=True, 
         seed=4321,
-        batchSize=500,
+        batchSize=100,
 )  # Variational wave function
 
 # Set up hamiltonian

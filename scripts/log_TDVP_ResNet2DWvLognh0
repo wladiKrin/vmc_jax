@@ -1,0 +1,244 @@
+pgi8cluster22: Using Ethernet for MPI communication.
+job started
+/var/spool/slurmd/job63314/slurm_script: Zeile 15: conda: Kommando nicht gefunden.
+pgi8cluster22: Using Ethernet for MPI communication.
+2
+commSize:  2
+rank:  0
+device_count:  2
+mpi distributed
+ -> Rank 0 working with device [CudaDevice(id=0)]
+initializing network
+num interactions:  512
+Number of parameters:  2040
+starting GS search
+ STEP 1
+   Energy mean: -255.977471
+   Energy variance: 0.151612
+   == Time for step: 63.272970s
+ STEP 2
+   Energy mean: -255.976866
+   Energy variance: 0.138294
+   == Time for step: 40.669403s
+ STEP 3
+   Energy mean: -255.981369
+   Energy variance: 0.123065
+   == Time for step: 40.574487s
+ STEP 4
+   Energy mean: -255.978768
+   Energy variance: 0.110589
+   == Time for step: 40.603663s
+ STEP 5
+   Energy mean: -255.986051
+   Energy variance: 0.099073
+   == Time for step: 40.701583s
+ STEP 6
+   Energy mean: -255.983720
+   Energy variance: 0.089455
+   == Time for step: 40.410581s
+ STEP 7
+   Energy mean: -255.984028
+   Energy variance: 0.082042
+   == Time for step: 40.323008s
+ STEP 8
+   Energy mean: -255.985720
+   Energy variance: 0.073402
+   == Time for step: 40.383334s
+ STEP 9
+   Energy mean: -255.990063
+   Energy variance: 0.067073
+   == Time for step: 40.611564s
+ STEP 10
+   Energy mean: -255.985211
+   Energy variance: 0.060780
+   == Time for step: 40.773447s
+ STEP 11
+   Energy mean: -255.989905
+   Energy variance: 0.053857
+   == Time for step: 40.512281s
+ STEP 12
+   Energy mean: -255.988451
+   Energy variance: 0.049312
+   == Time for step: 40.736804s
+ STEP 13
+   Energy mean: -255.990362
+   Energy variance: 0.045167
+   == Time for step: 40.706416s
+ STEP 14
+   Energy mean: -255.991369
+   Energy variance: 0.040575
+   == Time for step: 40.488270s
+ STEP 15
+   Energy mean: -255.993221
+   Energy variance: 0.037534
+   == Time for step: 40.446342s
+ STEP 16
+   Energy mean: -255.993808
+   Energy variance: 0.034211
+   == Time for step: 40.462132s
+ STEP 17
+   Energy mean: -255.991892
+   Energy variance: 0.030830
+   == Time for step: 40.671348s
+ STEP 18
+   Energy mean: -255.993789
+   Energy variance: 0.028561
+   == Time for step: 40.458877s
+ STEP 19
+   Energy mean: -255.994973
+   Energy variance: 0.026195
+   == Time for step: 40.641037s
+ STEP 20
+   Energy mean: -255.994240
+   Energy variance: 0.023814
+   == Time for step: 40.621877s
+ STEP 21
+   Energy mean: -255.995525
+   Energy variance: 0.022173
+   == Time for step: 40.375942s
+ STEP 22
+   Energy mean: -255.994792
+   Energy variance: 0.020340
+   == Time for step: 40.415098s
+ STEP 23
+   Energy mean: -255.994411
+   Energy variance: 0.018793
+   == Time for step: 40.401484s
+ STEP 24
+   Energy mean: -255.996304
+   Energy variance: 0.016855
+   == Time for step: 40.207962s
+ STEP 25
+   Energy mean: -255.994295
+   Energy variance: 0.015406
+   == Time for step: 40.517853s
+ STEP 26
+   Energy mean: -255.997403
+   Energy variance: 0.014428
+   == Time for step: 40.637148s
+ STEP 27
+   Energy mean: -255.995457
+   Energy variance: 0.013290
+   == Time for step: 40.249346s
+ STEP 28
+   Energy mean: -255.995989
+   Energy variance: 0.012256
+   == Time for step: 40.366473s
+ STEP 29
+   Energy mean: -255.996642
+   Energy variance: 0.011464
+   == Time for step: 40.615744s
+ STEP 30
+   Energy mean: -255.996643
+   Energy variance: 0.010332
+   == Time for step: 40.243103s
+ STEP 31
+   Energy mean: -255.996883
+   Energy variance: 0.009542
+   == Time for step: 40.474480s
+ STEP 32
+   Energy mean: -255.997543
+   Energy variance: 0.008962
+   == Time for step: 40.616348s
+ STEP 33
+   Energy mean: -255.997667
+   Energy variance: 0.008176
+   == Time for step: 40.641622s
+ STEP 34
+   Energy mean: -255.997384
+   Energy variance: 0.007677
+   == Time for step: 40.365618s
+ STEP 35
+   Energy mean: -255.996995
+   Energy variance: 0.007069
+   == Time for step: 40.333809s
+ STEP 36
+   Energy mean: -255.998297
+   Energy variance: 0.006662
+   == Time for step: 40.450892s
+ STEP 37
+   Energy mean: -255.997724
+   Energy variance: 0.006214
+   == Time for step: 40.342777s
+ STEP 38
+   Energy mean: -255.998128
+   Energy variance: 0.005745
+   == Time for step: 40.520894s
+ STEP 39
+   Energy mean: -255.997879
+   Energy variance: 0.005389
+   == Time for step: 40.521890s
+ STEP 40
+   Energy mean: -255.999405
+   Energy variance: 0.004996
+   == Time for step: 40.486727s
+ STEP 41
+   Energy mean: -255.998897
+   Energy variance: 0.004606
+   == Time for step: 40.624208s
+ STEP 42
+   Energy mean: -255.998786
+   Energy variance: 0.004372
+   == Time for step: 40.487901s
+ STEP 43
+   Energy mean: -255.998183
+   Energy variance: 0.004095
+   == Time for step: 40.454207s
+ STEP 44
+   Energy mean: -255.998312
+   Energy variance: 0.003829
+   == Time for step: 40.340013s
+ STEP 45
+   Energy mean: -255.999331
+   Energy variance: 0.003635
+   == Time for step: 40.584334s
+ STEP 46
+   Energy mean: -255.998554
+   Energy variance: 0.003366
+   == Time for step: 40.558176s
+ STEP 47
+   Energy mean: -255.999233
+   Energy variance: 0.003099
+   == Time for step: 40.278509s
+ STEP 48
+   Energy mean: -255.998911
+   Energy variance: 0.002930
+   == Time for step: 40.372573s
+ STEP 49
+   Energy mean: -255.998672
+   Energy variance: 0.002757
+   == Time for step: 40.621966s
+ STEP 50
+   Energy mean: -255.999395
+   Energy variance: 0.002586
+   == Time for step: 40.292347s
+setting up tdvp equation
+starting tdvp equation
+>  t = 0.000000
+
+================================== whole step =============================================
+2025-02-07 20:39:12.746955: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 37.52GiB (40290434237 bytes) by rematerialization; only reduced to 59.28GiB (63651848240 bytes), down from 59.28GiB (63651848240 bytes) originally
+2025-02-07 20:39:23.063133: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 19.61GiB (rounded to 21053440768)requested by op 
+2025-02-07 20:39:23.066025: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ******__**************_______******************************************_____________________________
+E0207 20:39:23.066046 2656420 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 21053440664 bytes. [tf-allocator-allocation-error='']
+Traceback (most recent call last):
+  File "/local/krinitsin/VMC/vmc_jax/scripts/mainRes2DWvLog.py", line 294, in <module>
+    dp, dt = stepper.step(0, tdvpEquation, psi.get_parameters(), hamiltonian=hamiltonian, psi=psi,
+             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           normFunction=partial(norm_fun, df=tdvpEquation.S_dot))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/krinitsin/VMC/vmc_jax/jVMC/util/stepper.py", line 146, in step
+    k0 = f(y, t, **rhsArgs, intStep=0)
+  File "/local/krinitsin/VMC/vmc_jax/jVMC/util/tdvp.py", line 273, in __call__
+    Eloc = hamiltonian.get_O_loc(sampleConfigs, psi, sampleLogPsi, t)
+  File "/local/krinitsin/VMC/vmc_jax/jVMC/operator/base.py", line 188, in get_O_loc
+    sampleOffdConfigs, _ = self.get_s_primes(samples, *args)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/local/krinitsin/VMC/vmc_jax/jVMC/operator/base.py", line 153, in get_s_primes
+    self.sp, self.matEl = self._get_s_primes_pmapd(s, *args)
+                          ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 21053440664 bytes.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+srun: error: pgi8cluster22: task 0: Exited with exit code 1
+job ended
