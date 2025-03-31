@@ -20,7 +20,8 @@ import numpy as np
 import pandas as pd
 from nets.RBMCNN import CpxRBMCNN
 from nets.RBMNoLog import CpxRBMNoLog
-from sampler.uniformSampler import UniformSampler
+# from sampler.uniformSampler import UniformSampler
+import implicit_tdvp
 
 import jVMC
 import jVMC.global_defs as global_defs
@@ -61,7 +62,7 @@ parser.add_argument('-f', '--filterSize', type=int,
                     help='Filter size (default: 10)')
 
 parser.add_argument('--tmax', type=float, 
-                    default=2., 
+                    default=1., 
                     help='maximum time (default: 2)')
 parser.add_argument('--dt', type=float, 
                     default=1e-4, 
@@ -124,21 +125,25 @@ else:
 
 print(" -> Rank %d working with device %s" % (mpi.rank, global_defs.devices()), flush=True)
 
-param_name = "RBMCNN_ref_L="+str(L)+ "_g="+str(g)+ "_num_hidden="+str(num_hidden)+ "_filter_size="+str(filter_size)+ "_numSamples="+str(numSamples)+ "_exactRenorm="+str(exactRenorm) +"_integratorTol="+str(integratorTol)+ "_invCutoff="+str(invCutoff)+ "_tmax="+str(tmax)
+param_name = "RBM_ref_L="+str(L)+ "_g="+str(g)+ "_num_hidden="+str(num_hidden)+ "_filter_size="+str(filter_size)+ "_numSamples="+str(numSamples)+ "_exactRenorm="+str(exactRenorm) +"_integratorTol="+str(integratorTol)+ "_invCutoff="+str(invCutoff)+ "_tmax="+str(tmax)
 
 outp = jVMC.util.OutputManager("../data/output_"+param_name+".hdf5", append=True)
 
 # Set up variational wave function
 print("initializing network")
-net = CpxRBMCNN(
-  F=(filter_size,),
-  channels=(num_hidden,),
-  strides=(1,),
+# net = CpxRBMCNN(
+#   F=(filter_size,),
+#   channels=(num_hidden,),
+#   strides=(1,),
+#   bias=False, 
+#   periodicBoundary=False,
+# )
+net = CpxRBM(
+  numHidden=num_hidden,
   bias=False, 
-  periodicBoundary=False,
 )
 
-psi = jVMC.vqs.NQS(net, logarithmic=False, seed=4321)  # Variational wave function
+psi = jVMC.vqs.NQS(net, logarithmic=True, seed=4321)  # Variational wave function
 
 # Set up hamiltonian
 hamiltonian = jVMC.operator.BranchFreeOperator()
@@ -165,7 +170,7 @@ psi2ObsSampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateP
 psi2Sampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
                                  numChains=25, sweepSteps=L,
                                  numSamples=numSamples, thermalizationSweeps=25)
-uniformSampler = UniformSampler(psi, (L,), numSamples=numSamples, exactRenorm=exactRenorm)
+# uniformSampler = UniformSampler(psi, (L,), numSamples=numSamples, exactRenorm=exactRenorm)
 
 params = psi.get_parameters()
 print("Number of parameters: ", params.size)
@@ -191,7 +196,7 @@ print("Number of parameters: ", params.size)
 #####################################
 
 print("setting up tdvp equation")
-tdvpEquation = jVMC.util.TDVP(psi2Sampler, rhsPrefactor=1.j, pinvCutoff=invCutoff)
+tdvpEquation = implicit_tdvp.TDVP(psi2Sampler, rhsPrefactor=1.j, pinvCutoff=invCutoff)
 
 # Set up stepper
 stepper = jVMC.util.stepper.AdaptiveHeun(timeStep=dt, tol=integratorTol)
@@ -224,7 +229,7 @@ while t < tmax:
     # print(dp)
     psi.set_parameters(dp)
     t += dt
-    tdvpEquation.set_time(t)
+    # tdvpEquation.set_time(t)
 
     # Measure observables
     obs = measure(observables, psi, psi2ObsSampler)
