@@ -1,0 +1,10 @@
+{
+    "system": {
+        "Lx": 4
+        "Ly": 4
+    },
+    "net": {
+        "num_hidden": 100
+        "num_samples": 20000
+    }
+}
