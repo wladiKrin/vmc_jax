@@ -13,6 +13,8 @@ from functools import partial
 import flax
 import flax.linen as nn
 import h5py
+# from sampler.uniformSampler import UniformSampler
+import implicit_tdvp
 import jax.numpy as jnp
 import jax.random as random
 import matplotlib.pyplot as plt
@@ -20,8 +22,6 @@ import numpy as np
 import pandas as pd
 from nets.RBMCNN import CpxRBMCNN
 from nets.RBMNoLog import CpxRBMNoLog
-# from sampler.uniformSampler import UniformSampler
-import implicit_tdvp
 
 import jVMC
 import jVMC.global_defs as global_defs
@@ -55,7 +55,7 @@ parser.add_argument('--exactRenorm', type=bool,
                     help='Wether to use the exact Renormalisation factor (default: false)')
 
 parser.add_argument('--numHidden', type=int, 
-                    default=15, 
+                    default=20, 
                     help='Number of hidden units (default: 20)')
 parser.add_argument('-f', '--filterSize', type=int, 
                     default=10, 
@@ -68,7 +68,7 @@ parser.add_argument('--dt', type=float,
                     default=1e-4, 
                     help='Time step (default: 1e-4)')
 parser.add_argument('--integratorTol', type=float, 
-                    default=1e-4, 
+                    default=1e-5, 
                     help='Adaptive Heun integrator tolerance (default: 1e-4)')
 
 parser.add_argument('--invCutoff', type=float, 
@@ -125,7 +125,7 @@ else:
 
 print(" -> Rank %d working with device %s" % (mpi.rank, global_defs.devices()), flush=True)
 
-param_name = "RBM_ref_L="+str(L)+ "_g="+str(g)+ "_num_hidden="+str(num_hidden)+ "_filter_size="+str(filter_size)+ "_numSamples="+str(numSamples)+ "_exactRenorm="+str(exactRenorm) +"_integratorTol="+str(integratorTol)+ "_invCutoff="+str(invCutoff)+ "_tmax="+str(tmax)
+param_name = "RBM_ref_exact_L="+str(L)+ "_g="+str(g)+ "_num_hidden="+str(num_hidden)+ "_filter_size="+str(filter_size)+ "_numSamples="+str(numSamples)+ "_exactRenorm="+str(exactRenorm) +"_integratorTol="+str(integratorTol)+ "_invCutoff="+str(invCutoff)+ "_tmax="+str(tmax)
 
 outp = jVMC.util.OutputManager("../data/output_"+param_name+".hdf5", append=True)
 
@@ -163,7 +163,7 @@ for l in range(L):
     observables["X"].add(op.scal_opstr(1. / L, (op.Sx(l), )))
 
 # Set up sampler
-# exactSampler = jVMC.sampler.ExactSampler(psi, L)
+exactSampler = jVMC.sampler.ExactSampler(psi, L)
 psi2ObsSampler = jVMC.sampler.MCSampler(psi, (L,), random.PRNGKey(4321), updateProposer=jVMC.sampler.propose_spin_flip_Z2,
                                  numChains=25, sweepSteps=L,
                                  numSamples=20000, thermalizationSweeps=25)
@@ -196,7 +196,7 @@ print("Number of parameters: ", params.size)
 #####################################
 
 print("setting up tdvp equation")
-tdvpEquation = implicit_tdvp.TDVP(psi2Sampler, rhsPrefactor=1.j, pinvCutoff=invCutoff)
+tdvpEquation = implicit_tdvp.TDVP(exactSampler, rhsPrefactor=1.j, pinvCutoff=invCutoff)
 
 # Set up stepper
 stepper = jVMC.util.stepper.AdaptiveHeun(timeStep=dt, tol=integratorTol)

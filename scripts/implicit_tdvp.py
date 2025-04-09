@@ -3,6 +3,7 @@ from functools import partial
 
 import jax
 import jax.numpy as jnp
+import jax.scipy.optimize
 import numpy as np
 import scipy.optimize
 from scipy.optimize import elementwise
@@ -193,7 +194,7 @@ class TDVP:
             # print("S ", self.S.shape)
             # print("@ ", (self.S@theta).shape)
             # print("dot ", jnp.dot(self.S,theta).shape)
-            return jnp.imag(jnp.dot(self.S, theta) - F)
+            return jnp.linalg.norm(jnp.dot(self.S, theta) - F)
 
         # print(params.shape)
         # print(self.S.shape)
@@ -204,10 +205,15 @@ class TDVP:
         # print(res_bracket.bracket)
         # print(params)
         # print(f(params))
-        brackets = (params-jnp.ones_like(params), params+jnp.ones_like(params))
 
-        update = elementwise.find_root(f, brackets)
-        print(update)
+        # brackets = (params-jnp.ones_like(params), params+jnp.ones_like(params))
+        # update = elementwise.find_root(f, brackets)
+
+        update = jax.scipy.optimize.minimize(f, params, method='BFGS')
+        # print("result: ", update.x)
+        print("success: ", update.success)
+        print("status: ", update.status)
+        print("function val: ", update.fun)
 
         # Transform TDVP equation to eigenbasis and compute SNR
         # self._transform_to_eigenbasis(self.S, F) #, Fdata)
@@ -234,7 +240,11 @@ class TDVP:
         #
         # update = jnp.real(jnp.dot(self.V, (pinvEv * self.VtF)))
 
-        return update, residual, max(cutoff, self.pinvCutoff)
+        self.snr = 0
+        self.ev = 0
+        residual = 0
+        cutoff = 0
+        return update.x, residual, max(cutoff, self.pinvCutoff)
 
     def S_dot(self, v):
 
