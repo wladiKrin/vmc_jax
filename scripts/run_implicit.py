@@ -68,7 +68,7 @@ parser.add_argument('--dt', type=float,
                     default=1e-4, 
                     help='Time step (default: 1e-4)')
 parser.add_argument('--integratorTol', type=float, 
-                    default=1e-5, 
+                    default=1e-4, 
                     help='Adaptive Heun integrator tolerance (default: 1e-4)')
 
 parser.add_argument('--invCutoff', type=float, 
@@ -125,7 +125,7 @@ else:
 
 print(" -> Rank %d working with device %s" % (mpi.rank, global_defs.devices()), flush=True)
 
-param_name = "RBM_ref_exact_L="+str(L)+ "_g="+str(g)+ "_num_hidden="+str(num_hidden)+ "_filter_size="+str(filter_size)+ "_numSamples="+str(numSamples)+ "_exactRenorm="+str(exactRenorm) +"_integratorTol="+str(integratorTol)+ "_invCutoff="+str(invCutoff)+ "_tmax="+str(tmax)
+param_name = "RBM_ref_exactSamp_L="+str(L)+ "_g="+str(g)+ "_num_hidden="+str(num_hidden)+ "_filter_size="+str(filter_size)+ "_numSamples="+str(numSamples)+ "_exactRenorm="+str(exactRenorm) +"_integratorTol="+str(integratorTol)+ "_invCutoff="+str(invCutoff)+ "_tmax="+str(tmax)
 
 outp = jVMC.util.OutputManager("../data/output_"+param_name+".hdf5", append=True)
 
@@ -205,7 +205,7 @@ t = 0.
 # Measure initial observables
 parameters = []
 parameters.append(params) 
-obs = measure(observables, psi, psi2ObsSampler)
+obs = measure(observables, psi, exactSampler)
 data = []
 data.append([t, 
     obs["energy"]["mean"][0], 
@@ -232,7 +232,7 @@ while t < tmax:
     # tdvpEquation.set_time(t)
 
     # Measure observables
-    obs = measure(observables, psi, psi2ObsSampler)
+    obs = measure(observables, psi, exactSampler)
 
     # Write some meta info to screen
     print("   Time step size: dt = %f" % (dt))

@@ -2,6 +2,9 @@ import warnings
 from functools import partial
 
 import jax
+
+jax.config.update("jax_enable_x64", True)
+
 import jax.numpy as jnp
 import jax.scipy.optimize
 import numpy as np
@@ -188,63 +191,72 @@ class TDVP:
         self.S, F = self.get_tdvp_equation(Eloc, gradients)
         F.block_until_ready()
 
+        print("scipy optimize")
+        S_np = np.array(self.S)
+        F_np = np.array(F)
         def f(theta):
-            # print(theta)
-            # print("theta ", theta.shape)
-            # print("S ", self.S.shape)
-            # print("@ ", (self.S@theta).shape)
-            # print("dot ", jnp.dot(self.S,theta).shape)
-            return jnp.linalg.norm(jnp.dot(self.S, theta) - F)
+            return np.linalg.norm(np.dot(S_np, theta) - F_np)
+        update_np = scipy.optimize.minimize(f, np.array(params), method='BFGS', tol=1e-4)
 
-        # print(params.shape)
-        # print(self.S.shape)
-        # print(F.shape)
-        # res_bracket = elementwise.bracket_root(f, params)
+        print("success: ", update_np.success)
+        print("status: ", update_np.status)
+        print("message: ", update_np.message)
+        print("function val: ", update_np.fun)
+
+        # # print(params[:5])
         #
-        # print(res_bracket.success)
-        # print(res_bracket.bracket)
-        # print(params)
-        # print(f(params))
-
-        # brackets = (params-jnp.ones_like(params), params+jnp.ones_like(params))
-        # update = elementwise.find_root(f, brackets)
-
-        update = jax.scipy.optimize.minimize(f, params, method='BFGS')
-        # print("result: ", update.x)
-        print("success: ", update.success)
-        print("status: ", update.status)
-        print("function val: ", update.fun)
+        # print("jax optimize")
+        # def f(theta):
+        #     return jnp.linalg.norm(jnp.dot(jnp.imag(self.S), theta) - jnp.imag(F))
+        # update = jax.scipy.optimize.minimize(f, jnp.array(update_np.x + 0.1*np.random.randn(update_np.x.size)), method='BFGS', ) # options = {"maxiter": 1e6, "gtol":1e-4})
+        # # print("res: ", update.x)
+        # print("success: ", update.success)
+        # print("status: ", update.status)
+        # print("function val: ", update.fun)
+        # # update = update.x
+        #
+        # print("same_res: ", np.sum(np.abs(np.array(update.x)/update_np.x-1)**2))
+        # print(np.array(update.x)[:5])
+        # print(np.array(update_np.x)[:5])
+        # print(f(np.array(update.x)))
+        #
+        #
+        # update = jnp.array(update_np.x)
 
         # Transform TDVP equation to eigenbasis and compute SNR
-        # self._transform_to_eigenbasis(self.S, F) #, Fdata)
-        # self._get_snr(Eloc, gradients)
+        self._transform_to_eigenbasis(self.S, F) #, Fdata)
+        self._get_snr(Eloc, gradients)
         #
-        # # Discard eigenvalues below numerical precision
-        # self.invEv = jnp.where(jnp.abs(self.ev / self.ev[-1]) > 1e-14, 1. / self.ev, 0.)
-        #
-        # residual = 1.0
-        # cutoff = 1e-2
-        # F_norm = jnp.linalg.norm(F)
-        # while residual > self.pinvTol and cutoff > self.pinvCutoff:
-        #     cutoff *= 0.8
-        #     # Set regularizer for singular value cutoff
-        #     regularizer = 1. / (1. + (max(cutoff, self.pinvCutoff) / jnp.abs(self.ev / self.ev[-1]))**6)
-        #
-        #     if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
-        #         # Construct a soft cutoff based on the SNR
-        #         regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
-        #
-        #     pinvEv = self.invEv * regularizer
-        #
-        #     residual = jnp.linalg.norm((pinvEv * self.ev - jnp.ones_like(pinvEv)) * self.VtF) / F_norm
-        #
-        # update = jnp.real(jnp.dot(self.V, (pinvEv * self.VtF)))
+        # Discard eigenvalues below numerical precision
+        self.invEv = jnp.where(jnp.abs(self.ev / self.ev[-1]) > 1e-14, 1. / self.ev, 0.)
 
-        self.snr = 0
-        self.ev = 0
-        residual = 0
-        cutoff = 0
-        return update.x, residual, max(cutoff, self.pinvCutoff)
+        residual = 1.0
+        cutoff = 1e-2
+        F_norm = jnp.linalg.norm(F)
+        while residual > self.pinvTol and cutoff > self.pinvCutoff:
+            cutoff *= 0.8
+            # Set regularizer for singular value cutoff
+            regularizer = 1. / (1. + (max(cutoff, self.pinvCutoff) / jnp.abs(self.ev / self.ev[-1]))**6)
+
+            if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
+                # Construct a soft cutoff based on the SNR
+                regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
+
+            pinvEv = self.invEv * regularizer
+
+            residual = jnp.linalg.norm((pinvEv * self.ev - jnp.ones_like(pinvEv)) * self.VtF) / F_norm
+
+        update_expl = jnp.real(jnp.dot(self.V, (pinvEv * self.VtF)))
+
+        print("implicit:", np.array(update_np.x)[:5])
+        print("explicit:", np.array(update_expl.x)[:5])
+        print("comp to explicit: ", np.sum(np.abs(update_expl/update_np.x-1)**2))
+
+        # self.snr = 0
+        # self.ev = 0
+        # residual = 0
+        # cutoff = 0
+        return update, residual, max(cutoff, self.pinvCutoff)
 
     def S_dot(self, v):
 
