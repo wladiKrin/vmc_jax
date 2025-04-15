@@ -1,0 +1,1884 @@
+Slurm Job Id: 74429
+Di 15. Apr 14:05:39 CEST 2025
+host: pgi8cluster43
+Slurm Instance: 0
+Encap Proc Id: 0
+scripts/0encap_folder/2D_trotter_cnn_expl_trotter/fix_x_rot/run.py 
+
+[pgi8cluster43:3926213] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.pgi8cluster43.26033004/jf.0/1738735616/shared_mem_cuda_pool.pgi8cluster43 could be created.
+[pgi8cluster43:3926213] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
+[CudaDevice(id=0)]
+** Ground state search
+GS Z-polarization:  {'mean': Array([-0.21996656], dtype=float64), 'variance': Array([0.05947578], dtype=float64), 'MC_error': Array([0.], dtype=float64)}
+GS ZZ-correlation:  {'mean': Array([0.09677045], dtype=float64), 'variance': Array([0.15924323], dtype=float64), 'MC_error': Array([0.], dtype=float64)}
+** Time evolution
+### Circuit step  0
+
+Diagonal part
+>  t = 0.000000
+
+   Time step size: dt = 0.000100
+   Residuals: tdvp_err = 1.40e-03, solver_res = 9.29e-06
+saving time:  0.0
+    Energy =  -1.5483271837885908
+    Energy variance =  40.766266259676485
+   == Total time for this step:  21.26250823913142
+>  t = 0.000100
+
+   Time step size: dt = 0.000200
+   Residuals: tdvp_err = 1.40e-03, solver_res = 9.29e-06
+saving time:  0.0004000000000000001
+    Energy =  -1.5483271837935646
+    Energy variance =  40.76615265012428
+   == Total time for this step:  15.834690986201167
+>  t = 0.000300
+
+   Time step size: dt = 0.000400
+   Residuals: tdvp_err = 1.39e-03, solver_res = 9.29e-06
+saving time:  0.0012000000000000003
+    Energy =  -1.5483271837512556
+    Energy variance =  40.76592574536825
+   == Total time for this step:  15.58010069699958
+>  t = 0.000700
+
+   Time step size: dt = 0.000800
+   Residuals: tdvp_err = 1.39e-03, solver_res = 9.30e-06
+saving time:  0.0028
+    Energy =  -1.5483271820206137
+    Energy variance =  40.76547373619468
+   == Total time for this step:  15.603960067033768
+>  t = 0.001500
+
+   Time step size: dt = 0.001600
+   Residuals: tdvp_err = 1.39e-03, solver_res = 9.32e-06
+saving time:  0.006000000000000001
+    Energy =  -1.548327146445714
+    Energy variance =  40.76458111624277
+   == Total time for this step:  15.617812125012279
+>  t = 0.003100
+
+   Time step size: dt = 0.003200
+   Residuals: tdvp_err = 1.38e-03, solver_res = 9.34e-06
+saving time:  0.0124
+    Energy =  -1.5483267211912743
+    Energy variance =  40.76286973214879
+   == Total time for this step:  15.628156210761517
+>  t = 0.006300
+
+   Time step size: dt = 0.006400
+   Residuals: tdvp_err = 1.35e-03, solver_res = 9.29e-06
+saving time:  0.025199999999999997
+    Energy =  -1.5483280317916506
+    Energy variance =  40.75983635286595
+   == Total time for this step:  15.604085808154196
+>  t = 0.012700
+
+   Time step size: dt = 0.010064
+   Residuals: tdvp_err = 1.24e-03, solver_res = 8.98e-06
+saving time:  0.0508
+    Energy =  -1.5483372432821165
+    Energy variance =  40.75569836207465
+   == Total time for this step:  16.397159781306982
+>  t = 0.022764
+
+   Time step size: dt = 0.008454
+   Residuals: tdvp_err = 1.23e-03, solver_res = 9.96e-06
+saving time:  0.0910578824957383
+    Energy =  -1.5481707779217615
+    Energy variance =  40.752985440765386
+   == Total time for this step:  29.34829373518005
+>  t = 0.031218
+
+   Time step size: dt = 0.008375
+   Residuals: tdvp_err = 1.13e-03, solver_res = 9.76e-06
+saving time:  0.12487377346125844
+    Energy =  -1.5481446722313688
+    Energy variance =  40.75221068413033
+   == Total time for this step:  29.331693388987333
+>  t = 0.039593
+
+   Time step size: dt = 0.011446
+   Residuals: tdvp_err = 1.03e-03, solver_res = 9.42e-06
+saving time:  0.15837236976570387
+    Energy =  -1.5481300643176612
+    Energy variance =  40.75036782238691
+   == Total time for this step:  29.3013578010723
+>  t = 0.051039
+
+   Time step size: dt = 0.019426
+   Residuals: tdvp_err = 9.07e-04, solver_res = 8.83e-06
+saving time:  0.20415474047786578
+    Energy =  -1.5481123668799333
+    Energy variance =  40.744075935234726
+   == Total time for this step:  15.596822674851865
+>  t = 0.070464
+
+   Time step size: dt = 0.018785
+   Residuals: tdvp_err = 8.89e-04, solver_res = 9.74e-06
+saving time:  0.2818573071611389
+    Energy =  -1.5480009654785651
+    Energy variance =  40.72351784324139
+   == Total time for this step:  15.619867043104023
+>  t = 0.089249
+
+   Time step size: dt = 0.020446
+   Residuals: tdvp_err = 8.17e-04, solver_res = 9.55e-06
+saving time:  0.3569958783363717
+    Energy =  -1.5478780927871854
+    Energy variance =  40.69975670208905
+   == Total time for this step:  29.27737167989835
+>  t = 0.109695
+
+   Time step size: dt = 0.019400
+   Residuals: tdvp_err = 7.45e-04, solver_res = 9.39e-06
+saving time:  0.4387790236207668
+    Energy =  -1.5478585118347867
+    Energy variance =  40.6749423929845
+   == Total time for this step:  29.31609322875738
+>  t = 0.129095
+
+   Time step size: dt = 0.018081
+   Residuals: tdvp_err = 6.64e-04, solver_res = 9.02e-06
+saving time:  0.5163790261677648
+    Energy =  -1.5477672437868815
+    Energy variance =  40.6550317769422
+   == Total time for this step:  29.264907117933035
+>  t = 0.147176
+
+   Time step size: dt = 0.022933
+   Residuals: tdvp_err = 5.87e-04, solver_res = 8.58e-06
+saving time:  0.5887036969396057
+    Energy =  -1.5477267324462893
+    Energy variance =  40.64071890077063
+   == Total time for this step:  29.319390560034662
+>  t = 0.170108
+
+   Time step size: dt = 0.027124
+   Residuals: tdvp_err = 6.01e-04, solver_res = 9.64e-06
+saving time:  0.6804338301630612
+    Energy =  -1.5475556952457628
+    Energy variance =  40.62303215401518
+   == Total time for this step:  15.621138729155064
+>  t = 0.197232
+
+   Time step size: dt = 0.023712
+   Residuals: tdvp_err = 5.06e-04, solver_res = 8.91e-06
+saving time:  0.7889279252501289
+    Energy =  -1.5473162140246728
+    Energy variance =  40.60351646555839
+   == Total time for this step:  29.29617700818926
+>  t = 0.220944
+
+   Time step size: dt = 0.021629
+   Residuals: tdvp_err = 4.37e-04, solver_res = 8.34e-06
+saving time:  0.8837744156782463
+    Energy =  -1.5471985562747648
+    Energy variance =  40.587549191218855
+   == Total time for this step:  29.28561335010454
+>  t = 0.242572
+
+   Time step size: dt = 0.027966
+   Residuals: tdvp_err = 4.74e-04, solver_res = 9.65e-06
+saving time:  0.9702891488401663
+    Energy =  -1.5471120350708298
+    Energy variance =  40.573769713298255
+   == Total time for this step:  15.628513179253787
+Off-diagonal part
+>  t = 0.000000
+
+   Time step size: dt = 0.010344
+   Residuals: tdvp_err = 4.83e-03, solver_res = 9.00e-06
+saving time:  1.0
+    Energy =  4.373490667454238
+    Energy variance =  30.50041518596935
+   == Total time for this step:  32.696079567074776
+>  t = 0.010344
+
+   Time step size: dt = 0.009646
+   Residuals: tdvp_err = 4.67e-03, solver_res = 8.90e-06
+saving time:  1.0206878323272615
+    Energy =  4.373236559952486
+    Energy variance =  30.512001293093785
+   == Total time for this step:  16.658331913407892
+>  t = 0.019990
+
+   Time step size: dt = 0.007804
+   Residuals: tdvp_err = 4.45e-03, solver_res = 8.78e-06
+saving time:  1.0399801251332699
+    Energy =  4.373148791182012
+    Energy variance =  30.520237510075173
+   == Total time for this step:  31.348864231724292
+>  t = 0.027794
+
+   Time step size: dt = 0.007973
+   Residuals: tdvp_err = 4.52e-03, solver_res = 9.98e-06
+saving time:  1.0555875702116047
+    Energy =  4.373180916099595
+    Energy variance =  30.525469386091032
+   == Total time for this step:  31.356179889757186
+>  t = 0.035767
+
+   Time step size: dt = 0.009983
+   Residuals: tdvp_err = 4.32e-03, solver_res = 9.89e-06
+saving time:  1.071533086680059
+    Energy =  4.37320894711511
+    Energy variance =  30.52970407465771
+   == Total time for this step:  16.653897929005325
+>  t = 0.045749
+
+   Time step size: dt = 0.006506
+   Residuals: tdvp_err = 4.06e-03, solver_res = 9.59e-06
+saving time:  1.0914986028089388
+    Energy =  4.373359218995832
+    Energy variance =  30.532852588387694
+   == Total time for this step:  31.3295557978563
+>  t = 0.052255
+
+   Time step size: dt = 0.009063
+   Residuals: tdvp_err = 3.91e-03, solver_res = 9.34e-06
+saving time:  1.1045097400864705
+    Energy =  4.373407171962196
+    Energy variance =  30.534573297415257
+   == Total time for this step:  31.314194520935416
+>  t = 0.061318
+
+   Time step size: dt = 0.008772
+   Residuals: tdvp_err = 3.76e-03, solver_res = 9.00e-06
+saving time:  1.122635930601775
+    Energy =  4.373535417041017
+    Energy variance =  30.536208882379924
+   == Total time for this step:  31.31227346789092
+>  t = 0.070090
+
+   Time step size: dt = 0.010152
+   Residuals: tdvp_err = 3.69e-03, solver_res = 8.78e-06
+saving time:  1.1401804599168266
+    Energy =  4.373612883916277
+    Energy variance =  30.537201899153754
+   == Total time for this step:  31.393450002186
+>  t = 0.080242
+
+   Time step size: dt = 0.011766
+   Residuals: tdvp_err = 3.90e-03, solver_res = 9.99e-06
+saving time:  1.1604843651012118
+    Energy =  4.373667335424608
+    Energy variance =  30.537558223404815
+   == Total time for this step:  31.392418869771063
+>  t = 0.092009
+
+   Time step size: dt = 0.014701
+   Residuals: tdvp_err = 3.80e-03, solver_res = 8.79e-06
+saving time:  1.1840172344809443
+    Energy =  4.373784077421879
+    Energy variance =  30.537442113094144
+   == Total time for this step:  16.687776509672403
+>  t = 0.106710
+
+   Time step size: dt = 0.015034
+   Residuals: tdvp_err = 4.06e-03, solver_res = 9.04e-06
+saving time:  1.2134191960816976
+    Energy =  4.374008992966852
+    Energy variance =  30.534553433862484
+   == Total time for this step:  31.318546483758837
+>  t = 0.121744
+
+   Time step size: dt = 0.011076
+   Residuals: tdvp_err = 4.51e-03, solver_res = 9.58e-06
+saving time:  1.243487534480074
+    Energy =  4.374254188724849
+    Energy variance =  30.529225710646223
+   == Total time for this step:  31.41439363686368
+>  t = 0.132820
+
+   Time step size: dt = 0.016107
+   Residuals: tdvp_err = 4.71e-03, solver_res = 8.87e-06
+saving time:  1.2656396030252304
+    Energy =  4.37436401015483
+    Energy variance =  30.524016887149045
+   == Total time for this step:  16.64582140976563
+>  t = 0.148926
+
+   Time step size: dt = 0.010806
+   Residuals: tdvp_err = 5.44e-03, solver_res = 9.61e-06
+saving time:  1.2978526031177982
+    Energy =  4.37448920668022
+    Energy variance =  30.512987241079113
+   == Total time for this step:  31.305081970989704
+>  t = 0.159732
+
+   Time step size: dt = 0.013232
+   Residuals: tdvp_err = 5.67e-03, solver_res = 8.68e-06
+saving time:  1.3194639721124748
+    Energy =  4.374533529749874
+    Energy variance =  30.503707194548106
+   == Total time for this step:  31.32383668795228
+>  t = 0.172964
+
+   Time step size: dt = 0.009374
+   Residuals: tdvp_err = 6.36e-03, solver_res = 8.80e-06
+saving time:  1.3459286587597368
+    Energy =  4.3745034074074995
+    Energy variance =  30.489879736983507
+   == Total time for this step:  31.392567051108927
+>  t = 0.182339
+
+   Time step size: dt = 0.008050
+   Residuals: tdvp_err = 6.94e-03, solver_res = 8.88e-06
+saving time:  1.3646772989199771
+    Energy =  4.374467388178168
+    Energy variance =  30.478975329756224
+   == Total time for this step:  31.391159954946488
+>  t = 0.190389
+
+   Time step size: dt = 0.009113
+   Residuals: tdvp_err = 7.53e-03, solver_res = 8.99e-06
+saving time:  1.3807771165104055
+    Energy =  4.374431958059073
+    Energy variance =  30.468944037042018
+   == Total time for this step:  31.439635423012078
+>  t = 0.199501
+
+   Time step size: dt = 0.007650
+   Residuals: tdvp_err = 8.31e-03, solver_res = 9.21e-06
+saving time:  1.3990022447521526
+    Energy =  4.37437717995754
+    Energy variance =  30.456836868681343
+   == Total time for this step:  31.357972202822566
+>  t = 0.207151
+
+   Time step size: dt = 0.007843
+   Residuals: tdvp_err = 9.06e-03, solver_res = 9.49e-06
+saving time:  1.4143015617108274
+    Energy =  4.374353355882334
+    Energy variance =  30.446305155813477
+   == Total time for this step:  31.361482025124133
+>  t = 0.214994
+
+   Time step size: dt = 0.006945
+   Residuals: tdvp_err = 9.93e-03, solver_res = 9.80e-06
+saving time:  1.4299877280729882
+    Energy =  4.374346273747779
+    Energy variance =  30.435162303433014
+   == Total time for this step:  31.39537084568292
+>  t = 0.221939
+
+   Time step size: dt = 0.009991
+   Residuals: tdvp_err = 1.05e-02, solver_res = 8.95e-06
+saving time:  1.4438771446289225
+    Energy =  4.374359796425797
+    Energy variance =  30.425167236522118
+   == Total time for this step:  31.379147859290242
+>  t = 0.231929
+
+   Time step size: dt = 0.010269
+   Residuals: tdvp_err = 1.19e-02, solver_res = 9.32e-06
+saving time:  1.4638586718221298
+    Energy =  4.374450604997989
+    Energy variance =  30.41089091896993
+   == Total time for this step:  31.480414058081806
+>  t = 0.242198
+
+   Time step size: dt = 0.008029
+   Residuals: tdvp_err = 1.37e-02, solver_res = 9.83e-06
+saving time:  1.4843966896572296
+    Energy =  4.374557857149554
+    Energy variance =  30.396768070260784
+   == Total time for this step:  31.525583246257156
+>  t = 0.250228
+
+   Time step size: dt = 0.012837
+   Residuals: tdvp_err = 1.48e-02, solver_res = 9.03e-06
+saving time:  1.5004555313925045
+    Energy =  4.374577834399099
+    Energy variance =  30.387294662198883
+   == Total time for this step:  16.72833153512329
+>  t = 0.263065
+
+   Time step size: dt = 0.008541
+   Residuals: tdvp_err = 1.77e-02, solver_res = 9.66e-06
+saving time:  1.5261305146463227
+    Energy =  4.374653068836607
+    Energy variance =  30.372892673840877
+   == Total time for this step:  31.449580216780305
+>  t = 0.271606
+
+   Time step size: dt = 0.005626
+   Residuals: tdvp_err = 1.98e-02, solver_res = 9.97e-06
+saving time:  1.5432124246944132
+    Energy =  4.374675636344127
+    Energy variance =  30.36451109845609
+   == Total time for this step:  31.40359481284395
+>  t = 0.277232
+
+   Time step size: dt = 0.010695
+   Residuals: tdvp_err = 2.08e-02, solver_res = 8.73e-06
+saving time:  1.5544642528731538
+    Energy =  4.374645647494454
+    Energy variance =  30.360146543106154
+   == Total time for this step:  16.74378473078832
+>  t = 0.287927
+
+   Time step size: dt = 0.009301
+   Residuals: tdvp_err = 2.41e-02, solver_res = 9.05e-06
+saving time:  1.5758547672720504
+    Energy =  4.374739670950978
+    Energy variance =  30.352908151608794
+   == Total time for this step:  31.409095594193786
+>  t = 0.297229
+
+   Time step size: dt = 0.009250
+   Residuals: tdvp_err = 2.72e-02, solver_res = 9.39e-06
+saving time:  1.5944577136289264
+    Energy =  4.374777359761722
+    Energy variance =  30.347217586084618
+   == Total time for this step:  31.40816398197785
+>  t = 0.306479
+
+   Time step size: dt = 0.002940
+   Residuals: tdvp_err = 3.05e-02, solver_res = 9.76e-06
+saving time:  1.612958271895609
+    Energy =  4.374723488686248
+    Energy variance =  30.34210087047682
+   == Total time for this step:  31.415622426196933
+>  t = 0.309419
+
+   Time step size: dt = 0.005879
+   Residuals: tdvp_err = 3.16e-02, solver_res = 9.89e-06
+saving time:  1.618837322380753
+    Energy =  4.37472193232725
+    Energy variance =  30.340477755016728
+   == Total time for this step:  16.695654659997672
+>  t = 0.315298
+
+   Time step size: dt = 0.007300
+   Residuals: tdvp_err = 3.32e-02, solver_res = 8.95e-06
+saving time:  1.630595423351041
+    Energy =  4.374642249902406
+    Energy variance =  30.33834058793453
+   == Total time for this step:  16.690798338036984
+>  t = 0.322598
+
+   Time step size: dt = 0.004045
+   Residuals: tdvp_err = 3.60e-02, solver_res = 9.40e-06
+saving time:  1.6451953836416173
+    Energy =  4.374621917259128
+    Energy variance =  30.336002806903473
+   == Total time for this step:  31.541648257058114
+>  t = 0.326643
+
+   Time step size: dt = 0.008091
+   Residuals: tdvp_err = 3.76e-02, solver_res = 9.63e-06
+saving time:  1.6532859582818709
+    Energy =  4.374629303107108
+    Energy variance =  30.33474404768601
+   == Total time for this step:  16.650606028269976
+>  t = 0.334734
+
+   Time step size: dt = 0.004229
+   Residuals: tdvp_err = 4.07e-02, solver_res = 9.87e-06
+saving time:  1.6694671075623777
+    Energy =  4.374686854030387
+    Energy variance =  30.332423973434235
+   == Total time for this step:  31.505060642026365
+>  t = 0.338962
+
+   Time step size: dt = 0.005648
+   Residuals: tdvp_err = 4.24e-02, solver_res = 9.87e-06
+saving time:  1.677924152569005
+    Energy =  4.374693019890012
+    Energy variance =  30.331395787297584
+   == Total time for this step:  31.43980456329882
+>  t = 0.344610
+
+   Time step size: dt = 0.004471
+   Residuals: tdvp_err = 4.48e-02, solver_res = 9.85e-06
+saving time:  1.6892198805958596
+    Energy =  4.374701164081211
+    Energy variance =  30.330192409436933
+   == Total time for this step:  31.41797302570194
+>  t = 0.349081
+
+   Time step size: dt = 0.008943
+   Residuals: tdvp_err = 4.68e-02, solver_res = 9.82e-06
+saving time:  1.6981623957939072
+    Energy =  4.374703341940601
+    Energy variance =  30.3294238064845
+   == Total time for this step:  16.68913730699569
+>  t = 0.358024
+
+   Time step size: dt = 0.008496
+   Residuals: tdvp_err = 5.11e-02, solver_res = 9.63e-06
+saving time:  1.716047426190002
+    Energy =  4.374687820061386
+    Energy variance =  30.32801133811004
+   == Total time for this step:  16.68382482090965
+>  t = 0.366520
+
+   Time step size: dt = 0.008219
+   Residuals: tdvp_err = 5.55e-02, solver_res = 9.48e-06
+saving time:  1.7330401863614047
+    Energy =  4.374531910172493
+    Energy variance =  30.32745871633753
+   == Total time for this step:  16.707608211785555
+>  t = 0.374739
+
+   Time step size: dt = 0.008455
+   Residuals: tdvp_err = 6.00e-02, solver_res = 9.48e-06
+saving time:  1.7494787746499112
+    Energy =  4.3743397686816365
+    Energy variance =  30.326757021401022
+   == Total time for this step:  16.652639834210277
+>  t = 0.383194
+
+   Time step size: dt = 0.009116
+   Residuals: tdvp_err = 6.48e-02, solver_res = 9.57e-06
+saving time:  1.766387886384699
+    Energy =  4.3742105837366125
+    Energy variance =  30.325201923125366
+   == Total time for this step:  16.667750775814056
+>  t = 0.392310
+
+   Time step size: dt = 0.008678
+   Residuals: tdvp_err = 7.00e-02, solver_res = 9.74e-06
+saving time:  1.7846195438365848
+    Energy =  4.374213234436494
+    Energy variance =  30.322875662026988
+   == Total time for this step:  16.68812075490132
+>  t = 0.400988
+
+   Time step size: dt = 0.010142
+   Residuals: tdvp_err = 7.49e-02, solver_res = 9.77e-06
+saving time:  1.8019760974834953
+    Energy =  4.374244977245947
+    Energy variance =  30.321291682701816
+   == Total time for this step:  16.691156403161585
+>  t = 0.411130
+
+   Time step size: dt = 0.005613
+   Residuals: tdvp_err = 8.06e-02, solver_res = 9.76e-06
+saving time:  1.8222600082172375
+    Energy =  4.374439424631429
+    Energy variance =  30.32008095670109
+   == Total time for this step:  31.41949347499758
+>  t = 0.416743
+
+   Time step size: dt = 0.004433
+   Residuals: tdvp_err = 8.38e-02, solver_res = 9.86e-06
+saving time:  1.8334850224724113
+    Energy =  4.37447865200671
+    Energy variance =  30.319611080831457
+   == Total time for this step:  31.40106323082
+>  t = 0.421175
+
+   Time step size: dt = 0.004895
+   Residuals: tdvp_err = 8.64e-02, solver_res = 9.96e-06
+saving time:  1.842350482623401
+    Energy =  4.374497265436556
+    Energy variance =  30.319170164297145
+   == Total time for this step:  31.52581206569448
+>  t = 0.426070
+
+   Time step size: dt = 0.004552
+   Residuals: tdvp_err = 8.92e-02, solver_res = 9.99e-06
+saving time:  1.8521399290688714
+    Energy =  4.37430598772962
+    Energy variance =  30.31920968106222
+   == Total time for this step:  31.50372365489602
+>  t = 0.430622
+
+   Time step size: dt = 0.007895
+   Residuals: tdvp_err = 9.18e-02, solver_res = 9.99e-06
+saving time:  1.8612449020137443
+    Energy =  4.37425488580237
+    Energy variance =  30.318802299719973
+   == Total time for this step:  16.693777696229517
+>  t = 0.438517
+
+   Time step size: dt = 0.010891
+   Residuals: tdvp_err = 9.65e-02, solver_res = 9.93e-06
+saving time:  1.8770344413488549
+    Energy =  4.374386590363699
+    Energy variance =  30.317944291171372
+   == Total time for this step:  16.706782741006464
+>  t = 0.449408
+
+   Time step size: dt = 0.007800
+   Residuals: tdvp_err = 1.03e-01, solver_res = 9.72e-06
+saving time:  1.8988165870942875
+    Energy =  4.374540793864498
+    Energy variance =  30.317151961040068
+   == Total time for this step:  31.498794842045754
+>  t = 0.457208
+
+   Time step size: dt = 0.006203
+   Residuals: tdvp_err = 1.08e-01, solver_res = 9.58e-06
+saving time:  1.914416447301118
+    Energy =  4.37447525741625
+    Energy variance =  30.316563693553867
+   == Total time for this step:  31.46461212867871
+>  t = 0.463412
+
+   Time step size: dt = 0.005795
+   Residuals: tdvp_err = 1.12e-01, solver_res = 9.57e-06
+saving time:  1.926823277639099
+    Energy =  4.374439796483747
+    Energy variance =  30.316285237863838
+   == Total time for this step:  31.473855155985802
+>  t = 0.469206
+
+   Time step size: dt = 0.006702
+   Residuals: tdvp_err = 1.15e-01, solver_res = 9.68e-06
+saving time:  1.9384123546834973
+    Energy =  4.374410607504074
+    Energy variance =  30.316317057675196
+   == Total time for this step:  31.422542435117066
+>  t = 0.475909
+
+   Time step size: dt = 0.006802
+   Residuals: tdvp_err = 1.19e-01, solver_res = 9.80e-06
+saving time:  1.951817195380617
+    Energy =  4.37435967930238
+    Energy variance =  30.316747181411586
+   == Total time for this step:  31.477992897853255
+>  t = 0.482710
+
+   Time step size: dt = 0.007859
+   Residuals: tdvp_err = 1.24e-01, solver_res = 9.79e-06
+saving time:  1.9654206370323792
+    Energy =  4.374317442960944
+    Energy variance =  30.317413880876977
+   == Total time for this step:  31.46749836485833
+>  t = 0.490569
+
+   Time step size: dt = 0.009431
+   Residuals: tdvp_err = 1.28e-01, solver_res = 9.73e-06
+saving time:  1.9811387078346514
+    Energy =  4.374299839975913
+    Energy variance =  30.318248071221873
+   == Total time for this step:  16.702811601106077
+### Circuit step  1
+
+Diagonal part
+>  t = 0.000000
+
+   Time step size: dt = 0.009431
+   Residuals: tdvp_err = 5.53e-04, solver_res = 9.46e-06
+saving time:  2.0
+    Energy =  -8.967472141826224
+    Energy variance =  40.48148371696757
+   == Total time for this step:  15.711615581065416
+>  t = 0.009431
+
+   Time step size: dt = 0.018861
+   Residuals: tdvp_err = 5.53e-04, solver_res = 9.46e-06
+saving time:  2.0377226243306974
+    Energy =  -8.967472504277886
+    Energy variance =  40.48209690402723
+   == Total time for this step:  15.591131221037358
+>  t = 0.028292
+
+   Time step size: dt = 0.037723
+   Residuals: tdvp_err = 5.51e-04, solver_res = 9.44e-06
+saving time:  2.1131678729920917
+    Energy =  -8.967475205613106
+    Energy variance =  40.48328350737886
+   == Total time for this step:  15.549475871957839
+>  t = 0.066015
+
+   Time step size: dt = 0.075445
+   Residuals: tdvp_err = 5.49e-04, solver_res = 9.42e-06
+saving time:  2.2640583703148804
+    Energy =  -8.96749354235406
+    Energy variance =  40.48552317142155
+   == Total time for this step:  15.541640922892839
+>  t = 0.141460
+
+   Time step size: dt = 0.060715
+   Residuals: tdvp_err = 5.42e-04, solver_res = 9.37e-06
+saving time:  2.565839364960458
+    Energy =  -8.967582367469717
+    Energy variance =  40.489460314475025
+   == Total time for this step:  29.11178152402863
+>  t = 0.202175
+
+   Time step size: dt = 0.079053
+   Residuals: tdvp_err = 5.36e-04, solver_res = 9.35e-06
+saving time:  2.808699620012466
+    Energy =  -8.967599297236958
+    Energy variance =  40.49213877145181
+   == Total time for this step:  29.191622389946133
+Off-diagonal part
+>  t = 0.000000
+
+   Time step size: dt = 0.005460
+   Residuals: tdvp_err = 1.28e-01, solver_res = 8.91e-06
+saving time:  3.0
+    Energy =  1.6598315593474693
+    Energy variance =  24.75540494365902
+   == Total time for this step:  46.281486683059484
+>  t = 0.005460
+
+   Time step size: dt = 0.005287
+   Residuals: tdvp_err = 1.31e-01, solver_res = 8.77e-06
+saving time:  3.010919162176969
+    Energy =  1.659812752054286
+    Energy variance =  24.772550474530885
+   == Total time for this step:  31.455163011793047
+>  t = 0.010746
+
+   Time step size: dt = 0.005356
+   Residuals: tdvp_err = 1.34e-01, solver_res = 8.67e-06
+saving time:  3.021492239564156
+    Energy =  1.6598090280964646
+    Energy variance =  24.791344609050526
+   == Total time for this step:  31.374545361846685
+>  t = 0.016102
+
+   Time step size: dt = 0.005878
+   Residuals: tdvp_err = 1.37e-01, solver_res = 8.60e-06
+saving time:  3.03220368185937
+    Energy =  1.6598213845725776
+    Energy variance =  24.812592590226842
+   == Total time for this step:  31.430169759783894
+>  t = 0.021980
+
+   Time step size: dt = 0.006072
+   Residuals: tdvp_err = 1.40e-01, solver_res = 8.54e-06
+saving time:  3.0439605575843705
+    Energy =  1.6598522465887107
+    Energy variance =  24.838441113139268
+   == Total time for this step:  31.47843551868573
+>  t = 0.028052
+
+   Time step size: dt = 0.007946
+   Residuals: tdvp_err = 1.44e-01, solver_res = 9.95e-06
+saving time:  3.056104547550984
+    Energy =  1.6599810508358601
+    Energy variance =  24.86776666065816
+   == Total time for this step:  31.458415404427797
+>  t = 0.035998
+
+   Time step size: dt = 0.007802
+   Residuals: tdvp_err = 1.48e-01, solver_res = 9.86e-06
+saving time:  3.071996863379806
+    Energy =  1.6600663826086666
+    Energy variance =  24.909982822815188
+   == Total time for this step:  31.427676079794765
+>  t = 0.043801
+
+   Time step size: dt = 0.006705
+   Residuals: tdvp_err = 1.52e-01, solver_res = 9.75e-06
+saving time:  3.087601822758062
+    Energy =  1.6600941447968516
+    Energy variance =  24.955631663629667
+   == Total time for this step:  31.434782275930047
+>  t = 0.050505
+
+   Time step size: dt = 0.005876
+   Residuals: tdvp_err = 1.55e-01, solver_res = 9.61e-06
+saving time:  3.1010108528432294
+    Energy =  1.6600755772614484
+    Energy variance =  24.997973129170134
+   == Total time for this step:  31.410611820872873
+>  t = 0.056381
+
+   Time step size: dt = 0.006927
+   Residuals: tdvp_err = 1.58e-01, solver_res = 9.45e-06
+saving time:  3.1127621584035166
+    Energy =  1.6600483909453037
+    Energy variance =  25.037314602712925
+   == Total time for this step:  31.42012786725536
+>  t = 0.063308
+
+   Time step size: dt = 0.005564
+   Residuals: tdvp_err = 1.62e-01, solver_res = 9.18e-06
+saving time:  3.126616521418326
+    Energy =  1.65998494216073
+    Energy variance =  25.086150078956905
+   == Total time for this step:  31.42899457598105
+>  t = 0.068872
+
+   Time step size: dt = 0.008403
+   Residuals: tdvp_err = 1.65e-01, solver_res = 8.88e-06
+saving time:  3.1377446421987876
+    Energy =  1.6599610583496434
+    Energy variance =  25.12735945985652
+   == Total time for this step:  31.41163413366303
+>  t = 0.077275
+
+   Time step size: dt = 0.009259
+   Residuals: tdvp_err = 1.70e-01, solver_res = 8.31e-06
+saving time:  3.154549912459946
+    Energy =  1.6599201459812265
+    Energy variance =  25.19241511040642
+   == Total time for this step:  31.412702137138695
+>  t = 0.086534
+
+   Time step size: dt = 0.010321
+   Residuals: tdvp_err = 1.76e-01, solver_res = 9.52e-06
+saving time:  3.1730687127571877
+    Energy =  1.6598414968703152
+    Energy variance =  25.267920478578446
+   == Total time for this step:  16.713199770078063
+>  t = 0.096856
+
+   Time step size: dt = 0.011542
+   Residuals: tdvp_err = 1.82e-01, solver_res = 8.80e-06
+saving time:  3.1937114645097466
+    Energy =  1.659852829694976
+    Energy variance =  25.35637892226311
+   == Total time for this step:  16.70817924803123
+>  t = 0.108398
+
+   Time step size: dt = 0.011555
+   Residuals: tdvp_err = 1.89e-01, solver_res = 8.30e-06
+saving time:  3.2167962155422307
+    Energy =  1.659809930697548
+    Energy variance =  25.459443392674178
+   == Total time for this step:  16.70530159305781
+>  t = 0.119953
+
+   Time step size: dt = 0.010758
+   Residuals: tdvp_err = 1.97e-01, solver_res = 9.92e-06
+saving time:  3.23990642855267
+    Energy =  1.6599118978090726
+    Energy variance =  25.565521078095088
+   == Total time for this step:  16.71458385605365
+>  t = 0.130711
+
+   Time step size: dt = 0.009077
+   Residuals: tdvp_err = 2.04e-01, solver_res = 9.80e-06
+saving time:  3.261422346725613
+    Energy =  1.6599350412934442
+    Energy variance =  25.66650656309194
+   == Total time for this step:  31.458655917085707
+>  t = 0.139788
+
+   Time step size: dt = 0.007429
+   Residuals: tdvp_err = 2.09e-01, solver_res = 9.64e-06
+saving time:  3.2795753675053136
+    Energy =  1.6599643786752885
+    Energy variance =  25.75222766331202
+   == Total time for this step:  31.405810882803053
+>  t = 0.147216
+
+   Time step size: dt = 0.009648
+   Residuals: tdvp_err = 2.14e-01, solver_res = 9.44e-06
+saving time:  3.294432920505157
+    Energy =  1.6599832561163734
+    Energy variance =  25.822215717691797
+   == Total time for this step:  31.448327051941305
+>  t = 0.156864
+
+   Time step size: dt = 0.007623
+   Residuals: tdvp_err = 2.20e-01, solver_res = 9.11e-06
+saving time:  3.3137288109460195
+    Energy =  1.6600250642868095
+    Energy variance =  25.9121710066925
+   == Total time for this step:  31.49626495502889
+>  t = 0.164488
+
+   Time step size: dt = 0.008897
+   Residuals: tdvp_err = 2.24e-01, solver_res = 8.81e-06
+saving time:  3.3289755792472153
+    Energy =  1.6600505534560426
+    Energy variance =  25.982475493524156
+   == Total time for this step:  31.4519757963717
+>  t = 0.173385
+
+   Time step size: dt = 0.007535
+   Residuals: tdvp_err = 2.29e-01, solver_res = 8.44e-06
+saving time:  3.34677008082709
+    Energy =  1.6600955201478385
+    Energy variance =  26.063404802280694
+   == Total time for this step:  31.438074246048927
+>  t = 0.180921
+
+   Time step size: dt = 0.008842
+   Residuals: tdvp_err = 2.33e-01, solver_res = 8.15e-06
+saving time:  3.361841043264097
+    Energy =  1.660123338830589
+    Energy variance =  26.131068685762887
+   == Total time for this step:  31.442856945097446
+>  t = 0.189763
+
+   Time step size: dt = 0.008445
+   Residuals: tdvp_err = 2.38e-01, solver_res = 7.86e-06
+saving time:  3.3795254174622618
+    Energy =  1.6601657476840777
+    Energy variance =  26.209263568426188
+   == Total time for this step:  31.37476271390915
+>  t = 0.198207
+
+   Time step size: dt = 0.008020
+   Residuals: tdvp_err = 2.42e-01, solver_res = 7.66e-06
+saving time:  3.3964148533554113
+    Energy =  1.6601911826397062
+    Energy variance =  26.282718325530332
+   == Total time for this step:  31.414384047035128
+>  t = 0.206227
+
+   Time step size: dt = 0.012684
+   Residuals: tdvp_err = 2.47e-01, solver_res = 9.99e-06
+saving time:  3.4124544995430455
+    Energy =  1.6602121223178974
+    Energy variance =  26.351379168519337
+   == Total time for this step:  16.65682769101113
+>  t = 0.218911
+
+   Time step size: dt = 0.012408
+   Residuals: tdvp_err = 2.54e-01, solver_res = 9.87e-06
+saving time:  3.437822283903217
+    Energy =  1.6602251359602342
+    Energy variance =  26.458202465688856
+   == Total time for this step:  16.664436985272914
+>  t = 0.231319
+
+   Time step size: dt = 0.013712
+   Residuals: tdvp_err = 2.60e-01, solver_res = 9.81e-06
+saving time:  3.4626373634927825
+    Energy =  1.6602159534840086
+    Energy variance =  26.560227527255275
+   == Total time for this step:  16.68027717806399
+>  t = 0.245030
+
+   Time step size: dt = 0.013068
+   Residuals: tdvp_err = 2.67e-01, solver_res = 9.62e-06
+saving time:  3.4900603935074317
+    Energy =  1.6601878124363203
+    Energy variance =  26.670675823087763
+   == Total time for this step:  16.6737853679806
+>  t = 0.258098
+
+   Time step size: dt = 0.014115
+   Residuals: tdvp_err = 2.73e-01, solver_res = 9.49e-06
+saving time:  3.516196120241221
+    Energy =  1.660158688658202
+    Energy variance =  26.774593137050108
+   == Total time for this step:  16.73535615997389
+>  t = 0.272213
+
+   Time step size: dt = 0.013354
+   Residuals: tdvp_err = 2.80e-01, solver_res = 9.65e-06
+saving time:  3.5444259277561967
+    Energy =  1.6601210413246377
+    Energy variance =  26.885772306302133
+   == Total time for this step:  16.717878146097064
+>  t = 0.285567
+
+   Time step size: dt = 0.013031
+   Residuals: tdvp_err = 2.86e-01, solver_res = 8.43e-06
+saving time:  3.571133195737511
+    Energy =  1.6602192169257317
+    Energy variance =  26.990421471202037
+   == Total time for this step:  16.749767764937133
+>  t = 0.298598
+
+   Time step size: dt = 0.012257
+   Residuals: tdvp_err = 2.93e-01, solver_res = 9.22e-06
+saving time:  3.5971957162115897
+    Energy =  1.660161422083925
+    Energy variance =  27.092583993436257
+   == Total time for this step:  31.421104568988085
+>  t = 0.310855
+
+   Time step size: dt = 0.009549
+   Residuals: tdvp_err = 2.99e-01, solver_res = 9.94e-06
+saving time:  3.6217098390139353
+    Energy =  1.660124016962536
+    Energy variance =  27.189928009816466
+   == Total time for this step:  31.427962153218687
+>  t = 0.320404
+
+   Time step size: dt = 0.014388
+   Residuals: tdvp_err = 3.03e-01, solver_res = 8.41e-06
+saving time:  3.640807951692494
+    Energy =  1.6601948959460624
+    Energy variance =  27.267657484268213
+   == Total time for this step:  16.686417751945555
+>  t = 0.334792
+
+   Time step size: dt = 0.014477
+   Residuals: tdvp_err = 3.09e-01, solver_res = 8.80e-06
+saving time:  3.6695841876449347
+    Energy =  1.660168016896804
+    Energy variance =  27.386564101266902
+   == Total time for this step:  16.709275891073048
+>  t = 0.349269
+
+   Time step size: dt = 0.014925
+   Residuals: tdvp_err = 3.15e-01, solver_res = 8.96e-06
+saving time:  3.698537267315571
+    Energy =  1.6601055813386463
+    Energy variance =  27.50786721979412
+   == Total time for this step:  16.719018061179668
+>  t = 0.364194
+
+   Time step size: dt = 0.014335
+   Residuals: tdvp_err = 3.21e-01, solver_res = 8.83e-06
+saving time:  3.7283880403121286
+    Energy =  1.6599882547193707
+    Energy variance =  27.633102127512785
+   == Total time for this step:  16.715470796916634
+>  t = 0.378529
+
+   Time step size: dt = 0.014666
+   Residuals: tdvp_err = 3.26e-01, solver_res = 8.38e-06
+saving time:  3.757058057404206
+    Energy =  1.6598581931155092
+    Energy variance =  27.752424568300526
+   == Total time for this step:  16.68641036329791
+>  t = 0.393195
+
+   Time step size: dt = 0.011551
+   Residuals: tdvp_err = 3.31e-01, solver_res = 7.65e-06
+saving time:  3.786389059356642
+    Energy =  1.6597143405235435
+    Energy variance =  27.872879720549392
+   == Total time for this step:  31.395716450177133
+>  t = 0.404745
+
+   Time step size: dt = 0.015025
+   Residuals: tdvp_err = 3.35e-01, solver_res = 9.71e-06
+saving time:  3.8094903974340584
+    Energy =  1.6595518797713993
+    Energy variance =  27.966751348295965
+   == Total time for this step:  31.429124657064676
+>  t = 0.419770
+
+   Time step size: dt = 0.015885
+   Residuals: tdvp_err = 3.40e-01, solver_res = 9.00e-06
+saving time:  3.8395398544726325
+    Energy =  1.6595295925400946
+    Energy variance =  28.08724084235419
+   == Total time for this step:  31.432611257303506
+>  t = 0.435654
+
+   Time step size: dt = 0.018327
+   Residuals: tdvp_err = 3.45e-01, solver_res = 8.57e-06
+saving time:  3.8713089850441573
+    Energy =  1.6595586503666522
+    Energy variance =  28.21372634688916
+   == Total time for this step:  16.70820934511721
+>  t = 0.453981
+
+   Time step size: dt = 0.016527
+   Residuals: tdvp_err = 3.52e-01, solver_res = 8.53e-06
+saving time:  3.907962943254064
+    Energy =  1.6596506897173
+    Energy variance =  28.3590349717066
+   == Total time for this step:  16.68885192833841
+>  t = 0.470508
+
+   Time step size: dt = 0.016419
+   Residuals: tdvp_err = 3.58e-01, solver_res = 8.61e-06
+saving time:  3.941016495442846
+    Energy =  1.6597217257598422
+    Energy variance =  28.489537354128498
+   == Total time for this step:  31.409198640845716
+>  t = 0.486927
+
+   Time step size: dt = 0.013073
+   Residuals: tdvp_err = 3.64e-01, solver_res = 8.60e-06
+saving time:  3.9738544512473357
+    Energy =  1.6597863055490656
+    Energy variance =  28.61762818265938
+   == Total time for this step:  16.686262575909495
+### Circuit step  2
+
+Diagonal part
+>  t = 0.000000
+
+   Time step size: dt = 0.013073
+   Residuals: tdvp_err = 7.30e-04, solver_res = 8.32e-06
+saving time:  4.0
+    Energy =  -7.478827749057473
+    Energy variance =  66.04912765845197
+   == Total time for this step:  15.797878647223115
+>  t = 0.013073
+
+   Time step size: dt = 0.026146
+   Residuals: tdvp_err = 7.30e-04, solver_res = 8.33e-06
+saving time:  4.052291137505328
+    Energy =  -7.478827890903893
+    Energy variance =  66.05155483711002
+   == Total time for this step:  15.604002344887704
+>  t = 0.039218
+
+   Time step size: dt = 0.052291
+   Residuals: tdvp_err = 7.30e-04, solver_res = 8.36e-06
+saving time:  4.156873412515986
+    Energy =  -7.47882873645991
+    Energy variance =  66.05643700983767
+   == Total time for this step:  15.619026788976043
+>  t = 0.091509
+
+   Time step size: dt = 0.104582
+   Residuals: tdvp_err = 7.30e-04, solver_res = 8.42e-06
+saving time:  4.3660379625373
+    Energy =  -7.478831304689689
+    Energy variance =  66.06627839577602
+   == Total time for this step:  15.603878953959793
+>  t = 0.196092
+
+   Time step size: dt = 0.100453
+   Residuals: tdvp_err = 7.29e-04, solver_res = 8.54e-06
+saving time:  4.784367062579928
+    Energy =  -7.478801916496153
+    Energy variance =  66.08596498715971
+   == Total time for this step:  29.262149582151324
+Off-diagonal part
+>  t = 0.000000
+
+   Time step size: dt = 0.008935
+   Residuals: tdvp_err = 4.77e-01, solver_res = 6.50e-06
+saving time:  5.0
+    Energy =  2.649412260067531
+    Energy variance =  19.633978741853266
+   == Total time for this step:  46.347010034602135
+>  t = 0.008935
+
+   Time step size: dt = 0.011666
+   Residuals: tdvp_err = 4.80e-01, solver_res = 4.80e-06
+saving time:  5.017869488399542
+    Energy =  2.649422468140776
+    Energy variance =  19.666045779571142
+   == Total time for this step:  31.4244691291824
+>  t = 0.020601
+
+   Time step size: dt = 0.015960
+   Residuals: tdvp_err = 4.85e-01, solver_res = 8.10e-06
+saving time:  5.041202116987058
+    Energy =  2.649459971064622
+    Energy variance =  19.708307455617327
+   == Total time for this step:  16.685313284862787
+>  t = 0.036561
+
+   Time step size: dt = 0.015250
+   Residuals: tdvp_err = 4.90e-01, solver_res = 5.13e-06
+saving time:  5.0731216745361385
+    Energy =  2.6495240807240377
+    Energy variance =  19.765485182951128
+   == Total time for this step:  16.671383503824472
+>  t = 0.051810
+
+   Time step size: dt = 0.015222
+   Residuals: tdvp_err = 4.95e-01, solver_res = 8.30e-06
+saving time:  5.103620845835487
+    Energy =  2.6496099083202225
+    Energy variance =  19.81856928646593
+   == Total time for this step:  16.703107591718435
+>  t = 0.067032
+
+   Time step size: dt = 0.014771
+   Residuals: tdvp_err = 4.99e-01, solver_res = 6.39e-06
+saving time:  5.134064437046519
+    Energy =  2.649653004559563
+    Energy variance =  19.86838933493282
+   == Total time for this step:  31.428551817778498
+>  t = 0.081803
+
+   Time step size: dt = 0.013771
+   Residuals: tdvp_err = 5.03e-01, solver_res = 5.27e-06
+saving time:  5.163606799807375
+    Energy =  2.6497331990074064
+    Energy variance =  19.912824765294566
+   == Total time for this step:  31.41231572907418
+>  t = 0.095574
+
+   Time step size: dt = 0.016923
+   Residuals: tdvp_err = 5.06e-01, solver_res = 9.41e-06
+saving time:  5.191148367927063
+    Energy =  2.649792235443325
+    Energy variance =  19.94972010824096
+   == Total time for this step:  16.724284222349524
+>  t = 0.112498
+
+   Time step size: dt = 0.015871
+   Residuals: tdvp_err = 5.09e-01, solver_res = 9.12e-06
+saving time:  5.224995287292318
+    Energy =  2.6498178771573064
+    Energy variance =  19.98755276315267
+   == Total time for this step:  16.73188805533573
+>  t = 0.128368
+
+   Time step size: dt = 0.015277
+   Residuals: tdvp_err = 5.12e-01, solver_res = 8.78e-06
+saving time:  5.256736873101795
+    Energy =  2.649834944829064
+    Energy variance =  20.01457359916817
+   == Total time for this step:  16.749247486703098
+>  t = 0.143646
+
+   Time step size: dt = 0.015396
+   Residuals: tdvp_err = 5.13e-01, solver_res = 8.04e-06
+saving time:  5.2872917911835104
+    Energy =  2.6498617223669454
+    Energy variance =  20.032084696335268
+   == Total time for this step:  16.73660593200475
+>  t = 0.159042
+
+   Time step size: dt = 0.015927
+   Residuals: tdvp_err = 5.15e-01, solver_res = 7.10e-06
+saving time:  5.318083304279523
+    Energy =  2.6499033292188345
+    Energy variance =  20.041040368106522
+   == Total time for this step:  16.66208890127018
+>  t = 0.174968
+
+   Time step size: dt = 0.015122
+   Residuals: tdvp_err = 5.16e-01, solver_res = 9.17e-06
+saving time:  5.3499369038704545
+    Energy =  2.649960878011737
+    Energy variance =  20.04186548764868
+   == Total time for this step:  16.682034994009882
+>  t = 0.190091
+
+   Time step size: dt = 0.015843
+   Residuals: tdvp_err = 5.16e-01, solver_res = 8.96e-06
+saving time:  5.380181336332016
+    Energy =  2.650004659485653
+    Energy variance =  20.036059726769178
+   == Total time for this step:  31.441526537761092
+>  t = 0.205934
+
+   Time step size: dt = 0.015877
+   Residuals: tdvp_err = 5.17e-01, solver_res = 9.29e-06
+saving time:  5.4118676439937055
+    Energy =  2.650042373301994
+    Energy variance =  20.025529542104323
+   == Total time for this step:  31.43026189925149
+>  t = 0.221811
+
+   Time step size: dt = 0.015354
+   Residuals: tdvp_err = 5.17e-01, solver_res = 9.35e-06
+saving time:  5.44362194672197
+    Energy =  2.6500700899870866
+    Energy variance =  20.013748626429035
+   == Total time for this step:  31.486443497240543
+>  t = 0.237165
+
+   Time step size: dt = 0.014989
+   Residuals: tdvp_err = 5.18e-01, solver_res = 8.76e-06
+saving time:  5.4743307395590755
+    Energy =  2.650089890909683
+    Energy variance =  20.004484332979594
+   == Total time for this step:  31.474593812134117
+>  t = 0.252155
+
+   Time step size: dt = 0.014995
+   Residuals: tdvp_err = 5.19e-01, solver_res = 7.94e-06
+saving time:  5.504309654520019
+    Energy =  2.650106326158004
+    Energy variance =  20.0001242222822
+   == Total time for this step:  31.468014320824295
+>  t = 0.267150
+
+   Time step size: dt = 0.014880
+   Residuals: tdvp_err = 5.20e-01, solver_res = 7.62e-06
+saving time:  5.534299712816925
+    Energy =  2.6501213426544945
+    Energy variance =  20.002346552188072
+   == Total time for this step:  31.439556632190943
+>  t = 0.282030
+
+   Time step size: dt = 0.014534
+   Residuals: tdvp_err = 5.22e-01, solver_res = 8.01e-06
+saving time:  5.564059866962688
+    Energy =  2.650132529433906
+    Energy variance =  20.012237336477675
+   == Total time for this step:  31.44403483811766
+>  t = 0.296563
+
+   Time step size: dt = 0.014204
+   Residuals: tdvp_err = 5.24e-01, solver_res = 8.68e-06
+saving time:  5.593126928176476
+    Energy =  2.65013895493221
+    Energy variance =  20.029606521603185
+   == Total time for this step:  31.511925467755646
+>  t = 0.310767
+
+   Time step size: dt = 0.013625
+   Residuals: tdvp_err = 5.26e-01, solver_res = 9.33e-06
+saving time:  5.621534049571634
+    Energy =  2.650142272140593
+    Energy variance =  20.053551689474475
+   == Total time for this step:  31.56565247522667
+>  t = 0.324392
+
+   Time step size: dt = 0.012164
+   Residuals: tdvp_err = 5.28e-01, solver_res = 9.84e-06
+saving time:  5.648784210192714
+    Energy =  2.6501432134878127
+    Energy variance =  20.082278777658697
+   == Total time for this step:  31.513375736307353
+>  t = 0.336556
+
+   Time step size: dt = 0.014151
+   Residuals: tdvp_err = 5.30e-01, solver_res = 7.20e-06
+saving time:  5.6731124280958705
+    Energy =  2.650143313201032
+    Energy variance =  20.111975234816747
+   == Total time for this step:  31.53810217883438
+>  t = 0.350707
+
+   Time step size: dt = 0.013639
+   Residuals: tdvp_err = 5.32e-01, solver_res = 7.30e-06
+saving time:  5.701414049974
+    Energy =  2.6501366109818223
+    Energy variance =  20.15058255099062
+   == Total time for this step:  31.54430993506685
+>  t = 0.364346
+
+   Time step size: dt = 0.012967
+   Residuals: tdvp_err = 5.34e-01, solver_res = 7.40e-06
+saving time:  5.728691131099169
+    Energy =  2.650127302674156
+    Energy variance =  20.19130439581134
+   == Total time for this step:  31.520814407151192
+>  t = 0.377313
+
+   Time step size: dt = 0.012084
+   Residuals: tdvp_err = 5.36e-01, solver_res = 7.49e-06
+saving time:  5.754625821027296
+    Energy =  2.6501171465498006
+    Energy variance =  20.232686180776454
+   == Total time for this step:  31.452500890940428
+>  t = 0.389397
+
+   Time step size: dt = 0.012235
+   Residuals: tdvp_err = 5.38e-01, solver_res = 7.57e-06
+saving time:  5.778793264894202
+    Energy =  2.6501077459909066
+    Energy variance =  20.273216858319365
+   == Total time for this step:  31.483874084893614
+>  t = 0.401631
+
+   Time step size: dt = 0.011743
+   Residuals: tdvp_err = 5.39e-01, solver_res = 7.66e-06
+saving time:  5.803262801446134
+    Energy =  2.6500969366952756
+    Energy variance =  20.31586270670227
+   == Total time for this step:  31.460703731980175
+>  t = 0.413375
+
+   Time step size: dt = 0.012160
+   Residuals: tdvp_err = 5.41e-01, solver_res = 7.74e-06
+saving time:  5.826749553649347
+    Energy =  2.650086816764467
+    Energy variance =  20.35806683286678
+   == Total time for this step:  31.408952909056097
+>  t = 0.425535
+
+   Time step size: dt = 0.011731
+   Residuals: tdvp_err = 5.43e-01, solver_res = 7.83e-06
+saving time:  5.851069196913469
+    Energy =  2.650075233055354
+    Energy variance =  20.402780679520802
+   == Total time for this step:  31.389783717226237
+>  t = 0.437266
+
+   Time step size: dt = 0.012353
+   Residuals: tdvp_err = 5.45e-01, solver_res = 7.93e-06
+saving time:  5.8745316879275205
+    Energy =  2.6500649919596677
+    Energy variance =  20.446631635669338
+   == Total time for this step:  31.476671312004328
+>  t = 0.449619
+
+   Time step size: dt = 0.012167
+   Residuals: tdvp_err = 5.47e-01, solver_res = 8.08e-06
+saving time:  5.899237857786785
+    Energy =  2.650053677487095
+    Energy variance =  20.493212435422045
+   == Total time for this step:  31.49327808385715
+>  t = 0.461786
+
+   Time step size: dt = 0.012217
+   Residuals: tdvp_err = 5.49e-01, solver_res = 8.25e-06
+saving time:  5.923571074821374
+    Energy =  2.6500438795584094
+    Energy variance =  20.539170425065382
+   == Total time for this step:  31.401262582745403
+>  t = 0.474003
+
+   Time step size: dt = 0.012252
+   Residuals: tdvp_err = 5.50e-01, solver_res = 8.43e-06
+saving time:  5.948006008951271
+    Energy =  2.6500350294807644
+    Energy variance =  20.58504256765332
+   == Total time for this step:  31.4323747321032
+>  t = 0.486255
+
+   Time step size: dt = 0.013745
+   Residuals: tdvp_err = 5.52e-01, solver_res = 8.57e-06
+saving time:  5.972509027100393
+    Energy =  2.650026835393601
+    Energy variance =  20.630430583949074
+   == Total time for this step:  16.698647460900247
+### Circuit step  3
+
+Diagonal part
+>  t = 0.000000
+
+   Time step size: dt = 0.013745
+   Residuals: tdvp_err = 9.54e-04, solver_res = 9.52e-06
+saving time:  6.0
+    Energy =  -7.32795015944288
+    Energy variance =  55.88731130230497
+   == Total time for this step:  15.687679188791662
+>  t = 0.013745
+
+   Time step size: dt = 0.027491
+   Residuals: tdvp_err = 9.54e-04, solver_res = 9.53e-06
+saving time:  6.054981985799215
+    Energy =  -7.327949986830339
+    Energy variance =  55.890130496754935
+   == Total time for this step:  15.606356197968125
+>  t = 0.041236
+
+   Time step size: dt = 0.054982
+   Residuals: tdvp_err = 9.54e-04, solver_res = 9.54e-06
+saving time:  6.164945957397645
+    Energy =  -7.327948645283242
+    Energy variance =  55.895881560326046
+   == Total time for this step:  15.58686840115115
+>  t = 0.096218
+
+   Time step size: dt = 0.109964
+   Residuals: tdvp_err = 9.55e-04, solver_res = 9.57e-06
+saving time:  6.384873900594505
+    Energy =  -7.327938483912439
+    Energy variance =  55.90775348138081
+   == Total time for this step:  15.599438013974577
+>  t = 0.206182
+
+   Time step size: dt = 0.109030
+   Residuals: tdvp_err = 9.57e-04, solver_res = 9.61e-06
+saving time:  6.824729786988227
+    Energy =  -7.327864580385047
+    Energy variance =  55.9322787180251
+   == Total time for this step:  29.249615589156747
+Off-diagonal part
+>  t = 0.000000
+
+   Time step size: dt = 0.008070
+   Residuals: tdvp_err = 5.05e-01, solver_res = 8.23e-06
+saving time:  7.0
+    Energy =  1.6723949031789735
+    Energy variance =  21.520337813190302
+   == Total time for this step:  46.3173713251017
+>  t = 0.008070
+
+   Time step size: dt = 0.016140
+   Residuals: tdvp_err = 5.03e-01, solver_res = 8.46e-06
+saving time:  7.016140398580768
+    Energy =  1.6724013220156277
+    Energy variance =  21.477787376191166
+   == Total time for this step:  16.726151726208627
+>  t = 0.024211
+
+   Time step size: dt = 0.015837
+   Residuals: tdvp_err = 5.01e-01, solver_res = 9.02e-06
+saving time:  7.048421195742306
+    Energy =  1.6724510085418873
+    Energy variance =  21.402067793110483
+   == Total time for this step:  31.448014061897993
+>  t = 0.040047
+
+   Time step size: dt = 0.014529
+   Residuals: tdvp_err = 5.00e-01, solver_res = 9.64e-06
+saving time:  7.080094827225691
+    Energy =  1.6724944512451
+    Energy variance =  21.339798006646337
+   == Total time for this step:  31.513622811064124
+>  t = 0.054577
+
+   Time step size: dt = 0.014703
+   Residuals: tdvp_err = 4.99e-01, solver_res = 6.64e-06
+saving time:  7.109153603744416
+    Energy =  1.6725194087964832
+    Energy variance =  21.291988155228154
+   == Total time for this step:  31.444689741823822
+>  t = 0.069280
+
+   Time step size: dt = 0.014183
+   Residuals: tdvp_err = 4.99e-01, solver_res = 7.35e-06
+saving time:  7.138559181668908
+    Energy =  1.672545232386777
+    Energy variance =  21.250644449611116
+   == Total time for this step:  31.442442334257066
+>  t = 0.083462
+
+   Time step size: dt = 0.013850
+   Residuals: tdvp_err = 4.99e-01, solver_res = 8.02e-06
+saving time:  7.166924877762769
+    Energy =  1.6725631659608449
+    Energy variance =  21.21565780065981
+   == Total time for this step:  31.510137929115444
+>  t = 0.097313
+
+   Time step size: dt = 0.013711
+   Residuals: tdvp_err = 5.00e-01, solver_res = 8.57e-06
+saving time:  7.194625516355642
+    Energy =  1.6725753304304969
+    Energy variance =  21.184230513148453
+   == Total time for this step:  31.424532637000084
+>  t = 0.111024
+
+   Time step size: dt = 0.013747
+   Residuals: tdvp_err = 5.01e-01, solver_res = 8.93e-06
+saving time:  7.222048353945907
+    Energy =  1.6725840589710126
+    Energy variance =  21.15415886423471
+   == Total time for this step:  31.296654788777232
+>  t = 0.124771
+
+   Time step size: dt = 0.013936
+   Residuals: tdvp_err = 5.02e-01, solver_res = 9.06e-06
+saving time:  7.249541935858922
+    Energy =  1.6725918220956069
+    Energy variance =  21.123683341329883
+   == Total time for this step:  31.282379385083914
+>  t = 0.138707
+
+   Time step size: dt = 0.014265
+   Residuals: tdvp_err = 5.03e-01, solver_res = 8.95e-06
+saving time:  7.277414070354735
+    Energy =  1.6726010747518671
+    Energy variance =  21.091344210266847
+   == Total time for this step:  31.288937135133892
+>  t = 0.152972
+
+   Time step size: dt = 0.014706
+   Residuals: tdvp_err = 5.05e-01, solver_res = 8.67e-06
+saving time:  7.305944745441163
+    Energy =  1.672613862806286
+    Energy variance =  21.05595027804266
+   == Total time for this step:  31.346350873820484
+>  t = 0.167679
+
+   Time step size: dt = 0.015211
+   Residuals: tdvp_err = 5.06e-01, solver_res = 8.29e-06
+saving time:  7.335357549536553
+    Energy =  1.6726312704200417
+    Energy variance =  21.016722783523985
+   == Total time for this step:  31.312223519198596
+>  t = 0.182890
+
+   Time step size: dt = 0.015785
+   Residuals: tdvp_err = 5.08e-01, solver_res = 7.89e-06
+saving time:  7.36578020067911
+    Energy =  1.6726530624459475
+    Energy variance =  20.973531446693805
+   == Total time for this step:  31.35626511508599
+>  t = 0.198675
+
+   Time step size: dt = 0.016501
+   Residuals: tdvp_err = 5.10e-01, solver_res = 7.52e-06
+saving time:  7.397349937070338
+    Energy =  1.6726782428887104
+    Energy variance =  20.926871423270146
+   == Total time for this step:  31.2955508553423
+>  t = 0.215176
+
+   Time step size: dt = 0.017249
+   Residuals: tdvp_err = 5.13e-01, solver_res = 7.15e-06
+saving time:  7.43035101575113
+    Energy =  1.6727060397149076
+    Energy variance =  20.877623118774984
+   == Total time for this step:  31.343349726870656
+>  t = 0.232424
+
+   Time step size: dt = 0.017518
+   Residuals: tdvp_err = 5.15e-01, solver_res = 6.74e-06
+saving time:  7.464848911984223
+    Energy =  1.6727349335400814
+    Energy variance =  20.827488298451783
+   == Total time for this step:  31.397167862858623
+>  t = 0.249942
+
+   Time step size: dt = 0.017104
+   Residuals: tdvp_err = 5.17e-01, solver_res = 6.24e-06
+saving time:  7.499884126140935
+    Energy =  1.6727608173722708
+    Energy variance =  20.779798792406073
+   == Total time for this step:  31.285376211162657
+>  t = 0.267046
+
+   Time step size: dt = 0.016360
+   Residuals: tdvp_err = 5.19e-01, solver_res = 5.66e-06
+saving time:  7.534092857003652
+    Energy =  1.6727809577198953
+    Energy variance =  20.737701302675383
+   == Total time for this step:  31.347532919142395
+>  t = 0.283406
+
+   Time step size: dt = 0.019684
+   Residuals: tdvp_err = 5.21e-01, solver_res = 9.23e-06
+saving time:  7.56681268348312
+    Energy =  1.6728088838328001
+    Energy variance =  20.7022463716687
+   == Total time for this step:  31.406407475937158
+>  t = 0.303090
+
+   Time step size: dt = 0.019359
+   Residuals: tdvp_err = 5.23e-01, solver_res = 8.06e-06
+saving time:  7.606179967359877
+    Energy =  1.6728368140094703
+    Energy variance =  20.666387530278726
+   == Total time for this step:  31.344614383298904
+>  t = 0.322449
+
+   Time step size: dt = 0.019652
+   Residuals: tdvp_err = 5.26e-01, solver_res = 9.78e-06
+saving time:  7.644898213469429
+    Energy =  1.6728580468394423
+    Energy variance =  20.639141111897192
+   == Total time for this step:  31.382543624844402
+>  t = 0.342101
+
+   Time step size: dt = 0.018748
+   Residuals: tdvp_err = 5.28e-01, solver_res = 9.13e-06
+saving time:  7.684202490769648
+    Energy =  1.6728837177211817
+    Energy variance =  20.62064499718293
+   == Total time for this step:  31.28710523294285
+>  t = 0.360849
+
+   Time step size: dt = 0.017689
+   Residuals: tdvp_err = 5.31e-01, solver_res = 8.46e-06
+saving time:  7.72169818136181
+    Energy =  1.6729006394818418
+    Energy variance =  20.61245217835743
+   == Total time for this step:  31.276129639241844
+>  t = 0.378538
+
+   Time step size: dt = 0.016896
+   Residuals: tdvp_err = 5.34e-01, solver_res = 7.72e-06
+saving time:  7.75707533996353
+    Energy =  1.6729089199942575
+    Energy variance =  20.61373698516926
+   == Total time for this step:  31.265408256091177
+>  t = 0.395434
+
+   Time step size: dt = 0.016542
+   Residuals: tdvp_err = 5.38e-01, solver_res = 7.04e-06
+saving time:  7.7908680567880335
+    Energy =  1.6729111110364518
+    Energy variance =  20.623212789575838
+   == Total time for this step:  31.367261026985943
+>  t = 0.411976
+
+   Time step size: dt = 0.016469
+   Residuals: tdvp_err = 5.41e-01, solver_res = 6.54e-06
+saving time:  7.823952443918401
+    Energy =  1.6729101627937015
+    Energy variance =  20.640044681617475
+   == Total time for this step:  31.285676102153957
+>  t = 0.428445
+
+   Time step size: dt = 0.016427
+   Residuals: tdvp_err = 5.44e-01, solver_res = 6.31e-06
+saving time:  7.856890608689598
+    Energy =  1.6729088493907998
+    Energy variance =  20.663909293650175
+   == Total time for this step:  31.274913970846683
+>  t = 0.444873
+
+   Time step size: dt = 0.016268
+   Residuals: tdvp_err = 5.48e-01, solver_res = 6.52e-06
+saving time:  7.889745099247134
+    Energy =  1.6729096263917014
+    Energy variance =  20.69459127131134
+   == Total time for this step:  31.28816722193733
+>  t = 0.461140
+
+   Time step size: dt = 0.015683
+   Residuals: tdvp_err = 5.51e-01, solver_res = 7.31e-06
+saving time:  7.922280901510252
+    Energy =  1.6729141140416657
+    Energy variance =  20.73171806499012
+   == Total time for this step:  31.292467654682696
+>  t = 0.476824
+
+   Time step size: dt = 0.017865
+   Residuals: tdvp_err = 5.53e-01, solver_res = 8.70e-06
+saving time:  7.953647380973987
+    Energy =  1.6729221998119914
+    Energy variance =  20.77389708071835
+   == Total time for this step:  31.33020439464599
+>  t = 0.494688
+
+   Time step size: dt = 0.005312
+   Residuals: tdvp_err = 5.56e-01, solver_res = 7.10e-06
+saving time:  7.989376524913243
+    Energy =  1.6729424753496918
+    Energy variance =  20.829598851173095
+   == Total time for this step:  16.67429311014712
+### Circuit step  4
+
+Diagonal part
+>  t = 0.000000
+
+   Time step size: dt = 0.005312
+   Residuals: tdvp_err = 9.00e-04, solver_res = 9.38e-06
+saving time:  8.0
+    Energy =  -9.15927291843112
+    Energy variance =  57.61659804266374
+   == Total time for this step:  15.64196891989559
+>  t = 0.005312
+
+   Time step size: dt = 0.010623
+   Residuals: tdvp_err = 9.00e-04, solver_res = 9.38e-06
+saving time:  8.021246990173514
+    Energy =  -9.159272901404215
+    Energy variance =  57.616059363731054
+   == Total time for this step:  15.527097329962999
+>  t = 0.015935
+
+   Time step size: dt = 0.021247
+   Residuals: tdvp_err = 9.00e-04, solver_res = 9.38e-06
+saving time:  8.063740970520545
+    Energy =  -9.159272764143969
+    Energy variance =  57.61498139147136
+   == Total time for this step:  15.533371966797858
+>  t = 0.037182
+
+   Time step size: dt = 0.042494
+   Residuals: tdvp_err = 8.99e-04, solver_res = 9.39e-06
+saving time:  8.148728931214606
+    Energy =  -9.159271648964424
+    Energy variance =  57.61282017802291
+   == Total time for this step:  15.567635193932801
+>  t = 0.079676
+
+   Time step size: dt = 0.084988
+   Residuals: tdvp_err = 8.98e-04, solver_res = 9.40e-06
+saving time:  8.318704852602727
+    Energy =  -9.1592624411132
+    Energy variance =  57.60845337990915
+   == Total time for this step:  15.524180315434933
+>  t = 0.164664
+
+   Time step size: dt = 0.117879
+   Residuals: tdvp_err = 8.95e-04, solver_res = 9.42e-06
+saving time:  8.658656695378967
+    Energy =  -9.159183796845333
+    Energy variance =  57.59934591762457
+   == Total time for this step:  29.085083156824112
+Off-diagonal part
+>  t = 0.000000
+
+   Time step size: dt = 0.011218
+   Residuals: tdvp_err = 5.80e-01, solver_res = 5.45e-06
+saving time:  9.0
+    Energy =  1.2453237077232115
+    Energy variance =  18.31776301669621
+   == Total time for this step:  46.081056805793196
+>  t = 0.011218
+
+   Time step size: dt = 0.017248
+   Residuals: tdvp_err = 5.80e-01, solver_res = 5.84e-06
+saving time:  9.02243504773833
+    Energy =  1.2453232547234623
+    Energy variance =  18.28906622402517
+   == Total time for this step:  31.281347209122032
+>  t = 0.028466
+
+   Time step size: dt = 0.017407
+   Residuals: tdvp_err = 5.80e-01, solver_res = 7.82e-06
+saving time:  9.056931861245511
+    Energy =  1.2453224514532661
+    Energy variance =  18.252757096657035
+   == Total time for this step:  31.293511136900634
+>  t = 0.045873
+
+   Time step size: dt = 0.018143
+   Residuals: tdvp_err = 5.80e-01, solver_res = 5.39e-06
+saving time:  9.091746191675895
+    Energy =  1.2453220895454742
+    Energy variance =  18.224224131053305
+   == Total time for this step:  31.275832773186266
+>  t = 0.064016
+
+   Time step size: dt = 0.017917
+   Residuals: tdvp_err = 5.80e-01, solver_res = 6.91e-06
+saving time:  9.128032193305259
+    Energy =  1.2453196609075199
+    Energy variance =  18.20130630133368
+   == Total time for this step:  31.280570019967854
+>  t = 0.081933
+
+   Time step size: dt = 0.016314
+   Residuals: tdvp_err = 5.80e-01, solver_res = 7.96e-06
+saving time:  9.16386589888344
+    Energy =  1.2453105610762107
+    Energy variance =  18.183974298231227
+   == Total time for this step:  31.370276113040745
+>  t = 0.098246
+
+   Time step size: dt = 0.011700
+   Residuals: tdvp_err = 5.81e-01, solver_res = 8.61e-06
+saving time:  9.196492999341565
+    Energy =  1.2452853414507636
+    Energy variance =  18.171564922291928
+   == Total time for this step:  31.3682912690565
+>  t = 0.109946
+
+   Time step size: dt = 0.007135
+   Residuals: tdvp_err = 5.81e-01, solver_res = 9.07e-06
+saving time:  9.219892840914858
+    Energy =  1.2452628480354613
+    Energy variance =  18.1640326352978
+   == Total time for this step:  31.347427835222334
+>  t = 0.117081
+
+   Time step size: dt = 0.012000
+   Residuals: tdvp_err = 5.80e-01, solver_res = 9.38e-06
+saving time:  9.234162175859682
+    Energy =  1.2452575050469372
+    Energy variance =  18.159829585820532
+   == Total time for this step:  31.385258314665407
+>  t = 0.129081
+
+   Time step size: dt = 0.012363
+   Residuals: tdvp_err = 5.80e-01, solver_res = 9.54e-06
+saving time:  9.258162895277058
+    Energy =  1.245282020014431
+    Energy variance =  18.15324771991989
+   == Total time for this step:  31.34445902798325
+>  t = 0.141444
+
+   Time step size: dt = 0.015476
+   Residuals: tdvp_err = 5.80e-01, solver_res = 9.14e-06
+saving time:  9.282888291744213
+    Energy =  1.2453614046137376
+    Energy variance =  18.14733181272485
+   == Total time for this step:  16.645914484281093
+>  t = 0.156921
+
+   Time step size: dt = 0.017118
+   Residuals: tdvp_err = 5.81e-01, solver_res = 8.89e-06
+saving time:  9.313841136578306
+    Energy =  1.2454418402197478
+    Energy variance =  18.14097955623554
+   == Total time for this step:  16.625203371047974
+>  t = 0.174039
+
+   Time step size: dt = 0.019155
+   Residuals: tdvp_err = 5.82e-01, solver_res = 9.33e-06
+saving time:  9.348077942095667
+    Energy =  1.2454826710355273
+    Energy variance =  18.134663675408852
+   == Total time for this step:  16.636932293884456
+>  t = 0.193194
+
+   Time step size: dt = 0.017868
+   Residuals: tdvp_err = 5.83e-01, solver_res = 5.81e-06
+saving time:  9.386388688423558
+    Energy =  1.2455067996226172
+    Energy variance =  18.12773342485111
+   == Total time for this step:  16.650963595137
+>  t = 0.211063
+

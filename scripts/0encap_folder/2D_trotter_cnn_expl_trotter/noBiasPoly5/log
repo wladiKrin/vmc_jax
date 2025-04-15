@@ -1,0 +1,631 @@
+Slurm Job Id: 74374
+Di 15. Apr 11:46:45 CEST 2025
+host: pgi8cluster43
+Slurm Instance: 0
+Encap Proc Id: 0
+scripts/0encap_folder/2D_trotter_cnn_expl_trotter/noBiasPoly5/run.py 
+
+[pgi8cluster43:3889176] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.pgi8cluster43.26033004/jf.0/21757952/shared_mem_cuda_pool.pgi8cluster43 could be created.
+[pgi8cluster43:3889176] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
+[CudaDevice(id=0)]
+** Ground state search
+ STEP 1
+   Energy mean: 0.000000
+   Energy variance: 77.316956
+   == Time for step: 8.204305s
+ STEP 2
+   Energy mean: -1.209948
+   Energy variance: 76.708417
+   == Time for step: 2.860065s
+ STEP 3
+   Energy mean: -2.413145
+   Energy variance: 74.799001
+   == Time for step: 2.432366s
+ STEP 4
+   Energy mean: -3.584185
+   Energy variance: 71.680859
+   == Time for step: 2.481371s
+ STEP 5
+   Energy mean: -4.699446
+   Energy variance: 67.558100
+   == Time for step: 2.470135s
+ STEP 6
+   Energy mean: -5.740359
+   Energy variance: 62.714884
+   == Time for step: 2.428365s
+ STEP 7
+   Energy mean: -6.694895
+   Energy variance: 57.462740
+   == Time for step: 2.415364s
+ STEP 8
+   Energy mean: -7.557399
+   Energy variance: 52.090498
+   == Time for step: 2.442889s
+ STEP 9
+   Energy mean: -8.327572
+   Energy variance: 46.832338
+   == Time for step: 2.485294s
+ STEP 10
+   Energy mean: -9.009105
+   Energy variance: 41.855769
+   == Time for step: 2.427366s
+ STEP 11
+   Energy mean: -9.608311
+   Energy variance: 37.264486
+   == Time for step: 2.463191s
+ STEP 12
+   Energy mean: -10.132929
+   Energy variance: 33.109433
+   == Time for step: 2.437135s
+ STEP 13
+   Energy mean: -10.591219
+   Energy variance: 29.402512
+   == Time for step: 2.438193s
+ STEP 14
+   Energy mean: -10.991328
+   Energy variance: 26.129497
+   == Time for step: 2.494307s
+ STEP 15
+   Energy mean: -11.340907
+   Energy variance: 23.260520
+   == Time for step: 2.496938s
+ STEP 16
+   Energy mean: -11.646899
+   Energy variance: 20.757805
+   == Time for step: 2.498531s
+ STEP 17
+   Energy mean: -11.915467
+   Energy variance: 18.580910
+   == Time for step: 2.419695s
+ STEP 18
+   Energy mean: -12.151986
+   Energy variance: 16.690036
+   == Time for step: 2.442997s
+ STEP 19
+   Energy mean: -12.361097
+   Energy variance: 15.047923
+   == Time for step: 2.428972s
+ STEP 20
+   Energy mean: -12.546771
+   Energy variance: 13.620801
+   == Time for step: 2.477077s
+ STEP 21
+   Energy mean: -12.712392
+   Energy variance: 12.378724
+   == Time for step: 2.447446s
+ STEP 22
+   Energy mean: -12.860831
+   Energy variance: 11.295527
+   == Time for step: 2.391575s
+ STEP 23
+   Energy mean: -12.994519
+   Energy variance: 10.348589
+   == Time for step: 2.458429s
+ STEP 24
+   Energy mean: -13.115514
+   Energy variance: 9.518491
+   == Time for step: 2.507616s
+ STEP 25
+   Energy mean: -13.225559
+   Energy variance: 8.788646
+   == Time for step: 2.531503s
+ STEP 26
+   Energy mean: -13.326128
+   Energy variance: 8.144922
+   == Time for step: 2.509591s
+ STEP 27
+   Energy mean: -13.418470
+   Energy variance: 7.575306
+   == Time for step: 2.501987s
+ STEP 28
+   Energy mean: -13.503645
+   Energy variance: 7.069594
+   == Time for step: 2.396242s
+ STEP 29
+   Energy mean: -13.582553
+   Energy variance: 6.619116
+   == Time for step: 2.413230s
+ STEP 30
+   Energy mean: -13.655956
+   Energy variance: 6.216504
+   == Time for step: 2.437935s
+ STEP 31
+   Energy mean: -13.724506
+   Energy variance: 5.855490
+   == Time for step: 2.462237s
+ STEP 32
+   Energy mean: -13.788756
+   Energy variance: 5.530735
+   == Time for step: 2.517092s
+ STEP 33
+   Energy mean: -13.849176
+   Energy variance: 5.237682
+   == Time for step: 2.478511s
+ STEP 34
+   Energy mean: -13.906169
+   Energy variance: 4.972439
+   == Time for step: 2.486914s
+ STEP 35
+   Energy mean: -13.960079
+   Energy variance: 4.731669
+   == Time for step: 2.469610s
+ STEP 36
+   Energy mean: -14.011199
+   Energy variance: 4.512508
+   == Time for step: 2.502648s
+ STEP 37
+   Energy mean: -14.059783
+   Energy variance: 4.312494
+   == Time for step: 2.488823s
+ STEP 38
+   Energy mean: -14.106045
+   Energy variance: 4.129498
+   == Time for step: 2.426886s
+ STEP 39
+   Energy mean: -14.150172
+   Energy variance: 3.961681
+   == Time for step: 2.449979s
+ STEP 40
+   Energy mean: -14.192327
+   Energy variance: 3.807446
+   == Time for step: 2.485002s
+ STEP 41
+   Energy mean: -14.232648
+   Energy variance: 3.665404
+   == Time for step: 2.504366s
+ STEP 42
+   Energy mean: -14.271257
+   Energy variance: 3.534341
+   == Time for step: 2.472761s
+ STEP 43
+   Energy mean: -14.308261
+   Energy variance: 3.413196
+   == Time for step: 2.371586s
+ STEP 44
+   Energy mean: -14.343755
+   Energy variance: 3.301035
+   == Time for step: 2.495345s
+ STEP 45
+   Energy mean: -14.377821
+   Energy variance: 3.197036
+   == Time for step: 2.479798s
+ STEP 46
+   Energy mean: -14.410535
+   Energy variance: 3.100472
+   == Time for step: 2.475728s
+ STEP 47
+   Energy mean: -14.441963
+   Energy variance: 3.010697
+   == Time for step: 2.490014s
+ STEP 48
+   Energy mean: -14.472167
+   Energy variance: 2.927138
+   == Time for step: 2.492248s
+ STEP 49
+   Energy mean: -14.501202
+   Energy variance: 2.849281
+   == Time for step: 2.487046s
+ STEP 50
+   Energy mean: -14.529121
+   Energy variance: 2.776667
+   == Time for step: 2.455683s
+ STEP 51
+   Energy mean: -14.555971
+   Energy variance: 2.708881
+   == Time for step: 2.493960s
+ STEP 52
+   Energy mean: -14.581798
+   Energy variance: 2.645551
+   == Time for step: 2.414976s
+ STEP 53
+   Energy mean: -14.606645
+   Energy variance: 2.586336
+   == Time for step: 2.461015s
+ STEP 54
+   Energy mean: -14.630553
+   Energy variance: 2.530930
+   == Time for step: 2.513203s
+ STEP 55
+   Energy mean: -14.653561
+   Energy variance: 2.479050
+   == Time for step: 2.542696s
+ STEP 56
+   Energy mean: -14.675707
+   Energy variance: 2.430440
+   == Time for step: 2.480503s
+ STEP 57
+   Energy mean: -14.697029
+   Energy variance: 2.384861
+   == Time for step: 2.504717s
+ STEP 58
+   Energy mean: -14.717562
+   Energy variance: 2.342096
+   == Time for step: 2.488001s
+ STEP 59
+   Energy mean: -14.737342
+   Energy variance: 2.301940
+   == Time for step: 2.542798s
+ STEP 60
+   Energy mean: -14.756404
+   Energy variance: 2.264206
+   == Time for step: 2.498418s
+ STEP 61
+   Energy mean: -14.774781
+   Energy variance: 2.228717
+   == Time for step: 2.504062s
+ STEP 62
+   Energy mean: -14.792507
+   Energy variance: 2.195308
+   == Time for step: 2.388702s
+ STEP 63
+   Energy mean: -14.809615
+   Energy variance: 2.163825
+   == Time for step: 2.424733s
+ STEP 64
+   Energy mean: -14.826138
+   Energy variance: 2.134120
+   == Time for step: 2.403715s
+ STEP 65
+   Energy mean: -14.842108
+   Energy variance: 2.106057
+   == Time for step: 2.423611s
+ STEP 66
+   Energy mean: -14.857559
+   Energy variance: 2.079503
+   == Time for step: 2.511234s
+ STEP 67
+   Energy mean: -14.872521
+   Energy variance: 2.054332
+   == Time for step: 2.529760s
+ STEP 68
+   Energy mean: -14.887027
+   Energy variance: 2.030426
+   == Time for step: 2.396439s
+ STEP 69
+   Energy mean: -14.901108
+   Energy variance: 2.007669
+   == Time for step: 2.378409s
+ STEP 70
+   Energy mean: -14.914797
+   Energy variance: 1.985950
+   == Time for step: 2.430667s
+ STEP 71
+   Energy mean: -14.928125
+   Energy variance: 1.965161
+   == Time for step: 2.414870s
+ STEP 72
+   Energy mean: -14.941125
+   Energy variance: 1.945197
+   == Time for step: 2.519449s
+ STEP 73
+   Energy mean: -14.953828
+   Energy variance: 1.925955
+   == Time for step: 2.500308s
+ STEP 74
+   Energy mean: -14.966267
+   Energy variance: 1.907335
+   == Time for step: 2.433959s
+ STEP 75
+   Energy mean: -14.978476
+   Energy variance: 1.889238
+   == Time for step: 2.406111s
+ STEP 76
+   Energy mean: -14.990488
+   Energy variance: 1.871563
+   == Time for step: 2.410892s
+ STEP 77
+   Energy mean: -15.002338
+   Energy variance: 1.854213
+   == Time for step: 2.383688s
+ STEP 78
+   Energy mean: -15.014060
+   Energy variance: 1.837087
+   == Time for step: 2.433677s
+ STEP 79
+   Energy mean: -15.025692
+   Energy variance: 1.820086
+   == Time for step: 2.485965s
+ STEP 80
+   Energy mean: -15.037270
+   Energy variance: 1.803110
+   == Time for step: 2.443956s
+ STEP 81
+   Energy mean: -15.048833
+   Energy variance: 1.786054
+   == Time for step: 2.393424s
+ STEP 82
+   Energy mean: -15.060420
+   Energy variance: 1.768816
+   == Time for step: 2.350602s
+ STEP 83
+   Energy mean: -15.072071
+   Energy variance: 1.751291
+   == Time for step: 2.430413s
+ STEP 84
+   Energy mean: -15.083829
+   Energy variance: 1.733371
+   == Time for step: 2.424970s
+ STEP 85
+   Energy mean: -15.095734
+   Energy variance: 1.714949
+   == Time for step: 2.374161s
+ STEP 86
+   Energy mean: -15.107830
+   Energy variance: 1.695920
+   == Time for step: 2.406712s
+ STEP 87
+   Energy mean: -15.120158
+   Energy variance: 1.676177
+   == Time for step: 2.395885s
+ STEP 88
+   Energy mean: -15.132759
+   Energy variance: 1.655618
+   == Time for step: 2.447650s
+ STEP 89
+   Energy mean: -15.145674
+   Energy variance: 1.634148
+   == Time for step: 2.446333s
+ STEP 90
+   Energy mean: -15.158937
+   Energy variance: 1.611679
+   == Time for step: 2.503991s
+ STEP 91
+   Energy mean: -15.172580
+   Energy variance: 1.588134
+   == Time for step: 2.542464s
+ STEP 92
+   Energy mean: -15.186631
+   Energy variance: 1.563453
+   == Time for step: 2.531333s
+ STEP 93
+   Energy mean: -15.201106
+   Energy variance: 1.537595
+   == Time for step: 2.449079s
+ STEP 94
+   Energy mean: -15.216013
+   Energy variance: 1.510544
+   == Time for step: 2.453762s
+ STEP 95
+   Energy mean: -15.231348
+   Energy variance: 1.482312
+   == Time for step: 2.530773s
+ STEP 96
+   Energy mean: -15.247096
+   Energy variance: 1.452939
+   == Time for step: 2.535922s
+ STEP 97
+   Energy mean: -15.263227
+   Energy variance: 1.422499
+   == Time for step: 2.523940s
+ STEP 98
+   Energy mean: -15.279703
+   Energy variance: 1.391090
+   == Time for step: 2.514529s
+ STEP 99
+   Energy mean: -15.296473
+   Energy variance: 1.358836
+   == Time for step: 2.523049s
+ STEP 100
+   Energy mean: -15.313483
+   Energy variance: 1.325879
+   == Time for step: 2.517876s
+ STEP 101
+   Energy mean: -15.330673
+   Energy variance: 1.292371
+   == Time for step: 2.524892s
+ STEP 102
+   Energy mean: -15.347981
+   Energy variance: 1.258472
+   == Time for step: 2.516286s
+ STEP 103
+   Energy mean: -15.365345
+   Energy variance: 1.224341
+   == Time for step: 2.435090s
+ STEP 104
+   Energy mean: -15.382704
+   Energy variance: 1.190131
+   == Time for step: 2.413250s
+ STEP 105
+   Energy mean: -15.400001
+   Energy variance: 1.155990
+   == Time for step: 2.412332s
+ STEP 106
+   Energy mean: -15.417183
+   Energy variance: 1.122053
+   == Time for step: 2.506833s
+ STEP 107
+   Energy mean: -15.434200
+   Energy variance: 1.088442
+   == Time for step: 2.512749s
+ STEP 108
+   Energy mean: -15.451006
+   Energy variance: 1.055266
+   == Time for step: 2.455856s
+ STEP 109
+   Energy mean: -15.467564
+   Energy variance: 1.022619
+   == Time for step: 2.442526s
+ STEP 110
+   Energy mean: -15.483838
+   Energy variance: 0.990582
+   == Time for step: 2.371516s
+ STEP 111
+   Energy mean: -15.499800
+   Energy variance: 0.959219
+   == Time for step: 2.432509s
+ STEP 112
+   Energy mean: -15.515426
+   Energy variance: 0.928583
+   == Time for step: 2.402275s
+ STEP 113
+   Energy mean: -15.530697
+   Energy variance: 0.898714
+   == Time for step: 2.405492s
+ STEP 114
+   Energy mean: -15.545599
+   Energy variance: 0.869642
+   == Time for step: 2.427663s
+ STEP 115
+   Energy mean: -15.560122
+   Energy variance: 0.841383
+   == Time for step: 2.484697s
+ STEP 116
+   Energy mean: -15.574261
+   Energy variance: 0.813949
+   == Time for step: 2.406845s
+ STEP 117
+   Energy mean: -15.588012
+   Energy variance: 0.787340
+   == Time for step: 2.400728s
+ STEP 118
+   Energy mean: -15.601377
+   Energy variance: 0.761550
+   == Time for step: 2.463053s
+ STEP 119
+   Energy mean: -15.614360
+   Energy variance: 0.736569
+   == Time for step: 2.472337s
+ STEP 120
+   Energy mean: -15.626966
+   Energy variance: 0.712380
+   == Time for step: 2.376316s
+ STEP 121
+   Energy mean: -15.639201
+   Energy variance: 0.688964
+   == Time for step: 2.385715s
+ STEP 122
+   Energy mean: -15.651072
+   Energy variance: 0.666302
+   == Time for step: 2.436723s
+ STEP 123
+   Energy mean: -15.662587
+   Energy variance: 0.644373
+   == Time for step: 2.458074s
+ STEP 124
+   Energy mean: -15.673752
+   Energy variance: 0.623156
+   == Time for step: 2.450291s
+ STEP 125
+   Energy mean: -15.684575
+   Energy variance: 0.602629
+   == Time for step: 2.466801s
+ STEP 126
+   Energy mean: -15.695063
+   Energy variance: 0.582773
+   == Time for step: 2.460872s
+ STEP 127
+   Energy mean: -15.705222
+   Energy variance: 0.563569
+   == Time for step: 2.470484s
+ STEP 128
+   Energy mean: -15.715059
+   Energy variance: 0.544996
+   == Time for step: 2.421676s
+ STEP 129
+   Energy mean: -15.724583
+   Energy variance: 0.527035
+   == Time for step: 2.400331s
+ STEP 130
+   Energy mean: -15.733800
+   Energy variance: 0.509669
+   == Time for step: 2.406767s
+ STEP 131
+   Energy mean: -15.742717
+   Energy variance: 0.492878
+   == Time for step: 2.449836s
+ STEP 132
+   Energy mean: -15.751342
+   Energy variance: 0.476646
+   == Time for step: 2.490307s
+ STEP 133
+   Energy mean: -15.759683
+   Energy variance: 0.460954
+   == Time for step: 2.549150s
+ STEP 134
+   Energy mean: -15.767747
+   Energy variance: 0.445786
+   == Time for step: 2.403328s
+ STEP 135
+   Energy mean: -15.775541
+   Energy variance: 0.431125
+   == Time for step: 2.528675s
+ STEP 136
+   Energy mean: -15.783074
+   Energy variance: 0.416956
+   == Time for step: 2.476720s
+ STEP 137
+   Energy mean: -15.790353
+   Energy variance: 0.403263
+   == Time for step: 2.467276s
+ STEP 138
+   Energy mean: -15.797385
+   Energy variance: 0.390031
+   == Time for step: 2.402885s
+ STEP 139
+   Energy mean: -15.804177
+   Energy variance: 0.377245
+   == Time for step: 2.450503s
+ STEP 140
+   Energy mean: -15.810737
+   Energy variance: 0.364891
+   == Time for step: 2.551036s
+ STEP 141
+   Energy mean: -15.817071
+   Energy variance: 0.352955
+   == Time for step: 2.456432s
+ STEP 142
+   Energy mean: -15.823188
+   Energy variance: 0.341424
+   == Time for step: 2.441567s
+ STEP 143
+   Energy mean: -15.829093
+   Energy variance: 0.330285
+   == Time for step: 2.449532s
+ STEP 144
+   Energy mean: -15.834793
+   Energy variance: 0.319525
+   == Time for step: 2.510969s
+ STEP 145
+   Energy mean: -15.840295
+   Energy variance: 0.309132
+   == Time for step: 2.472473s
+ STEP 146
+   Energy mean: -15.845606
+   Energy variance: 0.299093
+   == Time for step: 2.443434s
+ STEP 147
+   Energy mean: -15.850732
+   Energy variance: 0.289397
+   == Time for step: 2.438898s
+ STEP 148
+   Energy mean: -15.855680
+   Energy variance: 0.280032
+   == Time for step: 2.443411s
+ STEP 149
+   Energy mean: -15.860454
+   Energy variance: 0.270987
+   == Time for step: 2.526577s
+ STEP 150
+   Energy mean: -15.865062
+   Energy variance: 0.262250
+   == Time for step: 2.437136s
+ STEP 151
+   Energy mean: -15.869509
+   Energy variance: 0.253812
+   == Time for step: 2.545764s
+ STEP 152
+   Energy mean: -15.873801
+   Energy variance: 0.245662
+   == Time for step: 2.439118s
+ STEP 153
+   Energy mean: -15.877944
+   Energy variance: 0.237790
+   == Time for step: 2.534588s
+ STEP 154
+   Energy mean: -15.881942
+   Energy variance: 0.230185
+   == Time for step: 2.460002s
+ STEP 155
+   Energy mean: -15.885802
+   Energy variance: 0.222838
+   == Time for step: 2.453139s

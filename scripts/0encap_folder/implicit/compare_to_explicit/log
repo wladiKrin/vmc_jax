@@ -1,0 +1,3070 @@
+Slurm Job Id: 74034
+Do 10. Apr 11:56:20 CEST 2025
+host: pgi8cluster44
+Slurm Instance: 0
+Encap Proc Id: 0
+scripts/0encap_folder/implicit/compare_to_explicit/run.py 
+
+/local/krinitsin/VMC/vmc_jax/scripts/0encap_folder/implicit/compare_to_explicit/implicit_tdvp.py:33: SyntaxWarning: invalid escape sequence '\l'
+  """ This class provides functionality to solve a time-dependent variational principle (TDVP).
+[pgi8cluster44:3258090] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.pgi8cluster44.26033004/jf.0/3621584896/shared_mem_cuda_pool.pgi8cluster44 could be created.
+[pgi8cluster44:3258090] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
+ -> Rank 0 working with device [CudaDevice(id=0)]
+initializing network
+Number of parameters:  400
+setting up tdvp equation
+starting tdvp equation
+>  t = 0.000000
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.016606861750049978
+implicit: [-3.29740902 -1.95495536 -2.35875165  1.13025976  2.67623891]
+explicit: [-8.70285215 -4.75316941 -4.0424384   0.94251619  4.84504986]
+comp to explicit:  16191.579936087855
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.019858398129878815
+implicit: [-2.08500342 -1.50648585 -1.70634594  0.74948928  1.94243566]
+explicit: [-8.86439541 -3.69216421 -4.30910625  1.83836318  3.84253234]
+comp to explicit:  145852.36161880486
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.011410573870751072
+implicit: [-3.04431468 -2.69053557 -2.4502536   1.22364061  3.44596494]
+explicit: [-8.86767135 -4.27197302 -4.16091335  1.28839817  4.38670964]
+comp to explicit:  25099.06145775345
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.01794820475277842
+implicit: [-2.63111812 -1.67650303 -2.04886589  0.92781527  2.24002968]
+explicit: [-8.90785432 -4.21721594 -4.14411089  1.30923952  4.30508111]
+comp to explicit:  25457.896674801694
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.019707430413335055
+implicit: [-2.04488771 -1.46679665 -1.75821339  0.74198229  1.94207078]
+explicit: [-8.82517682 -3.64051351 -4.26766104  1.75427816  3.7840889 ]
+comp to explicit:  2015804.8486418729
+   Time step size: dt = 0.000100
+   Residuals: tdvp_err = 7.45e-02, solver_res = 3.45e-08
+    Energy = -9.999904 +/- 0.000000
+    xPol = 0.999978 +/- 0.000000
+   == Total time for this step: 17.874760s
+
+>  t = 0.000100
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.01961601996220918
+implicit: [-1.9981783  -1.47767235 -1.74607659  0.76204591  1.92961622]
+explicit: [-8.80591864 -3.6561071  -4.2614068   1.71386626  3.79814396]
+comp to explicit:  121870.69186128295
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.009779595537273039
+implicit: [-2.66174577  0.56633548 -1.90713901  1.45344587  0.59985524]
+explicit: [-7.75461131 -1.39097145 -4.49108506  1.98431745  2.85303061]
+comp to explicit:  13499.428168503087
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.014840892332510496
+implicit: [-1.21244358 -1.15390054 -1.64644282  0.61914839  1.77981963]
+explicit: [-8.37623522 -2.47285784 -4.42504959  2.26410699  3.07194254]
+comp to explicit:  85099.10018188988
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.022380326914486746
+implicit: [-0.96917491 -1.05145347 -1.30610435  0.55823682  1.37816178]
+explicit: [-8.35755811 -2.44076849 -4.30826722  2.33872835  2.99866288]
+comp to explicit:  1012719.3534614872
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.012046458511157983
+implicit: [-1.81423172  0.80199104 -1.77655392  0.77100852  0.62817587]
+explicit: [-7.77312962 -1.57344427 -4.31314712  1.93396249  2.84447346]
+comp to explicit:  193589.32286858492
+   Time step size: dt = 0.000200
+   Residuals: tdvp_err = 1.02e-01, solver_res = 3.77e-08
+    Energy = -9.999904 +/- 0.000000
+    xPol = 0.999976 +/- 0.000000
+   == Total time for this step: 15.489829s
+
+>  t = 0.000300
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.011698043243555386
+implicit: [-1.91395078  0.88604015 -1.79484129  0.75259958  0.52905753]
+explicit: [-7.71686865 -1.49698632 -4.11573521  2.01314188  2.70624347]
+comp to explicit:  8504.757105825316
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  3.754830689284733e-08
+implicit: [-3.33224569  0.0110832  -0.16093403  4.17956618 -0.56426687]
+explicit: [-2.6238191  -2.76856019 -0.34387884 -1.52747454  5.45663988]
+comp to explicit:  1560058.2609624828
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  2.624252825346717e-08
+implicit: [-5.27989097 -0.54112729 -0.98728697  4.88608425 -0.01071799]
+explicit: [-5.30748574 -1.20237863 -2.41033488 -0.55369719  3.55709929]
+comp to explicit:  152889.26790921445
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.0005079801135064322
+implicit: [-4.34534288 -0.3634256  -1.24519685  4.05849113  0.00692306]
+explicit: [-4.52036948 -0.87442225 -2.82633467 -1.7786074   3.5029987 ]
+comp to explicit:  290583.0709674707
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  3.580124852975002e-08
+implicit: [-1.75247153  0.12337263 -0.94941358  2.49120427 -0.56930497]
+explicit: [-0.94726263 -3.12762303 -1.15245588 -3.02871952  5.39026648]
+comp to explicit:  199485.89711083163
+   Time step size: dt = 0.000400
+   Residuals: tdvp_err = 4.48e-02, solver_res = 4.64e-08
+    Energy = -9.999903 +/- 0.000000
+    xPol = 0.999971 +/- 0.000000
+   == Total time for this step: 45.271606s
+
+>  t = 0.000700
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  3.490578011893823e-08
+implicit: [-2.03911123  0.03400591 -0.98749072  2.6432631  -0.50527311]
+explicit: [-1.2224327  -3.04930766 -1.15474909 -2.99388916  5.29649923]
+comp to explicit:  32216.533747414353
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  1.2060108430796148e-07
+implicit: [ 0.12217332  0.39257461 -0.61660225  0.82609138 -0.44270014]
+explicit: [ 2.23218691 -5.71133528  1.98644315  0.45321974  7.03283016]
+comp to explicit:  75141.86359835156
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  6.462719011162857e-08
+implicit: [-0.38100344  0.31371257 -0.72914249  1.35522654 -0.57438759]
+explicit: [ 1.78774484e+00 -3.20934386e+00  2.13957018e+00  5.31544201e-03
+  6.99829265e+00]
+comp to explicit:  214596.95815750732
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  6.072819488204455e-08
+implicit: [-0.59981658  0.25281386 -0.75046422  1.53213608 -0.5659709 ]
+explicit: [ 1.40958497 -3.0385894   1.8689566  -0.20737102  6.89194985]
+comp to explicit:  267046.3590376113
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  1.011034129437106e-07
+implicit: [-0.15703078  0.29881557 -0.6332596   1.10119211 -0.47619234]
+explicit: [ 1.59683667 -4.20231684  2.48186123  1.46140521  6.8778561 ]
+comp to explicit:  5494732.692692911
+   Time step size: dt = 0.000800
+   Residuals: tdvp_err = 4.30e-07, solver_res = 4.62e-08
+    Energy = -9.999903 +/- 0.000000
+    xPol = 0.999959 +/- 0.000000
+   == Total time for this step: 40.336737s
+
+>  t = 0.001500
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  9.757566635325215e-08
+implicit: [-0.20402787  0.28862032 -0.64034008  1.14762896 -0.48340667]
+explicit: [ 1.54752203 -4.042666    2.5564809   1.50883911  6.87224316]
+comp to explicit:  383204.73433507426
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  4.7339526780386383e-07
+implicit: [ 0.1919107   0.29506863 -0.35976133  0.64111612 -0.23661611]
+explicit: [-3.46072553 -8.68598668  5.75074837  1.21352243  4.39361501]
+comp to explicit:  1176897.8652561365
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  2.2399360642335767e-07
+implicit: [ 0.08140368  0.29963585 -0.48097387  0.80770647 -0.33809699]
+explicit: [ 1.41862440e-04 -9.95545856e+00  4.13345179e+00 -3.86072207e-02
+  7.44960274e+00]
+comp to explicit:  24457028283.343582
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  2.0741009184126628e-07
+implicit: [ 0.04615456  0.29356685 -0.49426381  0.85093079 -0.3546314 ]
+explicit: [ 0.57726822 -9.25317723  3.37784763 -0.21000423  7.5839374 ]
+comp to explicit:  166427.51892190208
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  3.8831739538690813e-07
+implicit: [ 0.13969893  0.28507847 -0.39044397  0.71357129 -0.2730172 ]
+explicit: [ -3.53062223 -10.39663339   5.81750373   0.71935118   5.14348523]
+comp to explicit:  3354906.706377948
+   Time step size: dt = 0.001600
+   Residuals: tdvp_err = 8.67e-07, solver_res = 4.65e-08
+    Energy = -9.999907 +/- 0.000000
+    xPol = 0.999920 +/- 0.000000
+   == Total time for this step: 32.387242s
+
+>  t = 0.003100
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  3.725650985636627e-07
+implicit: [ 0.130343    0.28425485 -0.39737559  0.72619056 -0.27980173]
+explicit: [ -3.5162098  -10.70007004   5.89109429   0.6182794    5.32257856]
+comp to explicit:  5750777.980816307
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  2.2398925543091054e-06
+implicit: [ 0.23038904  0.24118557 -0.1810509   0.50831385 -0.14679208]
+explicit: [-2.42589638 -4.6420494   6.65140949  1.28548142 -1.03067879]
+comp to explicit:  577716.5939853548
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  9.794622719576958e-07
+implicit: [ 0.20084031  0.2623912  -0.26721331  0.59102273 -0.19395716]
+explicit: [-5.54981642 -6.93965935  7.72564726  1.4863665   2.59866027]
+comp to explicit:  42989773.247297235
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  8.984323771639018e-07
+implicit: [ 0.19139397  0.26270091 -0.27973576  0.60503386 -0.20302121]
+explicit: [-5.75057462 -7.0736333   8.0465597   1.40795745  2.77535173]
+comp to explicit:  1941628.9834991521
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  1.8066304368494661e-06
+implicit: [ 0.21444984  0.24256026 -0.20730303  0.53406258 -0.16386669]
+explicit: [-3.66832904 -5.4628448   7.092172    1.6645576   0.59113328]
+comp to explicit:  956952.1825385089
+   Time step size: dt = 0.003200
+   Residuals: tdvp_err = 2.33e-06, solver_res = 4.13e-08
+    Energy = -9.999921 +/- 0.000000
+    xPol = 0.999787 +/- 0.000000
+   == Total time for this step: 24.193937s
+
+>  t = 0.006300
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  1.7265050720775614e-06
+implicit: [ 0.21126818  0.24334953 -0.21283477  0.53903141 -0.16676298]
+explicit: [-3.99792369 -5.60478905  7.09137889  1.70299704  0.97588488]
+comp to explicit:  544915.0562487693
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  1.1655838986801352e-05
+implicit: [ 0.22512419  0.18213614 -0.08359254  0.39027875 -0.1173814 ]
+explicit: [-1.23413251 -5.31708243 -1.51337015  0.63849692  6.25096   ]
+comp to explicit:  3387025.4130310244
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  4.892284027384167e-06
+implicit: [ 0.22360372  0.21021428 -0.13256967  0.45207894 -0.13189295]
+explicit: [-3.44249083 -4.4553939   1.80548381  0.82160147 -1.82471509]
+comp to explicit:  2102413.3218459226
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  4.45896633273967e-06
+implicit: [ 0.2199343   0.21254978 -0.14104922  0.45936589 -0.13456008]
+explicit: [-3.53178296 -4.27468468  2.44609934  0.90306601 -2.39113766]
+comp to explicit:  975017.9045551931
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  9.294862642561266e-06
+implicit: [ 0.2187076   0.18778113 -0.10026643  0.40529643 -0.12121573]
+explicit: [-2.20379832 -5.30496051 -1.56088127  0.68334113  4.73250067]
+comp to explicit:  2101456682.426961
+   Time step size: dt = 0.006400
+   Residuals: tdvp_err = 7.62e-06, solver_res = 5.23e-08
+    Energy = -9.999981 +/- 0.000000
+    xPol = 0.999301 +/- 0.000000
+   == Total time for this step: 17.436142s
+
+>  t = 0.012700
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  8.858796781365108e-06
+implicit: [ 0.21741989  0.18932997 -0.1036553   0.40858377 -0.1215311 ]
+explicit: [-2.41911421 -5.2425729  -1.50508259  0.68456498  4.30256826]
+comp to explicit:  102156796.61362594
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  6.3216299531328e-05
+implicit: [ 0.20213356  0.12388649 -0.03353299  0.28476545 -0.11412975]
+explicit: [-0.41566436 -3.59682945 -1.11128847  0.3803259   5.49428861]
+comp to explicit:  271674940.88304234
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  2.6018786871555057e-05
+implicit: [ 0.20902184  0.15295761 -0.06019225  0.33703979 -0.11303796]
+explicit: [-0.7277915  -4.61045343 -1.32824726  0.4989059   6.44508769]
+comp to explicit:  1031508.9830800792
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  2.362014783466745e-05
+implicit: [ 0.20748168  0.15631453 -0.06508687  0.34291132 -0.11214679]
+explicit: [-0.81133149 -4.78672622 -1.35854198  0.5218585   6.54823201]
+comp to explicit:  2309910.9877792425
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  5.004296849587369e-05
+implicit: [ 0.19915483  0.13151794 -0.04304501  0.2973569  -0.11107371]
+explicit: [-0.59179869 -3.94202185 -1.198105    0.41275479  5.76919232]
+comp to explicit:  5224602.587236815
+   Time step size: dt = 0.012800
+   Residuals: tdvp_err = 2.76e-05, solver_res = 2.28e-08
+    Energy = -10.000226 +/- 0.000000
+    xPol = 0.997445 +/- 0.000000
+   == Total time for this step: 12.966406s
+
+>  t = 0.025500
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  4.76155185681579e-05
+implicit: [ 0.19848053  0.13340897 -0.044998    0.30020444 -0.11004758]
+explicit: [-0.62626757 -4.01306823 -1.21302196  0.42001862  5.82790595]
+comp to explicit:  3287520.111526711
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.00034755998162921834
+implicit: [ 0.18122792  0.07196946 -0.00473876  0.19676156 -0.12281233]
+explicit: [-0.30480947 -2.5638708  -0.81262979  0.27147967  3.83257132]
+comp to explicit:  633071447.9833041
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.00014195320680680836
+implicit: [ 0.1869479   0.09890178 -0.02058944  0.24022613 -0.11410753]
+explicit: [-0.42137051 -3.11009401 -0.98030052  0.32137272  4.69783383]
+comp to explicit:  3443425.9041445106
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.0001285470545846695
+implicit: [ 0.18573749  0.10252972 -0.02353153  0.24542414 -0.11144666]
+explicit: [-0.48019226 -3.21312132 -1.00504579  0.32934113  4.80731332]
+comp to explicit:  8884771.935917089
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.0002736528747744637
+implicit: [ 0.17832078  0.07992685 -0.01052492  0.20777007 -0.11647899]
+explicit: [-0.42137405 -2.76414017 -0.86674743  0.28379708  4.07491507]
+comp to explicit:  54137617.00821681
+   Time step size: dt = 0.025600
+   Residuals: tdvp_err = 1.05e-04, solver_res = 2.69e-11
+    Energy = -10.001184 +/- 0.000000
+    xPol = 0.990241 +/- 0.000000
+   == Total time for this step: 10.938143s
+
+>  t = 0.051100
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.0002600572909099644
+implicit: [ 0.17749799  0.08184068 -0.01177588  0.21017991 -0.11476942]
+explicit: [-0.4496265  -2.80708623 -0.87591892  0.28658538  4.12741471]
+comp to explicit:  7386118.918078914
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.00020680131953345417
+implicit: [ 0.10095987 -0.8787503   0.23264081  0.06121301  0.13943471]
+explicit: [-0.47015973 -2.044587   -0.62448871  0.228768    2.39966911]
+comp to explicit:  1571632.8925575493
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.00029391606715597395
+implicit: [ 0.3227915   0.00123526  0.16376481 -0.09878809  0.02041508]
+explicit: [-0.45423449 -2.33693767 -0.71775418  0.24352682  3.14464325]
+comp to explicit:  4099993.165199731
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.0003327612059458267
+implicit: [ 0.20191605  0.05646092  0.03204824  0.09753269 -0.08906866]
+explicit: [-1.51547838 -1.87325069  0.02380878  0.55363584  2.81622169]
+comp to explicit:  4852102.57997368
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.00018069265954134012
+implicit: [ 0.08840542 -1.10911794  0.11209489  0.03547718  0.05986942]
+explicit: [-2.0724782  -1.57579926  0.51127537  0.74053695  2.13921122]
+comp to explicit:  439511.4774357453
+   Time step size: dt = 0.051200
+   Residuals: tdvp_err = 4.09e-04, solver_res = 1.94e-14
+    Energy = -9.997731 +/- 0.000000
+    xPol = 0.961886 +/- 0.000000
+   == Total time for this step: 22.442180s
+
+>  t = 0.102300
+
+================================== whole step =============================================
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.00033619788299908633
+implicit: [ 0.1104065  -0.2282534   0.16649497 -0.11812218  0.02837699]
+explicit: [-2.09182713  0.2254289  -0.79028022  0.95714276  1.29515138]
+comp to explicit:  1042444.3056194626
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00010833353914792704
+implicit: [-0.26477954  0.01791963  0.06923666 -0.11513089  0.12341806]
+explicit: [-0.13954695  0.29658105  0.49571447 -0.11710955 -0.72401304]
+comp to explicit:  188281.17256172182
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.00011556809345368173
+implicit: [-0.15035681 -0.23315948  0.07466302  0.00237721  0.11684915]
+explicit: [-0.83733366  0.22036433  0.29715255  0.42521108  0.26701303]
+comp to explicit:  561148.8592063126
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  8.258230035882504e-05
+implicit: [-0.08137823 -0.17392877  0.02765359 -0.10005519  0.1006898 ]
+explicit: [-0.60408285  0.17658395 -0.18677734  0.46560214 -0.16039798]
+comp to explicit:  64449.542830700215
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  7.15219414526094e-05
+implicit: [-0.02033002  0.04721773 -0.00638188 -0.19208854 -0.03830826]
+explicit: [-0.62997481  0.10244581 -0.05223987 -0.1028007   0.30628006]
+comp to explicit:  302220.7623002351
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.0002767393981716437
+implicit: [ 0.03004584 -0.43874965  0.17239238 -0.11572228  0.06391994]
+explicit: [-2.09182713  0.2254289  -0.79028022  0.95714276  1.29515138]
+comp to explicit:  1255986.059271403
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  8.365702625574889e-05
+implicit: [-0.19478287  0.15499916  0.0914981  -0.18993382  0.07070464]
+explicit: [ 0.3738826   0.43485339  0.211691    0.33736585 -0.42256312]
+comp to explicit:  138288.81728582346
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.0003171253540397148
+implicit: [-0.1686216  -0.45190664  0.05802567 -0.16831904 -0.11483085]
+explicit: [-0.38794381  0.39106476  0.09186084  0.7489758   0.35669249]
+comp to explicit:  181704.7770247751
+scipy optimize
+success:  True
+status:  0
+message:  Optimization terminated successfully.
+function val:  0.00020572248330723373
+implicit: [-0.12729869 -0.44649865  0.0706087  -0.01517878 -0.15495319]
+explicit: [-0.48530145  0.48374173 -0.01040413  0.86923797  0.2615734 ]
+comp to explicit:  730144.4826560838
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  6.975804717424095e-05
+implicit: [ 0.01308006  0.24891167  0.04377692 -0.25589518  0.05296699]
+explicit: [-0.32558121  0.5389158  -0.21110612  0.251755   -0.03754523]
+comp to explicit:  4746651.584529383
+   Time step size: dt = 0.047878
+   Residuals: tdvp_err = 5.47e-04, solver_res = 5.95e-15
+    Energy = -9.998437 +/- 0.000000
+    xPol = 0.921170 +/- 0.000000
+   == Total time for this step: 83.660146s
+
+>  t = 0.150178
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  7.060669281927934e-05
+implicit: [ 0.0020962   0.07478344  0.11736777 -0.20531807  0.05430681]
+explicit: [-0.41278251  0.2917608  -0.06866707  0.31806053  0.30769265]
+comp to explicit:  117238.69194829366
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  7.17253331361883e-05
+implicit: [ 0.01166441  0.02741045 -0.00706984 -0.02477021 -0.0685567 ]
+explicit: [-0.51611639  0.01908294  0.03745509 -0.04463503 -0.04454391]
+comp to explicit:  103242.54015450765
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  6.506107392063795e-05
+implicit: [ 0.05009411  0.04974569  0.07228176 -0.10310468 -0.05052127]
+explicit: [-0.53953736  0.09528575 -0.03085713 -0.00225797  0.32303656]
+comp to explicit:  25472.683487447517
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  6.2881209191179e-05
+implicit: [ 0.05522806  0.04655061  0.11314826 -0.12643691 -0.03194144]
+explicit: [-0.52932009  0.11279328  0.0104514   0.06820695  0.35515833]
+comp to explicit:  56799.2235240212
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  6.454235250012915e-05
+implicit: [ 0.03330661  0.02933303  0.03792209 -0.04556279 -0.07696768]
+explicit: [-0.58436909  0.04774048  0.07480392  0.03344323  0.14831169]
+comp to explicit:  48706.75509448464
+   Time step size: dt = 0.051032
+   Residuals: tdvp_err = 8.53e-05, solver_res = 3.45e-15
+    Energy = -9.999576 +/- 0.000000
+    xPol = 0.865711 +/- 0.000000
+   == Total time for this step: 52.129668s
+
+>  t = 0.201210
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  6.640979587435915e-05
+implicit: [ 0.03090522  0.03308473  0.05250077 -0.04859073 -0.07027944]
+explicit: [-0.58794105  0.0539306   0.08100469  0.03590676  0.19130268]
+comp to explicit:  133339.971562254
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00011290911135098709
+implicit: [-0.18545141  0.03439217 -0.04011119  0.05755519 -0.08616281]
+explicit: [-0.53969913  0.00832651  0.06107717  0.1154084   0.26331545]
+comp to explicit:  5230785.215216146
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  7.155384569411368e-05
+implicit: [-0.04350117  0.03241043  0.0092348   0.00810095 -0.08069469]
+explicit: [-0.5472643  -0.00670367  0.08749583  0.06689184  0.08140192]
+comp to explicit:  398986.9581066401
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  7.407282414048057e-05
+implicit: [-0.01993398  0.03062197  0.04528022  0.01314918 -0.08856543]
+explicit: [-0.63598044 -0.0025961   0.11464313  0.04236001  0.13033042]
+comp to explicit:  54179.77901066566
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00012108918327903863
+implicit: [-0.05236874  0.03898306  0.061347    0.05812052 -0.10240952]
+explicit: [-0.69503695  0.00806314  0.15160307 -0.03886548  0.31898855]
+comp to explicit:  6771644.17990416
+   Time step size: dt = 0.101114
+   Residuals: tdvp_err = 2.53e-05, solver_res = 8.97e-15
+    Energy = -9.998184 +/- 0.000000
+    xPol = 0.734916 +/- 0.000000
+   == Total time for this step: 53.302193s
+
+>  t = 0.302323
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00011912407295819987
+implicit: [-0.01979287  0.02846401  0.10015709  0.04977892 -0.09018105]
+explicit: [-0.61047066  0.00242558  0.16550878 -0.096239    0.33770652]
+comp to explicit:  117733.14259490112
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00028758621153759603
+implicit: [-0.10536857 -0.00959029  0.59420332  0.12934933  0.05667153]
+explicit: [ 0.29941728 -0.02390711  0.36548473 -0.51737418  0.16427007]
+comp to explicit:  247322.0923106489
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00019086414099163577
+implicit: [-0.02701297  0.00592073  0.2708533   0.08824446  0.0133665 ]
+explicit: [-0.14714687 -0.02068128  0.16271245 -0.33102956  0.27074702]
+comp to explicit:  630728.7619647081
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00018986025764820738
+implicit: [-0.00893329 -0.00463567  0.32496652  0.10051067 -0.0127294 ]
+explicit: [-0.28405446 -0.0280792   0.20691206 -0.2903677   0.00997224]
+comp to explicit:  278401.2982684843
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0003529215994897905
+implicit: [ 0.15439421  0.00232654  0.47217553  0.06187917 -0.18065929]
+explicit: [ 0.01780325 -0.03743491  0.27555836 -0.7551965   0.05776868]
+comp to explicit:  247086.56264411288
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00011961826535097382
+implicit: [-0.02334643  0.02766171  0.10191964  0.04985802 -0.0873487 ]
+explicit: [-0.61047066  0.00242558  0.16550878 -0.096239    0.33770652]
+comp to explicit:  250835.8165142713
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00020507635756329906
+implicit: [-0.10017939 -0.0050949   0.3305126   0.11846137  0.03876256]
+explicit: [-0.02676645 -0.02680683  0.19010283 -0.38850802  0.17325664]
+comp to explicit:  107720.4712159381
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00016141012676008367
+implicit: [-0.01936139  0.01369101  0.19539749  0.08054412 -0.03090624]
+explicit: [-0.30946183 -0.01243152  0.16670353 -0.25618336  0.34060361]
+comp to explicit:  1079290.494210458
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00016931335689733787
+implicit: [ 0.02974664  0.01198457  0.22784762  0.07711941 -0.05152463]
+explicit: [-0.29986485 -0.01747549  0.18959775 -0.26251767  0.25909506]
+comp to explicit:  15447289.740339816
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00023232892955885617
+implicit: [ 0.01216439 -0.00783654  0.42723237  0.10447136 -0.04349806]
+explicit: [-0.26509877 -0.02861687  0.23333045 -0.34687728 -0.08032323]
+comp to explicit:  207920.995566158
+   Time step size: dt = 0.062009
+   Residuals: tdvp_err = 7.74e-05, solver_res = 2.98e-13
+    Energy = -9.997223 +/- 0.000000
+    xPol = 0.654563 +/- 0.000000
+   == Total time for this step: 127.565589s
+
+>  t = 0.364333
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00022754008383696578
+implicit: [ 0.03008169 -0.01053938  0.42856866  0.10246106 -0.08812119]
+explicit: [-0.28010386 -0.03060308  0.18753384 -0.34176123 -0.12599038]
+comp to explicit:  1397320.6423721027
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0008741341375234172
+implicit: [ 0.38932355  0.30376502  1.52020193 -1.2899142   0.16400885]
+explicit: [-1.85183943 -0.11643242 -0.22062836 -1.88041024  2.97077521]
+comp to explicit:  22879683.294236492
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0005421849747703362
+implicit: [ 0.55709343  0.07509918  0.37770483 -0.21729527  0.05113119]
+explicit: [-0.39672916  0.04803198  0.1743103  -1.40113474  1.00451737]
+comp to explicit:  993790.3719454359
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.000575158585617834
+implicit: [-0.27809299  0.0012707   0.10868051 -0.48289416 -0.61143293]
+explicit: [-1.27962468  0.0827067   0.61158924 -1.24304739 -0.07782398]
+comp to explicit:  930823.4989583405
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001115984516890856
+implicit: [ 0.36662042 -0.12274083  0.45870885 -0.41695147 -1.07301796]
+explicit: [ 1.16281505 -0.06160043 -0.68287638 -0.41526709 -2.42669986]
+comp to explicit:  14199489.470567986
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00021895160208290501
+implicit: [ 0.01937582 -0.0139588   0.39972485  0.10539482 -0.08607826]
+explicit: [-0.28010386 -0.03060308  0.18753384 -0.34176123 -0.12599038]
+comp to explicit:  200279.53793862404
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00030713137320979313
+implicit: [ 0.1846249   0.00048625  0.33530533  0.05543325 -0.18715694]
+explicit: [-0.04198429 -0.04884734  0.05791651 -0.67044723  0.23572083]
+comp to explicit:  262040.3321847017
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00025834031948001056
+implicit: [ 0.08691729 -0.00611288  0.38968134  0.08516738 -0.15035773]
+explicit: [-0.15495582 -0.03697223  0.13088518 -0.46154771 -0.00754405]
+comp to explicit:  768854.0997397337
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00025854423948912724
+implicit: [ 0.10333051 -0.0067454   0.38440172  0.08240452 -0.15180667]
+explicit: [-0.14851923 -0.03949647  0.1177891  -0.46769935 -0.01440981]
+comp to explicit:  1324298.4025870739
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0003095345546270906
+implicit: [ 0.22224439  0.00514759  0.31855799  0.03748018 -0.18017152]
+explicit: [-0.10056994 -0.05178916 -0.01841579 -0.69319341  0.22748871]
+comp to explicit:  975426.5481312214
+   Time step size: dt = 0.024804
+   Residuals: tdvp_err = 3.58e-04, solver_res = 2.75e-12
+    Energy = -9.997196 +/- 0.000000
+    xPol = 0.624652 +/- 0.000000
+   == Total time for this step: 167.460021s
+
+>  t = 0.389136
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.000304521714236664
+implicit: [ 0.22347725  0.00642775  0.31268332  0.03008794 -0.17217354]
+explicit: [-0.12739773 -0.0520499  -0.0298454  -0.69389785  0.21882592]
+comp to explicit:  455653.4940404451
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0005425623454254474
+implicit: [-2.53728726e-01 -3.00094365e-04 -3.75474113e-01 -7.86127435e-01
+ -6.34149825e-01]
+explicit: [-1.68283396  0.1306133  -0.12497948 -1.77719421 -0.582864  ]
+comp to explicit:  569905.4644564193
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00045659221239415865
+implicit: [ 0.10113766  0.03257644  0.088333   -0.2887158  -0.15021531]
+explicit: [-0.90049014 -0.01323656 -0.3287632  -1.26988491 -0.24479625]
+comp to explicit:  354465.4472830687
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00045447122887257033
+implicit: [-0.04452934  0.01356218  0.01763833 -0.31703415 -0.17521508]
+explicit: [-0.64766313  0.00205711 -0.37157656 -1.13529394 -0.23592119]
+comp to explicit:  287659.30190106353
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0006047525527692908
+implicit: [-0.29899098  0.00250907  0.04380283 -0.70099645 -0.50204709]
+explicit: [-0.49468992  0.03802255  0.1982766  -1.19545499 -1.33794825]
+comp to explicit:  1097480.000852356
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0003154454544155634
+implicit: [ 0.22385451  0.01240254  0.34117384  0.02891194 -0.19236415]
+explicit: [-0.12739773 -0.0520499  -0.0298454  -0.69389785  0.21882592]
+comp to explicit:  1275784.063640189
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0004928152918376633
+implicit: [ 0.02103721  0.00782496 -0.06637146 -0.48074316 -0.38379974]
+explicit: [-1.26958412  0.05337124 -0.17273504 -1.52878713 -0.09129154]
+comp to explicit:  21247100.323781114
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0004364265599888626
+implicit: [ 0.1880837   0.04306534  0.24725485 -0.12880666 -0.06910795]
+explicit: [-0.634655   -0.03052555 -0.26902306 -1.07897251  0.08812268]
+comp to explicit:  2455663.351676887
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0004125639764659488
+implicit: [ 0.08862331  0.04058665  0.16021168 -0.17622653 -0.08044993]
+explicit: [-0.58501338 -0.02426946 -0.26909487 -1.03735014 -0.05644009]
+comp to explicit:  266511462.64814746
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0004484102782501685
+implicit: [-0.13055968 -0.03119521 -0.22125684 -0.60230983 -0.63901199]
+explicit: [-0.89115148  0.03578877 -0.08499916 -1.34716036 -0.59492621]
+comp to explicit:  854321.3740950075
+   Time step size: dt = 0.035007
+   Residuals: tdvp_err = 8.50e-04, solver_res = 3.00e-12
+    Energy = -9.997025 +/- 0.000000
+    xPol = 0.585693 +/- 0.000000
+   == Total time for this step: 168.696018s
+
+>  t = 0.424143
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00047071588887202787
+implicit: [-0.25261802 -0.04093264 -0.1182142  -0.55685734 -0.39573558]
+explicit: [-0.68495719  0.04118236 -0.33025172 -1.21857485  0.03678982]
+comp to explicit:  3565952.6436132235
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0012794477304903275
+implicit: [ 0.46853104 -0.09912666  0.1006937  -0.39851242 -0.60872181]
+explicit: [ 1.14327001 -0.11466204  0.31166618 -0.23516391 -0.30511512]
+comp to explicit:  1841952.108136517
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0006682241110987319
+implicit: [-0.29291541  0.00464937  0.0163081  -0.39507844  0.35767578]
+explicit: [-0.32790171 -0.0988711  -0.72561402 -0.57636387  2.03029999]
+comp to explicit:  561242.2258522098
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0006847443969464749
+implicit: [-0.44256058  0.0379373  -0.07115455 -0.50996002  0.46075696]
+explicit: [-0.7556702   0.13790853 -0.44927392 -0.5933618   2.85660482]
+comp to explicit:  1219277.6338558737
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0013111079939824306
+implicit: [-0.09747686  0.14553721 -0.36721561 -0.45980819 -0.89404923]
+explicit: [ 0.85337402 -0.344895   -0.2776615  -0.36534587  0.49398774]
+comp to explicit:  64066323.645253964
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00048570546832110673
+implicit: [-0.25541897 -0.03651026 -0.09825781 -0.54241982 -0.36019546]
+explicit: [-0.68495719  0.04118236 -0.33025172 -1.21857485  0.03678982]
+comp to explicit:  563796.8671303935
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0005862487461267455
+implicit: [-0.33384087  0.00710014  0.0593189  -0.62715345 -0.25914001]
+explicit: [-0.39097207  0.04048303 -0.1878335  -0.97844182  0.30566673]
+comp to explicit:  206477.8227573018
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0005107107096653158
+implicit: [-0.29706518 -0.02526609 -0.05904547 -0.63402521 -0.40314653]
+explicit: [-0.54366744  0.0546777  -0.26922915 -1.1361953   0.1410045 ]
+comp to explicit:  869516.9970468921
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0005086895562746191
+implicit: [-0.31050001 -0.02653686 -0.06417898 -0.62988296 -0.38847173]
+explicit: [-0.54429986  0.06231547 -0.33957603 -1.11371554  0.36112199]
+comp to explicit:  13965376.992302505
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0005269197631735562
+implicit: [-0.3566462   0.00258081 -0.06068977 -0.58888948 -0.08102132]
+explicit: [-0.40943432  0.05942831 -0.38092326 -0.90292686  1.07913138]
+comp to explicit:  267279.4636543691
+   Time step size: dt = 0.013575
+   Residuals: tdvp_err = 2.58e-03, solver_res = 7.26e-12
+    Energy = -9.997019 +/- 0.000000
+    xPol = 0.571794 +/- 0.000000
+   == Total time for this step: 193.291570s
+
+>  t = 0.437717
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0006131374177514804
+implicit: [-0.38133025 -0.01438249  0.04448406 -0.61580523 -0.26064031]
+explicit: [-0.39513211  0.08056164 -0.41448445 -0.88395962  1.2953608 ]
+comp to explicit:  375020.1415637301
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0008855647002081453
+implicit: [-0.06150086 -0.04249442  0.24941313 -0.34081181  0.096156  ]
+explicit: [-0.10663356 -0.08135608 -1.32497082 -0.51486923  4.23246694]
+comp to explicit:  7946356.088986968
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0005898767205528428
+implicit: [-0.33534606  0.02448849 -0.0752787  -0.41257196  0.48154637]
+explicit: [-0.51879952  0.02737761 -0.70007034 -0.52238479  4.18318308]
+comp to explicit:  516263.3010985709
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0006331087840686249
+implicit: [-0.39867378  0.0492132   0.05255136 -0.455777    0.42758573]
+explicit: [-0.55192787  0.10069587 -0.58357632 -0.54604357  4.25215873]
+comp to explicit:  1146174.9249807713
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0008426666828726977
+implicit: [-0.10219911  0.03610559  0.22519934 -0.36893737  0.34526192]
+explicit: [-0.30810719  0.09321987 -0.48796573 -0.54712437  4.13457095]
+comp to explicit:  220530.44099548573
+   Time step size: dt = 0.027149
+   Residuals: tdvp_err = 4.12e-03, solver_res = 1.40e-11
+    Energy = -9.997221 +/- 0.000000
+    xPol = 0.546274 +/- 0.000000
+   == Total time for this step: 97.854034s
+
+>  t = 0.464866
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0008234554791692061
+implicit: [-0.19111088  0.04132656 -0.13662219 -0.36825567  0.37411612]
+explicit: [-0.37055065  0.15298347  0.14175404 -0.52265066  2.62001782]
+comp to explicit:  179811.06645273382
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001238528841614455
+implicit: [ 0.23693918  0.07139668  0.17974052 -0.40458349 -1.34830671]
+explicit: [ 0.94652338 -0.22214915 -0.39636692 -0.37799505  1.09240808]
+comp to explicit:  2148972.8246871755
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0010240005912848051
+implicit: [-0.0760583   0.11172563 -0.76873286 -0.46287961 -1.08097572]
+explicit: [ 1.25781462  0.20162739  0.16898797 -0.43630159 -1.90189353]
+comp to explicit:  61776270.377948835
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0009936421121061985
+implicit: [-0.14705058  0.05391848 -0.65291668 -0.41708609 -0.60642311]
+explicit: [ 1.06191705  0.24892918 -0.2887404  -0.44204053 -3.73714229]
+comp to explicit:  2187701.6527819806
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.000966778598819568
+implicit: [-0.01014825  0.03645314 -0.46954488 -0.36752257 -1.23354549]
+explicit: [ 0.61749687  0.11763804 -0.35276328 -0.38854341  1.35897521]
+comp to explicit:  486940.7880764866
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0007870673433050487
+implicit: [-0.20540104  0.04099227 -0.12733828 -0.37662065  0.35882101]
+explicit: [-0.37055065  0.15298347  0.14175404 -0.52265066  2.62001782]
+comp to explicit:  4610381.016025152
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001007397338228515
+implicit: [-0.02338247  0.07507489 -0.80574453 -0.42224999 -0.60706637]
+explicit: [ 1.14553023  0.23741698  0.26629543 -0.44873505 -2.00891593]
+comp to explicit:  6709630.631615216
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0008921745514442155
+implicit: [-0.04920153  0.05622385 -0.44000198 -0.38062435 -0.07950512]
+explicit: [ 0.35826981  0.19526268  0.41084154 -0.51881791 -0.00523839]
+comp to explicit:  23923576.714948766
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0008668514072313596
+implicit: [-0.09211942  0.05378053 -0.41201851 -0.38789363 -0.05834975]
+explicit: [ 0.3296678   0.19791917  0.34935438 -0.52307026 -0.1080231 ]
+comp to explicit:  6301809.643501298
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0009289467659454268
+implicit: [-0.11724062  0.08503235 -0.66276897 -0.4355126  -0.68665623]
+explicit: [ 1.09257335  0.25037391  0.22789784 -0.47534285 -2.53074251]
+comp to explicit:  411025.92258043133
+   Time step size: dt = 0.014222
+   Residuals: tdvp_err = 1.23e-02, solver_res = 9.64e-11
+    Energy = -9.997178 +/- 0.000000
+    xPol = 0.534171 +/- 0.000000
+   == Total time for this step: 214.947589s
+
+>  t = 0.479088
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0009064345948141964
+implicit: [-0.14513177  0.07756368 -0.64352892 -0.43859673 -0.71391589]
+explicit: [ 1.07303457  0.25543605  0.06799647 -0.47264257 -2.87997079]
+comp to explicit:  625488.0735817701
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0010777455231829104
+implicit: [ 0.29364819 -0.03836516 -0.35637986 -0.30197936 -0.15233844]
+explicit: [ 0.93905937 -0.10230672 -0.54759958 -0.34143652  1.41582922]
+comp to explicit:  863095.7121731361
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0009637213671760508
+implicit: [-0.15212303  0.0599552  -0.52234179 -0.41833232 -1.58319923]
+explicit: [ 0.78371418  0.20457814 -0.24550628 -0.38938899  0.4517357 ]
+comp to explicit:  213462187.73581356
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0009896544888018815
+implicit: [-0.08809982 -0.01045213 -0.83695739 -0.40726964 -1.58868053]
+explicit: [ 1.05830253  0.31591946 -0.32242363 -0.32933383 -1.20174672]
+comp to explicit:  57586048.39076255
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0009811140758201405
+implicit: [ 0.31709003 -0.12434963 -0.80022014 -0.28231153 -0.0369041 ]
+explicit: [ 2.01459247  0.16862345 -0.84391417 -0.30895781  2.74714715]
+comp to explicit:  2222425.5712601813
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00096103864051413
+implicit: [-0.12820983  0.06020625 -0.65794918 -0.41605348 -0.46500463]
+explicit: [ 1.07303457  0.25543605  0.06799647 -0.47264257 -2.87997079]
+comp to explicit:  288834.5971311793
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001097228054144916
+implicit: [ 0.11383171  0.0085073  -0.4401874  -0.35039162 -0.98088699]
+explicit: [ 0.59087822 -0.00570344 -0.60317823 -0.38803166  3.02246568]
+comp to explicit:  23393071.3003606
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0010135697475789649
+implicit: [-0.25311665  0.08168802 -0.56397946 -0.44832703 -1.66878896]
+explicit: [ 1.00165895  0.26416633 -0.10731188 -0.40780695 -1.09565601]
+comp to explicit:  672231.5405000623
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0009435020886607285
+implicit: [-0.19649482  0.04521488 -0.72196347 -0.44433648 -1.69867674]
+explicit: [ 1.12166139  0.31084427 -0.13114697 -0.36937008 -2.36553623]
+comp to explicit:  30788590.70093835
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0009472734474705984
+implicit: [ 0.12256892 -0.04095617 -0.72106998 -0.33410244 -0.64314744]
+explicit: [ 1.17320325  0.20187889 -0.62555461 -0.3162618   2.3675175 ]
+comp to explicit:  745195.0712341345
+   Time step size: dt = 0.022161
+   Residuals: tdvp_err = 1.68e-02, solver_res = 4.14e-10
+    Energy = -9.996520 +/- 0.000000
+    xPol = 0.517038 +/- 0.000000
+   == Total time for this step: 219.687269s
+
+>  t = 0.501249
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0009801805091722638
+implicit: [ 0.16232032 -0.05187112 -0.84200807 -0.34827265 -1.04001808]
+explicit: [ 1.47730813  0.264499   -0.62107878 -0.32360258  1.83245619]
+comp to explicit:  320773.55835510296
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0011091982221252317
+implicit: [ 0.72650423 -0.12640277 -0.53320082 -0.37387291  0.4885861 ]
+explicit: [ 2.14972278 -0.20561582 -0.41469323 -0.20294156  0.43481534]
+comp to explicit:  671984.3335341394
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0010652606263544856
+implicit: [ 0.48503308 -0.1510827  -0.85410811 -0.31876768  0.18292344]
+explicit: [ 2.9354821   0.00323802 -0.74173005 -0.31231389  1.2143291 ]
+comp to explicit:  413259.6145415148
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001260118620177895
+implicit: [ 0.47623967 -0.09217504 -0.72946922 -0.30351048 -0.45428262]
+explicit: [ 2.33869213  0.08907425 -0.6140049  -0.36030698  1.13379817]
+comp to explicit:  764551.302821329
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001280472292668033
+implicit: [ 0.28084449 -0.10793328 -0.4162152  -0.39761752 -0.41910695]
+explicit: [ 0.4859052  -0.12513594 -0.62225001 -0.21419539  0.98478952]
+comp to explicit:  1616174.0242078356
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0009801437622672287
+implicit: [ 0.16060027 -0.05185448 -0.84215101 -0.34898333 -1.0365426 ]
+explicit: [ 1.47730813  0.264499   -0.62107878 -0.32360258  1.83245619]
+comp to explicit:  345486.73058294575
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0010407202508778146
+implicit: [ 0.54373679 -0.16458301 -0.8097749  -0.34138585  0.51207012]
+explicit: [ 2.92038824 -0.11798177 -0.63197309 -0.27581753  0.72731186]
+comp to explicit:  476381.7425564878
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001015394782660953
+implicit: [ 0.44437684 -0.11007087 -0.80747218 -0.30550592 -0.10790102]
+explicit: [ 2.61146426  0.09879897 -0.76690874 -0.32802258  1.72659123]
+comp to explicit:  134814.4456862416
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0010257652227722834
+implicit: [ 0.40416552 -0.08120634 -0.78768358 -0.32243474 -0.33692308]
+explicit: [ 2.41179416  0.1152284  -0.70578744 -0.35564335  1.45154638]
+comp to explicit:  419841.8969007058
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0012869695462019563
+implicit: [ 0.2944216  -0.12184998 -0.68208355 -0.34380578 -0.2162705 ]
+explicit: [ 1.86409947 -0.08486552 -0.58316881 -0.31267438  1.14775265]
+comp to explicit:  1464535.155927962
+   Time step size: dt = 0.020138
+   Residuals: tdvp_err = 1.41e-02, solver_res = 1.93e-10
+    Energy = -9.996000 +/- 0.000000
+    xPol = 0.503474 +/- 0.000000
+   == Total time for this step: 202.191375s
+
+>  t = 0.521387
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0012938276962469089
+implicit: [ 0.29033547 -0.11131997 -0.6770361  -0.34003502 -0.30761452]
+explicit: [ 1.71226353  0.01291334 -0.53804437 -0.31479512  1.12033675]
+comp to explicit:  473892.18974050257
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001369038179308619
+implicit: [-0.15725451 -0.13072711 -0.14519771 -0.46476018  0.96516581]
+explicit: [-0.32265707 -0.21967324 -0.31064197 -0.16692722  0.84445787]
+comp to explicit:  401901.35624406335
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00133283958244587
+implicit: [ 0.18658449 -0.09642779 -0.23540318 -0.414574    0.32777018]
+explicit: [-0.20170442 -0.18401187 -0.49367397 -0.0704898   0.50882387]
+comp to explicit:  1893434.962033394
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0015046584772892572
+implicit: [ 0.08494198 -0.05520429 -0.35104048 -0.37018886 -0.17780258]
+explicit: [ 0.07987265 -0.0604548  -0.34703442 -0.03004035  0.62642566]
+comp to explicit:  220276.13043020648
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014632319104598006
+implicit: [ 0.3894004   0.02045953 -0.01566552 -0.42596766  0.77551061]
+explicit: [-0.90971234 -0.07859094 -0.07572626 -0.06846826 -0.46466735]
+comp to explicit:  6228313.58394521
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001352284828089473
+implicit: [ 0.34054269 -0.11151849 -0.67980447 -0.32740998 -0.39127613]
+explicit: [ 1.71226353  0.01291334 -0.53804437 -0.31479512  1.12033675]
+comp to explicit:  1018801.3424183241
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0013982954288967236
+implicit: [ 0.13250497 -0.09901348 -0.20984321 -0.41172314  0.31972615]
+explicit: [-0.39851197 -0.19438369 -0.51760594 -0.06414217  0.64105399]
+comp to explicit:  1558780.5233649963
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0015157928370322289
+implicit: [ 0.17144428 -0.10505534 -0.45033343 -0.35899489 -0.50453612]
+explicit: [ 0.32025098 -0.11243876 -0.55759224 -0.18135101  0.95160883]
+comp to explicit:  989680.7367456048
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0015136281861985702
+implicit: [ 0.16360901 -0.09719003 -0.47963704 -0.35960209 -0.36905882]
+explicit: [ 0.49810774 -0.05174702 -0.50735052 -0.17431283  1.0329798 ]
+comp to explicit:  2670219.832866825
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0015315605159948304
+implicit: [ 0.141215   -0.04808997 -0.23004525 -0.39488207  0.09976625]
+explicit: [-0.30921319 -0.10108299 -0.38994306 -0.02676807  0.61227694]
+comp to explicit:  4298674.815783956
+   Time step size: dt = 0.018704
+   Residuals: tdvp_err = 1.37e-02, solver_res = 1.26e-10
+    Energy = -9.995803 +/- 0.000000
+    xPol = 0.492708 +/- 0.000000
+   == Total time for this step: 206.629279s
+
+>  t = 0.540091
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014145159532629277
+implicit: [ 0.15128833 -0.03041264 -0.24450786 -0.39753227  0.3248228 ]
+explicit: [-0.1727061  -0.07557323 -0.3631016  -0.02005524  0.85367312]
+comp to explicit:  2786604.7261932353
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014828677596436747
+implicit: [ 0.70017201 -0.10493738 -0.04979663 -0.50442674  1.40633658]
+explicit: [ 0.07926665 -0.05471995  0.05262957 -0.39105794  0.00054683]
+comp to explicit:  150247.18208255054
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0016162178428915446
+implicit: [ 0.43713517 -0.02767166 -0.04146869 -0.45879037  0.40759152]
+explicit: [-0.84460901 -0.07126147 -0.11064823 -0.14225338 -0.4249923 ]
+comp to explicit:  98663.58102781516
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001431522198158815
+implicit: [ 0.29897762  0.00564894 -0.04998336 -0.48742114  0.20056036]
+explicit: [-0.90466482 -0.06696379 -0.2113696  -0.07736669  0.19319502]
+comp to explicit:  420059.36422686564
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001436751878545893
+implicit: [ 0.5449728  -0.01331651  0.04338814 -0.477047   -0.33857243]
+explicit: [-0.35092448 -0.04735517 -0.23799139 -0.34461926  0.58992877]
+comp to explicit:  207408.60241980813
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0015533776938998533
+implicit: [ 0.08896454 -0.05277136 -0.29346745 -0.38112907 -0.00757124]
+explicit: [-0.1727061  -0.07557323 -0.3631016  -0.02005524  0.85367312]
+comp to explicit:  290830.99506767036
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014607397266892777
+implicit: [ 0.37807059 -0.00353003  0.02185436 -0.47012183  0.96230285]
+explicit: [-0.81681447 -0.06751226 -0.06270889 -0.19855577 -1.076983  ]
+comp to explicit:  415038.4358544049
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0015220071408058107
+implicit: [ 0.19953175 -0.01849047 -0.13066162 -0.43720868  0.55788667]
+explicit: [-8.00498505e-01 -7.96315384e-02 -1.21803822e-01  5.33417359e-04
+ -3.94757607e-02]
+comp to explicit:  7082897.261300966
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014162623611559252
+implicit: [ 0.21428065  0.00467229 -0.09101662 -0.443644    0.6284392 ]
+explicit: [-0.68507826 -0.06775804 -0.16077365  0.0064483   0.36127393]
+comp to explicit:  294748.69711872377
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014273846281989005
+implicit: [ 0.42861684  0.00203007 -0.00896235 -0.48588965  0.0966259 ]
+explicit: [-0.77572494 -0.05038931 -0.17603779 -0.14962    -0.1404933 ]
+comp to explicit:  146069.96868084383
+   Time step size: dt = 0.021185
+   Residuals: tdvp_err = 1.44e-02, solver_res = 5.46e-11
+    Energy = -9.995265 +/- 0.000000
+    xPol = 0.482511 +/- 0.000000
+   == Total time for this step: 196.949974s
+
+>  t = 0.561275
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0013770199414615092
+implicit: [ 0.38393046  0.0137926   0.00128787 -0.49166501  0.14543422]
+explicit: [-0.7597492  -0.05200396 -0.20153429 -0.11991312 -0.09294136]
+comp to explicit:  42870817.69677673
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0015231273428401209
+implicit: [ 0.48055172  0.01183755  0.05492087 -0.32645409 -0.32045032]
+explicit: [ 0.21888283  0.07814126 -0.13218586 -0.24631619 -0.36782254]
+comp to explicit:  13088718.189814257
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014896049003314574
+implicit: [ 0.48382774 -0.01726209  0.04521385 -0.46045067 -0.59184056]
+explicit: [-0.20954357 -0.01499604 -0.20436953 -0.36334067  0.76269397]
+comp to explicit:  148977.67921304458
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0013331524389418462
+implicit: [ 0.41641215  0.00557082  0.06505324 -0.45210682 -0.13026781]
+explicit: [-0.35703978  0.01053504 -0.21481176 -0.25569673  0.60728568]
+comp to explicit:  690428.4555045912
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0013317543321873166
+implicit: [ 0.02060331  0.01943259  0.03290995 -0.26773219 -0.23985576]
+explicit: [ 0.13569766  0.15589139 -0.12198613  0.017422    0.24249618]
+comp to explicit:  71929.4076350788
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0013834964734586541
+implicit: [ 0.380223    0.01324605  0.00074837 -0.49156922  0.12509697]
+explicit: [-0.7597492  -0.05200396 -0.20153429 -0.11991312 -0.09294136]
+comp to explicit:  1350656.8863935205
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014343348878848045
+implicit: [ 0.61501721 -0.00569137  0.07237101 -0.39399221 -0.45893727]
+explicit: [ 0.02031793  0.03867785 -0.17073774 -0.41823175  0.62902387]
+comp to explicit:  428766.89180630003
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014085030529072658
+implicit: [ 0.51809237 -0.01107245  0.0367886  -0.47995917 -0.39303183]
+explicit: [-0.33466067 -0.03559133 -0.22023353 -0.29122858  0.49880811]
+comp to explicit:  1002785.7960108428
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001362364189370144
+implicit: [ 0.4383294   0.00136263  0.04781945 -0.47940499 -0.23916576]
+explicit: [-0.44105139 -0.02222073 -0.22154233 -0.24341422  0.35421414]
+comp to explicit:  1297561.638992916
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0015242926311882566
+implicit: [ 0.155913    0.02045825  0.07164859 -0.42283454 -0.61378585]
+explicit: [-0.07845835  0.08024345 -0.14157862 -0.23630278  0.64730614]
+comp to explicit:  223160.94387700834
+   Time step size: dt = 0.027545
+   Residuals: tdvp_err = 1.12e-02, solver_res = 1.86e-11
+    Energy = -9.995051 +/- 0.000000
+    xPol = 0.472517 +/- 0.000000
+   == Total time for this step: 183.601721s
+
+>  t = 0.588821
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014290194692577682
+implicit: [ 0.17368119  0.01736851  0.06796289 -0.40527727 -0.40522746]
+explicit: [-0.13166706  0.08088481 -0.16694644 -0.20823023  0.61735666]
+comp to explicit:  692328.4283556127
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0023334240557058438
+implicit: [-2.14015516e-01 -1.70303281e-04 -1.38544274e-03 -1.61993559e-02
+ -8.79844652e-01]
+explicit: [-0.34817037  0.01464404 -0.2645767   0.58093397 -0.31570502]
+comp to explicit:  145879.41269629647
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001385176505377309
+implicit: [-0.14740102 -0.00473788 -0.0272014  -0.17780609 -0.23626344]
+explicit: [ 0.07855384  0.14006284 -0.14690307  0.43682851  0.04713514]
+comp to explicit:  5712090.341197254
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001478535522008116
+implicit: [-0.14572145 -0.00774468 -0.01316321 -0.23362274 -0.10822393]
+explicit: [-0.02816062  0.13771351 -0.13206409  0.24437521 -0.10456828]
+comp to explicit:  256695.4141894084
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00200294994809991
+implicit: [-0.30971314 -0.02111356 -0.03914922 -0.29974267 -0.77106062]
+explicit: [-0.58603309  0.04082748 -0.22713773  0.42005394 -0.3563373 ]
+comp to explicit:  675963.9114186818
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014286486409848707
+implicit: [ 0.17444049  0.01695268  0.06666336 -0.40524667 -0.40240269]
+explicit: [-0.13166706  0.08088481 -0.16694644 -0.20823023  0.61735666]
+comp to explicit:  7168408.598110499
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014345126719390205
+implicit: [-0.18190821 -0.00392203 -0.02403452 -0.15893298 -0.46169479]
+explicit: [-0.12184852  0.11839069 -0.1797099   0.54595736 -0.03576478]
+comp to explicit:  81647333.95905851
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0013062064554223035
+implicit: [ 0.05403507 -0.00052609  0.00611925 -0.21772973 -0.00753904]
+explicit: [ 0.24335343  0.15209946 -0.11972106  0.16075733  0.24815124]
+comp to explicit:  907342.5947553657
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0013312125998888483
+implicit: [ 0.03818715  0.00207941  0.01942931 -0.24390603 -0.05413301]
+explicit: [ 0.12738379  0.1503498  -0.1217964   0.08595333  0.09537751]
+comp to explicit:  1006540.5726348045
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014487720805959163
+implicit: [-0.20248226 -0.01490449 -0.02919983 -0.22635938 -0.39144759]
+explicit: [-0.20794522  0.12140603 -0.15275709  0.35674304 -0.29192717]
+comp to explicit:  880718.1654292058
+   Time step size: dt = 0.026895
+   Residuals: tdvp_err = 1.24e-02, solver_res = 1.62e-11
+    Energy = -9.995840 +/- 0.000000
+    xPol = 0.466226 +/- 0.000000
+   == Total time for this step: 167.867406s
+
+>  t = 0.615716
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0014640297942617102
+implicit: [-0.18789109 -0.01403293 -0.03079296 -0.23575102 -0.26933176]
+explicit: [-0.23226203  0.12108361 -0.14558666  0.30486443 -0.29841024]
+comp to explicit:  180087.18442308833
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0026602257257250265
+implicit: [-0.3998802  -0.00432844  0.1027389  -0.44440934 -1.28058396]
+explicit: [-0.42136709 -0.00479936 -0.09721851  0.2721344  -1.02141369]
+comp to explicit:  128014.2724606877
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002162303004631768
+implicit: [-0.31386483 -0.01439723 -0.03623386 -0.34631015 -0.74382563]
+explicit: [-0.74558306  0.02045637 -0.22959361  0.36831757 -0.47761781]
+comp to explicit:  567432.0740554348
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002101724508184786
+implicit: [-0.35192211 -0.01508195 -0.06344718 -0.36419623 -0.54414864]
+explicit: [-0.86463302  0.03853354 -0.24011586  0.34749297 -0.40965719]
+comp to explicit:  7512765.071890679
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0023885488793421133
+implicit: [-0.30511858 -0.0192841   0.00839137 -0.52064229 -0.8025451 ]
+explicit: [-0.83519696  0.04957056 -0.09298423  0.38073938 -0.44153849]
+comp to explicit:  342991.54470447527
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.001467927921659151
+implicit: [-0.19222652 -0.01468488 -0.03223058 -0.23575311 -0.26383644]
+explicit: [-0.23226203  0.12108361 -0.14558666  0.30486443 -0.29841024]
+comp to explicit:  169543.07911920614
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0022857491929609806
+implicit: [-0.31853445 -0.01146441 -0.03225322 -0.36414748 -0.77009797]
+explicit: [-0.7360651   0.01485002 -0.21987938  0.36621879 -0.52460725]
+comp to explicit:  16264683.53431265
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00180221632094535
+implicit: [-0.32104633 -0.01340057 -0.03810163 -0.3012756  -0.54321675]
+explicit: [-0.62153272  0.06226675 -0.21280791  0.36486044 -0.36250879]
+comp to explicit:  537059.5864878392
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0017634765017572759
+implicit: [-0.28749259 -0.01312862 -0.04432289 -0.29930011 -0.4930422 ]
+explicit: [-0.62721671  0.06613428 -0.21058975  0.35625649 -0.35321769]
+comp to explicit:  147691085.7867753
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002088401550261243
+implicit: [-0.24452856 -0.02069189 -0.06150129 -0.36275283 -0.5821846 ]
+explicit: [-0.83048582  0.02370444 -0.22755716  0.35385265 -0.4394023 ]
+comp to explicit:  1361473.276140029
+   Time step size: dt = 0.023044
+   Residuals: tdvp_err = 1.88e-02, solver_res = 4.53e-12
+    Energy = -9.996385 +/- 0.000000
+    xPol = 0.463307 +/- 0.000000
+   == Total time for this step: 148.362954s
+
+>  t = 0.638760
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002036161798455503
+implicit: [-0.23143345 -0.0221055  -0.06771994 -0.35805596 -0.60830782]
+explicit: [-0.88139966  0.02737533 -0.22318504  0.3469381  -0.43545544]
+comp to explicit:  788678.8749901098
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0025392404821821812
+implicit: [-0.40324847 -0.08631981 -0.050584   -0.64913275 -0.215591  ]
+explicit: [-1.2807962   0.12865313 -0.10714503  0.14631768  0.14327748]
+comp to explicit:  855559.6731622447
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0024814385577930577
+implicit: [-0.33408945 -0.01575088  0.03723092 -0.58177004 -0.82840421]
+explicit: [-0.9258961   0.08490454 -0.0579131   0.37635881 -0.46447213]
+comp to explicit:  550071.9157112683
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002538729832659049
+implicit: [-0.33345866 -0.03143983  0.00936074 -0.59260395 -0.82053255]
+explicit: [-0.9281016   0.10532082 -0.05146229  0.32214322 -0.31612097]
+comp to explicit:  22166175.71346183
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0023817508208046284
+implicit: [-0.27779107 -0.02622461  0.06428793 -0.63168302 -0.09127705]
+explicit: [-0.79323303  0.18297029 -0.03672657  0.15559935 -0.45089715]
+comp to explicit:  581842.4380518892
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0021591477557731734
+implicit: [-0.32294829 -0.01502718 -0.0573298  -0.3898626  -0.59282657]
+explicit: [-0.88139966  0.02737533 -0.22318504  0.3469381  -0.43545544]
+comp to explicit:  293499.53612288984
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0024066239621764957
+implicit: [-0.30982563 -0.01965195  0.01640975 -0.54006557 -0.82092541]
+explicit: [-0.86914347  0.05849821 -0.07457182  0.37997601 -0.41910414]
+comp to explicit:  4492418.802257344
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00247201047449184
+implicit: [-0.25260438 -0.02106029 -0.06181321 -0.49223644 -0.61108662]
+explicit: [-0.91373471  0.03223214 -0.15762892  0.3542794  -0.45802519]
+comp to explicit:  251987.88619716273
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002241717553172013
+implicit: [-0.25672898 -0.02885136 -0.05759285 -0.43798252 -0.64140773]
+explicit: [-0.94653956  0.03567133 -0.1512254   0.33813079 -0.45211375]
+comp to explicit:  1353548.8007894354
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002576410314544767
+implicit: [-0.31540419 -0.03564119 -0.0288406  -0.58441456 -0.80293539]
+explicit: [-0.95078488  0.07921472 -0.05226864  0.35574993 -0.38797757]
+comp to explicit:  851312.4940457307
+   Time step size: dt = 0.019883
+   Residuals: tdvp_err = 3.02e-02, solver_res = 9.01e-13
+    Energy = -9.996140 +/- 0.000000
+    xPol = 0.462455 +/- 0.000000
+   == Total time for this step: 151.604811s
+
+>  t = 0.658644
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0024658310746184285
+implicit: [-0.31528274 -0.02926584 -0.01181141 -0.56868317 -0.78010132]
+explicit: [-0.9578535   0.0799588  -0.05576648  0.33382196 -0.3531596 ]
+comp to explicit:  83076903.82332689
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002414052766675922
+implicit: [-0.33709854 -0.03416467 -0.0534604  -0.72540696  0.44279825]
+explicit: [-0.75676381  0.1513433  -0.09757395 -0.24853303 -0.46471361]
+comp to explicit:  316042.8364714585
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002416744087816587
+implicit: [-0.29796929 -0.04104066  0.04082784 -0.65003145 -0.26512106]
+explicit: [-0.90710633  0.17442366  0.00766061  0.27716241 -0.21555689]
+comp to explicit:  867425.0960641182
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002364749315047955
+implicit: [-0.27455483 -0.0249678   0.07776115 -0.53623708 -0.40427583]
+explicit: [-0.8273753   0.1746568   0.01498236  0.27803703 -0.46633215]
+comp to explicit:  611535.7507360787
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002580330200481202
+implicit: [-0.11912903  0.01180646  0.1308104  -0.4680151  -0.29108821]
+explicit: [-0.60550305  0.16501657 -0.00670787 -0.01016736 -1.40161938]
+comp to explicit:  744465.287077894
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0025467251096499264
+implicit: [-0.30387468 -0.03711427 -0.02894441 -0.58419995 -0.786316  ]
+explicit: [-0.9578535   0.0799588  -0.05576648  0.33382196 -0.3531596 ]
+comp to explicit:  11420867.088144088
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0023928886159352266
+implicit: [-0.32232604 -0.03752241  0.05064157 -0.71102145  0.01767708]
+explicit: [-0.89134785  0.18391792 -0.00697579  0.15638813 -0.17578757]
+comp to explicit:  466349.0989892029
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0025400876974238608
+implicit: [-0.29060129 -0.02879074  0.06626384 -0.61758209 -0.5282571 ]
+explicit: [-0.95750592  0.15049887  0.01387157  0.31735087 -0.20082277]
+comp to explicit:  1338494.2023354408
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002502785202728669
+implicit: [-0.28726575 -0.02764667  0.07150995 -0.58715768 -0.5567927 ]
+explicit: [-0.92430059  0.1521335   0.00811466  0.31797289 -0.29499874]
+comp to explicit:  2594798.9011138994
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002475405259288847
+implicit: [-0.28151588 -0.01548673  0.11015597 -0.56384965 -0.38754359]
+explicit: [-0.74794615  0.1828548  -0.00948226  0.16812803 -0.66164939]
+comp to explicit:  337148.75397146546
+   Time step size: dt = 0.026131
+   Residuals: tdvp_err = 4.10e-02, solver_res = 4.07e-13
+    Energy = -9.995626 +/- 0.000000
+    xPol = 0.463455 +/- 0.000000
+   == Total time for this step: 164.177062s
+
+>  t = 0.684775
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0025130485994987553
+implicit: [-0.25601355 -0.0184421   0.09991944 -0.52396968 -0.40229055]
+explicit: [-0.73681278  0.18038297 -0.00508558  0.18649869 -0.75135332]
+comp to explicit:  656566.984429976
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.003191614217730166
+implicit: [-0.00214907  0.06427654 -0.06609283 -0.3722524   0.28591921]
+explicit: [-0.21682024  0.08566966 -0.07227392 -0.17838071 -1.68945293]
+comp to explicit:  38844187.121657655
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0026099898460811123
+implicit: [-0.15065133  0.01339729  0.06355113 -0.4185275  -0.137977  ]
+explicit: [-0.53932274  0.14464878 -0.0337955  -0.06856085 -1.74612334]
+comp to explicit:  14480753.444542548
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0027091372686682633
+implicit: [-0.0992798   0.03923971  0.09582437 -0.45317658 -0.18457233]
+explicit: [-0.60304819  0.16106901 -0.01222924 -0.09866465 -1.62199037]
+comp to explicit:  269202.9595976882
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002968203644830693
+implicit: [ 0.13249713  0.14083581  0.00803016 -0.42236808  0.45185159]
+explicit: [-0.42555695  0.09319807  0.02416073 -0.16942239 -1.25269234]
+comp to explicit:  12360007543.13725
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0025120490726511617
+implicit: [-0.2575644  -0.01782538  0.0992794  -0.52120472 -0.39229642]
+explicit: [-0.73681278  0.18038297 -0.00508558  0.18649869 -0.75135332]
+comp to explicit:  631588229.1703266
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0026539877884850707
+implicit: [-0.09235286  0.02541398  0.01311223 -0.37643698  0.0265232 ]
+explicit: [-0.48039051  0.12532303 -0.04784994 -0.07762315 -1.85871412]
+comp to explicit:  16801236.596273873
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002549093761319427
+implicit: [-0.18694995  0.00476617  0.11268298 -0.43527985 -0.28770702]
+explicit: [-0.59720329  0.16617494 -0.02023719 -0.01213407 -1.45034613]
+comp to explicit:  2928687.1517107747
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0025960289119140952
+implicit: [-0.17100794  0.01578314  0.12268562 -0.45485763 -0.34970764]
+explicit: [-0.61064357  0.17547446 -0.01023291 -0.01476612 -1.40137062]
+comp to explicit:  350788116.0960562
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002683299917980073
+implicit: [-0.06139002  0.0539463   0.04619862 -0.43077261  0.08225085]
+explicit: [-0.5330727   0.13788243 -0.0159484  -0.10474276 -1.60520163]
+comp to explicit:  2252560.007269744
+   Time step size: dt = 0.026583
+   Residuals: tdvp_err = 5.55e-02, solver_res = 1.48e-13
+    Energy = -9.994929 +/- 0.000000
+    xPol = 0.466609 +/- 0.000000
+   == Total time for this step: 153.436028s
+
+>  t = 0.711358
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002685072038202128
+implicit: [-0.03344597  0.06612822  0.06150466 -0.4425868   0.08916963]
+explicit: [-0.57852071  0.14318547 -0.01416726 -0.1046268  -1.54622696]
+comp to explicit:  1426821.7698609675
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004144956838421441
+implicit: [ 0.23316891  0.18077773  0.15302222 -0.47715445  0.32635774]
+explicit: [-0.09113073  0.05959349  0.17900399 -0.03583046 -0.10513588]
+comp to explicit:  31493152.5012863
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.003218300438497597
+implicit: [ 0.24451744  0.18493768  0.03627942 -0.44840885  0.57116309]
+explicit: [-0.3332971   0.10134256  0.07515212 -0.14751178 -0.85750384]
+comp to explicit:  78328706.26003294
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002938258718527913
+implicit: [ 0.20791031  0.18312644  0.07076466 -0.35329646  0.62215935]
+explicit: [-0.42121951  0.1182134   0.07065909 -0.14098855 -0.85821447]
+comp to explicit:  745867.3022641265
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.003889093145983654
+implicit: [ 0.06058758  0.12343853  0.12533046 -0.42357368  0.29000278]
+explicit: [-0.35419577  0.11186834  0.21031024 -0.50795667 -0.15682095]
+comp to explicit:  721440.7680181826
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0026337115111686204
+implicit: [-0.04251959  0.06592997  0.05420975 -0.43106209  0.13691232]
+explicit: [-0.57852071  0.14318547 -0.01416726 -0.1046268  -1.54622696]
+comp to explicit:  21932847.29856115
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0034440794550741325
+implicit: [ 0.28105351  0.19487672  0.03973796 -0.4628549   0.56701311]
+explicit: [-0.27228599  0.10292253  0.0950764  -0.14056949 -0.75192183]
+comp to explicit:  1021425.2232196982
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00296806059123498
+implicit: [ 0.16547754  0.14448147  0.02472854 -0.44406388  0.47044869]
+explicit: [-0.4795657   0.11394315  0.00232654 -0.14046843 -1.19456172]
+comp to explicit:  476679.9498949287
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.002889848941775129
+implicit: [ 0.13473553  0.14558939  0.03625277 -0.42928507  0.51683261]
+explicit: [-0.52262984  0.11902944  0.00467479 -0.13553153 -1.17814287]
+comp to explicit:  846111.9009596572
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0033681712896245822
+implicit: [ 0.21262252  0.17646603  0.06088432 -0.44854622  0.59619922]
+explicit: [-0.3803197   0.12010479  0.10382687 -0.20197816 -0.66587964]
+comp to explicit:  4315995.020556817
+   Time step size: dt = 0.026840
+   Residuals: tdvp_err = 6.49e-02, solver_res = 7.14e-14
+    Energy = -9.994663 +/- 0.000000
+    xPol = 0.471565 +/- 0.000000
+   == Total time for this step: 145.423813s
+
+>  t = 0.738199
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.003280843538133376
+implicit: [ 0.18640942  0.18042578  0.07388593 -0.43020516  0.62075316]
+explicit: [-0.38474066  0.12122142  0.09641955 -0.19407544 -0.6736061 ]
+comp to explicit:  1334784.0395387132
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004921470809600376
+implicit: [-0.14277098 -0.08094735  0.13225453 -0.58088273 -0.11851721]
+explicit: [-0.20889561 -0.00588108  0.14648225 -0.6471271   0.13792202]
+comp to explicit:  952498.0290021983
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004468250683657562
+implicit: [-0.00939152  0.08223022  0.12148256 -0.56142923  0.17856523]
+explicit: [-0.38880703  0.08730243  0.17595826 -0.6743342  -0.07883621]
+comp to explicit:  76394211.68419349
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004015374575800646
+implicit: [ 0.00293398  0.12119106  0.12375252 -0.46344866  0.40941697]
+explicit: [-0.38695595  0.09670382  0.15790318 -0.60618107  0.06011891]
+comp to explicit:  145603.05145540304
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005251373909378026
+implicit: [-0.13230736 -0.01417024  0.09402206 -0.48957624  0.40078643]
+explicit: [-0.38000301 -0.00937918  0.21370223 -0.71529683  0.49753669]
+comp to explicit:  231701.17415848508
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.003177191789959295
+implicit: [ 0.19700369  0.18529082  0.07526983 -0.40836837  0.63529652]
+explicit: [-0.38474066  0.12122142  0.09641955 -0.19407544 -0.6736061 ]
+comp to explicit:  1092077.0582039696
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.003850976720373728
+implicit: [ 0.0776557   0.12973596  0.1191168  -0.42203522  0.33179077]
+explicit: [-0.37028313  0.11056207  0.18261871 -0.5137078  -0.16163699]
+comp to explicit:  814908.7959596304
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0034800560109374363
+implicit: [ 0.17278038  0.17496343  0.10749803 -0.40612484  0.54926007]
+explicit: [-0.34396215  0.12240464  0.15380747 -0.31912949 -0.35125563]
+comp to explicit:  16382235.478666784
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0036176688519765844
+implicit: [ 0.13411829  0.17261216  0.09756639 -0.46480544  0.60040877]
+explicit: [-0.34605489  0.12357549  0.14712581 -0.31894373 -0.34900934]
+comp to explicit:  1501213.8836111103
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0040805692710622924
+implicit: [ 0.05922008  0.14616412  0.12178123 -0.51613432  0.4478756 ]
+explicit: [-0.37008491  0.11121071  0.16292994 -0.52067434 -0.1270193 ]
+comp to explicit:  642592.2647075335
+   Time step size: dt = 0.018792
+   Residuals: tdvp_err = 6.62e-02, solver_res = 7.15e-15
+    Energy = -9.994568 +/- 0.000000
+    xPol = 0.475912 +/- 0.000000
+   == Total time for this step: 134.907965s
+
+>  t = 0.756990
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0037413146212813514
+implicit: [ 0.06649456  0.14837054  0.12135987 -0.42527876  0.41239905]
+explicit: [-0.37137463  0.11150894  0.15859675 -0.50551581 -0.11419527]
+comp to explicit:  682030.6224180958
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005754529483300795
+implicit: [-0.10719539 -0.05345258  0.06668764 -0.49451353  0.26360737]
+explicit: [-0.30378501 -0.04775416  0.21869005 -0.6833254   0.37513648]
+comp to explicit:  3245634.1597291566
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004676053484558225
+implicit: [-0.1150925   0.03348616  0.1033578  -0.63526256  0.24778653]
+explicit: [-0.39929916  0.0498896   0.15926254 -0.81522237  0.23054114]
+comp to explicit:  2017098.6739373642
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004598262605337784
+implicit: [-0.12518009  0.06910385  0.13068791 -0.51214683  0.35749858]
+explicit: [-0.41220627  0.06275747  0.16610267 -0.71245901  0.31089153]
+comp to explicit:  634422.8902410762
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004782624052087386
+implicit: [-0.22660086 -0.01626675  0.12129918 -0.47556311  0.32420361]
+explicit: [-4.11013770e-01 -5.65278418e-05  2.47398124e-01 -5.89142356e-01
+  5.49023675e-01]
+comp to explicit:  827557.5245991466
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0037486921715811803
+implicit: [ 0.06799686  0.14878917  0.1228029  -0.42473933  0.4114128 ]
+explicit: [-0.37137463  0.11150894  0.15859675 -0.50551581 -0.11419527]
+comp to explicit:  1103926.4140755823
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005199245322848263
+implicit: [-0.12104309  0.01275584  0.10489922 -0.65763357  0.2765985 ]
+explicit: [-0.37923995  0.01784799  0.17050865 -0.82901028  0.30823778]
+comp to explicit:  473621.95096458425
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004430274778716228
+implicit: [-0.05797849  0.08157623  0.12183175 -0.57055719  0.2746211 ]
+explicit: [-0.4030428   0.07694095  0.15676689 -0.74664731  0.13835056]
+comp to explicit:  4847337.377314139
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004386794651287144
+implicit: [-0.05782991  0.09699072  0.13026748 -0.52380628  0.3293216 ]
+explicit: [-0.40558576  0.08049756  0.15663538 -0.69532417  0.1722421 ]
+comp to explicit:  106964856.04595895
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00486772791956702
+implicit: [-0.14889402  0.03680663  0.11761037 -0.5249039   0.35452607]
+explicit: [-0.40896854  0.0332803   0.17565279 -0.73301727  0.39435963]
+comp to explicit:  45256.567837570365
+   Time step size: dt = 0.025135
+   Residuals: tdvp_err = 6.88e-02, solver_res = 1.55e-14
+    Energy = -9.994430 +/- 0.000000
+    xPol = 0.482566 +/- 0.000000
+   == Total time for this step: 132.446441s
+
+>  t = 0.782125
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00506334245434735
+implicit: [-0.14328716  0.06111156  0.14886232 -0.50555109  0.35578339]
+explicit: [-0.41792596  0.03976788  0.18026878 -0.71257832  0.3954014 ]
+comp to explicit:  167612.05339340988
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005152961459762625
+implicit: [-0.20256639 -0.06732514  0.16013408  0.08222092  0.35934118]
+explicit: [-0.47857796 -0.0554669   0.29015606 -0.03654422  0.66547441]
+comp to explicit:  4768139.0795687055
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0053293890193523985
+implicit: [-0.18234139 -0.01384524  0.12468241 -0.24401982  0.34765217]
+explicit: [-0.47039359 -0.01108173  0.27001455 -0.46103544  0.51006591]
+comp to explicit:  455599.157418611
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004751700512983577
+implicit: [-0.25380755 -0.00474628  0.13498654 -0.29813131  0.35960431]
+explicit: [-0.499493    0.0052854   0.2854188  -0.45591061  0.53321043]
+comp to explicit:  7911630.574320839
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004678996633432668
+implicit: [-0.33144452 -0.04730979  0.17192141 -0.00455304  0.50276393]
+explicit: [-0.58989915 -0.02787333  0.37462692 -0.0674658   0.72798745]
+comp to explicit:  146988.1112354356
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004816168456584795
+implicit: [-0.16137784  0.0456979   0.12671313 -0.49184777  0.34802799]
+explicit: [-0.41792596  0.03976788  0.18026878 -0.71257832  0.3954014 ]
+comp to explicit:  204254.63117470258
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0056890370674307685
+implicit: [-0.17984521 -0.04613053  0.12576164 -0.07158327  0.44695865]
+explicit: [-0.46373887 -0.02957662  0.33486262 -0.2389375   0.62225833]
+comp to explicit:  2541660.332254651
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005127862370046098
+implicit: [-0.20013824 -0.00227969  0.12795827 -0.31534721  0.36484856]
+explicit: [-0.44182655  0.00103675  0.26312565 -0.54775747  0.53453184]
+comp to explicit:  218899.35957114422
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004402928699723357
+implicit: [-0.28554168 -0.00898896  0.13277383 -0.40758348  0.31105861]
+explicit: [-0.46312837  0.01072163  0.26887874 -0.54655971  0.52786029]
+comp to explicit:  4230066.731505893
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005373005010518458
+implicit: [-0.22386148 -0.02539645  0.13895184 -0.05735125  0.51957603]
+explicit: [-0.5441229  -0.00601383  0.39343176 -0.24772583  0.66129007]
+comp to explicit:  5777999.06154101
+   Time step size: dt = 0.030434
+   Residuals: tdvp_err = 7.47e-02, solver_res = 1.66e-14
+    Energy = -9.994733 +/- 0.000000
+    xPol = 0.491356 +/- 0.000000
+   == Total time for this step: 132.624926s
+
+>  t = 0.812559
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0043113004739534595
+implicit: [-0.36253548 -0.04344462  0.13484357 -0.21448738  0.47073984]
+explicit: [-0.56476433 -0.00627043  0.35848916 -0.27870927  0.63227377]
+comp to explicit:  110128.56565397658
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0068110836725657035
+implicit: [-0.44564838 -0.05207248  0.1679382   0.19394881  0.2187342 ]
+explicit: [-0.54886038 -0.19186955  0.27540545 -0.04400098  1.013006  ]
+comp to explicit:  6285202.915041164
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0056609978136577185
+implicit: [-0.32533091 -0.0210756   0.21727666  0.10146014  0.43951078]
+explicit: [-0.64995383 -0.08161468  0.37394714 -0.04011624  0.83682264]
+comp to explicit:  629530.9130324479
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0052285557033028875
+implicit: [-0.39793791 -0.04277472  0.19922314  0.0271474   0.40545832]
+explicit: [-0.67841535 -0.07538394  0.33191753  0.02784615  0.71635424]
+comp to explicit:  2106245.6475519203
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006123171658518011
+implicit: [-0.53292347 -0.07062342  0.21244969  0.25203166  0.23342235]
+explicit: [-0.77441168 -0.1701818   0.25249889  0.19654552  0.80668855]
+comp to explicit:  94466.08608528807
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004301038288089266
+implicit: [-0.36441741 -0.04241773  0.13547794 -0.21427538  0.46985806]
+explicit: [-0.56476433 -0.00627043  0.35848916 -0.27870927  0.63227377]
+comp to explicit:  170360.09983757065
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005759610263603551
+implicit: [-0.35431317 -0.02078552  0.24310985  0.14906544  0.3781256 ]
+explicit: [-0.64142241 -0.09777557  0.36532215 -0.03413056  0.87786186]
+comp to explicit:  88095.65645205585
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004952104650553136
+implicit: [-0.3957325  -0.04602608  0.18116075 -0.05566378  0.505152  ]
+explicit: [-0.64617466 -0.04392092  0.38444455 -0.09739984  0.73100139]
+comp to explicit:  219329.1045633959
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.004960042847164525
+implicit: [-0.38880059 -0.04475074  0.18068243 -0.09771259  0.48741847]
+explicit: [-0.66817441 -0.04922638  0.37094645 -0.08242955  0.67785371]
+comp to explicit:  41870.91476671743
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0056035092027678195
+implicit: [-0.44541289 -0.05487856  0.23086895  0.09156193  0.36965096]
+explicit: [-0.72932779 -0.10597008  0.33879439  0.0532422   0.73005245]
+comp to explicit:  95046.18850066687
+   Time step size: dt = 0.026487
+   Residuals: tdvp_err = 7.84e-02, solver_res = 2.15e-14
+    Energy = -9.994716 +/- 0.000000
+    xPol = 0.499285 +/- 0.000000
+   == Total time for this step: 143.050268s
+
+>  t = 0.839045
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005554484137346282
+implicit: [-0.45319673 -0.0630658   0.21597757  0.08426051  0.366651  ]
+explicit: [-0.74934365 -0.10612392  0.33010409  0.07542674  0.6848122 ]
+comp to explicit:  619994.2905866337
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007626596143942928
+implicit: [-0.74019519 -0.01774651  0.06436692  0.15302164  0.16732823]
+explicit: [-0.87482761 -0.13689936  0.05663269  0.2357717   0.64966486]
+comp to explicit:  12335180.694124673
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006775018355561867
+implicit: [-0.57739226 -0.04133014  0.17862882  0.23186206  0.17320041]
+explicit: [-0.88290794 -0.19327002  0.23773461  0.27485611  0.71975267]
+comp to explicit:  1990272.1195800402
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006519948500031065
+implicit: [-0.55505993 -0.04100153  0.15453247  0.20493007  0.21393329]
+explicit: [-0.86651217 -0.17300244  0.20776936  0.30072938  0.70706986]
+comp to explicit:  6197084.085656193
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006159165373292351
+implicit: [-0.72198307 -0.00523929  0.01173676  0.28697748  0.22858055]
+explicit: [-0.96534911 -0.09620439  0.01862118  0.30627438  0.72410209]
+comp to explicit:  1505840.2069579726
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005984832590032761
+implicit: [-0.37433178 -0.0369647   0.1842193   0.08034785  0.38162228]
+explicit: [-0.74934365 -0.10612392  0.33010409  0.07542674  0.6848122 ]
+comp to explicit:  3695169.084714562
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006228554367558605
+implicit: [-0.52618926 -0.03999231  0.18350553  0.28264875  0.18526002]
+explicit: [-0.74419712 -0.16055338  0.20213902  0.23061079  0.83531219]
+comp to explicit:  190142.12406434483
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005883521873753134
+implicit: [-0.48400415 -0.05837135  0.21572923  0.22276483  0.25398161]
+explicit: [-0.7607543  -0.14351781  0.2693709   0.18589959  0.73882544]
+comp to explicit:  824552.0623961075
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.005788351919201547
+implicit: [-0.54246304 -0.088492    0.2164462   0.22380615  0.3080721 ]
+explicit: [-0.80109407 -0.14862549  0.26965284  0.20996346  0.69248609]
+comp to explicit:  16723296.37340182
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006335127353320337
+implicit: [-0.58070933 -0.0611387   0.17644567  0.23884035  0.18773362]
+explicit: [-0.88577807 -0.1718657   0.22273345  0.33315197  0.67419007]
+comp to explicit:  176134.2290342612
+   Time step size: dt = 0.026353
+   Residuals: tdvp_err = 8.61e-02, solver_res = 7.93e-14
+    Energy = -9.995313 +/- 0.000000
+    xPol = 0.507150 +/- 0.000000
+   == Total time for this step: 122.569207s
+
+>  t = 0.865398
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006244070109823302
+implicit: [-0.56621253 -0.05743093  0.1755931   0.23315308  0.20880223]
+explicit: [-0.86922491 -0.16740812  0.20958127  0.32556163  0.69207191]
+comp to explicit:  52795.572149451786
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006864416097730953
+implicit: [-0.70231781  0.06017723 -0.20063724  0.16964961  0.25418796]
+explicit: [-0.90841542  0.0021429  -0.22651295  0.13500756  0.6920459 ]
+comp to explicit:  3334191.2968873484
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006611997557999499
+implicit: [-0.73721238 -0.0045787   0.01934937  0.24563319  0.19162011]
+explicit: [-0.97713305 -0.08944408  0.03184307  0.31792056  0.69563682]
+comp to explicit:  100195.41964189432
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006185951415786759
+implicit: [-0.71176384 -0.03103835  0.00885983  0.30765864  0.2833042 ]
+explicit: [-0.93463428 -0.096241    0.02101374  0.3098259   0.75382021]
+comp to explicit:  120296.99923209101
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007041841649398467
+implicit: [-0.66974939  0.01348861 -0.11807153  0.25873189  0.39474724]
+explicit: [-0.77670364  0.00259814 -0.16579833  0.08257357  0.84232748]
+comp to explicit:  14252045.239731403
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006458767545148949
+implicit: [-0.56466504 -0.04797387  0.16358804  0.22014587  0.20951208]
+explicit: [-0.86922491 -0.16740812  0.20958127  0.32556163  0.69207191]
+comp to explicit:  199081.87534474683
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006786114420219111
+implicit: [-0.74562613  0.01419406 -0.02336751  0.23886469  0.2057472 ]
+explicit: [-0.97248885 -0.06515975 -0.02937388  0.28682828  0.71387937]
+comp to explicit:  1891000.2229265524
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00606144903146827
+implicit: [-0.69181725 -0.04537164  0.09020604  0.30378654  0.21334014]
+explicit: [-0.93318568 -0.13437189  0.10845841  0.3514398   0.70675367]
+comp to explicit:  92860.13020477338
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006538137346663386
+implicit: [-0.67824317 -0.03035864  0.08788393  0.23306693  0.2012491 ]
+explicit: [-0.92775147 -0.13369962  0.11159094  0.35704072  0.70158863]
+comp to explicit:  800902.9947659698
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006419555896087556
+implicit: [-0.72599754 -0.00629407 -0.01139563  0.28387876  0.26579298]
+explicit: [-0.9353617  -0.06447402 -0.02783317  0.29043769  0.75462489]
+comp to explicit:  202078.7198130629
+   Time step size: dt = 0.031934
+   Residuals: tdvp_err = 8.79e-02, solver_res = 2.01e-13
+    Energy = -9.996244 +/- 0.000000
+    xPol = 0.516186 +/- 0.000000
+   == Total time for this step: 107.175747s
+
+>  t = 0.897332
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006588317276320235
+implicit: [-0.73016844 -0.01576658 -0.0065069   0.22887057  0.24195545]
+explicit: [-0.91951272 -0.06939213 -0.01900148  0.2844501   0.7510619 ]
+comp to explicit:  517578.67990111513
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.009160734634280042
+implicit: [-0.4693555   0.04461629 -0.18205925  0.29895362  0.64403164]
+explicit: [-0.39925257  0.01799287 -0.25709733 -0.08941932  0.71155718]
+comp to explicit:  601486.3546759018
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007142191900629427
+implicit: [-0.62591038  0.03654097 -0.15185659  0.27316705  0.41286633]
+explicit: [-0.68675428  0.02547194 -0.23800818  0.03630509  0.85304352]
+comp to explicit:  437013.4886238821
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007147900105558374
+implicit: [-0.64930058  0.03033005 -0.10369754  0.28005644  0.35989465]
+explicit: [-0.65170208  0.01327166 -0.2041264   0.03312444  0.85646684]
+comp to explicit:  103665.60698671882
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.008399577816701094
+implicit: [-0.53258457  0.03127135 -0.10225572  0.42731254  0.46518407]
+explicit: [-0.32622674  0.00918913 -0.17536146 -0.13823729  0.71850681]
+comp to explicit:  54751.72141124595
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006567743567097536
+implicit: [-0.73088349 -0.01418172 -0.0053662   0.22838116  0.24293119]
+explicit: [-0.91951272 -0.06939213 -0.01900148  0.2844501   0.7510619 ]
+comp to explicit:  324380.511126549
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007099513811469372
+implicit: [-0.60963499  0.03758521 -0.17261391  0.24954308  0.46264487]
+explicit: [-0.66467491  0.02914111 -0.24941331  0.01818209  0.85751941]
+comp to explicit:  371160.75330264866
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006634605639536668
+implicit: [-0.65779573  0.01403112 -0.1015023   0.28220992  0.35502633]
+explicit: [-0.82017097 -0.00997033 -0.15382628  0.1591093   0.82215193]
+comp to explicit:  400837.1571913687
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.006669943063193219
+implicit: [-0.69441804  0.00991947 -0.07136917  0.25752412  0.31000146]
+explicit: [-0.81059436 -0.01558834 -0.13932831  0.1578743   0.81212944]
+comp to explicit:  4426157.027049399
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007352291774462037
+implicit: [-0.6318926   0.02808164 -0.11416862  0.30313806  0.40083852]
+explicit: [-0.64713119  0.01619651 -0.21028125  0.02407997  0.81629686]
+comp to explicit:  222868.863754249
+   Time step size: dt = 0.030201
+   Residuals: tdvp_err = 9.16e-02, solver_res = 6.25e-13
+    Energy = -9.997170 +/- 0.000000
+    xPol = 0.523711 +/- 0.000000
+   == Total time for this step: 111.589931s
+
+>  t = 0.927533
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007147058968741162
+implicit: [-0.61805019  0.02984926 -0.1178499   0.32905645  0.38235785]
+explicit: [-0.63618958  0.01438195 -0.20200837  0.02695469  0.81285402]
+comp to explicit:  1141796.546905139
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.011048344630005294
+implicit: [-0.46087105 -0.02223658  0.05776967  0.5108991   0.02893737]
+explicit: [-0.15022789 -0.07473972 -0.00388347 -0.34212251  0.26978045]
+comp to explicit:  144103.98735235902
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.008703533331221916
+implicit: [-0.54780314  0.00843308 -0.06937892  0.47177169  0.41513389]
+explicit: [-0.29813341 -0.00906417 -0.12718279 -0.13155109  0.6330927 ]
+comp to explicit:  253332.44453236338
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.008590062663852137
+implicit: [-0.59134728  0.03459213 -0.05501671  0.45742275  0.23727405]
+explicit: [-0.27730206 -0.00553978 -0.13401953 -0.11928454  0.64462649]
+comp to explicit:  1957948.03386535
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.009145351714478231
+implicit: [-0.51361392 -0.00173957  0.02892037  0.3629211   0.01237996]
+explicit: [-0.11138142 -0.02490803 -0.04221913 -0.24409641  0.25861245]
+comp to explicit:  3316689.655513327
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007527172069921658
+implicit: [-0.65707118  0.01575026 -0.10632736  0.25870486  0.38035215]
+explicit: [-0.63618958  0.01438195 -0.20200837  0.02695469  0.81285402]
+comp to explicit:  220715.72139019537
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.008773958995876928
+implicit: [-0.49852845  0.03346964 -0.09968048  0.48120285  0.43981769]
+explicit: [-0.24672298  0.0115902  -0.17449173 -0.14290186  0.67683655]
+comp to explicit:  438221.5543151671
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007777585529893079
+implicit: [-0.54839771  0.04158411 -0.1227337   0.37877505  0.46782304]
+explicit: [-0.42815673  0.02385973 -0.21071385 -0.07394982  0.76460811]
+comp to explicit:  904608.9967947125
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0075009223763034365
+implicit: [-0.56527842  0.03498035 -0.11009309  0.3752271   0.43119543]
+explicit: [-0.43228357  0.0201257  -0.19569352 -0.06643929  0.75906902]
+comp to explicit:  704719.767460173
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007967244001613048
+implicit: [-0.56680985  0.02137916 -0.05938388  0.45132406  0.30510316]
+explicit: [-0.28544131 -0.00412501 -0.13603532 -0.11939453  0.60892793]
+comp to explicit:  844519.5921749577
+   Time step size: dt = 0.031576
+   Residuals: tdvp_err = 9.72e-02, solver_res = 1.46e-12
+    Energy = -9.998079 +/- 0.000000
+    xPol = 0.530168 +/- 0.000000
+   == Total time for this step: 117.105701s
+
+>  t = 0.959109
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007784030364546796
+implicit: [-0.56110366  0.02326473 -0.05860318  0.43126783  0.29838072]
+explicit: [-0.28326453 -0.00149942 -0.13750639 -0.11895183  0.61275755]
+comp to explicit:  130532.72305305515
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.011994351595998442
+implicit: [-0.44002206 -0.01996633  0.13193908  0.17316828 -0.24635129]
+explicit: [-0.14883879 -0.01377853  0.06272368 -0.26941545 -0.03996943]
+comp to explicit:  385784.6855496976
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.008865932521480182
+implicit: [-0.5297996  -0.01319916  0.03375944  0.29238064 -0.02106385]
+explicit: [-0.17891008 -0.04112157 -0.03060128 -0.20564681  0.21683487]
+comp to explicit:  264000.0108180735
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.008570259842214776
+implicit: [-0.49942987 -0.01438146  0.05037905  0.26340509  0.05254322]
+explicit: [-0.16448132 -0.03695747 -0.01241916 -0.20040311  0.25097673]
+comp to explicit:  654707.7948501188
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.011100075227098665
+implicit: [-0.40631901 -0.00731796  0.14246523  0.13697592 -0.12645738]
+explicit: [-0.11024975 -0.02147982  0.07248772 -0.27580056 -0.01544169]
+comp to explicit:  1754412.4461349603
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.007958474116944322
+implicit: [-0.56730035  0.02519577 -0.05730336  0.45909363  0.26775859]
+explicit: [-0.28326453 -0.00149942 -0.13750639 -0.11895183  0.61275755]
+comp to explicit:  392710.21232488356
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.009527251754420348
+implicit: [-0.5112688  -0.01352869  0.05287446  0.27842305 -0.0715355 ]
+explicit: [-0.12169776 -0.02711715 -0.0160415  -0.25383979  0.13952259]
+comp to explicit:  423239.62956817326
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.00835928066613125
+implicit: [-0.54962199  0.00951375 -0.0033179   0.39579698  0.09622255]
+explicit: [-0.18314709 -0.02507733 -0.07225983 -0.17907311  0.37344321]
+comp to explicit:  1831114.9817438186
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.008177915618616844
+implicit: [-0.54200099  0.00249429 -0.01606288  0.33346329  0.13277758]
+explicit: [-0.19123566 -0.0252467  -0.06431049 -0.1734847   0.38093507]
+comp to explicit:  202577.38692767287
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.009104341333313705
+implicit: [-0.48509252 -0.02831503  0.07234794  0.20246323 -0.02353347]
+explicit: [-0.15589445 -0.03498943  0.0092696  -0.22641532  0.13606494]
+comp to explicit:  525183.1364966623
+   Time step size: dt = 0.035764
+   Residuals: tdvp_err = 1.03e-01, solver_res = 2.01e-12
+    Energy = -9.999070 +/- 0.000000
+    xPol = 0.535433 +/- 0.000000
+   == Total time for this step: 112.130811s
+
+>  t = 0.994874
+
+================================== whole step =============================================
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.009024935685582327
+implicit: [-0.47383816 -0.03100196  0.06323222  0.17299599  0.01949389]
+explicit: [-0.13772478 -0.03400857  0.00821785 -0.21523909  0.17030738]
+comp to explicit:  93648.45589407462
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.018474791141777434
+implicit: [-0.22652942  0.03117212  0.34323995  0.13125197 -0.25943306]
+explicit: [-0.13468038  0.03858089  0.1801869  -0.19166598 -0.13670072]
+comp to explicit:  16090254.778697018
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.012200727762907829
+implicit: [-0.33703881 -0.01320158  0.16420838  0.01050267 -0.11652761]
+explicit: [-0.08093661 -0.00736208  0.09261717 -0.27903864 -0.03345025]
+comp to explicit:  2032922.278596794
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.011815554159212935
+implicit: [-0.32212144 -0.01441027  0.15870138  0.06210278 -0.08586682]
+explicit: [-0.03662578 -0.01956784  0.07155719 -0.269574    0.04742611]
+comp to explicit:  791020.4016747458
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.016822286106754774
+implicit: [-0.14300711  0.01722518  0.25396249  0.09711313 -0.17676213]
+explicit: [ 0.00929336  0.00853069  0.12650277 -0.24844094  0.02075252]
+comp to explicit:  3042786.561989331
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.009030025593029577
+implicit: [-0.47582035 -0.02755355  0.06594244  0.2253379   0.00333687]
+explicit: [-0.13772478 -0.03400857  0.00821785 -0.21523909  0.17030738]
+comp to explicit:  81810.47938031369
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.012051259711072378
+implicit: [-0.35201535 -0.01260063  0.14803278  0.00113814 -0.10754258]
+explicit: [-0.07307571 -0.00766821  0.08265091 -0.26804442 -0.02641379]
+comp to explicit:  1450730.3773408728
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.0102229076635521
+implicit: [-0.40460958 -0.02949756  0.09490104  0.0351816  -0.05076956]
+explicit: [-0.09571113 -0.02589439  0.04768252 -0.24280498  0.05598996]
+comp to explicit:  1162578.2196311518
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.010147362662533068
+implicit: [-0.39928383 -0.02648442  0.09351049  0.03780159 -0.03591357]
+explicit: [-0.08616522 -0.02885219  0.04426304 -0.23273945  0.07860542]
+comp to explicit:  938621.604119568
+scipy optimize
+success:  False
+status:  2
+message:  Desired error not necessarily achieved due to precision loss.
+function val:  0.011991161861341013
+implicit: [-0.33691633 -0.01577111  0.15168014  0.06534309 -0.08799685]
+explicit: [-0.03780494 -0.01767535  0.06999573 -0.24632879  0.03260218]
+comp to explicit:  391330.7062999262
+   Time step size: dt = 0.029009
+   Residuals: tdvp_err = 1.11e-01, solver_res = 8.05e-12
+    Energy = -9.999504 +/- 0.000000
+    xPol = 0.537878 +/- 0.000000
+   == Total time for this step: 99.744875s
+
+>  t = 1.023883
+
+done
+
+real	76m20,274s
+user	596m58,102s
+sys	0m27,770s
+

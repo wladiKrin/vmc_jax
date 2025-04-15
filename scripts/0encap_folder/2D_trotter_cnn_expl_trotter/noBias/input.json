@@ -1,0 +1,16 @@
+{
+    "system": {
+        "Lx": 4,
+        "Ly": 4
+    },
+    "net": {
+        "num_channels": 50,
+        "filtersize": 4,
+        "num_samples": 20000
+    },
+    "simulation": {
+        "circuitDepth": 15,
+        "tol": [1e-6,1e-7,1e-8],
+        "pinvTol": 1e-5
+    }
+}

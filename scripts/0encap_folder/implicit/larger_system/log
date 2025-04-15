@@ -1,0 +1,518 @@
+Slurm Job Id: 74070
+Do 10. Apr 16:08:37 CEST 2025
+host: pgi8cluster43
+Slurm Instance: 0
+Encap Proc Id: 0
+0encap_folder/implicit/larger_system/run.py 
+
+/local/krinitsin/VMC/vmc_jax/scripts/0encap_folder/implicit/larger_system/implicit_tdvp.py:34: SyntaxWarning: invalid escape sequence '\l'
+  """ This class provides functionality to solve a time-dependent variational principle (TDVP).
+[pgi8cluster43:268841] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.pgi8cluster43.26033004/jf.0/1566703616/shared_mem_cuda_pool.pgi8cluster43 could be created.
+[pgi8cluster43:268841] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
+ -> Rank 0 working with device [CudaDevice(id=0)]
+initializing network
+Number of parameters:  3200
+setting up tdvp equation
+starting tdvp equation
+>  t = 0.000000
+
+================================== whole step =============================================
+/Users/krinitsin/.local/lib/python3.13/site-packages/jax/_src/lax/lax.py:3656: ComplexWarning: Casting complex values to real discards the imaginary part
+  x_bar = _convert_element_type(x_bar, x.aval.dtype, x.aval.weak_type)
+func val:  1.2382935813138812e-07
+iter num:  636
+func val2:  1.2382935813138812e-07
+implicit: [ 0.68772953 -0.28109194 -0.35461489  1.34864965  0.48335786]
+explicit: [ 0.76096625 -0.18797779 -0.3022053   1.52933637  0.59281772]
+func valexplicit:  5.379163565601279e-08
+func val:  1.2434423111443403e-07
+iter num:  643
+func val2:  1.2434423111443403e-07
+implicit: [ 0.73182073 -0.27395359 -0.39467086  1.39427174  0.40938091]
+explicit: [ 0.81138275 -0.17718399 -0.33974326  1.56058774  0.5246562 ]
+func valexplicit:  5.427149898089162e-08
+func val:  1.2407479770575567e-07
+iter num:  591
+func val2:  1.2407479770575567e-07
+implicit: [ 0.71006123 -0.27821559 -0.37483365  1.37183575  0.44644634]
+explicit: [ 0.78646514 -0.18342007 -0.32107149  1.54515703  0.55889016]
+func valexplicit:  5.401216399677022e-08
+func val:  1.2408889723924492e-07
+iter num:  658
+func val2:  1.2408889723924492e-07
+implicit: [ 0.70990016 -0.27786754 -0.37467565  1.37142361  0.44649128]
+explicit: [ 0.78635591 -0.18296879 -0.32095065  1.54481698  0.55883271]
+func valexplicit:  5.403371703722777e-08
+func val:  1.2438814099065857e-07
+iter num:  637
+func val2:  1.2438814099065857e-07
+implicit: [ 0.73129341 -0.27292935 -0.39412587  1.39296734  0.40962399]
+explicit: [ 0.81100915 -0.17585668 -0.33930774  1.55951196  0.52457783]
+func valexplicit:  5.4336486019827765e-08
+   Time step size: dt = 0.000100
+   Residuals: tdvp_err = 6.86e-07, solver_res = 9.27e-08
+    Energy = -15.987934 +/- 0.000000
+    xPol = 0.999261 +/- 0.000000
+   == Total time for this step: 104.008046s
+
+>  t = 0.000100
+
+================================== whole step =============================================
+func val:  1.2440318688762416e-07
+iter num:  620
+func val2:  1.2440318688762416e-07
+implicit: [ 0.73110191 -0.2725899  -0.39392432  1.39250963  0.40974888]
+explicit: [ 0.81086688 -0.17541939 -0.33914386  1.5591396   0.52458879]
+func valexplicit:  5.4357868894162635e-08
+func val:  1.2604508961795346e-07
+iter num:  651
+func val2:  1.2604508961795346e-07
+implicit: [ 0.80722931 -0.23883602 -0.46327299  1.46390021  0.26770258]
+explicit: [ 0.89994709 -0.12976959 -0.40587095  1.60837668  0.389618  ]
+func valexplicit:  5.614534976309329e-08
+func val:  1.251544911639055e-07
+iter num:  620
+func val2:  1.251544911639055e-07
+implicit: [ 0.77086809 -0.25774256 -0.43010335  1.43063098  0.33748316]
+explicit: [ 0.85723247 -0.15507291 -0.37376629  1.58521585  0.45641363]
+func valexplicit:  5.5169452752026735e-08
+func val:  1.252190337166241e-07
+iter num:  599
+func val2:  1.252190337166241e-07
+implicit: [ 0.76993675 -0.2565413  -0.42908664  1.42862121  0.33839822]
+explicit: [ 0.85647505 -0.1535211  -0.37286538  1.58356726  0.45685681]
+func valexplicit:  5.5252406686634746e-08
+func val:  1.262451129266271e-07
+iter num:  626
+func val2:  1.262451129266271e-07
+implicit: [ 0.80418545 -0.23564547 -0.45987444  1.45765652  0.27107356]
+explicit: [ 0.89744464 -0.12556171 -0.40273133  1.60318664  0.39153851]
+func valexplicit:  5.639262423601144e-08
+   Time step size: dt = 0.000200
+   Residuals: tdvp_err = 6.94e-07, solver_res = 9.36e-08
+    Energy = -15.987934 +/- 0.000000
+    xPol = 0.999253 +/- 0.000000
+   == Total time for this step: 98.098390s
+
+>  t = 0.000300
+
+================================== whole step =============================================
+func val:  1.263093707282219e-07
+iter num:  571
+func val2:  1.263093707282219e-07
+implicit: [ 0.80311371 -0.23473726 -0.45871547  1.45557513  0.27238543]
+explicit: [ 0.89653504 -0.12435713 -0.40163799  1.60146651  0.39237565]
+func valexplicit:  5.6468101906676616e-08
+func val:  1.325686418813464e-07
+iter num:  529
+func val2:  1.325686418813464e-07
+implicit: [ 0.89077162 -0.1313795  -0.5338051   1.50060114  0.06384709]
+explicit: [ 1.01328567  0.01879109 -0.4699856   1.62607099  0.17468132]
+func valexplicit:  6.323788522409218e-08
+func val:  1.2910410068866138e-07
+iter num:  573
+func val2:  1.2910410068866138e-07
+implicit: [ 0.85499223 -0.18388933 -0.50396468  1.48880017  0.15726898]
+explicit: [ 0.96217463 -0.05577545 -0.44498527  1.62236265  0.27555485]
+func valexplicit:  5.954000503215171e-08
+func val:  1.2932314341277624e-07
+iter num:  619
+func val2:  1.2932314341277624e-07
+implicit: [ 0.85070557 -0.18231083 -0.4994002   1.48134596  0.16321747]
+explicit: [ 0.95858513 -0.05328266 -0.44026658  1.61582341  0.28001502]
+func valexplicit:  5.978067553967102e-08
+func val:  1.3316709147181535e-07
+iter num:  551
+func val2:  1.3316709147181535e-07
+implicit: [ 0.87891863 -0.12924017 -0.52079554  1.48064798  0.08085496]
+explicit: [ 1.00440308  0.02411815 -0.45563028  1.60719343  0.18759485]
+func valexplicit:  6.388142247242029e-08
+   Time step size: dt = 0.000400
+   Residuals: tdvp_err = 7.11e-07, solver_res = 9.68e-08
+    Energy = -15.987934 +/- 0.000000
+    xPol = 0.999237 +/- 0.000000
+   == Total time for this step: 97.810036s
+
+>  t = 0.000700
+
+================================== whole step =============================================
+func val:  1.332976338282356e-07
+iter num:  535
+func val2:  1.332976338282356e-07
+implicit: [ 0.87564498 -0.12955    -0.51740004  1.47526488  0.08577364]
+explicit: [ 1.00190424  0.02443511 -0.45185688  1.6020647   0.19162156]
+func valexplicit:  6.401920229390159e-08
+func val:  1.5597369438265713e-07
+iter num:  521
+func val2:  1.5597369438265713e-07
+implicit: [ 0.87635274  0.01839659 -0.48937157  1.33244986 -0.06589378]
+explicit: [ 1.22171742  0.40962825 -0.32770318  1.32670902 -0.21103445]
+func valexplicit:  7.5905715345595e-08
+func val:  1.4324003114863576e-07
+iter num:  530
+func val2:  1.4324003114863576e-07
+implicit: [ 0.88856175 -0.04278484 -0.51579351  1.41713302 -0.01161507]
+explicit: [ 1.09225628  0.20226092 -0.4019279   1.5002489   0.03158275]
+func valexplicit:  7.266321757561522e-08
+func val:  1.4333582185615808e-07
+iter num:  512
+func val2:  1.4333582185615808e-07
+implicit: [ 0.88200287 -0.04753829 -0.50966878  1.40729322 -0.0018214 ]
+explicit: [ 1.08716538  0.19818512 -0.39394609  1.48934254  0.04107807]
+func valexplicit:  7.271698069195381e-08
+func val:  1.5588777319922215e-07
+iter num:  484
+func val2:  1.5588777319922215e-07
+implicit: [ 0.86249693  0.00637855 -0.47835634  1.31497348 -0.04743546]
+explicit: [ 1.18900085  0.39614667 -0.29713172  1.31009214 -0.19138856]
+func valexplicit:  7.594195378974428e-08
+   Time step size: dt = 0.000800
+   Residuals: tdvp_err = 7.54e-07, solver_res = 1.08e-07
+    Energy = -15.987935 +/- 0.000000
+    xPol = 0.999201 +/- 0.000000
+   == Total time for this step: 99.167733s
+
+>  t = 0.001500
+
+================================== whole step =============================================
+func val:  1.5566398906013e-07
+iter num:  503
+func val2:  1.5566398906013e-07
+implicit: [ 0.86001216  0.00268198 -0.47719663  1.31279577 -0.04370555]
+explicit: [ 1.18208432  0.39043048 -0.29082161  1.30896839 -0.18249279]
+func valexplicit:  7.594762566506892e-08
+func val:  2.4146063076734155e-07
+iter num:  441
+func val2:  2.4146063076734155e-07
+implicit: [ 0.7208341   0.08958088 -0.33714385  0.97501244 -0.1000509 ]
+explicit: [ 0.77303503  0.62312055 -1.15732529  1.7334133  -0.36033266]
+func valexplicit:  6.328626785134933e-08
+func val:  1.893549586083449e-07
+iter num:  461
+func val2:  1.893549586083449e-07
+implicit: [ 0.79263543  0.0589814  -0.4032063   1.13035534 -0.08378429]
+explicit: [ 1.0477213   0.41468139 -0.76478736  1.15326428 -0.29368755]
+func valexplicit:  6.939589113247096e-08
+func val:  1.8734801859553722e-07
+iter num:  455
+func val2:  1.8734801859553722e-07
+implicit: [ 0.79162516  0.05331347 -0.40605079  1.1350101  -0.0792943 ]
+explicit: [ 1.04075811  0.40591435 -0.7382264   1.15842951 -0.29913559]
+func valexplicit:  7.009334781779817e-08
+func val:  2.3160854312342806e-07
+iter num:  446
+func val2:  2.3160854312342806e-07
+implicit: [ 0.72225922  0.07978566 -0.34651171  0.991308   -0.09201131]
+explicit: [ 0.7287106   0.54962691 -1.13678838  1.63999694 -0.30667066]
+func valexplicit:  6.426129471338288e-08
+   Time step size: dt = 0.001600
+   Residuals: tdvp_err = 8.58e-07, solver_res = 1.23e-07
+    Energy = -15.987943 +/- 0.000000
+    xPol = 0.999114 +/- 0.000000
+   == Total time for this step: 98.309158s
+
+>  t = 0.003100
+
+================================== whole step =============================================
+func val:  2.2911900713623599e-07
+iter num:  417
+func val2:  2.2911900713623599e-07
+implicit: [ 0.72398468  0.07769613 -0.34937384  0.99694862 -0.09016151]
+explicit: [ 0.73281157  0.53357257 -1.119154    1.61133415 -0.29208096]
+func valexplicit:  6.455846253609537e-08
+func val:  5.802135163001551e-07
+iter num:  380
+func val2:  5.802135163001551e-07
+implicit: [ 0.53382257  0.11394837 -0.20756614  0.6552188  -0.0792242 ]
+explicit: [-0.02632109  2.139319   -0.39761587  0.23568265 -0.07325224]
+func valexplicit:  6.239221707023624e-08
+func val:  3.575620213774494e-07
+iter num:  419
+func val2:  3.575620213774494e-07
+implicit: [ 0.61472212  0.10290136 -0.26668418  0.79670764 -0.08954443]
+explicit: [ 0.19293902  1.42347734 -0.93754117  1.16769662 -0.02790995]
+func valexplicit:  6.038329372224949e-08
+func val:  3.443324793548101e-07
+iter num:  412
+func val2:  3.443324793548101e-07
+implicit: [ 0.62115601  0.10024012 -0.27303498  0.8107696  -0.0878682 ]
+explicit: [ 0.21918752  1.34535813 -1.01438493  1.25875181 -0.06490879]
+func valexplicit:  6.056156821561314e-08
+func val:  5.162913464345947e-07
+iter num:  385
+func val2:  5.162913464345947e-07
+implicit: [ 0.54856048  0.10914189 -0.22144781  0.68663669 -0.07756098]
+explicit: [-0.07815386  1.98369296 -0.40322061  0.44982087  0.04725171]
+func valexplicit:  6.189980245737138e-08
+   Time step size: dt = 0.003200
+   Residuals: tdvp_err = 1.12e-06, solver_res = 9.58e-08
+    Energy = -15.987969 +/- 0.000000
+    xPol = 0.998883 +/- 0.000000
+   == Total time for this step: 97.938563s
+
+>  t = 0.006300
+
+================================== whole step =============================================
+func val:  5.033760770592888e-07
+iter num:  417
+func val2:  5.033760770592888e-07
+implicit: [ 0.55224566  0.10811695 -0.22471083  0.69411391 -0.07749613]
+explicit: [-0.0842642   1.94456469 -0.42134193  0.50602909  0.07717711]
+func valexplicit:  6.18207457002779e-08
+func val:  2.020183619008994e-06
+iter num:  298
+func val2:  2.020183619008994e-06
+implicit: [ 0.40031577  0.10362083 -0.1182908   0.44735047 -0.04101653]
+explicit: [-0.79048724  1.05552931 -1.06077006 -0.61253591 -0.74502963]
+func valexplicit:  7.308622661332577e-08
+func val:  1.0284175546233365e-06
+iter num:  334
+func val2:  1.0284175546233365e-06
+implicit: [ 0.46072183  0.10949581 -0.16098013  0.54428744 -0.05716035]
+explicit: [-0.42400596  1.87303954 -1.01098801 -0.37106004 -0.81225974]
+func valexplicit:  6.595900678280686e-08
+func val:  9.64819814501958e-07
+iter num:  341
+func val2:  9.64819814501958e-07
+implicit: [ 0.46707118  0.1089092  -0.16674952  0.55689702 -0.05835796]
+explicit: [-0.33864878  1.93521873 -0.92222543 -0.23837925 -0.6944497 ]
+func valexplicit:  6.586364196404189e-08
+func val:  1.6994423689072624e-06
+iter num:  285
+func val2:  1.6994423689072624e-06
+implicit: [ 0.41304115  0.10347912 -0.13029669  0.47274805 -0.0441686 ]
+explicit: [-0.72648036  1.26123166 -1.18464    -0.69435828 -0.82696162]
+func valexplicit:  7.145254906274672e-08
+   Time step size: dt = 0.006400
+   Residuals: tdvp_err = 1.86e-06, solver_res = 7.91e-08
+    Energy = -15.988069 +/- 0.000000
+    xPol = 0.998191 +/- 0.000000
+   == Total time for this step: 99.617467s
+
+>  t = 0.012700
+
+================================== whole step =============================================
+func val:  1.6387372136684753e-06
+iter num:  281
+func val2:  1.6387372136684753e-06
+implicit: [ 0.41582961  0.10361337 -0.13297785  0.4782349  -0.04495575]
+explicit: [-0.71881204  1.3266351  -1.20956379 -0.7109803  -0.85760986]
+func valexplicit:  7.106550740446438e-08
+func val:  3.6435481817724014e-06
+iter num:  34748
+func val2:  3.6435481817724014e-06
+implicit: [ 0.39853994  0.19489124  0.00047091 -0.00594418 -0.09709196]
+explicit: [-0.00700648  1.95456671 -1.83036478 -0.57480053  0.27658048]
+func valexplicit:  8.851418656956246e-08
+func val:  2.9395006140260605e-06
+iter num:  687
+func val2:  2.9395006140260605e-06
+implicit: [ 0.40802889  0.1289418  -0.06509214  0.35158513 -0.06748147]
+explicit: [-0.27648062  1.37163462 -1.12339912 -0.52629809 -0.23086984]
+func valexplicit:  8.210317211718658e-08
+func val:  3.037130939164831e-06
+iter num:  280
+func val2:  3.037130939164831e-06
+implicit: [ 0.35731337  0.09313623 -0.09141713  0.38920277 -0.03280741]
+explicit: [-0.39740623  1.35402337 -1.13923226 -0.54732505 -0.24756555]
+func valexplicit:  8.281848569493796e-08
+func val:  4.1375762027510995e-06
+iter num:  674
+func val2:  4.1375762027510995e-06
+implicit: [ 0.38325364  0.14813093 -0.03774932  0.20715975 -0.08368736]
+explicit: [ 0.08718382  2.15041675 -1.69365065 -0.54297172  0.22590607]
+func valexplicit:  8.766279424288499e-08
+   Time step size: dt = 0.012800
+   Residuals: tdvp_err = 4.16e-06, solver_res = 7.37e-08
+    Energy = -15.988347 +/- 0.000000
+    xPol = 0.995882 +/- 0.000000
+   == Total time for this step: 112.275015s
+
+>  t = 0.025500
+
+================================== whole step =============================================
+func val:  4.661708771010872e-06
+iter num:  243
+func val2:  4.661708771010872e-06
+implicit: [ 0.3238076   0.08408196 -0.06707571  0.33300697 -0.02754769]
+explicit: [ 0.1146305   2.38628136 -1.71211372 -0.5448424   0.22262646]
+func valexplicit:  8.9175666991397e-08
+func val:  1.1483637993643826e-05
+iter num:  50000
+func val2:  1.1483637993643826e-05
+implicit: [ 0.25412518  0.2457704   0.02146006 -0.03683696 -0.10716525]
+explicit: [-0.25475447  0.8792035  -1.05622424 -0.51757839  1.19856276]
+func valexplicit:  1.2424550809267655e-07
+func val:  7.832490571498165e-06
+iter num:  50000
+func val2:  7.832490571498165e-06
+implicit: [ 0.32627133  0.13999093 -0.01545341  0.02738676 -0.07886347]
+explicit: [ 0.30686139  1.70241454 -1.06016016 -0.57388588  1.06449763]
+func valexplicit:  1.1656576213540503e-07
+func val:  6.134257272688084e-06
+iter num:  1852
+func val2:  6.134257272688084e-06
+implicit: [ 0.32665273  0.16432691 -0.05218932 -0.02570172 -0.1219813 ]
+explicit: [ 0.26359955  2.31349301 -1.15189637 -0.69568695  1.3114236 ]
+func valexplicit:  1.199723230620162e-07
+func val:  8.769161769787038e-06
+iter num:  13866
+func val2:  8.769161769787038e-06
+implicit: [ 0.21162155  0.23616635 -0.07100706  0.17734868 -0.16708941]
+explicit: [-0.53784804  1.76153222 -1.16369925 -0.84924018  2.01642193]
+func valexplicit:  1.327143527506879e-07
+   Time step size: dt = 0.025600
+   Residuals: tdvp_err = 1.08e-05, solver_res = 7.11e-08
+    Energy = -15.988970 +/- 0.000000
+    xPol = 0.987577 +/- 0.000000
+   == Total time for this step: 144.621415s
+
+>  t = 0.051100
+
+================================== whole step =============================================
+func val:  8.993316883174037e-06
+iter num:  50000
+func val2:  8.993316883174037e-06
+implicit: [ 0.23444569  0.18379984 -0.05194579  0.10513519 -0.13993073]
+explicit: [-0.41672123  2.00253599 -1.12417232 -0.66828881  1.8137327 ]
+func valexplicit:  1.355161286250201e-07
+func val:  2.1355685640450677e-05
+iter num:  50000
+func val2:  2.1355685640450677e-05
+implicit: [ 0.21911243  0.0260689  -0.14782207  0.12184447 -0.0091742 ]
+explicit: [ 0.11667734 -0.16939996  0.14771839 -0.41247811  0.04195962]
+func valexplicit:  6.814638073265365e-09
+func val:  1.4184966382891516e-05
+iter num:  50000
+func val2:  1.4184966382891516e-05
+implicit: [ 0.21472154  0.14434384 -0.09436756  0.10744396 -0.06014327]
+explicit: [-0.3979805  -0.02189211 -0.1108079  -0.39454139  0.99279189]
+func valexplicit:  9.294620473090909e-08
+func val:  2.0256398383940464e-05
+iter num:  50000
+func val2:  2.0256398383940464e-05
+implicit: [ 0.23886507  0.10300294 -0.05701772  0.06422723 -0.12309554]
+explicit: [ 0.40590205  0.00574996  0.04490842 -0.75844886  1.05328907]
+func valexplicit:  8.488112302333449e-08
+func val:  2.995198939827768e-05
+iter num:  50000
+func val2:  2.995198939827768e-05
+implicit: [ 0.24496161 -0.04284136 -0.09859885 -0.06152625  0.11291912]
+explicit: [ 0.47635519 -0.14816361  0.16751095 -0.72802719  0.44702483]
+func valexplicit:  4.616338043979258e-08
+   Time step size: dt = 0.051200
+   Residuals: tdvp_err = 2.28e-05, solver_res = 7.99e-08
+    Energy = -15.987744 +/- 0.000000
+    xPol = 0.956688 +/- 0.000000
+   == Total time for this step: 201.756254s
+
+>  t = 0.102300
+
+================================== whole step =============================================
+func val:  2.524911788816503e-05
+iter num:  50000
+func val2:  2.524911788816503e-05
+implicit: [ 0.25098545  0.0083773  -0.00974363 -0.06244712  0.01443588]
+explicit: [ 1.19756423 -0.0755043   0.34424555 -0.43827748  0.10494818]
+func valexplicit:  4.661262779492218e-08
+func val:  5.9334196809911086e-05
+iter num:  50000
+func val2:  5.9334196809911086e-05
+implicit: [ 0.21857681 -0.02236005 -0.0127543  -0.02438806  0.01826238]
+explicit: [ 0.40475616 -0.47744606  0.25574181 -0.16384139  0.05537282]
+func valexplicit:  5.2126871933629615e-08
+func val:  4.0483926650901796e-05
+iter num:  50000
+func val2:  4.0483926650901796e-05
+implicit: [ 0.23051821 -0.01969338 -0.046567   -0.03927125  0.01942551]
+explicit: [ 1.07167091 -0.29784666  0.31668233 -0.18217566  0.12308191]
+func valexplicit:  4.4399409198536874e-08
+func val:  5.0012756359249214e-05
+iter num:  50000
+func val2:  5.0012756359249214e-05
+implicit: [ 0.23002556  0.00410501 -0.06454968 -0.00494428 -0.02001769]
+explicit: [ 1.13442594 -0.25084041  0.35304096 -0.21060777  0.12602973]
+func valexplicit:  3.8378370024959745e-08
+func val:  4.663744721873509e-05
+iter num:  50000
+func val2:  4.663744721873509e-05
+implicit: [ 0.2109259  -0.0240091  -0.01427309 -0.03800061  0.02734231]
+explicit: [ 0.7130628  -0.38003379  0.29920197 -0.16705982  0.08138912]
+func valexplicit:  3.3626410951766935e-08
+   Time step size: dt = 0.050701
+   Residuals: tdvp_err = 2.15e-05, solver_res = 1.97e-08
+    Energy = -15.990169 +/- 0.000000
+    xPol = 0.910271 +/- 0.000000
+   == Total time for this step: 200.738512s
+
+>  t = 0.153001
+
+================================== whole step =============================================
+func val:  3.510585510729109e-05
+iter num:  50000
+func val2:  3.510585510729109e-05
+implicit: [ 0.20951576 -0.04394307  0.0076796  -0.07373077  0.04795317]
+explicit: [ 0.75787682 -0.38243327  0.31645451 -0.13055459  0.07692142]
+func valexplicit:  3.993121341143931e-08
+func val:  0.00011570874567990832
+iter num:  50000
+func val2:  0.00011570874567990832
+implicit: [0.21371682 0.01763968 0.0290052  0.01052281 0.00647724]
+explicit: [ 0.28789579 -0.04546781  0.07701315 -0.11643219 -0.07334935]
+func valexplicit:  1.1791964992245576e-07
+func val:  6.13382859021222e-05
+iter num:  50000
+func val2:  6.13382859021222e-05
+implicit: [ 0.20234746 -0.00154875  0.0205268  -0.02257475 -0.02308078]
+explicit: [ 0.26426883 -0.32144292  0.171236   -0.07851683 -0.06325594]
+func valexplicit:  5.3975071080174175e-08
+func val:  4.710635882885394e-05
+iter num:  50000
+func val2:  4.710635882885394e-05
+implicit: [ 0.2014111  -0.02709183  0.0082672  -0.02268635 -0.02446752]
+explicit: [ 0.46213559 -0.35919578  0.16207896 -0.03965357 -0.01805563]
+func valexplicit:  5.475517347266075e-08
+func val:  7.95095321231714e-05
+iter num:  50000
+func val2:  7.95095321231714e-05
+implicit: [ 0.20535804 -0.00785462  0.01008625  0.00321426 -0.02191795]
+explicit: [ 0.94812433 -0.31498817  0.04930694 -0.02197291 -0.00223476]
+func valexplicit:  1.0245102831803564e-07
+func val:  2.528831135623118e-05
+iter num:  50000
+func val2:  2.528831135623118e-05
+implicit: [ 0.21037146 -0.04887827  0.02611313 -0.08138806  0.01372258]
+explicit: [ 0.75787681 -0.38243327  0.31645451 -0.1305546   0.07692142]
+func valexplicit:  3.99312133890118e-08
+E0410 16:35:35.133297  268841 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: INTERNAL: Failed to allocate 163840000 bytes for new constant
+Traceback (most recent call last):
+  File "/local/krinitsin/VMC/vmc_jax/scripts/0encap_folder/implicit/larger_system/run.py", line 198, in <module>
+    dp, dt = stepper.step(0, tdvpEquation, psi.get_parameters(), hamiltonian=hamiltonian, psi=psi,
+             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           normFunction=partial(norm_fun, df=tdvpEquation.S_dot))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/krinitsin/VMC/vmc_jax/jVMC/util/stepper.py", line 148, in step
+    k1 = f(y, t + dt, **rhsArgs, intStep=1)
+  File "/local/krinitsin/VMC/vmc_jax/scripts/0encap_folder/implicit/larger_system/implicit_tdvp.py", line 325, in __call__
+    update, solverResidual, pinvCutoff = self.solve(Eloc, sampleGradients, tmpParameters)
+                                         ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/krinitsin/VMC/vmc_jax/scripts/0encap_folder/implicit/larger_system/implicit_tdvp.py", line 213, in solve
+    update, state = solver.run(params)
+                    ~~~~~~~~~~^^^^^^^^
+  File "/local/krinitsin/miniforge3/envs/jvmc/lib/python3.13/site-packages/jaxopt/_src/base.py", line 359, in run
+    return run(init_params, *args, **kwargs)
+  File "/local/krinitsin/miniforge3/envs/jvmc/lib/python3.13/site-packages/jaxopt/_src/implicit_diff.py", line 251, in wrapped_solver_fun
+    return make_custom_vjp_solver_fun(solver_fun, keys)(*args, *vals)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/local/krinitsin/miniforge3/envs/jvmc/lib/python3.13/site-packages/jaxopt/_src/implicit_diff.py", line 207, in solver_fun_flat
+    return solver_fun(*args, **kwargs)
+  File "/local/krinitsin/miniforge3/envs/jvmc/lib/python3.13/site-packages/jaxopt/_src/base.py", line 321, in _run
+    opt_step = self.update(init_params, state, *args, **kwargs)
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: Failed to allocate 163840000 bytes for new constant
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+real	27m0,759s
+user	19m17,255s
+sys	7m37,734s
+
