@@ -74,10 +74,7 @@ class CpxRBMCNN(nn.Module):
                x = jnp.pad(x, pads, 'constant', constant_values=0)
             x = f(nn.Conv(features=c, kernel_size=tuple(self.F),
                           strides=self.strides,
-                          use_bias=bias, **init_args)(x))
-
-        # strides=self.strides, padding=[(0, 0)] * len(self.strides),
-        # nrm = jnp.sqrt(jnp.prod(jnp.array(x.shape[reduceDims[-1]:])))
+                          use_bias=b, **init_args)(x))
 
         return jnp.prod(x)
 
@@ -97,7 +94,6 @@ class CpxRBMCNNLog(nn.Module):
     F: Sequence[int] = (8,)
     channels: Sequence[int] = (10,)
     strides: Sequence[int] = (1,)
-    # actFun: Sequence[callable] = (jnp.cosh,)
     actFun: Sequence[callable] = (act_funs.log_cosh,)
     bias: bool = True
     firstLayerBias: bool = False
@@ -140,6 +136,6 @@ class CpxRBMCNNLog(nn.Module):
                x = jnp.pad(x, pads, 'constant', constant_values=0)
             x = f(nn.Conv(features=c, kernel_size=tuple(self.F),
                           strides=self.strides,
-                          use_bias=bias, **init_args)(x))
+                          use_bias=b, **init_args)(x))
 
-        return jnp.prod(x)
+        return jnp.sum(x)

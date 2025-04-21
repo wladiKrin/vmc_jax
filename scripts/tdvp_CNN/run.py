@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 import h5py
 
 import tdvp_imp
-from nets.RBMCNN import CpxRBMCNN
+from nets.RBMCNN import CpxRBMCNNLog
 from jVMC.nets.rbm import CpxRBM
 from nets.RBMNoLog import CpxRBMNoLog
 from jVMC.nets.initializers import init_fn_args
@@ -110,7 +110,7 @@ param_name = "RBMCNN_mixedSamp_L="+str(L)+ "_g="+str(g)+ "_num_hidden="+str(num_
 
 # Set up variational wave function
 print("initializing network")
-net = CpxRBMCNN(
+net = CpxRBMCNNLog(
         F=(filter_size,),
         channels=(num_hidden,),
         strides=(1,),
