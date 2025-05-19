@@ -44,7 +44,7 @@ parser = argparse.ArgumentParser( description='TDVP script')
 
     
 parser.add_argument('-l', '--lattice', type=int, 
-                    default=16, 
+                    default=20, 
                     help='lattice size (default: 10)')
 parser.add_argument('-g', '--trvField', type=float, 
                     default=-1, 
@@ -58,7 +58,7 @@ parser.add_argument('--exactRenorm', type=bool,
                     help='Wether to use the exact Renormalisation factor (default: false)')
 
 parser.add_argument('--numHidden', type=int, 
-                    default=40, 
+                    default=80, 
                     help='Number of hidden units (default: 20)')
 parser.add_argument('-f', '--filterSize', type=int, 
                     default=10, 
