@@ -1,14 +1,15 @@
+import warnings
+from functools import partial
+
 import jax
 import jax.numpy as jnp
 import numpy as np
+from sklearn.utils.extmath import randomized_svd
 
 import jVMC
-import jVMC.mpi_wrapper as mpi
 import jVMC.global_defs as global_defs
+import jVMC.mpi_wrapper as mpi
 from jVMC.stats import SampledObs
-
-import warnings
-from functools import partial
 
 
 def realFun(x):
@@ -71,7 +72,7 @@ class TDVP:
         * ``diagonalizeOnDevice``: Choose whether to diagonalize :math:`S` on GPU or CPU.
     """
 
-    def __init__(self, sampler, snrTol=2, pinvTol=1e-14, pinvCutoff=1e-8, makeReal='imag', rhsPrefactor=1.j, diagonalShift=0., crossValidation=False, diagonalizeOnDevice=True):
+    def __init__(self, sampler, snrTol=2, pinvTol=1e-14, pinvCutoff=1e-8, makeReal='imag', rhsPrefactor=1.j, diagonalShift=0., crossValidation=False, diagonalizeOnDevice=True, randomSVD=True):
         
         self.sampler = sampler
         self.snrTol = snrTol
@@ -82,6 +83,8 @@ class TDVP:
         self.crossValidation = crossValidation
 
         self.diagonalizeOnDevice = diagonalizeOnDevice
+
+        self.randomSVD = randomSVD
 
         self.metaData = None
 
@@ -152,21 +155,33 @@ class TDVP:
 
     def _transform_to_eigenbasis(self, S, F):
         
-        if self.diagonalizeOnDevice:
-            try:
-                self.ev, self.V = jnp.linalg.eigh(S)
-            except ValueError:
-                warnings.warn("jax.numpy.linalg.eigh raised an exception. Falling back to numpy.linalg.eigh for "
-                              "diagonalization.", RuntimeWarning)
+        if self.randomSVD:
+            print("using rsvd")
+            tmpS = np.array(S)
+            
+
+            tmpV, tmpEv, _ = randomized_svd(tmpS, n_components=100, random_state=0)
+            print("finished rsvd, shape: ", tmpV.shape)
+
+
+            self.ev = jnp.array(tmpEv)
+            self.V = jnp.array(tmpV)
+        else:
+            if self.diagonalizeOnDevice:
+                try:
+                    self.ev, self.V = jnp.linalg.eigh(S)
+                except ValueError:
+                    warnings.warn("jax.numpy.linalg.eigh raised an exception. Falling back to numpy.linalg.eigh for "
+                                  "diagonalization.", RuntimeWarning)
+                    tmpS = np.array(S)
+                    tmpEv, tmpV = np.linalg.eigh(tmpS)
+                    self.ev = jnp.array(tmpEv)
+                    self.V = jnp.array(tmpV)
+            else:
                 tmpS = np.array(S)
                 tmpEv, tmpV = np.linalg.eigh(tmpS)
                 self.ev = jnp.array(tmpEv)
                 self.V = jnp.array(tmpV)
-        else:
-            tmpS = np.array(S)
-            tmpEv, tmpV = np.linalg.eigh(tmpS)
-            self.ev = jnp.array(tmpEv)
-            self.V = jnp.array(tmpV)
 
         self.VtF = jnp.dot(jnp.transpose(jnp.conj(self.V)), F)
 
