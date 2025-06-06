@@ -1,0 +1,24 @@
+{
+    "system": {
+        "L": 20
+    },
+    "net": {
+        "num_channels": 40,
+        "filtersize": 10
+    },
+    "simulation": {
+        "tmax": 1.5,
+        "dt": 1e-3,
+        "tol": 1e-4,
+
+        "invCutoff": 1e-8,
+        "num_samples": 20000,
+
+        "diagonalizeOnDevice": true,
+
+        "use_rsvd": true,
+        "n_components": [0.2,0.4,0.6,0.8],
+        "n_oversamples": 40,
+        "n_iter": 4
+    }
+}

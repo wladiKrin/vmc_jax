@@ -10,7 +10,7 @@ import jVMC
 import jVMC.global_defs as global_defs
 import jVMC.mpi_wrapper as mpi
 from jVMC.stats import SampledObs
-
+from jVMC.util.rsvd import randomized_eigh, adaptive_randomized_eigh
 
 def realFun(x):
     return jnp.real(x)
@@ -72,7 +72,12 @@ class TDVP:
         * ``diagonalizeOnDevice``: Choose whether to diagonalize :math:`S` on GPU or CPU.
     """
 
-    def __init__(self, sampler, snrTol=2, pinvTol=1e-14, pinvCutoff=1e-8, makeReal='imag', rhsPrefactor=1.j, diagonalShift=0., crossValidation=False, diagonalizeOnDevice=True, randomSVD=True):
+    def __init__(self, sampler, snrTol=2, pinvTol=1e-14, pinvCutoff=1e-8, makeReal='imag', rhsPrefactor=1.j, diagonalShift=0., crossValidation=False, diagonalizeOnDevice=True, 
+            randomSVD=True,
+            n_components=300,
+            n_oversamples=10,
+            n_iter=4,
+        ):
         
         self.sampler = sampler
         self.snrTol = snrTol
@@ -85,6 +90,9 @@ class TDVP:
         self.diagonalizeOnDevice = diagonalizeOnDevice
 
         self.randomSVD = randomSVD
+        self.n_components = n_components
+        self.n_oversamples = n_oversamples
+        self.n_iter = n_iter
 
         self.metaData = None
 
@@ -154,18 +162,18 @@ class TDVP:
         return self.get_tdvp_equation(Eloc, gradients, rhsPrefactor=1.)
 
     def _transform_to_eigenbasis(self, S, F):
-        
+
         if self.randomSVD:
-            print("using rsvd")
-            tmpS = np.array(S)
-            
+            print("rsvd")
+            # tmpS = np.array(S)
+            # tmpV, tmpEv, tmpUh = randomized_eigh(tmpS, n_components=self.n_components, n_oversamples=self.n_oversamples, n_iter=self.n_iter)
+            # tmpUh = -tmpUh
+            # self.ev = jnp.array(tmpEv)
+            # self.V = jnp.array(tmpV)
+            # self.VtF = jnp.dot(jnp.array(tmpUh), F)
 
-            tmpV, tmpEv, _ = randomized_svd(tmpS, n_components=100, random_state=0)
-            print("finished rsvd, shape: ", tmpV.shape)
-
-
-            self.ev = jnp.array(tmpEv)
-            self.V = jnp.array(tmpV)
+            self.ev, self.V = randomized_eigh(S, self.n_components, n_oversamples=self.n_oversamples, n_iter=self.n_iter)
+            self.VtF = jnp.dot(jnp.transpose(jnp.conj(self.V)), F)
         else:
             if self.diagonalizeOnDevice:
                 try:
@@ -178,12 +186,14 @@ class TDVP:
                     self.ev = jnp.array(tmpEv)
                     self.V = jnp.array(tmpV)
             else:
+                print("svd on cpu")
                 tmpS = np.array(S)
                 tmpEv, tmpV = np.linalg.eigh(tmpS)
                 self.ev = jnp.array(tmpEv)
                 self.V = jnp.array(tmpV)
 
-        self.VtF = jnp.dot(jnp.transpose(jnp.conj(self.V)), F)
+            self.VtF = jnp.dot(jnp.transpose(jnp.conj(self.V)), F)
+        # self.VtF = jnp.dot(jnp.transpose(jnp.conj(self.V)), F)
 
     def _get_snr(self, Eloc, gradients):
 
@@ -205,7 +215,9 @@ class TDVP:
         self._get_snr(Eloc, gradients)
 
         # Discard eigenvalues below numerical precision
-        self.invEv = jnp.where(jnp.abs(self.ev / self.ev[-1]) > 1e-14, 1. / self.ev, 0.)
+        evL = self.ev[0] if self.randomSVD else self.ev[-1]
+        # self.invEv = jnp.where(jnp.abs(self.ev / self.ev[-1]) > 1e-14, 1. / self.ev, 0.)
+        self.invEv = jnp.where(jnp.abs(self.ev / evL) > 1e-14, 1. / self.ev, 0.)
 
         residual = 1.0
         cutoff = 1e-2
@@ -213,7 +225,7 @@ class TDVP:
         while residual > self.pinvTol and cutoff > self.pinvCutoff:
             cutoff *= 0.8
             # Set regularizer for singular value cutoff
-            regularizer = 1. / (1. + (max(cutoff, self.pinvCutoff) / jnp.abs(self.ev / self.ev[-1]))**6)
+            regularizer = 1. / (1. + (max(cutoff, self.pinvCutoff) / jnp.abs(self.ev / evL))**6)
 
             if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
                 # Construct a soft cutoff based on the SNR
