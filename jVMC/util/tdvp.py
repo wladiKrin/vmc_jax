@@ -171,15 +171,13 @@ class TDVP:
 
     def _get_snr(self, Eloc, gradients):
         
-        self.snr = 1
+        EO = gradients.covar_data(Eloc).transform(
+                        linearFun = jnp.transpose(jnp.conj(self.V)),
+                        nonLinearFun=self.trafo_helper
+                    )
+        self.rhoVar = EO.var().ravel()
 
-        # EO = gradients.covar_data(Eloc).transform(
-        #                 linearFun = jnp.transpose(jnp.conj(self.V)),
-        #                 nonLinearFun=self.trafo_helper
-        #             )
-        # self.rhoVar = EO.var().ravel()
-
-        # self.snr = jnp.sqrt(jnp.abs(mpi.globNumSamples * (jnp.conj(self.VtF) * self.VtF) / self.rhoVar)).ravel()
+        self.snr = jnp.sqrt(jnp.abs(mpi.globNumSamples * (jnp.conj(self.VtF) * self.VtF) / self.rhoVar)).ravel()
 
     def solve(self, Eloc, gradients):
         # Get TDVP equation from MC data
@@ -204,9 +202,9 @@ class TDVP:
             # Set regularizer for singular value cutoff
             regularizer = 1. / (1. + (max(cutoff, self.pinvCutoff) / jnp.abs(self.ev / self.ev[-1]))**6)
 
-            if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
-                # Construct a soft cutoff based on the SNR
-                regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
+            # if not isinstance(self.sampler, jVMC.sampler.ExactSampler):
+            #     # Construct a soft cutoff based on the SNR
+            #     regularizer *= 1. / (1. + (self.snrTol / self.snr)**6)
 
             pinvEv = self.invEv * regularizer
 
