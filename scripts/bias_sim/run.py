@@ -171,11 +171,15 @@ print("Z: ", obs["Z"]["mean"][0])
 print("X: ", obs["X"]["mean"][0])
 
 print("starting tdvp equation")
+finish = False
 while t < tmax:
-# while t <= 0:
     tic = time.perf_counter()
     print(">  t = %f\n" % (t))
     print("================================== whole step =============================================")
+    
+    if t + dt > tmax:
+        stepper = jVMC.util.stepper.Heun(timeStep=tmax-t)
+        finish = True
 
     # TDVP step
     dp, dt = stepper.step(0, tdvpEquation, psi.get_parameters(), hamiltonian=hamiltonian, psi=psi, 
@@ -230,8 +234,10 @@ while t < tmax:
     })
 
     dfTDVP.to_csv("./data_"+param_name+".csv", sep=' ')
+    if finish:
+        break
 
-dfPsi = pd.read_csv('./psi_L=10_J=-0.500000.csv', delim_whitespace = True)
+dfPsi = pd.read_csv('./psi_L=10_J=-0.100000.csv', delim_whitespace = True)
 psiRef = jnp.array(dfPsi['psiR']) + 1j * jnp.array(dfPsi['psiI'])
 psiRef = psiRef[::-1]
 psiRef /= jnp.linalg.norm(psiRef)

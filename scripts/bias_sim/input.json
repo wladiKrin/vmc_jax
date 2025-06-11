@@ -1,14 +1,14 @@
 {
   "system": {
     "L": 10,
-    "J": -0.5
+    "J": -0.1
   },
   "net": {
     "num_channels": 20,
     "filtersize": 10
   },
   "simulation": {
-    "sampler": "cutoff",
+    "sampler": "psiSq",
     "tmax": 2,
     "dt": 1e-3,
     "tol": 1e-4,
