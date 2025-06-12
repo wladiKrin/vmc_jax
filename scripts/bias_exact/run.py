@@ -9,7 +9,7 @@ import pandas as pd
 # Physical paramters:
 L = 10 # inp["system"]["Lx"]
 
-J = -0.5
+J = -1.0
 dt = 0.01
 tmax = 2
 

@@ -237,7 +237,7 @@ while t < tmax:
     if finish:
         break
 
-dfPsi = pd.read_csv('./psi_L=10_J=-0.100000.csv', delim_whitespace = True)
+dfPsi = pd.read_csv('./psi_L=10_J=-1.000000.csv', delim_whitespace = True)
 psiRef = jnp.array(dfPsi['psiR']) + 1j * jnp.array(dfPsi['psiI'])
 psiRef = psiRef[::-1]
 psiRef /= jnp.linalg.norm(psiRef)
