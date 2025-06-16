@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 scripts/0encap_folder/
+0encap_folder
 
 *.py[cod]
 *$py.class
