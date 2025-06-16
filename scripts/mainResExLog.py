@@ -38,6 +38,8 @@ import sys
 
 import argparse
 
+print(jax.local_device_count())
+
 # Create the argument parser
 parser = argparse.ArgumentParser( description='TDVP script')
 
@@ -99,34 +101,17 @@ dt            = args.dt
 integratorTol = args.integratorTol  # Adaptive integrator tolerance
 invCutoff     = args.invCutoff  # Adaptive integrator tolerance
 
-# inp = None
-# if len(sys.argv) > 1:
-#     # if an input file is given
-#     with open(sys.argv[1], 'r') as f:
-#         inp = json.load(f)
-# else:
-#
-#      if mpi.rank == 0:
-#         print("Error: No input file given.")
-#         exit()
-# L = inp["L"]
-# g = inp["trv_field"]
-# h = 0.0
-#
-# numSamples = inp["numSamples"]
-# num_hidden=inp["num_hidden"]
-# filter_size=inp["filter_size"]
-# tmax = inp["tmax"]  # Final time
-# dt = inp["dt"]  # Initial time step
-# integratorTol = inp["integratorTol"]  # Adaptive integrator tolerance
-# invCutoff = inp["invCutoff"]  # Adaptive integrator tolerance
-
 def norm_fun(v, df=lambda x: x):
     return jnp.abs(jnp.real(jnp.vdot(v,df(v))))
 
+mpi.commSize = jax.device_count()
+print(mpi.commSize)
+
 if mpi.commSize > 1:
+    print("mpi distributed")
     global_defs.set_pmap_devices(jax.devices()[mpi.rank % jax.device_count()])
 else:
+    print("not mpi distributed")
     global_defs.set_pmap_devices(jax.devices()[0])
 
 print(" -> Rank %d working with device %s" % (mpi.rank, global_defs.devices()), flush=True)
@@ -139,7 +124,7 @@ outp = jVMC.util.OutputManager("../data/output_"+param_name+".hdf5", append=True
 print("initializing network")
 net = ResNet(
         F=(filter_size,),
-        channels=(num_hidden,),
+        channels=(num_hidden,num_hidden,num_hidden,),
         strides=(1,),
         bias=False, 
 )
@@ -148,6 +133,7 @@ psi = jVMC.vqs.NQS(
         net, 
         logarithmic=True, 
         seed=4321,
+        batchSize=100,
 )  # Variational wave function
 
 # Set up hamiltonian
@@ -205,7 +191,7 @@ tdvpEquation = jVMC.util.TDVP(exactSampler, rhsPrefactor=1., pinvTol=1e-8, diago
 # tdvpEquation = tdvp_imp.TDVP({"lhs": exactSampler, "rhs": exactSampler}, rhsPrefactor=1., pinvTol=1e-8, diagonalShift=10, makeReal='real')
 
 print("starting GS search")
-jVMC.util.ground_state_search(psi, H_GS, tdvpEquation, exactSampler, numSteps=50)
+jVMC.util.ground_state_search(psi, H_GS, tdvpEquation, exactSampler, numSteps=200)
 # outp.write_network_checkpoint(0.0, psi.get_parameters())
 
 # print("loading GS data")
@@ -225,7 +211,7 @@ t = 0.
 parameters = []
 params = psi.get_parameters()
 parameters.append(params) 
-obs = measure(observables, psi, exactSampler)
+obs = measure(observables, psi, psi2ObsSampler)
 data = []
 data.append([t, 
     obs["energy"]["mean"][0], 
@@ -267,7 +253,7 @@ while t < tmax:
     # tdvpEquation.set_time(t)
 
     # Measure observables
-    obs = measure(observables, psi, exactSampler)
+    obs = measure(observables, psi, psi2ObsSampler)
 
     # Write some meta info to screen
     print("   Time step size: dt = %f" % (dt))

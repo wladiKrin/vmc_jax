@@ -73,6 +73,7 @@ class ResNet(nn.Module):
                 bias_init = jax.nn.initializers.zeros
                 )(x)
 
+
             x += residual
 
         x /= np.sqrt(nblock+1, dtype=global_defs.tReal)
