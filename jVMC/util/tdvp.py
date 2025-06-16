@@ -266,17 +266,24 @@ class TDVP:
         # Get sample
         start_timing(outp, "sampling")
         sampleConfigs, sampleLogPsi, p = self.sampler.sample(numSamples=numSamples)
+        # print("sampleConfigs: ", np.array(sampleConfigs))
+        # print("sampleLogPsi: ", np.array(sampleLogPsi))
+        # print("ps: ", np.array(p))
         stop_timing(outp, "sampling", waitFor=sampleConfigs)
 
         # Evaluate local energy
         start_timing(outp, "compute Eloc")
         Eloc = hamiltonian.get_O_loc(sampleConfigs, psi, sampleLogPsi, t)
+        # print("Eloc: ", np.array(Eloc))
+
         stop_timing(outp, "compute Eloc", waitFor=Eloc)
         Eloc = SampledObs( Eloc, p)
 
         # Evaluate gradients
         start_timing(outp, "compute gradients")
         sampleGradients = psi.gradients(sampleConfigs)
+        # print("samplegradients: ", np.array(sampleGradients))
+
         stop_timing(outp, "compute gradients", waitFor=sampleGradients)
         sampleGradients = SampledObs( sampleGradients, p)
 
